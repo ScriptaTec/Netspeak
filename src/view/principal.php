@@ -6,9 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST">
-        <button> <a href="./view/login.php">Login</a></button>
-        <button> <a href="./view/cadastro.php">Cadastro</a></button>
-    </form>
+    <h1>teste</h1>
+    <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa</h1>
 </body>
 </html>
