@@ -13,6 +13,7 @@
     Senha: <input type="password" name="senha" required><br>
     Data de Nascimento: <input type="date" name="data_nascimento" required><br>
     <button type="submit">Cadastrar</button>
+    <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
 </form>
 
 </body>
