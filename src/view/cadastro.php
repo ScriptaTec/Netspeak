@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>To testando - ANA</h1>
+    <h1>Ana testando</h1>
 <form method="POST" action="../controller/controller_cadastro.php">
     Nome Completo: <input type="text" name="nome" required><br>
     Email: <input type="email" name="email" required><br>
