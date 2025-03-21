@@ -14,6 +14,6 @@
     Data de Nascimento: <input type="date" name="data_nascimento" required><br>
     <button type="submit">Cadastrar</button>
 </form>
-
+<h1>sim</h1>
 </body>
 </html>
