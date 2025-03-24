@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "julius";
+    src: url("julius.ttf")
+    format("truetype");
+}
+
+.julius{
+    font-family: "julius", sans-serif;
+}
