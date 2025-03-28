@@ -10,6 +10,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO usuarios (nome_completo, email, senha, data_nascimento) VALUES (?, ?, ?, ?)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$nome, $email, $senha, $data_nascimento]);
-    echo "Cadastro realizado com sucesso!";
 }
 ?>
