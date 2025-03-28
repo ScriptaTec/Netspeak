@@ -8,7 +8,26 @@
 
     <title>Perfil</title>
 </head>
-<body>
-    
-</body>
+<body class="bg-gray-100 flex justify-start items-center min-h-screen">
+    <div class="border p-10">
+    <form action="">
+        <img src="" alt=""><br>
+        <h1>Nome de usuário</h1>
+
+        <div class="bg-white p-5 border-current">
+        <label for="nome">Nome: </label>
+        <input type="text" class="border"><br><br>
+
+        <label for="nome">Telefone: </label>
+        <input type="text" class="border"><br><br>
+
+        <label for="nome">Nascimento: </label>
+        <input type="text" class="border">
+        </div>
+
+        <input type="submit" value="Editar">
+        
+    </form>
+    </div>
+</bodycla>
 </html>

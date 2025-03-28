@@ -1,9 +1,9 @@
 @font-face {
-    font-family: "julius";
-    src: url("julius.ttf")
+    font-family: "monoid";
+    src: url("monoid.ttf")
     format("truetype");
 }
 
-.julius{
-    font-family: "julius", sans-serif;
+.monoid{
+    font-family: "monoid", sans-serif;
 }

@@ -57,7 +57,7 @@
         </div>
 
         <div class="absolute right-4 bottom-0">
-            <a href=""><img src="../imgs/suporte.png" alt=""></a>
+            <a href="perfil.php"><img src="../imgs/suporte.png" alt=""></a>
         </div>
     </footer>
 
