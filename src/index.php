@@ -1,3 +1,7 @@
+<?php
+session_start();
+require "controller/verifica_sessao.php";
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -27,6 +31,7 @@
         <div class="bg-slate-600 text-white inline-flex p-1 rounded-lg">
             <a href="view/cadastro.php">Cadastrar-se</a>
         </div>
+        <a href="view/logout.php">Sair</a>
 
         <a href="view/perfil.php"><img src="imgs/perfil.png" alt=""></a>
     </header>

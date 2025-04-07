@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +10,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>teste</h1>
-    <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa</h1>
+    <form method="POST" action="../controller/controller_logout.php">
+        <button type="submit">Sair da Conta</button>
+    </form>
 </body>
 </html>

@@ -18,7 +18,7 @@
         <a href="perfil.php"><img src="../imgs/perfil.png" alt=""></a>
     </header>
 
-    <main class="flex-grow flex items-center justify-center -mt-15">
+    <main class="flex-grow flex items-center justify-center mt-8">
         <div class="flex items-center shadow-lg gap-20 bg-white rounded-lg pl-10">
             <form method="POST" action="../controller/controller_cadastro.php">
 
@@ -32,6 +32,7 @@
                     style="box-shadow: -2px 2px 1px;"><br>
                 <label for="email" class="text-xs">Email</label><br>
 
+
                 <input type="password" name="senha" required placeholder="123"
                     class="w-72 p-1.5 mt-3 border-2 border-black rounded hover:border-black focus:outline-none"
                     style="box-shadow: -2px 2px 1px;"><br>
@@ -42,7 +43,21 @@
                     style="box-shadow: -2px 2px 1px;"><br>
                 <label for="nascimento" class="text-xs"> Data de Nascimento</label><br>
 
+
+                <?php
+session_start();
+
+// Verifica se a mensagem de erro existe na sessão e exibe
+if (isset($_SESSION['erro_email'])) {
+    echo '<p style="color: red;">' . $_SESSION['erro_email'] . '</p>';
+    // Limpa a variável de sessão após exibir a mensagem
+    unset($_SESSION['erro_email']);
+}
+?>
+               
+
                 <button type="submit" class="bg-black transition-all duration-300 transform hover:scale-105 rounded-full p-2 text-white text-sm mt-2">Cadastrar</button>
+                <a href="login.php">Logar</a>
             </form>
 
             <div class="border-collapse">
@@ -62,6 +77,5 @@
     </footer>
 
 </body>
-
 
 </html>

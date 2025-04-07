@@ -1,6 +1,6 @@
 <?php
 $host = '127.0.0.1';
-$dbname = 'cadastro_usuarios';
+$dbname = 'netspeak';
 $user = 'root'; // Altere conforme necessário
 $pass = '1234'; // Altere conforme necessário
 
