@@ -37,9 +37,10 @@ require "controller/verifica_sessao.php";
     </header>
 
     <main class="flex justify-center items-center min-h-screen">
-        <div class="inline-flex flex-col bg-gray-300 pb-5 pl-2 pr-2 pt-2">
-            <img class="h-96" src="https://i.pinimg.com/originals/9f/eb/6a/9feb6ae6ea5ee06371553d6398f1419b.gif" alt="">
+        <div class="inline-flex flex-col pb-5 pl-2 pr-2 pt-2">
             <h1 class="text-center">O melhor site sobre emojis!</h1>
+            
+            <textarea name="" id="" class="bg-gray-400 w-96 "></textarea>
         </div>
     </main>
 

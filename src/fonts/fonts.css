@@ -1,9 +1,10 @@
 @font-face {
-    font-family: "monoid";
-    src: url("monoid.ttf")
+    font-family: "jersey";
+    src: url("jersey.ttf")
     format("truetype");
 }
 
-.monoid{
-    font-family: "monoid", sans-serif;
+.jersey{
+    font-family: "jersey", sans-serif;
 }
+
