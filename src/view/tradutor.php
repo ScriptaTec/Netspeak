@@ -41,13 +41,6 @@
     </div>
 
     <div class="flex justify-center gap-10 mt-20">
-
-    <div class="bg-gray-100 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 text-center w-64">
-        <img src="imgs/translate.png" alt="Ícone de tradução" class="w-16 mx-auto mb-4">
-        <h1 class="text-xl font-semibold text-gray-800">Tradutor</h1>
-        <p class="text-gray-600">Traduzir frases em internetês</p>
-    </div>
-
     <div class="bg-gray-100 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 text-center w-64">
         <img src="imgs/pesquisa.png" alt="Ícone de emoji" class="w-16 mx-auto mb-4">
         <h1 class="text-xl font-semibold text-gray-800">Lista de Emojis</h1>
