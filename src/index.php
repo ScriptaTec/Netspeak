@@ -75,7 +75,7 @@ require "controller/verifica_sessao.php";
                     <h3><b>Usuário</b></h3>
                     <a href="view/cadastro.php">Cadastro</a>
                     <a href="view/login.php">Login</a>
-                    <a href="view/perfil.php">Perfil</a>
+                    <a href="controller/controller_perfil.php">Perfil</a>
                 </div>
 
                 <div class="flex flex-col">

@@ -15,6 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "SELECT id FROM usuarios WHERE email = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$email]);
+
+        $sql = "SELECT id FROM usuarios WHERE email_secundario = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$email_secundario]);
         
         if ($stmt->rowCount() > 0) {
             $_SESSION['erro_email'] = "Este email já está cadastrado.";
