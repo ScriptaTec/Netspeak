@@ -39,7 +39,7 @@ require "controller/verifica_sessao.php";
     <main class="flex justify-center items-center min-h-screen">
         <div class="inline-flex flex-col pb-5 pl-2 pr-2 pt-2">
             <h1 class="text-center">O melhor site sobre emojis!</h1>
-            
+
             <textarea name="" id="" class="bg-gray-400 w-96 "></textarea>
         </div>
     </main>
@@ -88,7 +88,8 @@ require "controller/verifica_sessao.php";
                     <h3><b>Fale conosco</b></h3>
                     <a href="view/suporte.php">Suporte</a>
                     <a href="view/suporte.php">Perguntas frequentes</a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=scripta.tech@gmail.com">scripta.tech@gmail.com</a>
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=scripta.tech@gmail.com">scripta.tech@gmail.com</a>
                 </div>
 
                 <div class="flex flex-col ">
@@ -100,11 +101,13 @@ require "controller/verifica_sessao.php";
 
                         <a href="https://github.com/ScriptaTec"><img src="imgs/github.png" alt="gitHub"></a>
 
-                        <a href="https://br.pinterest.com/scriptatech/"><img src="imgs/pinterest.png" alt="pinterest"></a>
-                   
-                        <a href="https://wa.me/5547988703860?text=Oi!%20vim%20pelo%20site%20de%20vocês%20(:" target="_blank">
-    <img src="imgs/whatsapp.png" alt="WhatsApp">
-</a>
+                        <a href="https://br.pinterest.com/scriptatech/"><img src="imgs/pinterest.png"
+                                alt="pinterest"></a>
+
+                        <a href="https://wa.me/5547988703860?text=Oi!%20vim%20pelo%20site%20de%20vocês%20(:"
+                            target="_blank">
+                            <img src="imgs/whatsapp.png" alt="WhatsApp">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -116,16 +119,3 @@ require "controller/verifica_sessao.php";
     </footer>
 
 </html>
-
-<!--<h5>Redes sociais</h5>
-           <div class="flex justify-start gap-2">
-           
-            <div class="flex gap-2">
-            <a href="https://github.com/ScriptaTec"><img src="imgs/github.png" alt="gitHub"></a>
-            <a href="https://github.com/ScriptaTec">ScriptaTec</a>
-            </div>
-            
-            <div class="flex gap-2">
-            <a href="https://www.instagram.com/scripta.tech/"><img src="imgs/instagram.png" alt="instagram"></a>
-            <a href="https://www.instagram.com/scripta.tech/">@Scripta.Tech</a>    
-        </div>

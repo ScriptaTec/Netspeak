@@ -14,7 +14,7 @@
     <title>Cadastro</title>
 </head>
 
-<body class="jersey bg-gray-50 flex flex-col min-h-screen">
+<body class="jerseyjersey bg-gray-50 flex flex-col min-h-screen">
 
     <!--esquerda encima-->
     <div class="absolute left-114 top-30 text-2xl ">✨</div>
@@ -101,16 +101,17 @@ unset($_SESSION['erro_email']);
             </div>
 
 
-            <div class="mt-10 absolute right-100 bottom-54">
-                <button type="submit"
-                    class="relative rounded-4xl rounded-br-none overflow-hidden mt-2 p-2 bg-black transition duration-500 hover:scale-110">
-                    <div id="progressoInterno" class="absolute h-full transition-all duration-400"
+            <div class="mt-20 absolute right-100 bottom-52">
+            <button type="submit"
+                    class="relative bg-black rounded-4xl rounded-br-none overflow-hidden p-2 pl-4 pr-4 ml-52 transition duration-500 hover:scale-110">
+                    <div id="progressoInterno"
+                        class="absolute left-0 top-0 h-full transition-all duration-700"
                         style="width: 0%; background-color: #ffac33"></div>
                     <span class="relative text-white">Cadastrar-se</span>
-                </button>
+                </button >
 
-                <div class="text-xs text-right mt-1">
-                    <a href="login.php">Já possuí uma conta?</a>
+                <div class="text-right mt-1">
+                    <a href="login.php"><b>Já possuí uma conta?</b></a>
                 </div>
             </div>
         </form>

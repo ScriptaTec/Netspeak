@@ -79,7 +79,11 @@
                         class="absolute left-0 top-0 h-full transition-all duration-700"
                         style="width: 0%; background-color: #ffac33"></div>
                     <span class="relative text-white">Logar</span>
-                </button>
+                </button >
+
+                <div class="text-right mr-10 text-sm mt-1">
+                    <a href="cadastro.php">Não possuí conta?</a>
+                </div>
 
         </form>
     </main>

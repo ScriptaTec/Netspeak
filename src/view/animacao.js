@@ -1,4 +1,4 @@
-//*Animação do botão de login e cadastro
+//Animação do botão de login e cadastro
 
 const form = document.getElementById('cadastroForm');
 const inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="password"], input[type="date"]');
@@ -21,3 +21,4 @@ function atualizarProgresso() {
 inputs.forEach(input => {
     input.addEventListener('input', atualizarProgresso);
 });
+
