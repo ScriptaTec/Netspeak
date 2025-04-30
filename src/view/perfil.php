@@ -1,25 +1,23 @@
 <?php
 session_start();
+require "../controller/controller_perfil.php";
 
-if (isset($_SESSION['user'])) {
-    // echo "Sessão ativa para o usuário: " . $_SESSION['user']['nome'];
-} else {
-    echo "<script>alert('Usuario não logado.'); location.href = 'cadastro.php';</script>"; //window.history.back(); → Retorna para a página anterior (onde estava o formulário de cadastro).
+if (!isset($_SESSION['user'])) {
+    echo "<script>alert('Usuário não logado.'); location.href = 'cadastro.php';</script>";
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../fonts/fonts.css">
-    <script src="navegacao.js" defer></script>
-
-    <title>Perfil</title>
+    <script src="../js/navegacao.js" defer></script>
 </head>
 
 <body class="bg-gray-50 jersey">
@@ -27,184 +25,170 @@ if (isset($_SESSION['user'])) {
     <div class="bg-gray-100 py-1">
         <header>
             <div class="w-30 mt-2 absolute top-0 left-5 transition duration-500 hover:scale-105">
-                <a href="../index.php"><img src="../imgs/logo4.png" alt=""></a>
+                <a href="../index.php"><img src="../imgs/logo4.png" alt="Logo"></a>
             </div>
 
             <div class="absolute top-0 right-0 m-5 gap-2 flex">
-                <a href="../index.php" class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
-            
-                <a href="logout.php"><img src="../imgs/exit.png" alt=""
-                class="transition duration-500 hover:scale-105"></a>
+                <a href="../index.php" class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300">Home</a>
+                <a href="logout.php"><img src="../imgs/exit.png" alt="Sair" class="transition duration-500 hover:scale-105"></a>
             </div>
         </header>
 
-        <!--Dados do usuário-->
-        <form action="">
-            <div class="flex justify-center items-center m-10">
-                <img src="../imgs/mulher(1).png" alt="" class="">
+        <!-- Alerta de mensagem -->
+        <?php if (isset($mensagem)) echo "<script>alert('$mensagem')</script>"; ?>
 
-                <div class="flex-col">
-                    <input type="email" name="email" required placeholder="Email..."
-                        class="bg-white w-60 p-2 mt-3 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                        style="box-shadow: 2px 2px 0px;"><br>
+        <!-- Dados básicos do usuário -->
+        <div class="flex justify-center items-center m-10">
+            <img src="../imgs/mulher(1).png" alt="Avatar">
 
-                    <input type="text" name="nome" required placeholder="Nome..."
-                        class="bg-white w-50 p-2 mt-3 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                        style="box-shadow: 2px 2px 1px;"><br>
-
-                    <input type="text" name="idade" required placeholder="Idade..."
-                        class="bg-white w-20 p-2 mt-3 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                        style="box-shadow: 2px 2px 1px;"><br>
+            <div class="flex-col ml-10">
+                <div class="flex flex-col">
+                    <label class="mb-1 ml-1">Email</label>
+                    <input type="email" value="<?= $_SESSION['user']['email'] ?? '' ?>" disabled
+                        class="bg-white w-60 p-2 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                        style="box-shadow: 2px 2px 0px;">
                 </div>
+
+                <input type="text" value="<?= $_SESSION['user']['nome'] ?? '' ?>" disabled
+                    class="bg-white w-50 p-2 mt-3 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                    style="box-shadow: 2px 2px 1px;"><br>
+
+                <input type="date" value="<?= $_SESSION['user']['data_nascimento'] ?? '' ?>" disabled
+                    class="bg-white w-32 p-2 mt-3 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                    style="box-shadow: 2px 2px 1px;">
             </div>
-        </form>
+        </div>
     </div>
 
-    <!--Editar e personalizar dados do usuário-->
+    <!-- Seção principal -->
     <main class="mt-2 flex justify-center flex-col items-center">
 
-        <!-- Barra de abas -->
+        <!-- Tabs -->
         <div class="flex gap-5">
             <button id="tabFavoritos" class="border-b-2 border-black font-bold">Favoritos</button>
             <button id="tabPersonalizar" class="text-gray-400 hover:text-black">Personalizar</button>
             <button id="tabRedefinirSenha" class="text-gray-400 hover:text-black">Redefinir senha</button>
         </div>
 
+        <!-- Conteúdo de cada aba -->
         <div id="conteudoFavoritos">
-            <h1>ainda nao tem nada aqui</h1>
+            <h1 class="mt-10 text-xl">Ainda não há favoritos cadastrados.</h1>
         </div>
 
         <div id="conteudoPersonalizar" class="flex justify-center items-center flex-col">
-            <!--Editar dados-->
-            <h1 class="text-3xl text-left mt-10">Altere seus dados: </h1>
-            <form action="">
-
+            <!-- Editar dados básicos -->
+            <h1 class="text-3xl text-left mt-10">Altere seus dados:</h1>
+            <form action="" method="POST">
                 <div class="flex gap-20 ml-5">
                     <div class="relative">
-                        <input type="email" name="email" required placeholder="Email..."
-                            class="w-60 p-2 mt-3 text-gray-600 border-2 border-black hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                            style="box-shadow: -4px 4px 1px rgb(100, 100, 100);">
-                        <img src="../imgs/edit-tool.png" alt="ícone"
-                            class="absolute top-8 right-3 transform -translate-y-1/2">
+                        <input type="email" name="email" required placeholder="Email..." value="<?= $_SESSION['user']['email'] ?? '' ?>"
+                            class="w-60 p-2 mt-3 text-gray-600 border-2 border-black focus:outline-none transition duration-500 hover:scale-105"
+                            style="box-shadow: -4px 4px 1px #646464;">
+                        <img src="../imgs/edit-tool.png" alt="Editar" class="absolute top-8 right-3 transform -translate-y-1/2">
                     </div>
 
                     <div class="relative">
-                        <input type="text" name="nome" required placeholder="Nome..."
-                            class="w-60 p-2 mt-3 text-gray-600 border-2 border-black hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                            style="box-shadow: -4px 4px 1px rgb(100, 100, 100);">
-                        <img src="../imgs/edit-tool.png" alt="ícone"
-                            class="absolute top-8 right-3 transform -translate-y-1/2">
+                        <input type="text" name="nome" required placeholder="Nome..." value="<?= $_SESSION['user']['nome'] ?? '' ?>"
+                            class="w-60 p-2 mt-3 text-gray-600 border-2 border-black focus:outline-none transition duration-500 hover:scale-105"
+                            style="box-shadow: -4px 4px 1px #646464;">
+                        <img src="../imgs/edit-tool.png" alt="Editar" class="absolute top-8 right-3 transform -translate-y-1/2">
                     </div>
                 </div>
 
                 <div class="ml-5">
-                    <button type="submit" value="editar"
-                        class="mt-3 px-4 py-1 bg-black text-white border transition duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-black">
-                        <span>Editar</span>
+                    <button type="submit" name="editar_dados_basicos" value="editar"
+                        class="mt-3 px-4 py-1 bg-black text-white hover:scale-105 hover:bg-yellow-200 hover:text-black transition duration-500">
+                        Editar
                     </button>
                 </div>
-
-                <div class="flex flex-col mt-10 ml-5">
-                    <a href="">Sair da conta-></a>
-
-                    <a href="">Escluir conta -></a>
-                </div>
-                <!--<div class="mt-10 ml-5 text-xl">
-                    <a href="logout.php" class="p-2 bg-gray-200 transition duration-500 hover:scale-110 hover:bg-black hover:text-white inline-block">Sair da conta -></a>
-                </div>
-
-                <div class="mt-5 ml-5 text-xl">
-                    <a href="#" class="p-2 bg-gray-200 transition duration-500 hover:scale-110 hover:bg-black hover:text-white inline-block">Excluir conta -></a>
-                </div>-->
             </form>
 
+            <!-- Sair e excluir conta -->
+            <div class="flex flex-col mt-10 ml-5">
+                <a href="logout.php">Sair da conta →</a>
+                <a href="excluir_conta.php" class="text-red-600">Excluir conta →</a>
+            </div>
 
-            <!--Personalizar dados-->
-            <section class="mt-10">
-                <h1 class="text-3xl">Adicione dados:</h1>
-                <form action="">
-                    <fieldset class="border p-10">
-                        <label for="nome-completo" class="text-xl">Nome completo: </label>
-                        <input type="text" name="nome-completo" required placeholder="@..."><br>
+            <!-- Formulário de personalização -->
+            <form action="" method="POST">
+                <section class="mt-10">
+                    <h1 class="text-3xl">Adicione dados:</h1>
+                    <fieldset class="border p-10 mt-5">
 
-                        <label for="email-secundario" class="text-xl">Email secundário: </label>
-                        <input type="email" name="email-secundario" required placeholder="...">
+                        <label class="text-xl">Nome completo:</label>
+                        <input type="text" name="nome_completo" required placeholder="@..."
+                            value="<?= $_SESSION['user']['nome_completo'] ?? '' ?>"><br>
 
+                        <label class="text-xl mt-3">Email secundário:</label>
+                        <input type="email" name="email_secundario" required
+                            value="<?= $_SESSION['user']['email_secundario'] ?? '' ?>"><br>
+
+                        <!-- Gênero -->
                         <div class="flex gap-5 mt-3">
-                            <label for="genero" class="text-xl">Gênero: </label>
+                            <label class="text-xl">Gênero:</label>
+                            <?php $genero = $_SESSION['user']['genero'] ?? ''; ?>
+                            <input type="radio" name="genero" value="feminino" <?= $genero === 'feminino' ? 'checked' : '' ?>>
+                            <label>Feminino</label>
 
-                            <input type="radio" name="feminino" id="feminino">
-                            <label for="feminino">Feminino</label>
+                            <input type="radio" name="genero" value="masculino" <?= $genero === 'masculino' ? 'checked' : '' ?>>
+                            <label>Masculino</label>
 
-                            <input type="radio" name="masculino" id="masculino">
-                            <label for="masculino">Masculino</label>
-
-                            <input type="radio" name="outro" id="outro">
-                            <label for="outro">Outro</label>
+                            <input type="radio" name="genero" value="outro" <?= $genero === 'outro' ? 'checked' : '' ?>>
+                            <label>Outro</label>
                         </div>
 
+                        <!-- Grau de formação -->
                         <div class="flex gap-5 mt-3">
-                            <label for="formacao" class="text-xl">Grau de formação: </label>
+                            <label class="text-xl">Grau de formação:</label>
+                            <?php $formacao = $_SESSION['user']['grau_formacao'] ?? ''; ?>
+                            <input type="radio" name="grau_formacao" value="Ensino Médio Incompleto" <?= $formacao === 'Ensino Médio Incompleto' ? 'checked' : '' ?>>
+                            <label>Ensino Médio incompleto</label>
 
-                            <input type="radio" name="em-incompleto" id="em-incompleto">
-                            <label for="em-incompleto">Ensino Médio incompleto</label>
+                            <input type="radio" name="grau_formacao" value="Ensino Médio Completo" <?= $formacao === 'Ensino Médio Completo' ? 'checked' : '' ?>>
+                            <label>Ensino Médio completo</label>
 
-                            <input type="radio" name="em-completo" id="em-completo">
-                            <label for="em-completo">Ensino Médio completo</label>
-
-                            <input type="radio" name="graduacao" id="graduacao">
-                            <label for="graduacao">Graduação</label>
+                            <input type="radio" name="grau_formacao" value="Graduação" <?= $formacao === 'Graduação' ? 'checked' : '' ?>>
+                            <label>Graduação</label>
                         </div>
 
+                        <!-- Dificuldade com tecnologia -->
                         <div class="flex gap-5 mt-3">
-                            <label for="dificuldade" class="text-xl">Nível de dificuldade com a tecnologia: </label>
+                            <label class="text-xl">Dificuldade com tecnologia:</label>
+                            <?php $dificuldade = $_SESSION['user']['dificuldade_tecnologia'] ?? ''; ?>
+                            <input type="radio" name="dificuldade_tecnologia" value="Alto" <?= $dificuldade === 'Alto' ? 'checked' : '' ?>>
+                            <label>Alta</label>
 
-                            <input type="radio" name="alta" id="alta">
-                            <label for="alta">Alta</label>
+                            <input type="radio" name="dificuldade_tecnologia" value="Médio" <?= $dificuldade === 'Médio' ? 'checked' : '' ?>>
+                            <label>Média</label>
 
-                            <input type="radio" name="media" id="media">
-                            <label for="media">Média</label>
-
-                            <input type="radio" name="baixa" id="baixa">
-                            <label for="baixa">Baixa</label>
+                            <input type="radio" name="dificuldade_tecnologia" value="Baixo" <?= $dificuldade === 'Baixo' ? 'checked' : '' ?>>
+                            <label>Baixa</label>
                         </div>
                     </fieldset>
 
                     <div class="ml-5">
-                    <button type="submit" value="editar"
-                        class="mt-3 px-4 py-1 bg-black text-white border transition duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-black">
-                        <span>Editar</span>
-                    </button>
-                </div>
-                </form>
-            </section>
+                        <button type="submit" name="editar_personalizacao" value="editar"
+                            class="mt-3 px-4 py-1 bg-black text-white hover:scale-105 hover:bg-yellow-200 hover:text-black transition duration-500">
+                            Editar
+                        </button>
+                    </div>
+                </section>
+            </form>
 
-
+            <!-- Temas -->
             <section class="mt-20 mb-20 flex">
                 <div class="flex-col">
                     <h2 class="text-7xl">Personalize</h2>
                     <h2 class="text-7xl">sua navegação!</h2>
-                    <h3 class="text-3xl text-gray-700">escolha entre os temas:</h3>
+                    <h3 class="text-3xl text-gray-700">Escolha entre os temas:</h3>
                 </div>
 
-                <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-5 ml-10">
                     <button class="bg-gray-100 p-2 rounded-full">Claro</button>
-                    <button class="bg-gray-400 p-2 rounded-full">Escuro</button>
+                    <button class="bg-gray-400 p-2 rounded-full text-white">Escuro</button>
                 </div>
             </section>
         </div>
     </main>
-    </div>
-
-    <!--<footer class="mt-20 w-full absolute bottom-0">
-        <div class="flex justify-center gap-4">
-            <h6 class=" text-sm">&copy; 2025 Scripta. Todos os direitos reservados.</h6>
-        </div>
-
-        <div class="absolute right-4 bottom-0">
-            <a href="perfil.php"><img src="../imgs/suporte.png" alt=""></a>
-        </div>
-    </footer>-->
 </body>
-
 </html>

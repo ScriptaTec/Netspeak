@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="animacao.js" defer></script>
+    <script src="../js/animacao.js" defer></script>
     <link rel="stylesheet" href="../fonts/fonts.css">
 
     <link rel="icon" href="../imgs/iconeLogo.ico" type="image/x-icon">
@@ -14,7 +14,7 @@
     <title>Cadastro</title>
 </head>
 
-<body class="jerseyjersey bg-gray-50 flex flex-col min-h-screen">
+<body class="jersey bg-gray-50 flex flex-col min-h-screen">
 
     <!--esquerda encima-->
     <div class="absolute left-114 top-30 text-2xl ">✨</div>
@@ -77,6 +77,13 @@ echo '<p style="color: red; font-size: 12px; padding: 2px">' . $_SESSION['erro_e
 // Limpa a variável de sessão após exibir a mensagem
 unset($_SESSION['erro_email']);
 }
+
+if (isset($_SESSION['erro_email_secundario'])) {
+    echo '<p style="color: red; font-size: 12px; padding: 2px">' . $_SESSION['erro_email_secundario'] . '</p>';
+    
+    // Limpa a variável de sessão após exibir a mensagem
+    unset($_SESSION['erro_email_secundario']);
+    }
 ?>
 
                     <input type="password" name="senha" required placeholder="Senha..."
@@ -94,9 +101,15 @@ unset($_SESSION['erro_email']);
                         class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
                         style="box-shadow: 2px 2px 0px;"><br>
 
-                    <input type="password" name="senha" required placeholder="Repetir senha..."
+                    <input type="password" name="confirmar_senha" required placeholder="Repetir senha..."
                         class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
                         style="box-shadow: 2px 2px 1px;"><br>
+                        <?php 
+                        if (isset($_SESSION['erro_senha'])) {
+                            echo "<p class='text-red-500 font-size: 12px; padding: 2px'>" . $_SESSION['erro_senha'] . "</p>";
+                            unset($_SESSION['erro_senha']);
+                        }
+                        ?>
                 </div>
             </div>
 
