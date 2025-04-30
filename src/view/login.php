@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="animacao.js" defer></script>
+    <script src="../js/animacao.js" defer></script>
     <link rel="stylesheet" href="../fonts/fonts.css">
 
     <link rel="icon" href="../imgs/iconeLogo.ico" type="image/x-icon">
@@ -61,10 +61,10 @@
                     session_start();
 
                     // Verifica se existe uma mensagem de erro de login na sessão e exibe
-                    if (isset($_SESSION['erro_login'])) {
-                        echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_login'] . '</p>';
+                    if (isset($_SESSION['erro_email'])) {
+                        echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_email'] . '</p>';
                         // Limpa a variável de erro após exibir a mensagem
-                        unset($_SESSION['erro_login']);
+                        unset($_SESSION['erro_email']);
                     }
                     ?>
 
@@ -72,6 +72,14 @@
                         class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                         style="box-shadow: 2px 2px 1px;"><br>
                 </div>
+
+                <?php 
+                if (isset($_SESSION['erro_senha'])) {
+                    echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_senha'] . '</p>';
+                    // Limpa a variável de erro após exibir a mensagem
+                    unset($_SESSION['erro_senha']);
+                }
+                ?>
 
                 <button type="submit"
                     class="relative bg-black rounded-4xl rounded-br-none overflow-hidden mt-4 p-2 pl-4 pr-4 ml-52 transition duration-500 hover:scale-110">
