@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="animacao.js" defer></script>
+    <script src="../js/animacao.js" defer></script>
     <link rel="stylesheet" href="../fonts/fonts.css">
 
     <link rel="icon" href="../imgs/iconeLogo.ico" type="image/x-icon">
@@ -45,7 +45,7 @@
 
     <main class="text-center flex items-center justify-center mt-40 text-gray-600">
 
-        <form method="POST" action="../controller/controller_login.php" id="cadastroForm">
+        <form method="POST" action="../controller/controller_login.php" id="form">
 
                 <div class="text-8xl text-black">
                     <h1>Bem-vindo</h1>
@@ -57,32 +57,32 @@
                         class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                         style="box-shadow: 2px 2px 1px;"><br>
 
-                    <?php
-                    session_start();
+<?php
+session_start();
 
-                    // Verifica se existe uma mensagem de erro de login na sessão e exibe
-                    if (isset($_SESSION['erro_login'])) {
-                        echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_login'] . '</p>';
-                        // Limpa a variável de erro após exibir a mensagem
-                        unset($_SESSION['erro_login']);
-                    }
-                    ?>
+// Verifica se existe uma mensagem de erro de login na sessão e exibe
+if (isset($_SESSION['erro_login'])) {
+echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_login'] . '</p>';
+// Limpa a variável de erro após exibir a mensagem
+unset($_SESSION['erro_login']);
+}
+?>
 
                     <input type="password" name="senha" required placeholder="Senha..."
                         class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                         style="box-shadow: 2px 2px 1px;"><br>
                 </div>
 
-                <button type="submit"
-                    class="relative bg-black rounded-4xl rounded-br-none overflow-hidden mt-4 p-2 pl-4 pr-4 ml-52 transition duration-500 hover:scale-110">
+                <button type="submit" style="cursor: pointer;"
+                    class="relative bg-black rounded-4xl rounded-br-none overflow-hidden mt-4 p-2 pl-5 pr-5 ml-52 transition duration-500 hover:scale-110">
                     <div id="progressoInterno"
                         class="absolute left-0 top-0 h-full transition-all duration-700"
                         style="width: 0%; background-color: #ffac33"></div>
                     <span class="relative text-white">Logar</span>
                 </button >
 
-                <div class="text-right mr-10 text-sm mt-1">
-                    <a href="cadastro.php">Não possuí conta?</a>
+                <div class="text-right mt-1 mr-10">
+                    <a href="cadastro.php" class="hover:text-black transition duration-500">Não possuí conta?</a>
                 </div>
 
         </form>

@@ -10,28 +10,16 @@ require "controller/verifica_sessao.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fonts/fonts.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="fonts/fonts.css">
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
 
     <title>Home</title>
 </head>
 
-<body class="bg-gray-50 monoid">
-
-    <!---------Cabeçalho--------->
-    <!-- <div class=" m-7 text-slate-700">
-        <form method="POST">
-            <button> <a href="./view/login.php">Login</a></button>
-
-
-            <button> <a href="./view/cadastro.php">Cadastro</a></button>
-        </form>
-    </div>-->
+<body class="bg-gray-50 jersey">
 
     <header class="flex absolute right-5 mt-3 gap-4">
-        <div class="bg-slate-600 text-white inline-flex p-1 rounded-lg">
-            <a href="view/cadastro.php">Cadastrar-se</a>
-        </div>
-        <a href="view/logout.php">Sair</a>
+        <a href="view/logout.php" class="text-xl hover:text-yellow-400">Sair</a>
 
         <a href="view/perfil.php"><img src="imgs/perfil.png" alt=""></a>
     </header>
@@ -96,7 +84,7 @@ require "controller/verifica_sessao.php";
                     <h3><b>Redes sociais</b></h3>
 
                     <div class="flex justify-center mt-2 gap-3">
-                        <a href="https://www.instagram.com/scripta.tech/"><img src="imgs/instagram.png"
+                        <a href="https://www.instagram.com/netspeak_2025/"><img src="imgs/instagram.png"
                                 alt="instagram"></a>
 
                         <a href="https://github.com/ScriptaTec"><img src="imgs/github.png" alt="gitHub"></a>

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="animacao.js" defer></script>
+    <script src="../js/animacao.js" defer></script>
     <link rel="stylesheet" href="../fonts/fonts.css">
 
     <link rel="icon" href="../imgs/iconeLogo.ico" type="image/x-icon">
@@ -14,7 +14,7 @@
     <title>Cadastro</title>
 </head>
 
-<body class="jerseyjersey bg-gray-50 flex flex-col min-h-screen">
+<body class="jersey bg-gray-50 flex flex-col min-h-screen">
 
     <!--esquerda encima-->
     <div class="absolute left-114 top-30 text-2xl ">✨</div>
@@ -54,11 +54,11 @@
 
     <main class=" flex items-center justify-center mt-20 text-gray-600">
 
-        <form method="POST" action="../controller/controller_cadastro.php" id="cadastroForm">
+        <form method="POST" action="../controller/controller_cadastro.php" id="form">
 
-            <div class="text-7xl text-center text-black flex-col mt-7 mr-10">
+            <div class="text-8xl text-center text-black flex-col">
                 <h1>Seja</h1>
-                <h1>bem-vindo!</h1>
+                <h1 class="-mt-5">bem-vindo!</h1>
             </div>
 
             <div class="flex gap-5">
@@ -102,7 +102,7 @@ unset($_SESSION['erro_email']);
 
 
             <div class="mt-20 absolute right-100 bottom-52">
-            <button type="submit"
+            <button type="submit" style="cursor: pointer;"
                     class="relative bg-black rounded-4xl rounded-br-none overflow-hidden p-2 pl-4 pr-4 ml-52 transition duration-500 hover:scale-110">
                     <div id="progressoInterno"
                         class="absolute left-0 top-0 h-full transition-all duration-700"
@@ -111,7 +111,7 @@ unset($_SESSION['erro_email']);
                 </button >
 
                 <div class="text-right mt-1">
-                    <a href="login.php"><b>Já possuí uma conta?</b></a>
+                    <a href="login.php" class="hover:text-black transition duration-500"><b>Já possuí uma conta?</b></a>
                 </div>
             </div>
         </form>

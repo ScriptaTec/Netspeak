@@ -17,194 +17,181 @@ if (isset($_SESSION['user'])) {
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../fonts/fonts.css">
-    <script src="navegacao.js" defer></script>
+    <script src="../js/navegacao.js" defer></script>
+    <script src="../js/animacao.js" defer></script>
+    <script src="../js/pop_ups.js" defer></script>
 
     <title>Perfil</title>
 </head>
 
-<body class="bg-gray-50 jersey">
+<body class="jersey min-h-screen">
+    <div class="bg-stone-50 py-1">
 
-    <div class="bg-gray-100 py-1">
+        <!--Cabeçalho-->
         <header>
             <div class="w-30 mt-2 absolute top-0 left-5 transition duration-500 hover:scale-105">
-                <a href="../index.php"><img src="../imgs/logo4.png" alt=""></a>
+                <a href="../index.php" class=""><img src="../imgs/logo4.png" alt=""></a>
             </div>
 
             <div class="absolute top-0 right-0 m-5 gap-2 flex">
-                <a href="../index.php" class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
-            
-                <a href="logout.php"><img src="../imgs/exit.png" alt=""
-                class="transition duration-500 hover:scale-105"></a>
+                <a href="../index.php"
+                    class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
+
+                <!--Ícone de sair da conta-->
+                <form method="POST" action="../controller/controller_logout.php" id="logoutForm"
+                    class="-mt-7 mr-5 flex justify-center group">
+                    <button type="button" class="openModalBtn" data-target="sairConta">
+                        <img src="../imgs/exit.png" alt="sair da conta"
+                            class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
+                        <img src="../imgs/exitHover.png" alt="sair da conta"
+                            class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+                    </button>
+                </form>
+
+                <!--Pop-up de sair da conta-->
+                <div id="sairConta" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+                    <div
+                        class="bg-white py-5 px-10 rounded-4xl border border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+                        <h1 class="text-3xl">Você deseja sair</h1>
+                        <h2 class="text-3xl text-center -mt-2">da conta?</h2>
+
+                        <div class="flex justify-center gap-5 mt-5">
+                            <button type="button" id="logout"
+                                class="py-2 px-7 rounded-3xl bg-black text-white border border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                                Sim
+                            </button>
+                            <button type="button"
+                                class="closeModalBtn
+                                py-2 px-7 rounded-3xl bg-black text-white border border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                                Não
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <!--Dados do usuário-->
-        <form action="">
-            <div class="flex justify-center items-center m-10">
-                <img src="../imgs/mulher(1).png" alt="" class="">
+        <!--Dados do cadastro do usuário-->
+        <div class="flex justify-center items-center gap-5 m-10">
 
-                <div class="flex-col">
-                    <input type="email" name="email" required placeholder="Email..."
-                        class="bg-white w-60 p-2 mt-3 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                        style="box-shadow: 2px 2px 0px;"><br>
+            <!--Mudar foto de perfil do usuário-->
+            <div class="relative z-10">
+                <!--Foto de perfil do usuário-->
+                <img src="../imgs/perfil1.png" alt="foto de perfil">
 
-                    <input type="text" name="nome" required placeholder="Nome..."
-                        class="bg-white w-50 p-2 mt-3 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                        style="box-shadow: 2px 2px 1px;"><br>
+                <!--Ícone de mudar foto de perfil do usuário-->
+                <button type="button" class="openModalBtn group" data-target="mudarFoto">
+                    <img src="../imgs/editarFoto.png" alt="mudar foto de perfil"
+                        class="h-12 absolute top-3 right-2 opacity-100 group-hover:opacity-0 transition-opacity duration-900">
+                    <img src="../imgs/editarHover.png" alt="mudar foto de perfil"
+                        class="h-14 absolute top-2 right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-900">
+                </button>
+            </div>
 
-                    <input type="text" name="idade" required placeholder="Idade..."
-                        class="bg-white w-20 p-2 mt-3 border-2 border-black rounded-4xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                        style="box-shadow: 2px 2px 1px;"><br>
+            <!--Pop-up de mudar foto de perfil-->
+            <div id="mudarFoto" class="hidden z-50 fixed inset-0 flex justify-center items-center bg-gray-200/50">
+
+                <!--Fechar pop-up-->
+                <button style="cursor: pointer;" type="button" class="closeModalBtn group">
+                    <img src="../imgs/close.png" alt="ícone de sair do mudar foto de perfil"
+                        class="absolute top-22 right-90 opacity-100 group-hover:opacity-0 transition duration-900">
+                    <img src="../imgs/closeHover.png" alt="ícone de sair do mudar foto de perfil"
+                        class="absolute top-22 right-90 opacity-0 group-hover:opacity-100 transition duration-900">
+                </button>
+
+                <div
+                    class="bg-white py-5 px-10 rounded-4xl border border-2 border-gray-400 shadow-xl hover:border-black hover:border-3 transition duration-900">
+
+                    <h1 class="text-center text-3xl">Edite sua foto de perfil</h1>
+
+                    <!--Opções de foto de perfil-->
+                    <div class="flex flex-col mt-5">
+                        <!--Fotos de perfil variadas-->
+                        <div class="flex gap-4">
+                            <img src="../imgs/perfil1.png" alt=""
+                                class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                            <img src="../imgs/perfil8.png" alt=""
+                                class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                            <img src="../imgs/perfil2.png" alt=""
+                                class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                            <img src="../imgs/perfil7.png" alt=""
+                                class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                        </div>
+
+                        <div class="flex gap-4 mt-7">
+                            <img src="../imgs/perfil3.png" alt=""
+                                class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                            <img src="../imgs/perfil6.png" alt=""
+                                class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                            <img src="../imgs/perfil4.png" alt=""
+                                class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                            <img src="../imgs/perfil5.png" alt=""
+                                class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button id="editar"
+                            class=" mt-5 py-1 px-5 rounded-3xl bg-gray-300 text-gray-600 hover:bg-black hover:text-white transition duration-700">
+                            Editar
+                        </button>
+                    </div>
                 </div>
             </div>
-        </form>
+
+            <div class="flex-col">
+                <h3 class="text-sm -mb-4 ml-3">Email:</h3>
+                <input type="email" name="email" required placeholder="Email..."
+                    class="bg-white w-46 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                    style="box-shadow: 2px 2px 0px;">
+
+                <h3 class="text-sm mt-2 -mb-4 ml-3">Nome:</h3>
+                <input type="text" name="nome" required placeholder="Nome..."
+                    class="bg-white w-40 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                    style="box-shadow: 2px 2px 1px;">
+
+                <h3 class="text-sm mt-2 -mb-4 ml-3">Nascimento:</h3>
+                <input type="text" name="idade" required placeholder="Idade..."
+                    class="bg-white w-30 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                    style="box-shadow: 2px 2px 1px;">
+            </div>
+        </div>
     </div>
 
-    <!--Editar e personalizar dados do usuário-->
     <main class="mt-2 flex justify-center flex-col items-center">
 
         <!-- Barra de abas -->
         <div class="flex gap-5">
-            <button id="tabFavoritos" class="border-b-2 border-black font-bold">Favoritos</button>
-            <button id="tabPersonalizar" class="text-gray-400 hover:text-black">Personalizar</button>
-            <button id="tabRedefinirSenha" class="text-gray-400 hover:text-black">Redefinir senha</button>
+            <!--Ver os emojis favoritos do usuário no arquivo favoritos.php-->
+            <button id="tabFavoritos" class="text-gray-400 hover:text-black transition duration-700">Favoritos</button>
+
+            <!--Editar dados do usuário no arquivo personalizar.php-->
+            <button id="tabPersonalizar"
+                class="border-b-2 border-amber-300 font-bold transition duration-700">Personalizar</button>
+
+            <!--Redefinir a senha do usuário no arquivo redefinir_senha.php-->
+            <button id="tabRedefinirSenha" class="text-gray-400 hover:text-black transition duration-700">Redefinir
+                senha</button>
         </div>
 
-        <div id="conteudoFavoritos">
-            <h1>ainda nao tem nada aqui</h1>
+
+        <div id="conteudo" class="mt-10">
+            <!--Conteúdo da página selecionada pelo usuário-->
         </div>
 
-        <div id="conteudoPersonalizar" class="flex justify-center items-center flex-col">
-            <!--Editar dados-->
-            <h1 class="text-3xl text-left mt-10">Altere seus dados: </h1>
-            <form action="">
 
-                <div class="flex gap-20 ml-5">
-                    <div class="relative">
-                        <input type="email" name="email" required placeholder="Email..."
-                            class="w-60 p-2 mt-3 text-gray-600 border-2 border-black hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                            style="box-shadow: -4px 4px 1px rgb(100, 100, 100);">
-                        <img src="../imgs/edit-tool.png" alt="ícone"
-                            class="absolute top-8 right-3 transform -translate-y-1/2">
-                    </div>
+        <!--Rodapé-->
+        <footer class="w-full mt-20 relative">
+            <div class="flex justify-center gap-4 mb-1">
+                <h6 class="text-sm">&copy; 2025 Scripta. Todos os direitos reservados.</h6>
+            </div>
 
-                    <div class="relative">
-                        <input type="text" name="nome" required placeholder="Nome..."
-                            class="w-60 p-2 mt-3 text-gray-600 border-2 border-black hover:border-black focus:outline-none transition duration-500 hover:scale-105"
-                            style="box-shadow: -4px 4px 1px rgb(100, 100, 100);">
-                        <img src="../imgs/edit-tool.png" alt="ícone"
-                            class="absolute top-8 right-3 transform -translate-y-1/2">
-                    </div>
-                </div>
-
-                <div class="ml-5">
-                    <button type="submit" value="editar"
-                        class="mt-3 px-4 py-1 bg-black text-white border transition duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-black">
-                        <span>Editar</span>
-                    </button>
-                </div>
-
-                <div class="flex flex-col mt-10 ml-5">
-                    <a href="">Sair da conta-></a>
-
-                    <a href="">Escluir conta -></a>
-                </div>
-                <!--<div class="mt-10 ml-5 text-xl">
-                    <a href="logout.php" class="p-2 bg-gray-200 transition duration-500 hover:scale-110 hover:bg-black hover:text-white inline-block">Sair da conta -></a>
-                </div>
-
-                <div class="mt-5 ml-5 text-xl">
-                    <a href="#" class="p-2 bg-gray-200 transition duration-500 hover:scale-110 hover:bg-black hover:text-white inline-block">Excluir conta -></a>
-                </div>-->
-            </form>
-
-
-            <!--Personalizar dados-->
-            <section class="mt-10">
-                <h1 class="text-3xl">Adicione dados:</h1>
-                <form action="">
-                    <fieldset class="border p-10">
-                        <label for="nome-completo" class="text-xl">Nome completo: </label>
-                        <input type="text" name="nome-completo" required placeholder="@..."><br>
-
-                        <label for="email-secundario" class="text-xl">Email secundário: </label>
-                        <input type="email" name="email-secundario" required placeholder="...">
-
-                        <div class="flex gap-5 mt-3">
-                            <label for="genero" class="text-xl">Gênero: </label>
-
-                            <input type="radio" name="feminino" id="feminino">
-                            <label for="feminino">Feminino</label>
-
-                            <input type="radio" name="masculino" id="masculino">
-                            <label for="masculino">Masculino</label>
-
-                            <input type="radio" name="outro" id="outro">
-                            <label for="outro">Outro</label>
-                        </div>
-
-                        <div class="flex gap-5 mt-3">
-                            <label for="formacao" class="text-xl">Grau de formação: </label>
-
-                            <input type="radio" name="em-incompleto" id="em-incompleto">
-                            <label for="em-incompleto">Ensino Médio incompleto</label>
-
-                            <input type="radio" name="em-completo" id="em-completo">
-                            <label for="em-completo">Ensino Médio completo</label>
-
-                            <input type="radio" name="graduacao" id="graduacao">
-                            <label for="graduacao">Graduação</label>
-                        </div>
-
-                        <div class="flex gap-5 mt-3">
-                            <label for="dificuldade" class="text-xl">Nível de dificuldade com a tecnologia: </label>
-
-                            <input type="radio" name="alta" id="alta">
-                            <label for="alta">Alta</label>
-
-                            <input type="radio" name="media" id="media">
-                            <label for="media">Média</label>
-
-                            <input type="radio" name="baixa" id="baixa">
-                            <label for="baixa">Baixa</label>
-                        </div>
-                    </fieldset>
-
-                    <div class="ml-5">
-                    <button type="submit" value="editar"
-                        class="mt-3 px-4 py-1 bg-black text-white border transition duration-500 hover:scale-105 hover:bg-yellow-200 hover:text-black">
-                        <span>Editar</span>
-                    </button>
-                </div>
-                </form>
-            </section>
-
-
-            <section class="mt-20 mb-20 flex">
-                <div class="flex-col">
-                    <h2 class="text-7xl">Personalize</h2>
-                    <h2 class="text-7xl">sua navegação!</h2>
-                    <h3 class="text-3xl text-gray-700">escolha entre os temas:</h3>
-                </div>
-
-                <div class="flex flex-col gap-5">
-                    <button class="bg-gray-100 p-2 rounded-full">Claro</button>
-                    <button class="bg-gray-400 p-2 rounded-full">Escuro</button>
-                </div>
-            </section>
-        </div>
-    </main>
-    </div>
-
-    <!--<footer class="mt-20 w-full absolute bottom-0">
-        <div class="flex justify-center gap-4">
-            <h6 class=" text-sm">&copy; 2025 Scripta. Todos os direitos reservados.</h6>
-        </div>
-
-        <div class="absolute right-4 bottom-0">
-            <a href="perfil.php"><img src="../imgs/suporte.png" alt=""></a>
-        </div>
-    </footer>-->
+            <div class="absolute right-4 bottom-1">
+                <a href="perfil.php">
+                    <img src="../imgs/suporte.png" alt="">
+                </a>
+            </div>
+        </footer>
 </body>
 
 </html>
