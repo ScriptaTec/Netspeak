@@ -1,29 +1,73 @@
 
-//Animação de navegação no perfil
-//if (tabFavoritos && tabPersonalizar && conteudoFavoritos && conteudoPersonalizar) {
-    // Funções de clique
-    tabFavoritos.addEventListener("click", () => {
-        tabFavoritos.classList.add("border-b-2", "border-black", "font-bold");
-        tabFavoritos.classList.remove("text-gray-400");
-        tabPersonalizar.classList.remove("border-b-2", "border-black", "font-bold");
-        tabPersonalizar.classList.add("text-gray-400");
+//Navegação entre as abas no perfil
+function carregarConteudo(pagina) {
+  fetch(pagina)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("conteudo").innerHTML = data;
 
-        conteudoFavoritos.classList.remove("hidden");
-        conteudoPersonalizar.classList.add("hidden");
+      //Necessário para os pop-ups
+      inicializarPopUps();
+      animacaoBtn("form");
+    })
+    .catch((error) => {
+      console.error("Erro ao carregar a página:", error);
     });
+}
 
-    tabPersonalizar.addEventListener("click", () => {
-        tabPersonalizar.classList.add("border-b-2", "border-black", "font-bold");
-        tabPersonalizar.classList.remove("text-gray-400");
-        tabFavoritos.classList.remove("border-b-2", "border-black", "font-bold");
-        tabFavoritos.classList.add("text-gray-400");
+tabFavoritos.addEventListener("click", () => {
+  carregarConteudo("../view/favoritos.php");
 
-        conteudoPersonalizar.classList.remove("hidden");
-        conteudoFavoritos.classList.add("hidden");
-    });
+  tabFavoritos.classList.add("border-b-2", "border-amber-300", "font-bold");
+  tabFavoritos.classList.remove("text-gray-400");
+  tabPersonalizar.classList.remove(
+    "border-b-2",
+    "border-amber-300",
+    "font-bold"
+  );
+  tabPersonalizar.classList.add("text-gray-400");
+  tabRedefinirSenha.classList.remove(
+    "border-b-2",
+    "border-amber-300",
+    "font-bold"
+  );
+  tabRedefinirSenha.classList.add("text-gray-400");
+});
 
-    // Estado inicial: exibir "Favoritos"
-    tabFavoritos.click(); // Simula o clique no botão "Favoritos" ao carregar
-//}
+tabPersonalizar.addEventListener("click", () => {
+  carregarConteudo("../view/personalizar.php");
 
+  tabPersonalizar.classList.add("border-b-2", "border-amber-300", "font-bold");
+  tabPersonalizar.classList.remove("text-gray-400");
+  tabFavoritos.classList.remove("border-b-2", "border-amber-300", "font-bold");
+  tabFavoritos.classList.add("text-gray-400");
+  tabRedefinirSenha.classList.remove(
+    "border-b-2",
+    "border-amber-300",
+    "font-bold"
+  );
+  tabRedefinirSenha.classList.add("text-gray-400");
+});
 
+tabRedefinirSenha.addEventListener("click", () => {
+  carregarConteudo("../view/redefinir_senha.php");
+
+  tabRedefinirSenha.classList.add(
+    "border-b-2",
+    "border-amber-300",
+    "font-bold"
+  );
+  tabRedefinirSenha.classList.remove("text-gray-400");
+  tabFavoritos.classList.remove("border-b-2", "border-amber-300", "font-bold");
+  tabFavoritos.classList.add("text-gray-400");
+  tabPersonalizar.classList.remove(
+    "border-b-2",
+    "border-amber-300",
+    "font-bold"
+  );
+  tabPersonalizar.classList.add("text-gray-400");
+});
+
+// Estado inicial
+carregarConteudo("../view/personalizar.php");
+tabPersonalizar.classList.add("border-b-2", "border-amber-300", "font-bold");
