@@ -77,6 +77,13 @@ echo '<p style="color: red; font-size: 12px; padding: 2px">' . $_SESSION['erro_e
 // Limpa a variável de sessão após exibir a mensagem
 unset($_SESSION['erro_email']);
 }
+
+if (isset($_SESSION['erro_email_secundario'])) {
+    echo '<p style="color: red; font-size: 12px; padding: 2px">' . $_SESSION['erro_email_secundario'] . '</p>';
+    
+    // Limpa a variável de sessão após exibir a mensagem
+    unset($_SESSION['erro_email_secundario']);
+    }
 ?>
 
                     <input type="password" name="senha" required placeholder="Senha..."
@@ -94,9 +101,15 @@ unset($_SESSION['erro_email']);
                         class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
                         style="box-shadow: 2px 2px 0px;"><br>
 
-                    <input type="password" name="senha" required placeholder="Repetir senha..."
+                    <input type="password" name="confirmar_senha" required placeholder="Repetir senha..."
                         class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
                         style="box-shadow: 2px 2px 1px;"><br>
+                        <?php 
+                        if (isset($_SESSION['erro_senha'])) {
+                            echo "<p class='text-red-500 font-size: 12px; padding: 2px'>" . $_SESSION['erro_senha'] . "</p>";
+                            unset($_SESSION['erro_senha']);
+                        }
+                        ?>
                 </div>
             </div>
 

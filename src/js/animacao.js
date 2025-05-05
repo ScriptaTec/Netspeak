@@ -1,3 +1,4 @@
+
 //Animação do botão de login, cadastro e redefinir senha
 
 //Necessário para funcionar no login e cadastro

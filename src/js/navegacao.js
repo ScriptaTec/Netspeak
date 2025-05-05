@@ -1,3 +1,4 @@
+
 //Navegação entre as abas no perfil
 function carregarConteudo(pagina) {
   fetch(pagina)
