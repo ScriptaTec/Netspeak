@@ -71,10 +71,12 @@ unset($_SESSION['erro_login']);
                     <input type="password" name="senha" required placeholder="Senha..."
                         class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                         style="box-shadow: 2px 2px 1px;"><br>
+
+                    <a href="redefinir_senha.php" class="-ml-32 hover:text-black transition duration-500">Esqueceu a senha?</a>
                 </div>
 
                 <button type="submit" style="cursor: pointer;"
-                    class="relative bg-black rounded-4xl rounded-br-none overflow-hidden mt-4 p-2 pl-5 pr-5 ml-52 transition duration-500 hover:scale-110">
+                    class="relative bg-black rounded-4xl rounded-br-none overflow-hidden p-2 pl-5 pr-5 ml-52 transition duration-500 hover:scale-110">
                     <div id="progressoInterno"
                         class="absolute left-0 top-0 h-full transition-all duration-700"
                         style="width: 0%; background-color: #ffac33"></div>

@@ -37,6 +37,8 @@ if (!isset($_SESSION['user'])) {
                 <a href="../index.php"
                     class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
 
+                    <a href="excluir_conta.php" class="text-red-600">Excluir conta →</a>
+
                 <!--Ícone de sair da conta-->
                 <form method="POST" action="../controller/controller_logout.php" id="logoutForm"
                     class="-mt-7 mr-5 flex justify-center group">
