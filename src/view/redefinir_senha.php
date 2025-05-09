@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -46,7 +48,7 @@
 
     <main class="text-center flex items-center justify-center mt-26 text-gray-600">
 
-        <form method="POST" action="" id="form">
+        <form method="POST" action="../controller/controller_redefinir.php" id="form">
 
             <div class="text-8xl text-black">
                 <h1>Esqueceu</h1>
@@ -58,11 +60,15 @@
                     class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                     style="box-shadow: 2px 2px 1px;"><br>
 
-                <input type="password" name="senha_antiga" required placeholder="Senha antiga..."
+                <input type="password" name="senha_atual" required placeholder="Senha antiga..."
                     class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                     style="box-shadow: 2px 2px 1px;"><br>
 
-                <input type="password" name="senha_nova" required placeholder="Senha nova..."
+                <input type="password" name="nova_senha" required placeholder="Senha nova..."
+                    class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
+                    style="box-shadow: 2px 2px 1px;"><br>
+
+                <input type="password" name="confirmar_senha" required placeholder="Confirmar senha nova..."
                     class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                     style="box-shadow: 2px 2px 1px;"><br>
             </div>
