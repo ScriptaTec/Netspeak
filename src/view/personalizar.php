@@ -1,10 +1,11 @@
+<?php session_start(); ?>
 <script src="../js/pop_ups.js" defer></script>
 <!--Alterar dados do usuário-->
 <div>
     <h1 class="text-left ml-10 text-3xl">Altere seus dados: </h1>
 </div>
 
-<form action="" method="post" class="flex justify-center items-center flex-col mt-5">
+<form action="../controller/controller_perfil.php" method="post" class="flex justify-center items-center flex-col mt-5">
 
     <div class="flex gap-20 ml-5">
         <div class="relative flex-col">
@@ -52,7 +53,7 @@
 
 
 <!--Personalizar dados do usuário-->
-<form action="" method="post">
+<form action="../controller/controller_perfil.php" method="post">
     <section
         class="mt-10 px-10 py-4 bg-stone-50 rounded-4xl border-2 border-gray-200 group hover:border-black transition duration-700">
 
@@ -61,10 +62,8 @@
             </h1>
         </div>
 
-        <form action="">
-
             <div class="flex gap-5 mt-5">
-                <label for="nome-completo" class="text-2xl">Nome completo: </label>
+                <label for="nome_completo" class="text-2xl">Nome completo: </label>
 
                 <input type="text" name="nome_completo" required placeholder="@..."
                     value="<?= $_SESSION['user']['nome_completo'] ?? '' ?>"
@@ -74,7 +73,7 @@
             <br>
 
             <div class="flex gap-5">
-                <label for="email-secundario" class="text-2xl">Email secundário: </label>
+                <label for="email_secundario" class="text-2xl">Email secundário: </label>
 
                 <input type="email" name="email_secundario" required
                     value="<?= $_SESSION['user']['email_secundario'] ?? '' ?>"
@@ -103,8 +102,8 @@
 
             <div class="flex gap-5 mt-3">
                 <div class="flex flex-col text-2xl">
-                    <label for="formacao">Grau de</label>
-                    <label for="formacao" class="-mt-3">formação: </label>
+                    <label for="grau_formacao">Grau de</label>
+                    <label for="grau_formacao" class="-mt-3">formação: </label>
                     <?php $formacao = $_SESSION['user']['grau_formacao'] ?? ''; ?>
                 </div>
 

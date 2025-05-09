@@ -49,5 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
         $mensagem = "Dados de personalização atualizados!";
     }
+    header("Location: ../view/perfil.php");
+        exit();
 }
 ?>
