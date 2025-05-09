@@ -1,24 +1,50 @@
-<div class="flex flex-col relative">
+<!DOCTYPE html>
+<html lang="pt">
 
-    <!--direita embaixo-->
-    <div class="absolute left-90 bottom-22 text-5xl ">😊</div>
-    <div class="absolute left-100 bottom-0 text-8xl ">😉</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="../js/animacao.js" defer></script>
+    <link rel="stylesheet" href="../fonts/fonts.css">
 
-    <!--direita encima-->
-    <div class="absolute left-90 top-10 text-8xl ">✨</div>
-    <div class="absolute left-86 top-32 text-3xl">✨</div>
+    <link rel="icon" href="../imgs/iconeLogo.ico" type="image/x-icon">
+
+    <title>Redefinir senha</title>
+</head>
+
+<body class="jersey bg-gray-50 flex flex-col min-h-screen">
 
     <!--esquerda encima-->
-    <div class="absolute right-90 top-30 text-8xl">🧐</div>
-    <div class="absolute right-80 top-54 text-5xl opacity-90">🗝️</div>
-    <div class="absolute right-130 top-30 text-4xl"></div>
+    <div class="absolute left-118
+    6 top-80 text-5xl ">🗝️</div>
+    <div class="absolute left-94 top-60 text-8xl ">🧐</div>
 
     <!--esquerda embaixo-->
-    <div class="absolute left-0 bottom-5 text-xl">✨</div>
-    <div class="absolute right-80 bottom-10 text-7xl">✨</div>
+    <div class="absolute left-110 bottom-26 text-8xl ">✨</div>
+    <div class="absolute left-130 bottom-22 text-2xl ">✨</div>
 
+    <!--direira encima-->
+    <div class="absolute right-100 top-30 text-8xl">✨</div>
+    <div class="absolute right-120 top-50 text-3xl opacity-90">✨</div>
 
-    <main class="text-center text-gray-600">
+    <!--direita embaixo-->
+    <div class="absolute right-110 bottom-56 text-5xl">😊</div>
+    <div class="absolute right-90 bottom-30 text-8xl">😉</div>
+
+    <header>
+        <div class="w-30 mt-2 absolute left-5 transition duration-500 hover:scale-105">
+            <a href="../index.php"><img src="../imgs/logo4.png" alt=""></a>
+        </div>
+
+        <div class="flex mt-5 gap-4 absolute right-5 text-xl">
+            <a href="../index.php" class="transition duration-500 hover:scale-105">Home</a>
+            <a href="perfil.php"><img src="../imgs/perfil.png" alt="ícone de perfil do usuário"
+                    class="-mt-1 transition duration-500 hover:scale-105"></a>
+        </div>
+    </header>
+
+    <main class="text-center flex items-center justify-center mt-26 text-gray-600">
 
         <form method="POST" action="" id="form">
 
@@ -42,17 +68,29 @@
             </div>
 
             <button type="submit" style="cursor: pointer;"
-                class="relative bg-black rounded-4xl rounded-br-none overflow-hidden mt-4 p-2 pl-5 pr-5 ml-46 transition duration-500 hover:scale-110">
+                class="relative bg-black rounded-4xl rounded-br-none overflow-hidden mt-4 p-2 pl-7 pr-7 ml-42 transition duration-500 hover:scale-110">
                 <div id="progressoInterno" class="absolute left-0 top-0 h-full transition-all duration-700"
                     style="width: 0%; background-color: #ffac33"></div>
                 <span class="relative text-white">Redefinir</span>
             </button>
 
             <div class="text-right mt-1 mr-7">
-                <a href="suporte.php" class="hover:text-black transition duration-500">Algo deu errado?</a>
+                <a href="cadastro.php" class="hover:text-black transition duration-500">Algo deu errado?</a>
             </div>
 
         </form>
     </main>
-</div>
-</div>
+
+    <footer class="fixed bottom-1 w-full">
+        <div class="flex justify-center gap-4">
+            <h6 class="text-sm">&copy; 2025 <span style="">Scripta</span>. Todos os direitos reservados.</h6>
+        </div>
+
+        <div class="absolute right-4 bottom-0 transition duration-500 hover:scale-105">
+            <a href="perfil.php"><img src="../imgs/suporte.png" alt="perfil do usuario"></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
