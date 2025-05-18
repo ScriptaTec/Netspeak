@@ -1,4 +1,3 @@
-
 //Navegação entre as abas no perfil
 function carregarConteudo(pagina) {
   fetch(pagina)
@@ -9,12 +8,10 @@ function carregarConteudo(pagina) {
       //Necessário para os pop-ups
       inicializarPopUps();
       animacaoBtn("form");
-    })
-    .catch((error) => {
-      console.error("Erro ao carregar a página:", error);
     });
 }
 
+//Abas das páginas
 tabFavoritos.addEventListener("click", () => {
   carregarConteudo("../view/favoritos.php");
 
@@ -26,12 +23,6 @@ tabFavoritos.addEventListener("click", () => {
     "font-bold"
   );
   tabPersonalizar.classList.add("text-gray-400");
-  tabRedefinirSenha.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabRedefinirSenha.classList.add("text-gray-400");
 });
 
 tabPersonalizar.addEventListener("click", () => {
@@ -41,31 +32,6 @@ tabPersonalizar.addEventListener("click", () => {
   tabPersonalizar.classList.remove("text-gray-400");
   tabFavoritos.classList.remove("border-b-2", "border-amber-300", "font-bold");
   tabFavoritos.classList.add("text-gray-400");
-  tabRedefinirSenha.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabRedefinirSenha.classList.add("text-gray-400");
-});
-
-tabRedefinirSenha.addEventListener("click", () => {
-  carregarConteudo("../view/redefinir_senha.php");
-
-  tabRedefinirSenha.classList.add(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabRedefinirSenha.classList.remove("text-gray-400");
-  tabFavoritos.classList.remove("border-b-2", "border-amber-300", "font-bold");
-  tabFavoritos.classList.add("text-gray-400");
-  tabPersonalizar.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabPersonalizar.classList.add("text-gray-400");
 });
 
 // Estado inicial

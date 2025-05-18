@@ -13,7 +13,7 @@ function inicializarPopUps() {
     });
   });
 
-    //Esconder o pop-up
+  //Esconder o pop-up
   closeModalBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const modal = btn.closest(".fixed");
@@ -32,20 +32,42 @@ function inicializarPopUps() {
     });
   }
 
-    // Botão de editar foto de perfil
+  // Botão de excluir conta
+  const confirmExcluirContaBtn = document.getElementById("confirmExcluirConta");
+  const excluirContaForm = document.getElementById("excluirContaForm");
+  if (confirmExcluirContaBtn && excluirContaForm) {
+    confirmExcluirContaBtn.addEventListener("click", () => {
+      excluirContaForm.submit();
+    });
+  }
+
+// Botão de editar dados da conta (email e nome de usuário)
+ const editarDadosForm = document.getElementById("editarDadosForm");
+const editarDados = document.getElementById("editarDados");
+const confirmEditarDadosBtn = document.getElementById("confirmeditarDados");
+
+if (confirmEditarDadosBtn && editarDadosForm && editarDados) {
+  confirmEditarDadosBtn.addEventListener("click", () => {
+    editarDados.classList.add("hidden");  
+    editarDadosForm.submit();          
+  });
+}
+
+  // Botão de adicionar dados na conta
+  const adicionarDadosForm = document.getElementById("adicionarDadosForm");
+const adicionarDados = document.getElementById("adicionarDados");
+const confirmAdicionarDadosBtn = document.getElementById("confirmAdicionarDados");
+
+if (confirmAdicionarDadosBtn && adicionarDadosForm && adicionarDados) {
+  confirmAdicionarDadosBtn.addEventListener("click", () => {
+    adicionarDados.classList.add("hidden");  
+    adicionarDadosForm.submit();          
+  });
+}
+
+
+  // Botão de editar foto de perfil
   const editarBtn = document.getElementById("editar");
-  if (editarBtn) {
-    editarBtn.addEventListener("click", () => {});
-  }
-
-    // Botão de editar dados do perfil
-  const editarDados = document.getElementById("editarDados");
-  if (editarBtn) {
-    editarBtn.addEventListener("click", () => {});
-  }
-
-    // Botão de adicionar dados do perfil
-  const adicionarDados = document.getElementById("adicionarDados");
   if (editarBtn) {
     editarBtn.addEventListener("click", () => {});
   }

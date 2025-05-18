@@ -37,8 +37,6 @@ if (!isset($_SESSION['user'])) {
                 <a href="../index.php"
                     class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
 
-                    <a href="excluir_conta.php" class="text-red-600">Excluir conta →</a>
-
                 <!--Ícone de sair da conta-->
                 <form method="POST" action="../controller/controller_logout.php" id="logoutForm"
                     class="-mt-7 mr-5 flex justify-center group">
@@ -73,15 +71,10 @@ if (!isset($_SESSION['user'])) {
             </div>
         </header>
 
-
-
         <!-- Alerta de mensagem -->
         <?php if (isset($mensagem))
             echo "<script>alert('$mensagem')</script>"; ?>
 
-
-
-        <!--Dados do cadastro do usuário-->
         <div class="flex justify-center items-center gap-5 m-10">
 
             <!--Mudar foto de perfil do usuário-->
@@ -116,7 +109,6 @@ if (!isset($_SESSION['user'])) {
 
                     <!--Opções de foto de perfil-->
                     <div class="flex flex-col mt-5">
-                        <!--Fotos de perfil variadas-->
                         <div class="flex gap-4">
                             <img src="../img_perfil/perfil1.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
@@ -149,27 +141,27 @@ if (!isset($_SESSION['user'])) {
                 </div>
             </div>
 
+            <!--Dados do cadastro do usuário-->
             <div class="flex-col">
                 <h3 class="text-sm -mb-4 ml-3">Email:</h3>
                 <input type="email" value="<?= $_SESSION['user']['email'] ?? '' ?>" disabled
-                    class="bg-white w-46 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                    class="bg-white w-46 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none"
                     style="box-shadow: 2px 2px 0px;">
 
                 <h3 class="text-sm mt-2 -mb-4 ml-3">Nome:</h3>
                 <input type="text" value="<?= $_SESSION['user']['nome'] ?? '' ?>" disabled
-                    class="bg-white w-40 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                    class="bg-white w-40 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none"
                     style="box-shadow: 2px 2px 1px;">
 
                 <h3 class="text-sm mt-2 -mb-4 ml-3">Nascimento:</h3>
                 <input type="date" value="<?= $_SESSION['user']['data_nascimento'] ?? '' ?>" disabled
-                    class="bg-white w-30 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none hover:border-black focus:outline-none transition duration-500 hover:scale-105"
+                    class="bg-white w-30 p-2 mt-3 border-2 border-black rounded-4xl rounded-tl-2xl rounded-bl-none"
                     style="box-shadow: 2px 2px 1px;">
             </div>
         </div>
     </div>
 
 
-    <!-- Seção principal -->
     <main class="mt-2 flex justify-center flex-col items-center">
 
         <!-- Barra de abas -->
@@ -180,10 +172,6 @@ if (!isset($_SESSION['user'])) {
             <!--Editar dados do usuário no arquivo personalizar.php-->
             <button id="tabPersonalizar"
                 class="border-b-2 border-amber-300 font-bold transition duration-700">Personalizar</button>
-
-            <!--Redefinir a senha do usuário no arquivo redefinir_senha.php-->
-            <button id="tabRedefinirSenha" class="text-gray-400 hover:text-black transition duration-700">Redefinir
-                senha</button>
         </div>
 
 
@@ -205,4 +193,5 @@ if (!isset($_SESSION['user'])) {
         </div>
     </footer>
 </body>
+
 </html>
