@@ -172,7 +172,11 @@ if (!isset($_SESSION['user'])) {
             <!--Personalizar dados do usuário no arquivo personalizar.php-->
             <button id="tabPersonalizar"
                 class="text-gray-400 hover:text-black transition duration-700">Personalizar</button>
-        </div>
+        
+        <!--Excluir conta do usuário no arquivo excluir_conta.php-->
+            <button id="tabExcluirConta" class="text-gray-400 hover:text-black transition duration-700">Excluir
+                conta</button>
+            </div>
 
 
         <div id="conteudo" class="mt-10">

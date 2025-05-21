@@ -12,14 +12,44 @@ require "controller/verifica_sessao.php";
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="fonts/fonts.css">
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
-
+    <script src="js/pop_ups.js" defer></script>
     <title>Home</title>
 </head>
 
 <body class="bg-gray-50 jersey">
 
     <header class="flex absolute right-5 mt-3 gap-4">
-        <a href="view/logout.php" class="text-xl hover:text-yellow-400">Sair</a>
+        <!--Ícone de sair da conta-->
+        <form method="POST" action="controller/controller_logout.php" id="logoutForm"
+            class="-mt-7 mr-5 flex justify-center group">
+            <button type="button" class="openModalBtn" data-target="sairConta">
+                <img src="imgs/exit.png" alt="sair da conta"
+                    class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
+                <img src="imgs/exitHover.png" alt="sair da conta"
+                    class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+            </button>
+        </form>
+
+        <!--Pop-up de sair da conta-->
+        <div id="sairConta" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+            <div
+                class="bg-white py-5 px-10 rounded-4xl border border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+                <h1 class="text-3xl">Você deseja sair</h1>
+                <h2 class="text-3xl text-center -mt-2">da conta?</h2>
+
+                <div class="flex justify-center gap-5 mt-5">
+                    <button type="button" id="logout"
+                        class="py-2 px-7 rounded-3xl bg-black text-white border border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                        Sim
+                    </button>
+                    <button type="button"
+                        class="closeModalBtn
+                                py-2 px-7 rounded-3xl bg-black text-white border border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                        Não
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <a href="view/perfil.php"><img src="imgs/perfil.png" alt=""></a>
     </header>
