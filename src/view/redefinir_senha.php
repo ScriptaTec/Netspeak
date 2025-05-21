@@ -46,7 +46,7 @@
         </div>
     </header>
 
-    <main class="text-center flex items-center justify-center mt-26 text-gray-600">
+    <main class="text-center flex items-center justify-center mt-20 text-gray-600">
 
         <form method="POST" action="../controller/controller_redefinir.php" id="form">
 

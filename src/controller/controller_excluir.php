@@ -14,7 +14,7 @@ $delete->bindParam(':email', $email);
 
 if ($delete->execute()) {
     session_destroy();
-    echo "<script>alert('Conta excluída com sucesso.'); location.href='../view/cadastro.php';</script>";
+    echo "<script>location.href='../view/cadastro.php';</script>";
 } else {
-    echo "<script>alert('Erro ao excluir a conta.'); history.back();</script>";
+    echo "<script>history.back();</script>";
 }
