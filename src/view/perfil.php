@@ -71,10 +71,6 @@ if (!isset($_SESSION['user'])) {
             </div>
         </header>
 
-        <!-- Alerta de mensagem -->
-        <?php if (isset($mensagem))
-            echo "<script>alert('$mensagem')</script>"; ?>
-
         <div class="flex justify-center items-center gap-5 m-10">
 
             <!--Mudar foto de perfil do usuário-->
@@ -112,7 +108,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="flex gap-4">
                             <img src="../img_perfil/perfil1.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                            <img src="../img_perfil/perfil8.png" alt=""
+                            <img src="../img_perfil/perfil6.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
                             <img src="../img_perfil/perfil2.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
@@ -123,7 +119,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="flex gap-4 mt-7">
                             <img src="../img_perfil/perfil3.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                            <img src="../img_perfil/perfil6.png" alt=""
+                            <img src="../img_perfil/perfil8.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
                             <img src="../img_perfil/perfil4.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
@@ -169,9 +165,13 @@ if (!isset($_SESSION['user'])) {
             <!--Ver os emojis favoritos do usuário no arquivo favoritos.php-->
             <button id="tabFavoritos" class="text-gray-400 hover:text-black transition duration-700">Favoritos</button>
 
-            <!--Editar dados do usuário no arquivo personalizar.php-->
+            <!--Alterar dados do usuário no arquivo alterarDados.php-->
+            <button id="tabAlterarDados" class="border-b-2 border-amber-300 font-bold transition duration-700">Alterar
+                dados</button>
+
+            <!--Personalizar dados do usuário no arquivo personalizar.php-->
             <button id="tabPersonalizar"
-                class="border-b-2 border-amber-300 font-bold transition duration-700">Personalizar</button>
+                class="text-gray-400 hover:text-black transition duration-700">Personalizar</button>
         </div>
 
 
