@@ -23,10 +23,7 @@ require "controller/verifica_sessao.php";
         <form method="POST" action="controller/controller_logout.php" id="logoutForm"
             class="-mt-7 mr-5 flex justify-center group">
             <button type="button" class="openModalBtn" data-target="sairConta">
-                <img src="imgs/exit.png" alt="sair da conta"
-                    class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
-                <img src="imgs/exitHover.png" alt="sair da conta"
-                    class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+                Sair
             </button>
         </form>
 
