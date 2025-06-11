@@ -16,24 +16,24 @@
     <div class="relative">
 
         <!--Parte roxa-->
-        <div class="bg-white w-10 h-10 absolute left-50 top-105"></div>
+        <div class="bg-white w-10 h-10 absolute left-50 top-70"></div>
 
         <div class="bg-white w-14 h-10 absolute left-30 top-90"></div>
 
-        <div class="bg-white w-15 h-20 absolute right-50 top-105"></div>
+        <div class="bg-white w-15 h-10 absolute right-50 top-70"></div>
 
         <div class="bg-white w-17 h-13 absolute right-30 top-86"></div>
 
         <div class="bg-white w-5 h-5 absolute right-50 top-86"></div>
 
         <!--Parte branca-->
-        <div class="bg-[color:#9e8cbe] w-10 h-10 absolute left-35 top-120"></div>
+        <div class="bg-[color:#9e8cbe] w-10 h-10 absolute left-35 top-107"></div>
 
-        <div class="bg-[color:#9e8cbe] w-6 h-6 absolute left-50 top-130"></div>
+        <div class="bg-[color:#9e8cbe] w-6 h-6 absolute left-50 top-100"></div>
 
-        <div class="bg-[color:#9e8cbe] w-15 h-10 absolute right-50 top-120"></div>
+        <div class="bg-[color:#9e8cbe] w-15 h-10 absolute right-50 top-110"></div>
 
-        <div class="bg-[color:#9e8cbe] w-6 h-6 absolute right-35 top-130"></div>
+        <div class="bg-[color:#9e8cbe] w-6 h-6 absolute right-35 top-100"></div>
     </div>
 
     <header class="flex absolute right-5 mt-3">
@@ -47,11 +47,11 @@
     </header>
 
     <div class="flex justify-center" style="background-color: #9e8cbe">
-        <img src="imgs/capaHome.png" alt="imagem de fundo do index" class="w-2xl -mt-15">
+        <img src="imgs/capaHome.png" alt="imagem de fundo do index" class="w-xl -mt-15">
     </div>
 
-    <div class=" text-center mt-5 ">
-        <h1 class="text-5xl">Descubra o significado dos <span class="px-3 py-1 rounded-3xl rounded-br-none"
+    <div class=" text-center mt-7 ">
+        <h1 class="text-6xl">Descubra o significado dos <span class="px-3 py-1 rounded-3xl rounded-br-none"
                 style="background-color:#ffeb70">emojis</span></h1>
     </div>
 
@@ -59,7 +59,7 @@
         <h3>Se cadastrando e tendo acesso a <span style="color:#574d6b">ferramenta de tradução</span> <a href="view/cadastro.php" class="underline">clicando aqui!</a></h3>
     </div>
 
-    <div class="flex justify-center mt-5">
+    <div class="flex justify-center mt-7">
         <div class="w-full max-w-2xl bg-gray-200 px-2 py-2 flex items-center rounded-3xl border border-gray-300">
 
             <button class="p-2">
