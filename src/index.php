@@ -12,14 +12,21 @@ require "controller/verifica_sessao.php";
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="fonts/fonts.css">
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
-
+    <script src="js/pop_ups.js" defer></script>
     <title>Home</title>
 </head>
 
 <body class="bg-gray-50 jersey">
 
     <header class="flex absolute right-5 mt-3 gap-4">
-        <a href="view/logout.php" class="text-xl hover:text-yellow-400">Sair</a>
+        <!--Ícone de sair da conta-->
+        <form method="POST" action="controller/controller_logout.php" id="logoutForm"
+            class="-mt-7 mr-5 flex justify-center group">
+            <button type="button" class="openModalBtn" data-target="sairConta">
+                Sair
+            </button>
+        </form>
+       
 
         <a href="view/perfil.php"><img src="imgs/perfil.png" alt=""></a>
     </header>
