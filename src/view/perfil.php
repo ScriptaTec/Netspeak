@@ -51,18 +51,18 @@ if (!isset($_SESSION['user'])) {
                 <!--Pop-up de sair da conta-->
                 <div id="sairConta" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
                     <div
-                        class="bg-white py-5 px-10 rounded-4xl border border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+                        class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
                         <h1 class="text-3xl">Você deseja sair</h1>
                         <h2 class="text-3xl text-center -mt-2">da conta?</h2>
 
                         <div class="flex justify-center gap-5 mt-5">
                             <button type="button" id="logout"
-                                class="py-2 px-7 rounded-3xl bg-black text-white border border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                                class="py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
                                 Sim
                             </button>
                             <button type="button"
                                 class="closeModalBtn
-                                py-2 px-7 rounded-3xl bg-black text-white border border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                                py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
                                 Não
                             </button>
                         </div>
@@ -88,7 +88,7 @@ if (!isset($_SESSION['user'])) {
             </div>
 
             <!--Pop-up de mudar foto de perfil-->
-            <div id="mudarFoto" class="hidden z-50 fixed inset-0 flex justify-center items-center bg-gray-200/50">
+            <div id="mudarFoto" class="hidden z-50 fixed inset-0 justify-center items-center bg-gray-200/50">
 
                 <!--Fechar pop-up-->
                 <button style="cursor: pointer;" type="button" class="closeModalBtn group">
@@ -99,7 +99,7 @@ if (!isset($_SESSION['user'])) {
                 </button>
 
                 <div
-                    class="bg-white py-5 px-10 rounded-4xl border border-2 border-gray-400 shadow-xl hover:border-black hover:border-3 transition duration-900">
+                    class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-400 shadow-xl hover:border-black hover:border-3 transition duration-900">
 
                     <h1 class="text-center text-3xl">Edite sua foto de perfil</h1>
 
