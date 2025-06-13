@@ -1,6 +1,14 @@
 <?php
 session_start();
 require "controller/verifica_sessao.php";
+require_once '../controller/geminiController.php';
+
+$respostaDaApi = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
+    $fraseUsuario = $_POST['frase'];
+    $respostaDaApi = processarFraseComGemini($fraseUsuario);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt">
