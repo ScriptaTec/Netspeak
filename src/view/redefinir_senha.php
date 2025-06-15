@@ -10,7 +10,6 @@
     <script src="../js/animacao.js" defer></script>
     <link rel="stylesheet" href="../fonts/fonts.css">
 
-    <link rel="icon" href="../imgs/iconeLogo.ico" type="image/x-icon">
 
     <title>Redefinir senha</title>
 </head>
@@ -36,12 +35,12 @@
 
     <header>
         <div class="w-30 mt-2 absolute left-5 transition duration-500 hover:scale-105">
-            <a href="../index.php"><img src="../imgs/logo4.png" alt=""></a>
+            <a href="../index.php"><img src="../imgs/logo.png" alt=""></a>
         </div>
 
         <div class="flex mt-5 gap-4 absolute right-5 text-xl">
             <a href="../index.php" class="transition duration-500 hover:scale-105">Home</a>
-            <a href="perfil.php"><img src="../imgs/perfil.png" alt="ícone de perfil do usuário"
+            <a href="perfil.php"><img src="../imgs/icones/perfil.png" alt="ícone de perfil do usuário"
                     class="-mt-1 transition duration-500 hover:scale-105"></a>
         </div>
     </header>
@@ -81,7 +80,7 @@
             </button>
 
             <div class="text-right mt-1 mr-7">
-                <a href="cadastro.php" class="hover:text-black transition duration-500">Algo deu errado?</a>
+                <a href="suporte.php" class="hover:text-black transition duration-500">Algo deu errado?</a>
             </div>
 
         </form>
@@ -93,7 +92,7 @@
         </div>
 
         <div class="absolute right-4 bottom-0 transition duration-500 hover:scale-105">
-            <a href="perfil.php"><img src="../imgs/suporte.png" alt="perfil do usuario"></a>
+            <a href="perfil.php"><img src="../imgs/icones/suporte.png" alt="perfil do usuario"></a>
         </div>
     </footer>
 

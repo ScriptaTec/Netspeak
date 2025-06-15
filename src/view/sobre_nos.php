@@ -21,7 +21,7 @@
                 class="text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
 
             <!--Ícone de entrar na conta-->
-            <a href="perfil.php"><img src="../imgs/perfil.png" alt="Ícone de perfil"></a>
+            <a href="perfil.php"><img src="../imgs/icones/perfil.png" alt="Ícone de perfil"></a>
         </div>
     </header>
 
@@ -158,7 +158,7 @@
 
         <div class="absolute right-4 bottom-1">
             <a href="perfil.php">
-                <img src="../imgs/suporte.png" alt="">
+                <img src="../imgs/icones/suporte.png" alt="">
             </a>
         </div>
     </footer>

@@ -16,7 +16,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../imgs/icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../fonts/fonts.css">
     <script src="../js/navegacao.js" defer></script>
     <script src="../js/animacao.js" defer></script>
@@ -30,7 +30,7 @@ if (!isset($_SESSION['user'])) {
         <!--Cabeçalho-->
         <header>
             <div class="w-30 mt-2 absolute top-0 left-5 transition duration-500 hover:scale-105">
-                <a href="../index.php" class=""><img src="../imgs/logo4.png" alt=""></a>
+                <a href="../index.php" class=""><img src="../imgs/logo.png" alt=""></a>
             </div>
 
             <div class="absolute top-0 right-0 m-5 gap-2 flex">
@@ -41,9 +41,9 @@ if (!isset($_SESSION['user'])) {
                 <form method="POST" action="../controller/controller_logout.php" id="logoutForm"
                     class="-mt-7 mr-5 flex justify-center group">
                     <button type="button" class="openModalBtn" data-target="sairConta">
-                        <img src="../imgs/exit.png" alt="sair da conta"
+                        <img src="../imgs/icones/exit.png" alt="sair da conta"
                             class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
-                        <img src="../imgs/exitHover.png" alt="sair da conta"
+                        <img src="../imgs/icones/exitHover.png" alt="sair da conta"
                             class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                     </button>
                 </form>
@@ -76,25 +76,25 @@ if (!isset($_SESSION['user'])) {
             <!--Mudar foto de perfil do usuário-->
             <div class="relative z-10">
                 <!--Foto de perfil do usuário-->
-                <img src="../img_perfil/perfil1.png" alt="foto de perfil">
+                <img src="../imgs/imgs_perfil/perfil1.png" alt="foto de perfil">
 
                 <!--Ícone de mudar foto de perfil do usuário-->
                 <button type="button" class="openModalBtn group" data-target="mudarFoto">
-                    <img src="../imgs/editarFoto.png" alt="mudar foto de perfil"
+                    <img src="../imgs/icones/editarFoto.png" alt="mudar foto de perfil"
                         class="h-12 absolute top-3 right-2 opacity-100 group-hover:opacity-0 transition-opacity duration-900">
-                    <img src="../imgs/editarHover.png" alt="mudar foto de perfil"
+                    <img src="../imgs/icones/editarHover.png" alt="mudar foto de perfil"
                         class="h-14 absolute top-2 right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-900">
                 </button>
             </div>
 
             <!--Pop-up de mudar foto de perfil-->
-            <div id="mudarFoto" class="hidden z-50 fixed inset-0 justify-center items-center bg-gray-200/50">
+            <div id="mudarFoto" class="hidden z-50 fixed inset-0 flex justify-center items-center bg-gray-200/50">
 
                 <!--Fechar pop-up-->
                 <button style="cursor: pointer;" type="button" class="closeModalBtn group">
-                    <img src="../imgs/close.png" alt="ícone de sair do mudar foto de perfil"
+                    <img src="../imgs/icones/close.png" alt="ícone de sair do mudar foto de perfil"
                         class="absolute top-22 right-90 opacity-100 group-hover:opacity-0 transition duration-900">
-                    <img src="../imgs/closeHover.png" alt="ícone de sair do mudar foto de perfil"
+                    <img src="../imgs/icones/closeHover.png" alt="ícone de sair do mudar foto de perfil"
                         class="absolute top-22 right-90 opacity-0 group-hover:opacity-100 transition duration-900">
                 </button>
 
@@ -106,24 +106,24 @@ if (!isset($_SESSION['user'])) {
                     <!--Opções de foto de perfil-->
                     <div class="flex flex-col mt-5">
                         <div class="flex gap-4">
-                            <img src="../img_perfil/perfil1.png" alt=""
+                            <img src="../imgs/imgs_perfil/perfil1.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                            <img src="../img_perfil/perfil6.png" alt=""
+                            <img src="../imgs/imgs_perfil/perfil6.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                            <img src="../img_perfil/perfil2.png" alt=""
+                            <img src="../imgs/imgs_perfil/perfil2.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                            <img src="../img_perfil/perfil7.png" alt=""
+                            <img src="../imgs/imgs_perfil/perfil7.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
                         </div>
 
                         <div class="flex gap-4 mt-7">
-                            <img src="../img_perfil/perfil3.png" alt=""
+                            <img src="../imgs/imgs_perfil/perfil3.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                            <img src="../img_perfil/perfil8.png" alt=""
+                            <img src="../imgs/imgs_perfil/perfil8.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                            <img src="../img_perfil/perfil4.png" alt=""
+                            <img src="../imgs/imgs_perfil/perfil4.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                            <img src="../img_perfil/perfil5.png" alt=""
+                            <img src="../imgs/imgs_perfil/perfil5.png" alt=""
                                 class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
                         </div>
                     </div>
@@ -192,7 +192,7 @@ if (!isset($_SESSION['user'])) {
 
         <div class="absolute right-4 bottom-1">
             <a href="perfil.php">
-                <img src="../imgs/suporte.png" alt="">
+                <img src="../imgs/icones/suporte.png" alt="">
             </a>
         </div>
     </footer>
