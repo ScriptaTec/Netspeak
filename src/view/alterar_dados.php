@@ -17,7 +17,7 @@ session_start();
                 value="<?= $_SESSION['user']['email'] ?? '' ?>"
                 class="w-60 p-2 text-gray-600 bg-white border-2 border-black hover:border-black focus:outline-none transition duration-500 hover:scale-105"
                 style="box-shadow: -4px 4px 1px rgb(100, 100, 100);">
-            <img src="../imgs/editar.png" alt="ícone" class="absolute top-6 right-3 transform -translate-y-1/2">
+            <img src="../imgs/icones/editar.png" alt="ícone" class="absolute top-6 right-3 transform -translate-y-1/2">
 
             <!--Salvar os dados editados-->
             <div>
@@ -29,13 +29,13 @@ session_start();
                 <!--Pop-up ao salvar os dados editados do perfil-->
                 <div id="editarDados" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
                     <div
-                        class="bg-white py-5 px-10 rounded-4xl border border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+                        class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
                         <h1 class="text-3xl">Seus dados foram editados com sucesso!</h1>
 
                         <div class="flex justify-center gap-5 mt-5">
                             <button type="button"
                                 class="closeModalBtn
-                                py-2 px-7 rounded-3xl bg-black text-white border border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                                py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
                                 ok
                             </button>
                         </div>
@@ -48,7 +48,7 @@ session_start();
             <input type="text" name="nome" required placeholder="Nome..." value="<?= $_SESSION['user']['nome'] ?? '' ?>"
                 class="w-60 p-2 text-gray-600 bg-white border-2 border-black hover:border-black focus:outline-none transition duration-500 hover:scale-105"
                 style="box-shadow: -4px 4px 1px rgb(100, 100, 100);">
-            <img src="../imgs/editar.png" alt="ícone" class="absolute top-6 right-3 transform -translate-y-1/2">
+            <img src="../imgs/icones/editar.png" alt="ícone" class="absolute top-6 right-3 transform -translate-y-1/2">
         </div>
     </div>
 </form>
@@ -57,9 +57,9 @@ session_start();
 <div class="mt-10 ml-10">
         <a href="redefinir_senha.php" class="group inline-block">
         <button type="button">
-            <img src="../imgs/redefinir.png" alt="redefinir senha"
+            <img src="../imgs/icones/redefinir.png" alt="redefinir senha"
                 class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
-            <img src="../imgs/redefinirHover.png" alt="redefinir senha"
+            <img src="../imgs/icones/redefinirHover.png" alt="redefinir senha"
                 class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
         </button>
 

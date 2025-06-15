@@ -8,9 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="../js/animacao.js" defer></script>
     <link rel="stylesheet" href="../fonts/fonts.css">
-
-    <link rel="icon" href="../imgs/iconeLogo.ico" type="image/x-icon">
-
     <title>Cadastro</title>
 </head>
 
@@ -47,7 +44,7 @@
 
         <div class="flex mt-5 gap-4 absolute right-5 text-xl">
             <a href="../index.php" class="transition duration-500 hover:scale-105">Home</a>
-            <a href="perfil.php"><img src="../imgs/perfil.png" alt="ícone de perfil do usuário"
+            <a href="perfil.php"><img src="../imgs/icones/perfil.png" alt="ícone de perfil do usuário"
                     class="-mt-1 transition duration-500 hover:scale-105"></a>
         </div>
     </header>
@@ -136,7 +133,7 @@ if (isset($_SESSION['erro_email_secundario'])) {
         </div>
 
         <div class="absolute right-4 bottom-0">
-            <a href="perfil.php"><img src="../imgs/suporte.png" alt=""></a>
+            <a href="perfil.php"><img src="../imgs/icones/suporte.png" alt="Ícone de suporte"></a>
         </div>
     </footer>
 </body>

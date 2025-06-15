@@ -8,8 +8,6 @@
     <script src="../js/animacao.js" defer></script>
     <link rel="stylesheet" href="../fonts/fonts.css">
 
-    <link rel="icon" href="../imgs/iconeLogo.ico" type="image/x-icon">
-
     <title>Login</title>
 </head>
 
@@ -39,7 +37,7 @@
 
         <div class="flex mt-5 gap-4 absolute right-5 text-xl">
             <a href="../index.php" class="transition duration-500 hover:scale-105">Home</a>
-            <a href="perfil.php"><img src="../imgs/perfil.png" alt="ícone de perfil do usuário" class="-mt-1 transition duration-500 hover:scale-105"></a>
+            <a href="perfil.php"><img src="../imgs/icones/perfil.png" alt="ícone de perfil do usuário" class="-mt-1 transition duration-500 hover:scale-105"></a>
         </div>
     </header>
 
@@ -96,7 +94,7 @@ unset($_SESSION['erro_login']);
         </div>
 
         <div class="absolute right-4 bottom-0 transition duration-500 hover:scale-105">
-            <a href="perfil.php"><img src="../imgs/suporte.png" alt=""></a>
+            <a href="perfil.php"><img src="../imgs/icones/suporte.png" alt=""></a>
         </div>
     </footer>
 
