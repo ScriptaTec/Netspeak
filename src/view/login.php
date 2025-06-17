@@ -88,15 +88,9 @@ unset($_SESSION['erro_login']);
         </form>
     </main>
 
-    <footer class="fixed bottom-1 w-full">
-        <div class="flex justify-center gap-4">
-            <h6 class="text-sm">&copy; 2025 <span style="">Scripta</span>. Todos os direitos reservados.</h6>
-        </div>
-
-        <div class="absolute right-4 bottom-0 transition duration-500 hover:scale-105">
-            <a href="perfil.php"><img src="../imgs/icones/suporte.png" alt=""></a>
-        </div>
-    </footer>
+<?php
+require('footer.php');
+?>
 
 </body>
 

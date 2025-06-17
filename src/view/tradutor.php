@@ -25,5 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     <?php if (!empty($respostaDaApi)): ?>
         <p><?= htmlspecialchars($respostaDaApi) ?></p>
     <?php endif; ?>
+
+    <?php
+    require('footer.php');
+    ?>
 </body>
 </html>

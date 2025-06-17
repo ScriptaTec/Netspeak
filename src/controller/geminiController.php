@@ -3,7 +3,7 @@ function processarFraseComGemini($fraseUsuario)
 {
     $apiKey = 'AIzaSyBOMJngpBUXNQl9JQwE6EfUwUfiQ60mbYA';
 
-    $mensagem = "Traduza para a linguagem netspeak a frase (só me responda com a frase e adicione emojis): $fraseUsuario";
+    $mensagem = "Traduza para a linguagem formal da lingua portuguesa a frase (só me responda com a frase e adicione emojis): $fraseUsuario";
 
     $data = [
         "contents" => [

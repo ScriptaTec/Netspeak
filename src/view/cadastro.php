@@ -127,15 +127,9 @@ if (isset($_SESSION['erro_email_secundario'])) {
         </form>
     </main>
 
-    <footer class="fixed bottom-1 w-full">
-        <div class="flex justify-center gap-4">
-            <h6 class=" text-sm">&copy; 2025 Scripta. Todos os direitos reservados.</h6>
-        </div>
-
-        <div class="absolute right-4 bottom-0">
-            <a href="perfil.php"><img src="../imgs/icones/suporte.png" alt="Ícone de suporte"></a>
-        </div>
-    </footer>
+<?php
+require('footer.php');
+?>
 </body>
 
 </html>

@@ -16,7 +16,7 @@
     <header>
         <div class="absolute top-0 right-0 m-5 gap-2 flex">
             <!--Ir para home caso não estiver logado e index caso estiver-->
-            <a href="../home.php"
+            <a href="tradutor.php"
                 class="text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
 
             <!--Ícone de entrar na conta-->
@@ -297,17 +297,9 @@
     </div>
 
     <!--Rodapé-->
-    <footer class="w-full mt-15 relative">
-        <div class="flex justify-center gap-4 mb-1">
-            <h6 class="text-sm">&copy; 2025 Scripta. Todos os direitos reservados.</h6>
-        </div>
-
-        <div class="absolute right-4 bottom-1">
-            <a href="perfil.php">
-                <img src="../imgs/icones/suporte.png" alt="">
-            </a>
-        </div>
-    </footer>
+<?php
+require('footer.php');
+?>
 </body>
 
 </html>

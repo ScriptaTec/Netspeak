@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'dificuldade_tecnologia' => $usuario['dificuldade_tecnologia']
                 ];
 
-                header("Location: ../index.php");
+                header("Location: ../view/tradutor.php");
                 exit();
             } else {
                 $_SESSION['erro_senha'] = "Senha incorreta!";

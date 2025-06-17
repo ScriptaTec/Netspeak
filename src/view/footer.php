@@ -5,7 +5,7 @@
         </div>
 
         <div class="absolute right-4 bottom-1">
-            <a href="perfil.php">
+            <a href="suporte.php">
                 <img src="../imgs/icones/suporte.png" alt="">
             </a>
         </div>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../controller/config.php"; // Ajuste o caminho conforme sua estrutura
+require "../controller/config.php"; 
 
 $id_usuario = $_SESSION['user']['id'] ?? null;
 
