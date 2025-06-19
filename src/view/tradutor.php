@@ -17,26 +17,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     <title>Tradutor Netspeak</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../fonts/fonts.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
 </head>
 <body>
     
 <div class="jersey bg-[url(../imgs/fundoTradutor.png)] h-screen bg-cover bg-center">
 
+<!--Cabeçalho-->
     <header class="flex">
-        <div class="absolute top-2 left-3">
-            <img src="../imgs/icones/menu.png" alt="Ícone de menu">
-        </div>
 
-        <div class="absolute top-2 right-3">
-            <a href="perfil.php">
+        <button class="absolute top-2 right-3" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
                 <div class="relative w-8 h-8 group">
-                    <img src="../imgs/icones/perfilBranco.png" alt="ícone perfil"
+                    <img src="../imgs/icones/menu.png" alt="ícone perfil"
                         class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
-                    <img src="../imgs/icones/perfilRoxo.png" alt="ícone perfil hover"
+                    <img src="../imgs/icones/menuAmarelo.png" alt="ícone perfil hover"
                         class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
                 </div>
-            </a>
-        </div>
+</button>
+
+<!--Importar o menu de navegação rápida-->
+         <?php include 'menu.php'; ?>
     </header>
 
     <div class="flex justify-center mt-30 -ml-10">
@@ -88,6 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 require('footer.php');
 ?>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
 </body>
 
 </html>

@@ -30,11 +30,11 @@ if (!isset($_SESSION['user'])) {
         <!--Cabeçalho-->
         <header>
             <div class="w-30 mt-2 absolute top-0 left-5 transition duration-500 hover:scale-105">
-                <a href="../index.php" class=""><img src="../imgs/logo.png" alt=""></a>
+                <a href="" class=""><img src="../imgs/logo.png" alt=""></a>
             </div>
 
             <div class="absolute top-0 right-0 m-5 gap-2 flex">
-                <a href="../index.php"
+                <a href="tradutor.php"
                     class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
 
                 <!--Ícone de sair da conta-->
