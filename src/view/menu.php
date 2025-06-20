@@ -7,7 +7,7 @@
    </button>
 
   <div class="py-4 overflow-y-auto">
-      <ul class="space-y-2 font-medium">
+      <ul class="space-y-2 text-xl">
          <li>
             <a href="perfil.php" class="flex items-center p-2 text-[#746587] rounded-lg transition duration-500 hover:text-white hover:bg-[#746587]"> 
             <span class="ms-1">Perfil</span>

@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
         <!--Tutorial para usar a ferramenta-->
         <div
             class="-ml-98 -mt-3 text-center text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400">
-            <a href="suporte.php">Precisa de ajuda?</a>
+            <a href="tutorial.php">Precisa de ajuda?</a>
         </div>
 
         <div class="flex justify-center mt-7">
@@ -96,7 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
         require('footer.php');
         ?>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
 </body>
 
