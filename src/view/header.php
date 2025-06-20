@@ -16,6 +16,8 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Tailwind CSS-->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--Biblioteca FlowBite-->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <!--Fontes das letras-->
     <link rel="stylesheet" href="../fonts/fonts.css">
     <!--Navegação entre telas no perfil-->
