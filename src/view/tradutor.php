@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
                     <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
 
                     <input type="text" name="frase" required placeholder="Aqui..."
-                        class="w-120 py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none hover:text-[#543A82] transition-all duration-700">
+                        class="w-120 py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700">
 
 
                     <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default">
