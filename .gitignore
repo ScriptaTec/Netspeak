@@ -1,0 +1,4 @@
+/mysql/
+.env
+/certbot/
+src/vendor/

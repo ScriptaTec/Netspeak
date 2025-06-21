@@ -1,0 +1,62 @@
+services:
+  certbot:
+    container_name: certbot_netspeak
+    image: certbot/certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    networks:
+      backend:
+        ipv4_address: 192.168.4.5
+
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 1 & wait $${!}; done'"
+  
+
+  php:
+    container_name: php_netspeak
+    image: scriptatech/netspeak:1.0.0
+    restart: unless-stopped
+    volumes:
+      - ./src/:/var/www/html
+    networks:
+      backend:
+        ipv4_address: 192.168.4.2
+
+  nginx:
+    container_name: nginx_netspeak
+    image: nginx:1.25
+    restart: unless-stopped
+    ports:
+      - "80:80"  
+      - "443:443"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./certbot/www:/var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+    depends_on:
+      - php
+    networks:
+      backend:
+        ipv4_address: 192.168.4.3
+
+  mysql:
+    container_name: mysql_netspeak
+    image: mysql
+    restart: unless-stopped
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./scripts:/docker-entrypoint-initdb.d/
+    env_file:
+      - ./src/.env
+    networks:
+      backend:
+        ipv4_address: 192.168.4.4
+
+networks:
+  backend:
+    name: netspeak_interna
+    driver: bridge
+    ipam:
+      config: 
+        - subnet: 192.168.4.0/24
