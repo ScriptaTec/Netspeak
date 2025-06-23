@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -56,7 +60,6 @@
                         style="box-shadow: 2px 2px 1px;"><br>
 
 <?php
-session_start();
 
 // Verifica se existe uma mensagem de erro de login na sessão e exibe
 if (isset($_SESSION['erro_login'])) {

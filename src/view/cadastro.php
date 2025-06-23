@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -65,7 +69,6 @@
                         style="box-shadow: 2px 2px 1px;"><br>
 
 <?php
-session_start();
 
 // Verifica se a mensagem de erro existe na sessão e exibe
 if (isset($_SESSION['erro_email'])) {
