@@ -56,12 +56,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
             <a href="tutorial.php">Precisa de ajuda?</a>
         </div>
 
+         <!--Card para enviar a frase-->
         <div class="flex justify-center mt-7">
             <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
                 style="box-shadow: 0px 8px 0px #AE99D2">
 
                 <!--Input para enviar a frase-->
-                <form method="post" action="" class="flex items-center gap-3">
+                <form method="post" action="resposta_tradutor.php" class="flex items-center gap-3">
 
                     <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
 
@@ -86,11 +87,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
                 </form>
             </div>
         </div>
-
-        <!--Campo para mostrar a tradução-->
-        <?php if (!empty($respostaDaApi)): ?>
-            <p><?= htmlspecialchars($respostaDaApi) ?></p>
-        <?php endif; ?>
 
         <?php
         require('footer.php');
