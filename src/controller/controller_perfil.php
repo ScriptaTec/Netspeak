@@ -1,6 +1,6 @@
 <?php
-session_start();
 require "../controller/config.php"; 
+// session_start();
 
 $id_usuario = $_SESSION['user']['id'] ?? null;
 

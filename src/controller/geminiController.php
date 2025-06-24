@@ -1,8 +1,15 @@
 <?php
+
+require_once '../vendor/autoload.php';
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable('../');
+$dotenv->load();
+
 function processarFraseComGemini($fraseUsuario)
 {
-    $apiKey = 'AIzaSyBOMJngpBUXNQl9JQwE6EfUwUfiQ60mbYA';
-
+    $apiKey = $_ENV['CHAVE_API_GEMINI'];
+    
     $mensagem = "Traduza para a linguagem formal da lingua portuguesa a frase (só me responda com a frase e adicione emojis): $fraseUsuario";
 
     $data = [
