@@ -217,10 +217,10 @@
 
                         <span
                             class="block text-2xl underline decoration-2 underline-offset-4 underline-[#ffae33]  hover:text-black transition duration-800"><a
-                                href="https://github.com/FelipeTMachado">Desenvolvedor full-stack</a></span>
+                                href="https://github.com/FelipeTMachado">Infra</a></span>
                     </div>
 
-                    <p class="py-2 px-4 ml-24 text-justify text-white text-xl rounded-3xl rounded-br-none bg-[#75678E]">
+                    <p class="py-2 px-4 ml-32 text-justify text-white text-xl rounded-3xl rounded-br-none bg-[#75678E]">
                         Voluntário da pesquisa e estudante do bacharelado em <br> Ciência da Computação do Instituto Federal Catarinense <br> campus Rio do Sul.</p>
                 </div>
             </div>

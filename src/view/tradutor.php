@@ -56,20 +56,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
             <a href="tutorial.php">Precisa de ajuda?</a>
         </div>
 
-         <!--Card para enviar a frase-->
+
+        <!--Card para enviar a frase-->
         <div class="flex justify-center mt-7">
             <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
                 style="box-shadow: 0px 8px 0px #AE99D2">
 
-                <!--Input para enviar a frase-->
+                <!--Formulário para enviar para o resposta_tradutor-->
                 <form method="post" action="resposta_tradutor.php" class="flex items-center gap-3">
 
                     <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
 
+                    <!--Input para enviar a frase-->
                     <input type="text" name="frase" required placeholder="Aqui..."
                         class="w-120 py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700">
 
-
+                    <!--Botão para enviar a frase-->
                     <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default">
                         <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
                             class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
@@ -78,6 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
                             class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </button>
 
+                    <!--Descrição do que o botão de enviar fará-->
                     <div id="tooltip-default" role="tooltip"
                         class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
                         Clique para enviar a frase que será traduzida
@@ -88,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
             </div>
         </div>
 
+        <!--Rodapé-->
         <?php
         require('footer.php');
         ?>
