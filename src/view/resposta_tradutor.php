@@ -5,7 +5,8 @@ $respostaDaApi = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     $fraseUsuario = $_POST['frase'];
-    $respostaDaApi = processarFraseComGemini($fraseUsuario);
+    $tipoTraducao = $_POST['tipoTraducao'];
+    $respostaDaApi = processarFraseComGemini($fraseUsuario, $tipoTraducao);
 }
 ?>
 
@@ -23,6 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 
 <body>
     <div class="jersey bg-[url(../imgs/Tradutor.png)] h-screen bg-cover bg-center">
+
+<form method="post" action="resposta_tradutor.php">
 
         <!--Cabeçalho-->
         <header class="flex">
@@ -55,10 +58,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 
                 <!--Selecionar tipo de conversão-->
                 <div class="flex justify-center">
-                    <select name="" id="" class="text-center text-[#746587] bg-white focus:outline-none font-xl rounded-sm text-xl " style="box-shadow: -6px 6px 0px #AE99D2">
-                        <option value="">Selecione o tipo de conversão</option>
-                        <option value="">Formal para informal</option>
-                        <option value="">Informal para formal</option>
+                    <select name="tipoTraducao" id="tipoTraducao" class="text-center text-[#746587] bg-white focus:outline-none font-xl rounded-sm text-xl " style="box-shadow: -6px 6px 0px #AE99D2">
+                        <option value="1">Selecione o tipo de conversão</option>
+                        <option value="formal">Formal para informal</option>
+                        <option value="informal">Informal para formal</option>
                     </select>
                 </div>
 
@@ -102,6 +105,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
                 </form>
             </div>
         </div>
+
+        </form>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>

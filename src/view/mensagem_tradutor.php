@@ -5,7 +5,8 @@ $respostaDaApi = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     $fraseUsuario = $_POST['frase'];
-    $respostaDaApi = processarFraseComGemini($fraseUsuario);
+    $tipoTraducao = $_POST['tipoTraducao'];
+    $respostaDaApi = processarFraseComGemini($fraseUsuario, $tipoTraducao);
 }
 ?>
 
@@ -15,10 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 <div class="flex justify-end my-10 relative">
 
     <!--Campo para a frase enviada pelo usuário-->
-    <?php if (!empty($respostaDaApi)): ?>
+    <?php if (!empty($fraseUsuario)): ?>
         <div class="max-w-[60%] py-2 px-4 rounded-2xl rounded-br-none bg-[#F8FBA6] text-xl text-[#746587] font-bold"
             style="box-shadow: -5px 5px 0px #746587">
-            <?= htmlspecialchars($respostaDaApi) ?>
+            <?= htmlspecialchars($fraseUsuario) ?>
         </div>
     <?php endif; ?>
 
@@ -26,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     <div class="text-center absolute -bottom-4 -right-12">
         <img src="../imgs/icones/perfilMensagem.png" class="bg-white p-2 rounded-2xl"  style="box-shadow: 3px 3px 0px #746587" alt="Perfil do usuário">
         <h2
-            class="text-sm text-[#746587] font-bold"><!--Nome do usuário que está mandando a mensagem fica aqui--></h2>
+            class="mt-1 text-sm text-white font-bold">Você</h2>
     </div>
 </div>
 
@@ -45,6 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     <div class="text-center absolute -bottom-4 -left-12">
         <img src="../imgs/icones/perfilMensagem.png" class="bg-white p-2 rounded-2xl"  style="box-shadow: -3px 3px 0px #746587" alt="Perfil do usuário">
         <h2
-            class="text-sm text-[#746587] font-bold"><!--Nome do usuário que está mandando a mensagem fica aqui--></h2>
+            class="mt-1 text-sm text-white font-bold">EmojiMoji</h2>
     </div>
 </div>
