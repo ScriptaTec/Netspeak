@@ -18,9 +18,19 @@ cp .env-docker .env
 ```
 
 Rodar o compose install dentro de src
+
 ```bash
 composer install
 ```
 
+Rodar o projeto
+
+```bash
+cd ..
+```
+
+```bash
+sudo docker-compose up -d --build
+```
 
 
