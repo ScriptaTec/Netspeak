@@ -5,7 +5,7 @@ $respostaDaApi = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     $fraseUsuario = $_POST['frase'];
-    $respostaDaApi = processarFraseComGemini($fraseUsuario);
+    $respostaDaApi = processarFraseComGemini($fraseUsuario, "formal");
 }
 ?>
 
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 
                 <!--Formulário para enviar para o resposta_tradutor-->
                 <form method="post" action="resposta_tradutor.php" class="flex items-center gap-3">
-
+                    <input type="hidden" name="tipoTraducao" value="formal">
                     <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
 
                     <!--Input para enviar a frase-->
@@ -86,11 +86,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
                         Clique para enviar a frase que será traduzida
                         <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>
-
                 </form>
             </div>
         </div>
-
+                
         <!--Rodapé-->
         <?php
         require('footer.php');

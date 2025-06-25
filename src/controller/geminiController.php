@@ -6,11 +6,19 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable('../');
 $dotenv->load();
 
-function processarFraseComGemini($fraseUsuario)
+
+
+function processarFraseComGemini($fraseUsuario, $tipoTraducao)
 {
+    if ($tipoTraducao === "informal"){
+        $mensagem = "Traduza para a linguagem formal da lingua portuguesa a frase (só me responda com a frase): $fraseUsuario";
+    } else {
+        $mensagem = "Traduza para a linguagem informal da lingua portuguesa, o netspeak, a frase (só me responda com a frase e adicione emojis): $fraseUsuario";
+    }
+
     $apiKey = $_ENV['CHAVE_API_GEMINI'];
     
-    $mensagem = "Traduza para a linguagem formal da lingua portuguesa a frase (só me responda com a frase e adicione emojis): $fraseUsuario";
+    // $mensagem = "Traduza para a linguagem formal da lingua portuguesa a frase (só me responda com a frase e adicione emojis): $fraseUsuario";
 
     $data = [
         "contents" => [
