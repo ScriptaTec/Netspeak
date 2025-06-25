@@ -21,6 +21,12 @@
          </li>
 
          <li>
+            <a href="sobre_nos.php" class="flex items-center p-2 text-[#746587] rounded-lg transition duration-500 hover:text-white hover:bg-[#746587]">
+               <span class="ms-1">Sobre nós</span>
+            </a>
+         </li>
+
+         <li>
             <a href="suporte.php" class="flex items-center p-2 text-[#746587] rounded-lg transition duration-500 hover:text-white hover:bg-[#746587]">
                <span class="ms-1">Suporte</span>
             </a>
