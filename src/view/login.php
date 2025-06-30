@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include "../controller/controller_login.php";
 ?>
 
 <!DOCTYPE html>
@@ -59,15 +59,7 @@ session_start();
                         class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                         style="box-shadow: 2px 2px 1px;"><br>
 
-<?php
 
-// Verifica se existe uma mensagem de erro de login na sessão e exibe
-if (isset($_SESSION['erro_login'])) {
-echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_login'] . '</p>';
-// Limpa a variável de erro após exibir a mensagem
-unset($_SESSION['erro_login']);
-}
-?>
 
                     <input type="password" name="senha" required placeholder="Senha..."
                         class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
@@ -87,6 +79,20 @@ unset($_SESSION['erro_login']);
                 <div class="text-right mt-1 mr-10">
                     <a href="cadastro.php" class="hover:text-black transition duration-500">Não possuí conta?</a>
                 </div>
+<?php
+// Verifica se existe uma mensagem de erro de login na sessão (email) e exibe
+if (isset($_SESSION['erro_email'])) {
+echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_email'] . '</p>';
+// Limpa a variável de erro após exibir a mensagem
+unset($_SESSION['erro_email']);
+}
+
+if (isset($_SESSION['erro_senha'])) {
+    echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_senha'] . '</p>';
+    // Limpa a variável de erro após exibir a mensagem
+    unset($_SESSION['erro_senha']);
+    }
+?>
 
         </form>
     </main>
