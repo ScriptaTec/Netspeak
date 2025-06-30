@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
 $stmt->execute([$email]);
 if ($stmt->rowCount() > 0) {
-    $_SESSION['erro_email'] = "Este e-mail já está cadastrado como e-mail principal.";
+    $_SESSION['erro_email'] = "Este e-mail já está cadastrado.";
     header("Location: ../view/cadastro.php");
     exit();
 }
@@ -31,7 +31,7 @@ if ($stmt->rowCount() > 0) {
 $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email_secundario = ?");
 $stmt->execute([$email]);
 if ($stmt->rowCount() > 0) {
-    $_SESSION['erro_email'] = "Este e-mail já está cadastrado como e-mail secundário.";
+    $_SESSION['erro_email'] = "Este e-mail já está cadastrado.";
     header("Location: ../view/cadastro.php");
     exit();
 }

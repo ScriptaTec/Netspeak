@@ -58,21 +58,21 @@ session_start();
                 <?php $formacao = $_SESSION['user']['grau_formacao'] ?? ''; ?>
             </div>
 
-            <input type="radio" name="grau_formacao" value="Ensino Médio Incompleto" <?= $formacao === 'Ensino Médio Incompleto' ? 'checked' : '' ?>
+            <input type="radio" name="grau_formacao" value="1" <?= $formacao === '1' ? 'checked' : '' ?>
                 class="appearance-none mt-4 w-4 h-4 border-2 border-gray-400 rounded-full checked:border-amber-300 checked:bg-amber-300">
             <div class="flex flex-col -ml-3 mt-2">
                 <label for="em-incompleto">Ensino Médio</label>
                 <label for="em-incompleto" class="-mt-2">incompleto</label>
             </div>
 
-            <input type="radio" name="grau_formacao" value="Ensino Médio Completo" <?= $formacao === 'Ensino Médio Completo' ? 'checked' : '' ?>
+            <input type="radio" name="grau_formacao" value="2" <?= $formacao === '2' ? 'checked' : '' ?>
                 class="appearance-none mt-4 w-4 h-4 border-2 border-gray-400 rounded-full checked:border-amber-300 checked:bg-amber-300">
             <div class="flex flex-col -ml-3 mt-2">
                 <label for="em-incompleto">Ensino Médio</label>
                 <label for="em-incompleto" class="-mt-2">completo</label>
             </div>
 
-            <input type="radio" name="grau_formacao" value="Graduação" <?= $formacao === 'Graduação' ? 'checked' : '' ?>
+            <input type="radio" name="grau_formacao" value="3" <?= $formacao === '3' ? 'checked' : '' ?>
                 class="appearance-none mt-4 w-4 h-4 border-2 border-gray-400 rounded-full checked:border-amber-300 checked:bg-amber-300">
             <label for="graduacao" class="-ml-3 mt-3">Graduação</label>
         </div>
@@ -84,15 +84,15 @@ session_start();
                 <?php $dificuldade = $_SESSION['user']['dificuldade_tecnologia'] ?? ''; ?>
             </div>
 
-            <input type="radio" name="dificuldade_tecnologia" value="Alto" <?= $dificuldade === 'Alto' ? 'checked' : '' ?>
+            <input type="radio" name="dificuldade_tecnologia" value="1" <?= $dificuldade === '1' ? 'checked' : '' ?>
                 class="appearance-none mt-4 w-4 h-4 border-2 border-gray-400 rounded-full checked:border-amber-300 checked:bg-amber-300">
             <label for="alta" class="-ml-3 mt-3">Alta</label>
 
-            <input type="radio" name="dificuldade_tecnologia" value="Médio" <?= $dificuldade === 'Médio' ? 'checked' : '' ?>
+            <input type="radio" name="dificuldade_tecnologia" value="2" <?= $dificuldade === '2' ? 'checked' : '' ?>
                 class="appearance-none mt-4 w-4 h-4 border-2 border-gray-400 rounded-full checked:border-amber-300 checked:bg-amber-300">
             <label for="media" class="-ml-3 mt-3">Média</label>
 
-            <input type="radio" name="dificuldade_tecnologia" value="Baixo" <?= $dificuldade === 'Baixo' ? 'checked' : '' ?>
+            <input type="radio" name="dificuldade_tecnologia" value="3" <?= $dificuldade === '3' ? 'checked' : '' ?>
                 class="appearance-none mt-4 w-4 h-4 border-2 border-gray-400 rounded-full checked:border-amber-300 checked:bg-amber-300">
             <label for="baixa" class="-ml-3 mt-3">Baixa</label>
         </div>

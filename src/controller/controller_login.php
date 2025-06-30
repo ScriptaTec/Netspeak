@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     } catch (PDOException $e) {
-        echo "Erro no banco de dados: " . $e->getMessage();
+        echo "Erro no banco de dados:" . $e->getMessage();
     } catch (Exception $e) {
         echo "Erro: " . $e->getMessage();
     }
