@@ -100,14 +100,14 @@
                     <h3 class="text-xl"><b>Usuário</b></h3>
                     <a href="view/cadastro.php" class="hover:text-[color:#f5bd20] transition duration-700">Cadastro</a>
                     <a href="view/login.php" class="hover:text-[color:#f5bd20] transition duration-700">Login</a>
-                    <a href="controller/controller_perfil.php"
+                    <a href="view/perfil.php"
                         class="hover:text-[color:#f5bd20] transition duration-700">Perfil</a>
                 </div>
 
                 <div class="flex flex-col">
                     <h3 class="text-xl" class="hover:text-[color:#f5bd20] transition duration-700"><b>Ferramentas</b>
                     </h3>
-                    <a href="" class="hover:text-[color:#f5bd20] transition duration-700">Tradutor</a>
+                    <a href="view/tradutor.php" class="hover:text-[color:#f5bd20] transition duration-700">Tradutor</a>
                     <a href="" class="hover:text-[color:#f5bd20] transition duration-700">Lista de emojis</a>
                 </div>
 

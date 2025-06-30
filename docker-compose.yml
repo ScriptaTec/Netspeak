@@ -40,6 +40,7 @@ services:
       backend:
         ipv4_address: 192.168.4.3
 
+# Comando para acessar o serviço do container mysql: mysql -u netspeak -p -h 192.168.4.4 ou acessar_mysql
   mysql:
     container_name: mysql_netspeak
     image: mysql
@@ -47,10 +48,12 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
       - ./scripts:/docker-entrypoint-initdb.d/
+    # Define as variavéis de ambiente (como o root e a senha)
     env_file:
       - ./src/.env
     networks:
       backend:
+      # IP para rodar o mysql no container.
         ipv4_address: 192.168.4.4
 
 networks:

@@ -5,7 +5,7 @@ session_start();
 <script src="../js/pop_ups.js" defer></script>
 
 <!--Personalizar dados do usuário-->
-<form action="../controller/controller_perfil.php" method="post" id="adicionarDadosForm">
+<form action="../controller/controller_perfil.php" method="POST" id="adicionarDadosForm">
     <section
         class="mt-5 px-10 py-4 bg-stone-50 rounded-4xl border-2 border-gray-200 group hover:border-black transition duration-700">
 
@@ -100,7 +100,7 @@ session_start();
 
     <!--Salvar os dados editados-->
     <div class="ml-5">
-        <button type="submit" name="editar_personalizacao" value="editar" data-target="adicionarDados"
+        <button type="submit" name="editar_personalizacao" value="editar" 
             class="openModalBtn mt-3 px-4 py-1 bg-black text-white transition duration-700 hover:scale-105 hover:bg-amber-300 hover:text-black">
             <span>Adicionar</span>
         </button>

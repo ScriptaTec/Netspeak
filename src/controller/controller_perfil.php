@@ -1,7 +1,8 @@
 <?php
 require "../controller/config.php"; 
-// session_start();
+session_start();
 
+echo var_dump($_POST);
 $id_usuario = $_SESSION['user']['id'] ?? null;
 
 if (!$id_usuario) {
@@ -35,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             grau_formacao = ?, dificuldade_tecnologia = ?
             WHERE id = ?";
         $stmt = $pdo->prepare($sql);
+
+        echo"$sql";
         $stmt->execute([
             $nome_completo, $email_secundario, $genero,
             $grau_formacao, $dificuldade_tecnologia, $id_usuario

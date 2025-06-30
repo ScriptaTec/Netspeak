@@ -1,4 +1,5 @@
 <?php
+require('../controller/verifica_sessao.php');
 require_once '../controller/geminiController.php';
 
 $respostaDaApi = '';

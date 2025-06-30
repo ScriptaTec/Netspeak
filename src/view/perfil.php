@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "../controller/controller_perfil.php";
 
 if (!isset($_SESSION['user'])) {

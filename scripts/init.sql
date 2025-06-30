@@ -19,3 +19,5 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO usuarios (id, nome, senha, email, data_nascimento) VALUES (1, 'Felipe Caue Machado', '$2y$10$Wn1S5fSAEKnPztsjkLNS3.f7tHJ/yYeckta1ZoMdTWogNkkmAALki', 'fmachad6@gmail.com', '1998-08-15');
 INSERT INTO usuarios (id, nome, senha, email, data_nascimento) VALUES (2, 'Bianca Jussara Wolf', '$2y$10$Wn1S5fSAEKnPztsjkLNS3.f7tHJ/yYeckta1ZoMdTWogNkkmAALki', 'bibi@gmail.com', '2008-06-01');
+
+

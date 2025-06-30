@@ -51,7 +51,7 @@ if ($stmt->rowCount() > 0) {
                 'email' => $email,
                 'data_nascimento' => $data_nascimento
             ];
-            header("Location: ../index.php");
+            header("Location: ../view/tradutor.php");
             exit();
         } else {
             throw new Exception("Erro ao inserir usuário no banco de dados.");
