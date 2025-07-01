@@ -1,107 +1,66 @@
-//Navegação entre as abas no perfil
-function carregarConteudo(pagina) {
-  fetch(pagina)
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById("conteudo").innerHTML = data;
+//Necessário para a página de perfil
+function navegacaoPerfil() {
+  const botoes = [
+    document.getElementById("btn-favoritos"),
+    document.getElementById("btn-alterarDados"),
+    document.getElementById("btn-personalizar"),
+    document.getElementById("btn-excluirConta"),
+  ];
 
-      //Necessário para os pop-ups
-      inicializarPopUps();
-      animacaoBtn("form");
+  botoes.forEach((botao) => {
+    botao.addEventListener("click", () => {
+      const idBotao = botao.id; // ex: "btn-personalizar"
+      const idConteudo = idBotao.replace("btn-", ""); // ex: "personalizar"
+
+      // Esconde todos os conteúdos e reseta os botões
+      botoes.forEach((btn) => {
+        const conteudoId = btn.id.replace("btn-", "");
+        document.getElementById(conteudoId).classList.add("hidden");
+
+        btn.classList.remove("border-b-2", "border-amber-300", "font-bold");
+        btn.classList.add("text-gray-400");
+      });
+
+      // Mostra o conteúdo da aba clicada e destaca o botão
+      document.getElementById(idConteudo).classList.remove("hidden");
+      botao.classList.remove("text-gray-400");
+      botao.classList.add("border-b-2", "border-amber-300", "font-bold");
     });
+  });
 }
 
-//Abas das páginas
-tabFavoritos.addEventListener("click", () => {
-  carregarConteudo("../view/favoritos.php");
-
-  tabFavoritos.classList.add("border-b-2", "border-amber-300", "font-bold");
-  tabFavoritos.classList.remove("text-gray-400");
-  tabPersonalizar.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabPersonalizar.classList.add("text-gray-400");
-  tabAlterarDados.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabAlterarDados.classList.add("text-gray-400");
-  tabExcluirConta.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabExcluirConta.classList.add("text-gray-400");
-});
-
-tabAlterarDados.addEventListener("click", () => {
-  carregarConteudo("../view/alterar_dados.php");
-
-  tabAlterarDados.classList.add("border-b-2", "border-amber-300", "font-bold");
-  tabAlterarDados.classList.remove("text-gray-400");
-  tabFavoritos.classList.remove("border-b-2", "border-amber-300", "font-bold");
-  tabFavoritos.classList.add("text-gray-400");
-  tabPersonalizar.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabPersonalizar.classList.add("text-gray-400");
-  tabExcluirConta.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabExcluirConta.classList.add("text-gray-400");
-});
-
-tabPersonalizar.addEventListener("click", () => {
-  carregarConteudo("../view/personalizar.php");
-
-  tabPersonalizar.classList.add("border-b-2", "border-amber-300", "font-bold");
-  tabPersonalizar.classList.remove("text-gray-400");
-  tabFavoritos.classList.remove("border-b-2", "border-amber-300", "font-bold");
-  tabFavoritos.classList.add("text-gray-400");
-  tabAlterarDados.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabAlterarDados.classList.add("text-gray-400");
-  tabExcluirConta.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabExcluirConta.classList.add("text-gray-400");
-});
-
-tabExcluirConta.addEventListener("click", () => {
-  carregarConteudo("../view/excluir_conta.php");
-
-  tabExcluirConta.classList.add("border-b-2", "border-amber-300", "font-bold");
-  tabExcluirConta.classList.remove("text-gray-400");
-  tabFavoritos.classList.remove("border-b-2", "border-amber-300", "font-bold");
-  tabFavoritos.classList.add("text-gray-400");
-  tabAlterarDados.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabAlterarDados.classList.add("text-gray-400");
-  tabPersonalizar.classList.remove(
-    "border-b-2",
-    "border-amber-300",
-    "font-bold"
-  );
-  tabPersonalizar.classList.add("text-gray-400");
-});
-
-// Estado inicial
-carregarConteudo("../view/alterar_dados.php");
-tabAlterarDados.classList.add("border-b-2", "border-amber-300", "font-bold");
 
 
+//Necessário para a página sobre nós
+function navegacaoSobreNos() {
+  const botoes = {
+    bolsa: "card_bolsa",
+    bolsistas: "card_bolsistas",
+    objetivo: "card_objetivo",
+    resultados: "card_resultados",
+  };
+
+  // Mostra inicialmente o card "bolsa"
+  Object.values(botoes).forEach((idCard) => {
+    const el = document.getElementById(idCard);
+    if (idCard === "card_bolsa") {
+      el.classList.remove("hidden");
+    } else {
+      el.classList.add("hidden");
+    }
+  });
+
+  // Adiciona os eventos aos botões
+  Object.keys(botoes).forEach((idBotao) => {
+    document.getElementById(idBotao).addEventListener("click", () => {
+      // Esconde todos os cards
+      Object.values(botoes).forEach((idCard) => {
+        document.getElementById(idCard).classList.add("hidden");
+      });
+
+      // Mostra o card correspondente ao botão clicado
+      const idCardParaMostrar = botoes[idBotao];
+      document.getElementById(idCardParaMostrar).classList.remove("hidden");
+    });
+  });
+}
