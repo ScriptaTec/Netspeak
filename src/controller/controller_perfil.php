@@ -1,5 +1,5 @@
 <?php
-require "../controller/config.php"; 
+require "../controller/config.php";
 session_start();
 
 // echo var_dump($_POST);
@@ -38,8 +38,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare($sql);
 
         $stmt->execute([
-            $nome_completo, $email_secundario, $genero,
-            $grau_formacao, $dificuldade_tecnologia, $id_usuario
+            $nome_completo,
+            $email_secundario,
+            $genero,
+            $grau_formacao,
+            $dificuldade_tecnologia,
+            $id_usuario
         ]);
 
         $_SESSION['user'] = array_merge($_SESSION['user'], [
@@ -52,6 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mensagem = "Dados de personalização atualizados!";
     }
     header("Location: ../view/perfil.php");
-        exit();
+    exit();
 }
 ?>

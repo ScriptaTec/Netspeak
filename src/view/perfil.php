@@ -1,6 +1,7 @@
 <?php
 require "../controller/controller_perfil.php";
 
+
 if (!isset($_SESSION['user'])) {
     echo "<script>alert('Usuário não logado.'); location.href = 'cadastro.php';</script>";
     exit();
@@ -25,56 +26,18 @@ require('header.php');
                 class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
 
             <!--Ícone de sair da conta-->
-            <form method="POST" action="../controller/controller_logout.php"
+            <form method="POST" action="../controller/controller_logout.php" id="form-sair"
                 class="-mt-7 mr-5 flex justify-center group">
 
                 <!--Botão de sair da conta-->
-                <button type="button" name="" value="" data-modal-target="popup-logout" data-modal-toggle="popup-logout">
+                <button type="button" data-modal-text="Você tem certeza que deseja sair da conta?"
+                    data-form-target="#form-sair" class="btn-abrir-modal">
                     <img src="../imgs/icones/exit.png" alt="sair da conta"
                         class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
                     <img src="../imgs/icones/exitHover.png" alt="sair da conta"
                         class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 </button>
             </form>
-
-            <!--Pop-up de confirmação para sair da conta-->
-            <div id="popup-logout" tabindex="-1"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                    <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-                        <button type="button"
-                            class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-hide="popup-logout">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Fechar pop-up</span>
-                        </button>
-                        <div class="p-4 md:p-5 text-center">
-                            <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Você deseja sair da
-                                sua conta?</h3>
-
-                            <!--Botão de confirmação-->
-                            <button data-modal-hide="popup-modal" type="button"
-                                class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
-                                Sim
-                            </button>
-
-                            <!--Botão de cancelamento-->
-                            <button data-modal-hide="popup-modal" type="button"
-                                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                                Não</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </header>
 
@@ -176,7 +139,7 @@ require('header.php');
 
         <h1 class="text-3xl">Altere seus dados: </h1>
 
-        <form action="../controller/controller_perfil.php" method="post">
+        <form action="../controller/controller_perfil.php" method="post" id="form-alterar">
 
             <div class="flex gap-10 mt-5">
                 <input type="email" name="email" required placeholder="Email..."
@@ -188,53 +151,17 @@ require('header.php');
                     value="<?= $_SESSION['user']['nome'] ?? '' ?>"
                     class="w-60 p-2 text-gray-600 bg-white border-2 border-black hover:border-black focus:outline-none transition duration-500 hover:scale-105"
                     style="box-shadow: -4px 4px 1px rgb(100, 100, 100);">
+
+                <!--Campo para que funcione a requisição-->
+                <input type="hidden" name="editar_dados_basicos" value="editar">
             </div>
 
             <!--Salvar os dados editados-->
-            <button type="submit" name="editar_dados_basicos" value="editar" data-modal-target="popup-alterar"
-                data-modal-toggle="popup-alterar"
-                class="mt-3 px-4 py-1 bg-black text-white transition duration-700 hover:scale-105 hover:bg-amber-300 hover:text-black">
+            <button type="button" name="editar_dados_basicos" value="editar"
+                data-modal-text="Você tem certeza que deseja alterar seus dados?" data-form-target="#form-alterar"
+                class="btn-abrir-modal mt-3 px-4 py-1 bg-black text-white transition duration-700 hover:scale-105 hover:bg-amber-300 hover:text-black">
                 <span>Editar</span>
             </button>
-
-            <!--Pop-up de confirmação de alteração de dados-->
-            <div id="popup-alterar" tabindex="-1"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                    <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-                        <button type="button"
-                            class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-hide="popup-alterar">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Fechar pop-up</span>
-                        </button>
-                        <div class="p-4 md:p-5 text-center">
-                            <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Você deseja alterar
-                                seus dados?</h3>
-
-                            <!--Botão de confirmação-->
-                            <button data-modal-hide="popup-modal" type="button"
-                                class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
-                                Sim
-                            </button>
-
-                            <!--Botão de cancelamento-->
-                            <button data-modal-hide="popup-modal" type="button"
-                                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                                Não</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </form>
 
         <!--Ícone de redefinir senha-->
@@ -259,9 +186,9 @@ require('header.php');
 
 
 <!-- Personalizar dados do usuário -->
-<section id="personalizar" class="">
+<section id="personalizar">
     <div class="flex justify-center mt-10">
-        <form action="../controller/controller_perfil.php" method="POST">
+        <form action="../controller/controller_perfil.php" method="POST" id="form-personalizar">
             <div
                 class="mt-5 px-10 py-4 bg-stone-50 rounded-4xl border-2 border-gray-200 group hover:border-black transition duration-700">
 
@@ -350,55 +277,20 @@ require('header.php');
                     <input type="radio" name="dificuldade_tecnologia" value="3" <?= $dificuldade === '3' ? 'checked' : '' ?>
                         class="appearance-none mt-4 w-4 h-4 border-2 border-gray-400 rounded-full checked:border-amber-300 checked:bg-amber-300">
                     <label for="baixa" class="-ml-3 mt-3">Baixa</label>
+                
+                 <!--Campo para que funcione a requisição-->
+                 <input type="hidden" name="editar_personalizacao" value="editar">
                 </div>
             </div>
 
             <!--Salvar os dados adicionados-->
             <div class="ml-5 mb-10">
-                <button type="submit" name="editar_personalizacao" value="editar" data-modal-target="popup-personalizar"
-                    data-modal-toggle="popup-personalizar"
-                    class="mt-3 px-4 py-1 bg-black text-white transition duration-700 hover:scale-105 hover:bg-amber-300 hover:text-black">
+                <button type="button" name="editar_personalizacao" value="editar"
+                    data-modal-text="Você concorda com nossa política de dados?" data-form-target="#form-personalizar"
+                    class="btn-abrir-modal 
+                    mt-3 px-4 py-1 bg-black text-white transition duration-700 hover:scale-105 hover:bg-amber-300 hover:text-black">
                     <span>Adicionar</span>
                 </button>
-            </div>
-
-            <!--Pop-up de confirmação para os dados adicionados-->
-            <div id="popup-personalizar" tabindex="-1"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                    <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-                        <button type="button"
-                            class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-hide="popup-personalizar">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Fechar pop-up</span>
-                        </button>
-                        <div class="p-4 md:p-5 text-center">
-                            <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Você concordo com
-                                nossos termos e políticas para o uso dos seus dados para a nossa pesquisa?</h3>
-
-                            <!--Botão de confirmação-->
-                            <button data-modal-hide="popup-modal" type="button"
-                                class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
-                                Sim, concordo
-                            </button>
-
-                            <!--Botão de cancelamento-->
-                            <button data-modal-hide="popup-modal" type="button"
-                                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                                Não concordo</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </form>
     </div>
@@ -406,67 +298,49 @@ require('header.php');
 <!-- Fim personalizar dados do usuário -->
 
 
-
 <!-- Excluir conta do usuário -->
-<section id="excluirConta" class="hidden">
-    <div class="flex justify-center items-center mt-10">
-        <form method="POST" action="../controller/controller_excluir.php" class="group">
+<section id="excluirConta" class="flex justify-center mt-10">
+    <form method="POST" action="../controller/controller_excluir.php" id="form-excluir" class="group">
 
-            <!--Botão de excluir a conta-->
-            <button type="button" name="" value="" data-modal-target="popup-excluir" data-modal-toggle="popup-excluir">
-                <img src="../imgs/icones/excluir.png" alt="sair da conta"
-                    class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
-                <img src="../imgs/icones/excluirHover.png" alt="sair da conta"
-                    class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-            </button>
+        <button type="button" data-modal-text="Você tem certeza que deseja excluir a conta?"
+            data-form-target="#form-excluir" class="btn-abrir-modal">
 
-            <div class="ml-20 mt-3">
-                <h2 class="text-2xl group-hover:text-black">Excluir conta</h2>
-            </div>
+            <img src="../imgs/icones/excluir.png" alt="sair da conta"
+                class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
+            <img src="../imgs/icones/excluirHover.png" alt="sair da conta"
+                class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
 
-            <!--Pop-up de confirmação para excluir conta-->
-            <div id="popup-excluir" tabindex="-1"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                    <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-                        <button type="button"
-                            class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-hide="popup-excluir">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Fechar pop-up</span>
-                        </button>
-                        <div class="p-4 md:p-5 text-center">
-                            <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Você deseja excluir
-                                sua conta?</h3>
+        </button>
 
-                            <!--Botão de confirmação-->
-                            <button data-modal-hide="popup-modal" type="button"
-                                class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
-                                Sim
-                            </button>
-
-                            <!--Botão de cancelamento-->
-                            <button data-modal-hide="popup-modal" type="button"
-                                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                                Não</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+        <div class="ml-20 mt-3">
+            <h2 class="text-2xl group-hover:text-black">Excluir conta</h2>
+        </div>
+    </form>
 </section>
 <!-- Fim excluir conta do usuário -->
 
+
+
+<!--Pop-up generico-->
+<div id="modal-confirmacao-generico" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+    <div
+        class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+        <h1 id="modal-text" class="text-3xl"></h1>
+
+        <div class="flex justify-center gap-5 mt-5">
+            <button type="button"
+                class="btn-confirmar 
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Sim
+            </button>
+            <button type="button"
+                class="btn-cancelar
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Não
+            </button>
+        </div>
+    </div>
+</div>
 
 <!-- Chamar animação de navegação em navegacao.js -->
 <script>
