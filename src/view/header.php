@@ -17,6 +17,8 @@
     <!--Animação das letras no index-->
     <script src="../js/animacaoLetra.js" defer></script>
 
+    <script src="../js/modals.js" defer></script>
+
     <title>EmojiMoji</title>
 </head>
 
