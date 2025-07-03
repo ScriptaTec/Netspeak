@@ -15,8 +15,9 @@
     <!--Animação do input no login e cadastro-->
     <script src="../js/animacao.js" defer></script>
     <!--Animação das letras no index-->
-    <script src="../js/animacaoLetra.js" defer></script>
-
+    <script src="js/animacaoLetra.js" ></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!--Modals do site-->
     <script src="../js/modals.js" defer></script>
 
     <title>EmojiMoji</title>
