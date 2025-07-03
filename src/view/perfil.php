@@ -14,24 +14,24 @@ require('header.php');
 ?>
 
 <div class="bg-stone-100 py-1">
-
     <!--Cabeçalho-->
-    <header>
-        <div class="w-30 mt-2 absolute top-0 left-5 transition duration-500 hover:scale-105">
-            <a href="" class=""><img src="../imgs/logo.png" alt=""></a>
+    <header class="flex justify-between m-3">
+        <div class="w-20">
+            <a href="tradutor.php">
+                <img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
 
-        <div class="absolute top-0 right-0 m-5 gap-2 flex">
+        <div class="flex items-center gap-2">
             <a href="tradutor.php"
-                class="mt-1 text-2xl text-black transition duration-500 hover:text-yellow-300 inline-block">Home</a>
+                class="text-2xl text-black transition duration-500 hover:text-amber-300 inline-block">Home</a>
 
             <!--Ícone de sair da conta-->
-            <form method="POST" action="../controller/controller_logout.php" id="form-sair"
-                class="-mt-7 mr-5 flex justify-center group">
+            <form method="POST" action="../controller/controller_logout.php" id="form-sair">
 
                 <!--Botão de sair da conta-->
                 <button type="button" data-modal-text="Você tem certeza que deseja sair da conta?"
-                    data-form-target="#form-sair" class="btn-abrir-modal">
+                    data-form-target="#form-sair" class="btn-abrir-modal relative w-8 group flex items-center">
+
                     <img src="../imgs/icones/exit.png" alt="sair da conta"
                         class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
                     <img src="../imgs/icones/exitHover.png" alt="sair da conta"
@@ -41,7 +41,7 @@ require('header.php');
         </div>
     </header>
 
-    <div class="flex justify-center items-center gap-5 m-10">
+    <div class="flex justify-center items-center gap-5">
 
         <!--Mudar foto de perfil do usuário-->
         <div class="relative z-10">
@@ -277,9 +277,9 @@ require('header.php');
                     <input type="radio" name="dificuldade_tecnologia" value="3" <?= $dificuldade === '3' ? 'checked' : '' ?>
                         class="appearance-none mt-4 w-4 h-4 border-2 border-gray-400 rounded-full checked:border-amber-300 checked:bg-amber-300">
                     <label for="baixa" class="-ml-3 mt-3">Baixa</label>
-                
-                 <!--Campo para que funcione a requisição-->
-                 <input type="hidden" name="editar_personalizacao" value="editar">
+
+                    <!--Campo para que funcione a requisição-->
+                    <input type="hidden" name="editar_personalizacao" value="editar">
                 </div>
             </div>
 
@@ -349,7 +349,6 @@ require('header.php');
         navegacaoPerfil();
     });
 </script>
-
 
 <!--Rodapé-->
 <?php

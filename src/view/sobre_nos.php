@@ -5,11 +5,15 @@ require('header.php');
 
 <div class="bg-[url(../imgs/sobreNos.png)] h-screen bg-cover bg-center">
     <!--Cabeçalho-->
-    <header>
-        <div class="flex gap-2 absolute top-0 right-0 m-5">
+    <header class="flex justify-between p-3">
+        <div class="w-20">
+            <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
+        </div>
+
+        <div class="flex gap-2">
             <!--Ir para home caso não estiver logado e index caso estiver-->
             <a href="tradutor.php"
-                class="text-2xl text-white transition duration-500 hover:text-yellow-300 inline-block">Home</a>
+                class="text-2xl text-white transition duration-500 hover:text-amber-300 inline-block">Home</a>
 
             <!--Ícone de entrar na conta-->
             <a href="perfil.php">
@@ -250,9 +254,9 @@ require('header.php');
             navegacaoSobreNos();
         });
     </script>
-
-    <!--Rodapé-->
-    <?php
-    require('footer.php');
-    ?>
 </div>
+
+<!--Rodapé-->
+<?php
+require('footer.php');
+?>

@@ -20,13 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     formParaEnviar = document.querySelector(formSelector);
 
-    if (!formParaEnviar) {
-      console.error(
-        `Formulário com seletor "${formSelector}" não foi encontrado.`
-      );
-      return;
-    }
-
     // Atualiza o conteúdo do modal
     modalText.textContent = text;
 
