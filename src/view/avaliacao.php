@@ -25,15 +25,13 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="text-center">
-        <div class="text-8xl text-[#F8FBA6]"
+        <div class="text-center text-8xl text-[#F8FBA6]"
             style="text-shadow: -5px 5px 0px #413E45; -webkit-text-stroke: 2px black; -moz-text-stroke: 2px black; text-stroke: 2px black;">
-            <h1>Qual sua experiência</h1>
-            <h1 class="-mt-6">com a ferramenta?</h1>
+            <h1 class="lg:text-left lg:ml-20">Qual sua experiência</h1>
+            <h1 class="-mt-6 lg:text-left lg:ml-20">com a ferramenta?</h1>
         </div>
-    </div>
 
-    <div class="flex justify-center items-center flex-col gap-14 mt-5 lg:flex-row">
+    <div class="flex justify-center items-center flex-col gap-14 mt-5 lg:flex-row lg:justify-end lg:fixed lg:ml-40">
 
         <!--Card de avalião ruim-->
         <div class="flex flex-col justify-center bg-[#9E8CBE] rounded-4xl w-62 px-5 py-4 relative group"
