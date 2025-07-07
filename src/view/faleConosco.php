@@ -31,29 +31,37 @@ require('header.php');
         <h1 class="-mt-6 lg:text-left lg:ml-20">mensagem...</h1>
     </div>
 
-    <form action="" class="ml-20 mt-10">
-        <div class="flex-col w-3xl py-3 px-10 rounded-4xl rounded-br-none border-2 border-[#746587]"
+    <!--Formulário do feedback-->
+    <form action="" class="mt-10 m-2 lg:ml-20">
+        <div class="flex-col lg:w-3xl py-3 px-10 rounded-4xl rounded-br-none border-2 border-[#746587]"
             style="box-shadow: 5px 14px 0px #746587">
-            <div class="flex gap-10">
+            <div class="flex-col lg:flex lg:flex-row gap-11">
                 <div class="flex flex-col">
                     <label for="email" class="text-[#413E45] text-xl">Email</label>
-                    <input type="text" placeholder="@gmail.com"
-                        class="bg-[#beaddb] border-none w-68 px-4 focus:outline-none ">
+                    <input type="email" placeholder="@gmail.com"
+                        class="bg-[#beaddb] px-4 border-none outline-none focus:outline-none focus:ring-0 hover:border-none lg:w-78">
                 </div>
 
                 <div class="flex flex-col">
-                    <label for="email" class="text-[#413E45] text-xl">Motivo do contato</label>
-                    <input type="text" placeholder="..." class="bg-[#beaddb] border-none w-68 px-4 focus:outline-none ">
+                    <label for="motivo" class="mt-5 text-[#413E45] text-xl lg:mt-0">Motivo do contato</label>
+                    <input type="text" placeholder="..."
+                        class="bg-[#beaddb] px-4 border-none outline-none focus:outline-none focus:ring-0 hover:border-none lg:w-78">
                 </div>
             </div>
 
             <div class="mt-5 flex flex-col">
-            <label for="email" class="text-[#413E45] text-xl">Relato</label>
+                <label for="relato" class="text-[#413E45] text-xl">Relato</label>
                 <textarea name="" id="" placeholder="..."
-                    class="bg-[#beaddb] border-none w-xl px-4 focus:outline-none "></textarea>
+                    class="resize-none bg-[#beaddb] px-4 h-74 outline-none border-none focus:outline-none focus:ring-0 hover:border-none lg:h-28 lg:w-2xl"></textarea>
             </div>
 
-            <div class="mt-10"><input type="submit" value="Enviar feedback" class="bg-[#746587] text-lg px-2 py-1 rounded-xl text-white hover:bg-black transition duration-600 ease-in-out"></div>
+            <!--Enviar o feedback-->
+            <div class="mt-5">
+                <button type="button"
+                    class="bg-[#746587] text-lg px-2 py-1 rounded-xl text-white hover:bg-black transition duration-600 ease-in-out">
+                    <span>Enviar feedback</span>
+                </button>
+            </div>
         </div>
     </form>
 </div>
