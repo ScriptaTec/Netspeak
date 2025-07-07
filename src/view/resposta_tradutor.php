@@ -17,8 +17,6 @@ require('header.php');
 
 <div class="bg-[url(../imgs/Tradutor.png)] h-screen bg-cover bg-center">
 
-    <form method="post" action="resposta_tradutor.php">
-
         <!--Cabeçalho-->
         <header class="flex justify-between p-3">
         <div class="w-20">
@@ -38,6 +36,8 @@ require('header.php');
             <!--Importar o menu de navegação rápida-->
             <?php include 'menu.php'; ?>
         </header>
+
+        <form method="post" action="resposta_tradutor.php">
 
         <!--Card onde será mostrada as traduções-->
         <div class=" mx-48 pt-12 pb-14 px-12 rounded-3xl border-2 border-white bg-[#9E8CBE] relative"
@@ -75,7 +75,6 @@ require('header.php');
                 style="box-shadow: 0px 8px 0px #AE99D2">
 
                 <!--Formulário para enviar para o resposta_tradutor-->
-                <form method="post" action="resposta_tradutor.php">
 
                     <img src="../imgs/icones/emojiBranco.png" alt="emoji" class="w-8">
 
@@ -99,7 +98,6 @@ require('header.php');
                         <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>
 
-                </form>
             </div>
         </div>
 
