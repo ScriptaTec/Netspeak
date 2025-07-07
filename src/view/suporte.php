@@ -35,7 +35,8 @@ require('header.php');
     <div class="flex flex-col mt-10 lg:flex-row lg:gap-20 lg:ml-20">
 
         <!--Card que redireciona para a página fale conosco-->
-        <a href="faleConosco.php" class="flex flex-col items-center text-center transition-all duration-500 hover:scale-105 ease-in-out">
+        <a href="faleConosco.php"
+            class="flex flex-col items-center text-center transition-all duration-500 hover:scale-105 ease-in-out">
             <img src="../imgs/icones/faleConosco.png" alt="Icone fale conosco" class="z-30 w-30">
 
             <div class="w-60 py-5 -mt-10 rounded-3xl border-2 border-[#746587] bg-[#F8FBA6]"
@@ -48,7 +49,8 @@ require('header.php');
         </a>
 
         <!--Card que redireciona para a página de avaliação-->
-        <a href="avaliacao.php" class="flex flex-col items-center mt-10 text-center transition-all duration-500 hover:scale-105 ease-in-out lg:mt-0">
+        <a href="avaliacao.php"
+            class="flex flex-col items-center mt-10 text-center transition-all duration-500 hover:scale-105 ease-in-out lg:mt-0">
             <img src="../imgs/icones/avaliacao.png" alt="Icone de avaliação" class="z-30 w-30">
 
             <div class="w-60 py-5 -mt-10 rounded-3xl border-2 border-[#746587] bg-[#F8FBA6]"
@@ -58,11 +60,11 @@ require('header.php');
                     <h3 class="-mt-2">ferramenta</h3>
                 </div>
             </div>
-
         </a>
 
         <!--Card que redireciona para a página de tutoriais-->
-        <a href="tutoriais.php" class="flex flex-col items-center mt-10 text-center transition-all duration-500 hover:scale-105 ease-in-out lg:mt-0">
+        <a href="tutoriais.php"
+            class="flex flex-col items-center mt-10 text-center transition-all duration-500 hover:scale-105 ease-in-out lg:mt-0">
             <img src="../imgs/icones/tutorial.png" alt="Icone de tutorial" class="z-30 w-30">
 
             <div class="w-60 py-5 -mt-10 rounded-3xl border-2 border-[#746587] bg-[#F8FBA6]"
