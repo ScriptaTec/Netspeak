@@ -48,15 +48,15 @@ require('header.php');
                 class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;"><br>
 
-            <input type="password" name="senha_atual" required placeholder="Senha antiga..."
+            <input type="password" name="senha" required placeholder="Senha antiga..."
                 class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;"><br>
 
-            <input type="password" name="nova_senha" required placeholder="Senha nova..."
+            <input type="password" name="novaSenha" required placeholder="Senha nova..."
                 class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;"><br>
 
-            <input type="password" name="confirmar_senha" required placeholder="Confirmar senha nova..."
+            <input type="password" name="confirmSenha" required placeholder="Confirmar senha nova..."
                 class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;"><br>
         </div>
