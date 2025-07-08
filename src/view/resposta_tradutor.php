@@ -17,8 +17,6 @@ require('header.php');
 
 <div class="bg-[url(../imgs/Tradutor.png)] h-screen bg-cover bg-center">
 
-    <form method="post" action="resposta_tradutor.php">
-
         <!--Cabeçalho-->
         <header class="flex justify-between p-3">
             <div class="w-20">
@@ -38,6 +36,8 @@ require('header.php');
             <!--Importar o menu de navegação rápida-->
             <?php include 'menu.php'; ?>
         </header>
+
+        <form method="post" action="resposta_tradutor.php">
 
         <!--Card onde será mostrada as traduções-->
         <div class=" mx-48 pt-12 pb-14 px-12 rounded-3xl border-2 border-white bg-[#9E8CBE] relative"
@@ -76,11 +76,8 @@ require('header.php');
 
 
                 <!--Formulário para enviar para o resposta_tradutor-->
-                <form method="post" action="resposta_tradutor.php" class="flex items-center gap-3">
-
 
                     <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
-
 
                     <!--Input para enviar a frase-->
                     <input type="text" name="frase" required placeholder="Aqui..."
@@ -104,7 +101,6 @@ require('header.php');
                         Clique para enviar a frase que será traduzida
                         <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>
-                </form>
             </div>
         </div>
     </form>
