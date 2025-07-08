@@ -69,13 +69,10 @@ require('header.php');
         </div>
 
 
-        <!--Card para enviar a frase-->
+        <!--Card para enviar a frase para o resposta_tradutor-->
         <div class="flex justify-center">
-            <div class="mt-7 py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
+            <div class="flex items-center gap-3 mt-7 py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
                 style="box-shadow: 0px 8px 0px #AE99D2">
-
-
-                <!--Formulário para enviar para o resposta_tradutor-->
 
                     <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
 
