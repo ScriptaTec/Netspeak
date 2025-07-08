@@ -19,12 +19,12 @@ require('header.php');
 
         <!--Cabeçalho-->
         <header class="flex justify-between p-3">
-        <div class="w-20">
-            <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
-        </div>
+            <div class="w-20">
+                <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
+            </div>
 
-            <button type="button" data-drawer-target="drawer-navigation"
-                data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+            <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                aria-controls="drawer-navigation">
                 <div class="relative w-8 h-8 group">
                     <img src="../imgs/icones/menuRoxo.png" alt="ícone perfil"
                         class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
@@ -71,25 +71,29 @@ require('header.php');
 
         <!--Card para enviar a frase-->
         <div class="flex justify-center">
-            <div class="flex items-center gap-3 mt-7 py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
+            <div class="mt-7 py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
                 style="box-shadow: 0px 8px 0px #AE99D2">
+
 
                 <!--Formulário para enviar para o resposta_tradutor-->
 
-                    <img src="../imgs/icones/emojiBranco.png" alt="emoji" class="w-8">
+                    <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
 
                     <!--Input para enviar a frase-->
                     <input type="text" name="frase" required placeholder="Aqui..."
                         class="w-120 py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700">
+
 
                     <!--Botão para enviar a frase-->
                     <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default">
                         <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
                             class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
 
+
                         <img src="../imgs/icones/enviarHover.png" alt="Ícone de enviar frase para ser traduzida"
                             class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </button>
+
 
                     <!--Descrição do que o botão de enviar fará-->
                     <div id="tooltip-default" role="tooltip"
@@ -97,10 +101,8 @@ require('header.php');
                         Clique para enviar a frase que será traduzida
                         <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>
-
             </div>
         </div>
-
     </form>
 </div>
 

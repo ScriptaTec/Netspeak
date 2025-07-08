@@ -49,7 +49,7 @@
                   <span class="ms-1">Sair da conta</span>
                </button>
 
-               <!--Pop-up generico-->
+               <!--Pop-up de sair da conta-->
                <div id="modal-confirmacao-generico"
                   class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
                   <div
