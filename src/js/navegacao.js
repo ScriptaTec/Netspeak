@@ -1,10 +1,11 @@
-//Necessário para a página de perfil
+//Necessário para a página de perfil e suporte em avaliacao.php
 function navegacaoPerfil() {
   const botoes = [
     document.getElementById("btn-favoritos"),
     document.getElementById("btn-alterarDados"),
     document.getElementById("btn-personalizar"),
     document.getElementById("btn-excluirConta"),
+    document.getElementById("btn-justificativa"),
   ];
 
   botoes.forEach((botao) => {
