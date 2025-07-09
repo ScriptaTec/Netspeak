@@ -11,6 +11,7 @@ CREATE TABLE `usuarios` (
     `senha` varchar(255) NOT NULL,
     `email` varchar(255) NOT NULL,
     `email_secundario` varchar(100) DEFAULT NULL,
+    `foto_perfil` varchar(255) DEFAULT 'perfil1.png', 
     PRIMARY KEY (`id`),
     UNIQUE KEY `email` (`email`),
     UNIQUE KEY `unique_email_secundario` (`email_secundario`)
@@ -18,6 +19,6 @@ CREATE TABLE `usuarios` (
 
 
 INSERT INTO usuarios (id, nome, senha, email, data_nascimento) VALUES (1, 'Felipe Caue Machado', '$2y$10$Wn1S5fSAEKnPztsjkLNS3.f7tHJ/yYeckta1ZoMdTWogNkkmAALki', 'fmachad6@gmail.com', '1998-08-15');
-INSERT INTO usuarios (id, nome, senha, email, data_nascimento) VALUES (2, 'Bianca Jussara Wolf', '$2y$10$Wn1S5fSAEKnPztsjkLNS3.f7tHJ/yYeckta1ZoMdTWogNkkmAALki', 'bibi@gmail.com', '2008-06-01');
+INSERT INTO usuarios (id, nome, senha, email, data_nascimento) VALUES (2, 'Bianca Jussara Wolff', '$2y$10$Wn1S5fSAEKnPztsjkLNS3.f7tHJ/yYeckta1ZoMdTWogNkkmAALki', 'bibi@gmail.com', '2008-06-01');
 
 
