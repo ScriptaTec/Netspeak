@@ -1,3 +1,4 @@
+
 <!--Cabeçalho-->
 <?php
 require('header.php');
@@ -14,9 +15,9 @@ require('header.php');
         <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
             aria-controls="drawer-navigation">
             <div class="relative w-8 h-8 group">
-                <img src="../imgs/icones/menuAmarelo.png" alt="ícone de menu"
+                <img src="../imgs/icones/menu.png" alt="ícone de menu"
                     class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 duration-600">
-                <img src="../imgs/icones/menu.png" alt="ícone de menu hover"
+                <img src="../imgs/icones/menuAmarelo.png" alt="ícone de menu hover"
                     class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 duration-600">
             </div>
         </button>
@@ -35,7 +36,7 @@ require('header.php');
     <div class="flex flex-col mt-10 lg:flex-row lg:gap-20 lg:ml-20">
 
         <!--Card que redireciona para a página fale conosco-->
-        <a href="faleConosco.php"
+        <a href="fale_conosco.php"
             class="flex flex-col items-center text-center transition-all duration-500 hover:scale-105 ease-in-out">
             <img src="../imgs/icones/faleConosco.png" alt="Icone fale conosco" class="z-30 w-30">
 

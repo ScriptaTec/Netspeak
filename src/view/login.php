@@ -55,14 +55,13 @@ require('header.php');
                 style="box-shadow: 2px 2px 1px;">
 
             <button type="button" onclick="changePwdView()" class="absolute right-0 px-3 text-gray-500">
-                <img id="ocultar" class="" src="../imgs/icones/ocultar.png" alt="Ocultar senha" title="Ocultar senha">
-                <img id="mostrar" class="hidden" src="../imgs/icones/mostrar.png" alt="Mostrar senha"
-                    title="Mostrar senha">
+                <img id="ocultar" class="" src="../imgs/icones/ocultar.png" alt="Ocultar senha">
+                <img id="mostrar" class="hidden" src="../imgs/icones/mostrar.png" alt="Mostrar senha">
             </button>
         </div>
 
         <div class="text-right mt-1">
-            <a href="cadastro.php" class="text-gray-500 hover:text-black transition duration-500">Esqueceu a senha?</a>
+            <a href="redefinir_senha.php" class="text-gray-500 hover:text-black transition duration-500">Esqueceu a senha?</a>
         </div>
 
         <button type="submit" style="cursor: pointer;"
