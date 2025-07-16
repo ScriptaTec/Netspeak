@@ -22,43 +22,65 @@ require('header.php');
 <div class="absolute right-110 bottom-56 text-5xl">😊</div>
 <div class="absolute right-90 bottom-30 text-8xl">😉</div>
 
-<header>
-    <div class="w-30 mt-2 absolute left-5 transition duration-500 hover:scale-105">
+<header class="flex justify-between m-3">
+    <div class="w-20">
         <a href="../index.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
     </div>
 
-    <div class="flex mt-5 gap-4 absolute right-5 text-xl">
-        <a href="tradutor.php" class="transition duration-500 hover:scale-105">Home</a>
-        <a href="perfil.php"><img src="../imgs/icones/perfil.png" alt="ícone de perfil do usuário"
-                class="-mt-1 transition duration-500 hover:scale-105"></a>
-    </div>
+    <a href="../index.php" class="text-2xl transition duration-500 hover:text-amber-300">Home</a>
 </header>
 
-<main class="text-center flex items-center justify-center mt-20 text-gray-600">
+<div class="flex justify-center items-center">
+    <form method="POST" action="../controller/controller_redefinir.php" id="form" class="flex flex-col">
 
-    <form method="POST" action="../controller/controller_redefinir.php" id="form">
-
-        <div class="text-8xl text-black">
+        <div class="text-7xl text-center lg:text-8xl">
             <h1>Esqueceu</h1>
             <h1 class="-mt-3">a senha?</h1>
         </div>
 
-        <div class="mt-2">
-            <input type="email" name="email" required placeholder="Email..."
-                class="w-68 p-2 mt-3 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
-                style="box-shadow: 2px 2px 1px;"><br>
+        <label for="email" class="text-xl mt-3 ml-4">Email</label>
+        <input type="email" name="email" required placeholder="Email..."
+            class="w-full -mt-1 text-xl py-1.5 px-4  border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
+            style="box-shadow: 2px 2px 1px;">
 
-            <input type="password" name="senha" required placeholder="Senha antiga..."
-                class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
-                style="box-shadow: 2px 2px 1px;"><br>
+        <label for="senha" class="text-xl mt-3 ml-4">Senha antiga</label>
 
-            <input type="password" name="novaSenha" required placeholder="Senha nova..."
-                class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
-                style="box-shadow: 2px 2px 1px;"><br>
+        <div class="relative flex items-center">
+            <input type="password" name="senha" required placeholder="Senha antiga..." id="senhaAntiga"
+                class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
+                style="box-shadow: 2px 2px 1px;">
 
+            <button type="button" onclick="acaoBotao('senhaAntiga', this)" class="absolute right-0 px-3 text-gray-500">
+                <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
+                <img class="mostrar hidden" src="../imgs/icones/mostrar.png" alt="Mostrar senha">
+            </button>
+        </div>
+
+        <label for="senha" class="text-xl mt-3 ml-4">Nova senha</label>
+
+        <div class="relative flex items-center">
+            <input type="password" name="novaSenha" required placeholder="Nova senha..." id="senhaNova"
+                class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
+                style="box-shadow: 2px 2px 1px;">
+
+            <button type="button" onclick="acaoBotao('senhaNova', this)" class="absolute right-0 px-3 text-gray-500">
+                <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
+                <img class="mostrar hidden" src="../imgs/icones/mostrar.png" alt="Mostrar senha">
+            </button>
+        </div>
+
+        <label for="senha" class="text-xl mt-3 ml-4">Confirmar senha</label>
+
+        <div class="relative flex items-center">
             <input type="password" name="confirmSenha" required placeholder="Confirmar senha nova..."
-                class="w-68 p-2 mt-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:scale-105 hover:border-black focus:outline-none"
-                style="box-shadow: 2px 2px 1px;"><br>
+                id="confirmarSenha"
+                class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
+                style="box-shadow: 2px 2px 1px;">
+
+            <button type="button" onclick="acaoBotao('confirmarSenha', this)" class="absolute right-0 px-3 text-gray-500">
+                <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
+                <img class="mostrar hidden" src="../imgs/icones/mostrar.png" alt="Mostrar senha">
+            </button>
         </div>
 
         <button type="submit" style="cursor: pointer;"
@@ -67,13 +89,8 @@ require('header.php');
                 style="width: 0%; background-color: #ffac33"></div>
             <span class="relative text-white">Redefinir</span>
         </button>
-
-        <div class="text-right mt-1 mr-7">
-            <a href="suporte.php" class="hover:text-black transition duration-500">Algo deu errado?</a>
-        </div>
-
     </form>
-</main>
+</div>
 
 <?php
 require('footer.php');

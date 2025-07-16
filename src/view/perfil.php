@@ -15,30 +15,23 @@ require('header.php');
 
 <div class="bg-stone-100 py-1">
     <!--Cabeçalho-->
-    <header class="flex justify-between m-3">
+    <header class="flex justify-between p-3">
         <div class="w-20">
-            <a href="tradutor.php">
-                <img src="../imgs/logo.png" alt="Logo do site"></a>
+            <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
 
-        <div class="flex items-center gap-2">
-            <a href="tradutor.php"
-                class="text-2xl text-black transition duration-500 hover:text-amber-300 inline-block">Home</a>
+        <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+            aria-controls="drawer-navigation">
+            <div class="relative w-8 h-8 group">
+                <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
+                    class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
+                <img src="../imgs/icones/menuAmarelo.png" alt="ícone menu hover"
+                    class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+            </div>
+        </button>
 
-            <!--Ícone de sair da conta-->
-            <form method="POST" action="../controller/controller_logout.php" id="form-sair">
-
-                <!--Botão de sair da conta-->
-                <button type="button" data-modal-text="Você tem certeza que deseja sair da conta?"
-                    data-form-target="#form-sair" class="btn-abrir-modal relative w-8 group flex items-center">
-
-                    <img src="../imgs/icones/exit.png" alt="sair da conta"
-                        class="absolute opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
-                    <img src="../imgs/icones/exitHover.png" alt="sair da conta"
-                        class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                </button>
-            </form>
-        </div>
+        <!--Importar o menu de navegação rápida-->
+        <?php include 'menu.php'; ?>
     </header>
 
     <div class="flex justify-center items-center gap-5">

@@ -3,28 +3,25 @@
 require('header.php');
 ?>
 
-<div class="bg-[url(../imgs/sobreNos.png)] h-screen bg-cover bg-center">
-    <!--Cabeçalho-->
-    <header class="flex justify-between p-3">
+<div class="lg:bg-[url(../imgs/sobreNos.png)] h-screen bg-cover bg-center">
+   <!--Cabeçalho-->
+   <header class="flex justify-between p-3">
         <div class="w-20">
             <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
 
-        <div class="flex gap-2">
-            <!--Ir para home caso não estiver logado e index caso estiver-->
-            <a href="tradutor.php"
-                class="text-2xl text-white transition duration-500 hover:text-amber-300 inline-block">Home</a>
+        <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+            aria-controls="drawer-navigation">
+            <div class="relative w-8 h-8 group">
+                <img src="../imgs/icones/menu.png" alt="ícone menu"
+                    class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
+                <img src="../imgs/icones/menuAmarelo.png" alt="ícone menu hover"
+                    class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+            </div>
+        </button>
 
-            <!--Ícone de entrar na conta-->
-            <a href="perfil.php">
-                <div class="relative w-8 h-8 group">
-                    <img src="../imgs/icones/perfilBranco.png" alt="ícone perfil"
-                        class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
-                    <img src="../imgs/icones/perfilHover.png" alt="ícone perfil hover"
-                        class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
-                </div>
-            </a>
-        </div>
+        <!--Importar o menu de navegação rápida-->
+        <?php include 'menu.php'; ?>
     </header>
 
     <div class="pt-24 pl-20 text-left text-9xl">

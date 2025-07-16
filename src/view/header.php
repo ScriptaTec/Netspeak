@@ -19,6 +19,8 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <!--Modals do site-->
     <script src="../js/modals.js" defer></script>
+    <!--Mostrar senha nos inputs-->
+    <script src="../js/inputs.js"></script>
 
     <title>EmojiMoji</title>
 </head>

@@ -82,7 +82,9 @@
                 <div class="flex flex-col">
                     <h3 class="text-xl"><b>Usuário</b></h3>
                     <a href="view/cadastro.php" class="hover:text-[color:#f5bd20] transition duration-700">Cadastro</a>
+                    
                     <a href="view/login.php" class="hover:text-[color:#f5bd20] transition duration-700">Login</a>
+                    
                     <a href="view/perfil.php" class="hover:text-[color:#f5bd20] transition duration-700">Perfil</a>
                 </div>
 
@@ -91,14 +93,14 @@
                         <b>Ferramentas</b>
                     </h3>
                     <a href="view/tradutor.php" class="hover:text-[color:#f5bd20] transition duration-700">Tradutor</a>
-                    <a href="" class="hover:text-[color:#f5bd20] transition duration-700">Lista de emojis</a>
                 </div>
 
                 <div class="flex flex-col">
                     <h3 class="text-xl"><b>Fale conosco</b></h3>
+                    <a href="view/sobre_nos.php" class="hover:text-[color:#f5bd20] transition duration-700">Sobre nós</a>
+                    
                     <a href="view/suporte.php" class="hover:text-[color:#f5bd20] transition duration-700">Suporte</a>
-                    <a href="view/suporte.php" class="hover:text-[color:#f5bd20] transition duration-700">Perguntas
-                        frequentes</a>
+                    
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=scripta.tech@gmail.com"
                         class="hover:text-[color:#f5bd20] transition duration-700">scripta.tech@gmail.com</a>
                 </div>
