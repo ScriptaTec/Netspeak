@@ -82,26 +82,26 @@ require('header.php');
         <label for="senha" class="text-xl mt-3 ml-4">Senha</label>
 
         <div class="relative flex items-center">
-            <input type="password" name="senha" id="loginPwdChange" required placeholder="Senha..."
+            <input type="password" name="senha" id="senha" required placeholder="Senha..."
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;">
 
-            <button type="button" onclick="changePwdView()" class="absolute right-0 px-3 text-gray-500">
-                <img id="ocultar" class="" src="../imgs/icones/ocultar.png" alt="Ocultar senha">
-                <img id="mostrar" class="hidden " src="../imgs/icones/mostrar.png" alt="Mostrar senha">
+            <button type="button" onclick="acaoBotao('senha', this)" class="absolute right-0 px-3 text-gray-500">
+                <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
+                <img class="mostrar hidden " src="../imgs/icones/mostrar.png" alt="Mostrar senha">
             </button>
         </div>
 
         <label for="senha" class="text-xl mt-3 ml-4">Repetir senha</label>
 
         <div class="relative flex items-center">
-            <input type="password" name="confirmar_senha" id="confirmPwdChange" required placeholder="Repetir senha..."
+            <input type="password" name="confirmar_senha" id="confirmarSenha" required placeholder="Repetir senha..."
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;">
 
-            <button type="button" onclick="changePwdView()" class="absolute right-0 px-3 text-gray-500">
-                <img id="ocultar" class="" src="../imgs/icones/ocultar.png" alt="Ocultar senha">
-                <img id="mostrar" class="hidden " src="../imgs/icones/mostrar.png" alt="Mostrar senha">
+            <button type="button" onclick="acaoBotao('confirmarSenha', this)" class="absolute right-0 px-3 text-gray-500">
+                <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
+                <img class="mostrar hidden " src="../imgs/icones/mostrar.png" alt="Mostrar senha">
             </button>
         </div>
 

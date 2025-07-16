@@ -1,19 +1,24 @@
-let loginPwdStatus = false;
+function acaoBotao(inputId, buttonElement) {
+    //Pega id do input que esta sendo passado como parâmetro
+    const input = document.getElementById(inputId);
 
-function changePwdView() {
-  let getLoginInput = document.getElementById("loginPwdChange");
-  let btnMostrar = document.getElementById("mostrar");
-  let btnOcultar = document.getElementById("ocultar");
+    // Pegaros icones do botão
+    const iconOcultar = buttonElement.querySelector('.ocultar');
+    const iconMostrar = buttonElement.querySelector('.mostrar');
 
-  if (loginPwdStatus === false) {
-    getLoginInput.setAttribute("type", "text");
-    btnMostrar.classList.remove("hidden");
-    btnOcultar.classList.add("hidden");
-    loginPwdStatus = true;
-  } else {
-    getLoginInput.setAttribute("type", "password");
-    btnMostrar.classList.add("hidden");
-    btnOcultar.classList.remove("hidden");
-    loginPwdStatus = false;
-  }
+    // Verifica o tipo atual do input
+    if (input.type === 'password') {
+      //Torna a senha visivel
+      input.type = "text";
+
+      iconOcultar.classList.add("hidden"); //sai icone de senha ocultada
+      iconMostrar.classList.remove("hidden"); //entra icone de senha visivel
+    } else {
+      //Torna a senha oculta
+      input.type = "password";
+
+      iconOcultar.classList.remove("hidden"); //entra icone de senha ocultada
+      iconMostrar.classList.add("hidden"); //sai icone de senha visivel
+    }
 }
+
