@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 require('header.php');
 ?>
 
-<div class="lg:bg-[url(../imgs/fundoTradutor.png)] h-screen bg-cover bg-center">
+<div class="lg:bg-[url(../imgs/fundo.png)] h-screen bg-cover bg-center">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -37,18 +37,15 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="flex justify-center mt-20 -ml-10">
-        <div class="text-left text-8xl text-[#F8FBA6]"
-            style="text-shadow: -5px 5px 0px #413E45; -webkit-text-stroke: 2px black; -moz-text-stroke: 2px black; text-stroke: 2px black;">
-            <h1>Digite</h1>
-            <h1 class="-mt-6">uma frase no</h1>
-            <h1 class="-mt-6">campo abaixo</h1>
+    <div class="flex justify-center m-2">
+        <div class="text-center text-6xl lg:text-transparent">
+            <h1>Digite uma frase no campo abaixo</h1>
         </div>
     </div>
 
     <!--Tutorial para usar a ferramenta-->
     <div
-        class="-ml-98 -mt-3 text-center text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400">
+        class="mx-7 text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400 lg:ml-90 lg:mt-64">
         <a href="tutorial.php">Precisa de ajuda?</a>
     </div>
 
@@ -65,7 +62,7 @@ require('header.php');
 
                 <!--Input para enviar a frase-->
                 <input type="text" name="frase" required placeholder="Aqui..."
-                    class="w-120 py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700">
+                    class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
 
                 <!--Botão para enviar a frase-->
                 <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default">
