@@ -3,7 +3,7 @@
 require('header.php');
 ?>
 
-<main class=" lg:bg-[url(../imgs/sobreNos.png)] flex-grow bg-no-repeat">
+<main class="lg:bg-[url(../imgs/sobreNos.png)] bg-cover bg-no-repeat">
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
         <div class="w-20">
@@ -13,9 +13,9 @@ require('header.php');
         <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
             aria-controls="drawer-navigation">
             <div class="relative w-8 h-8 group">
-                <img src="../imgs/icones/menu.png" alt="ícone menu"
+                <img src="../imgs/icones/menuAmarelo.png" alt="ícone menu"
                     class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
-                <img src="../imgs/icones/menuAmarelo.png" alt="ícone menu hover"
+                <img src="../imgs/icones/menuRoxo.png" alt="ícone menu hover"
                     class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
             </div>
         </button>
@@ -58,7 +58,7 @@ require('header.php');
         </div>
 
         <!--Card sobre a bolsa-->
-        <div id="card-bolsa" class="p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-10"
+        <div id="card-bolsa" class="mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-10"
             style="box-shadow: 20px 10px 0px #75678E">
             <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">O desenvolvimento de um
                 interpretador para a linguagem da internet</h3>
@@ -235,7 +235,7 @@ require('header.php');
             </div>
         </div>
 
-        <div id="card-objetivo" class="hidden p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-10"
+        <div id="card-objetivo" class="hidden mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-10"
             style="box-shadow: 20px 10px 0px #75678E">
             <h3 class="text-4xl text-[#543A82] text-justify" style="text-shadow: 2px 2px 0px #babc7c">Qual o
                 nosso
@@ -249,7 +249,7 @@ require('header.php');
             </p>
         </div>
 
-        <div id="card-resultados" class="hidden p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-10"
+        <div id="card-resultados" class="hidden mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-10"
             style="box-shadow: 20px 10px 0px #75678E">
             <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">Como os resultados
                 da pesquisa
@@ -265,8 +265,21 @@ require('header.php');
             </p>
         </div>
     </div>
-
- <?php
-require('footer.php');
- ?>
 </main>
+
+<!--Rodapé-->
+<footer class="relative py-2 w-full">
+    <h6 class="text-sm text-center">&copy; 2025 Emojimoji. Todos os direitos reservados.</h6>
+
+    <div class="absolute right-3 bottom-1.5">
+        <a href="suporte.php">
+            <img src="../imgs/icones/suporte.png" alt="ícone de suporte">
+        </a>
+    </div>
+</footer>
+
+<!--Necessário para o funcionamento da biblioteca FlowBite-->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>

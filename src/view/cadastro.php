@@ -7,30 +7,7 @@ session_start();
 require('header.php');
 ?>
 
-<!--esquerda encima-->
-<div class="absolute left-114 top-30 text-2xl ">✨</div>
-<div class="absolute left-90 top-40 text-8xl ">✨</div>
-<div class="absolute left-84 top-70 text-4xl ">✨</div>
-
-
-<!--esquerda embaixo-->
-<div class="absolute bottom-50 left-72 text-8xl">😆</div>
-<div class="absolute left-70 bottom-36 text-5xl opacity-90">😂</div>
-<div class="absolute left-90 bottom-40 text-5xl">✨</div>
-<div class="absolute left-100 bottom-36 text-xl">✨</div>
-
-
-<!--direita encima-->
-<div class="absolute right-100 top-30 text-5xl">🙃</div>
-<div class="absolute right-70 top-40 text-9xl">😚</div>
-<div class="absolute right-64 top-60 text-5xl ">✌️</div>
-
-
-<!--direita no meio-->
-<div class="absolute bottom-50 right-86 text-2xl">✨</div>
-<div class="absolute bottom-30 right-86 text-7xl">✨</div>
-
-
+<div class="h-screen lg:bg-[url(../imgs/cadastro.png)]">
 <header class="flex justify-between m-3">
     <div class="w-20">
         <a href="../index.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
@@ -124,6 +101,7 @@ require('header.php');
                 conta?</a>
         </div>
     </form>
+</div>
 </div>
 
 <?php

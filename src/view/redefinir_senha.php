@@ -5,23 +5,7 @@
 require('header.php');
 ?>
 
-<!--esquerda encima-->
-<div class="absolute left-118
-    6 top-80 text-5xl ">🗝️</div>
-<div class="absolute left-94 top-60 text-8xl ">🧐</div>
-
-<!--esquerda embaixo-->
-<div class="absolute left-110 bottom-26 text-8xl ">✨</div>
-<div class="absolute left-130 bottom-22 text-2xl ">✨</div>
-
-<!--direira encima-->
-<div class="absolute right-100 top-30 text-8xl">✨</div>
-<div class="absolute right-120 top-50 text-3xl opacity-90">✨</div>
-
-<!--direita embaixo-->
-<div class="absolute right-110 bottom-56 text-5xl">😊</div>
-<div class="absolute right-90 bottom-30 text-8xl">😉</div>
-
+<div class="h-screen lg:bg-[url(../imgs/redefinir_senha.png)]">
 <header class="flex justify-between m-3">
     <div class="w-20">
         <a href="../index.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
@@ -90,6 +74,7 @@ require('header.php');
             <span class="relative text-white">Redefinir</span>
         </button>
     </form>
+</div>
 </div>
 
 <?php
