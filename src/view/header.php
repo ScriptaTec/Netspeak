@@ -11,7 +11,7 @@
     <!--Fontes das letras-->
     <link rel="stylesheet" href="../fonts/fonts.css">
     <!--Navegação do sobre nós-->
-    <script src="../js/navegacao.js" defer></script>
+    <script src="../js/sobre_nos.js" defer></script>
     <!--Animação do input no login e cadastro-->
     <script src="../js/animacao.js" defer></script>
     <!--Animação das letras no index-->
