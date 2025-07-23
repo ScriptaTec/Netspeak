@@ -26,22 +26,27 @@ const confirmarSair = modalSair.querySelector(".btn-confirmar");
 const cancelarSair = modalSair.querySelector(".btn-cancelar");
 const formSair = document.getElementById("form-sair");
 
+//Variaveis de mudar foto de perfil
+const modalFoto = document.getElementById("modal-foto");
+const confirmarFoto = modalFoto.querySelector(".btn-confirmar");
+const cancelarFoto = modalFoto.querySelector(".btn-cancelar");
+
 // Função para alternar a visibilidade dos formulários
 function mostrarEditar() {
-    editar.classList.add("text-black");
-    formEditar.classList.remove("hidden");
-  
-    adicionar.classList.remove("text-black");
-    formAdicionar.classList.add("hidden");
-  }
-  
-  function mostrarAdicionar() {
-    adicionar.classList.add("text-black");
-    formAdicionar.classList.remove("hidden");
-  
-    editar.classList.remove("text-black");
-    formEditar.classList.add("hidden");
-  }
+  editar.classList.add("text-black");
+  formEditar.classList.remove("hidden");
+
+  adicionar.classList.remove("text-black");
+  formAdicionar.classList.add("hidden");
+}
+
+function mostrarAdicionar() {
+  adicionar.classList.add("text-black");
+  formAdicionar.classList.remove("hidden");
+
+  editar.classList.remove("text-black");
+  formEditar.classList.add("hidden");
+}
 
 //Modal de adicionar dados
 function abrirModalAdicionar() {
@@ -54,7 +59,7 @@ function abrirModalAdicionar() {
     formAdicionar.submit(); // Envia o formulário de exclusão
   });
 
-  cancelar.addEventListener("click", (event) => {
+  cancelar.addEventListener("click", () => {
     modalAdiconar.classList.add("hidden"); // Esconde o modal
   });
 }
@@ -70,7 +75,7 @@ function abrirModalEditar() {
     formEditar.submit(); // Envia o formulário de edição
   });
 
-  cancelarEditar.addEventListener("click", (event) => {
+  cancelarEditar.addEventListener("click", () => {
     modalEditar.classList.add("hidden"); // Esconde o modal e não envia as alterações
   });
 }
@@ -86,7 +91,7 @@ function abrirModalExcluir() {
     formExcluir.submit(); // Envia o formulário de excluir conta
   });
 
-  cancelarExcluir.addEventListener("click", (event) => {
+  cancelarExcluir.addEventListener("click", () => {
     modalExcluir.classList.add("hidden"); // Esconde o modal e não exclui a conta
   });
 }
@@ -102,8 +107,23 @@ function abrirModalSair() {
     formSair.submit(); // Envia o formulário de sair da conta
   });
 
-  cancelarSair.addEventListener("click", (event) => {
+  cancelarSair.addEventListener("click", () => {
     modalSair.classList.add("hidden"); // Esconde o modal e não sai da conta
   });
 }
 
+//Modal de mudar foto de perfil
+function abrirModalFoto() {
+  //Mostrar o modal quando a pessoa clicar no botão de sair da conta
+  event.preventDefault();
+  modalFoto.classList.remove("hidden");
+
+  //Botões dentro do modal
+  confirmarFoto.addEventListener("click", () => {
+    modalFoto.classList.add("hidden");
+  });
+
+  cancelarFoto.addEventListener("click", () => {
+    modalFoto.classList.add("hidden"); // Esconde o modal e não sai da conta
+  });
+}
