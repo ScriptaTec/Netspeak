@@ -4,8 +4,8 @@ require('header.php');
 ?>
 
 <div class="lg:bg-[url(../imgs/sobreNos.png)] h-screen bg-cover bg-center">
-   <!--Cabeçalho-->
-   <header class="flex justify-between p-3">
+    <!--Cabeçalho-->
+    <header class="flex justify-between p-3">
         <div class="w-20">
             <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
@@ -31,25 +31,25 @@ require('header.php');
 
     <!--Opções de navegação-->
     <div class="flex gap-6 pl-20">
-        <button id="bolsa"
+        <button onclick="mostrarCardBolsa()"
             class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82]"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Sobre a bolsa
         </button>
 
-        <button id="bolsistas"
+        <button onclick="mostrarCardBolsistas()"
             class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82]"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Desenvolvedoras
         </button>
 
-        <button id="objetivo"
+        <button onclick="mostrarCardObjetivo()"
             class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82]"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Objetivo
         </button>
 
-        <button id="resultados"
+        <button onclick="mostrarCardResultados()"
             class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82]"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Resultados
@@ -57,7 +57,7 @@ require('header.php');
     </div>
 
     <!--Card sobre a bolsa-->
-    <div id="card_bolsa" class="hidden p-4 my-10 mx-20 rounded-2xl rounded-br-none bg-[#F8FBA6]"
+    <div id="card-bolsa" class="p-4 my-10 mx-20 rounded-2xl rounded-br-none bg-[#F8FBA6]"
         style="box-shadow: 20px 10px 0px #75678E">
         <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">O desenvolvimento de um
             interpretador para a linguagem da internet</h3>
@@ -72,7 +72,7 @@ require('header.php');
     </div>
 
     <!--Card sobre as bolsistas-->
-    <div id="card_bolsistas" class="hidden col gap-20">
+    <div id="card-bolsistas" class="hidden col gap-20">
 
         <!--Card Ana-->
         <div class="p-4 my-10 mx-32 rounded-2xl rounded-br-none bg-[#F8FBA6] transform transition-all duration-500 hover:scale-105"
@@ -218,7 +218,7 @@ require('header.php');
         </div>
     </div>
 
-    <div id="card_objetivo" class="hidden p-4 my-10 mx-20 rounded-2xl rounded-br-none bg-[#F8FBA6]"
+    <div id="card-objetivo" class="hidden p-4 my-10 mx-20 rounded-2xl rounded-br-none bg-[#F8FBA6]"
         style="box-shadow: 20px 10px 0px #75678E">
         <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">Qual o nosso obejtivo?</h3>
 
@@ -229,7 +229,7 @@ require('header.php');
         </p>
     </div>
 
-    <div id="card_resultados" class="hidden p-4 my-10 mx-20 rounded-2xl rounded-br-none bg-[#F8FBA6]"
+    <div id="card-resultados" class="hidden p-4 my-10 mx-20 rounded-2xl rounded-br-none bg-[#F8FBA6]"
         style="box-shadow: 20px 10px 0px #75678E">
         <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">Como os resultados da pesquisa
             são coletados?</h3>
@@ -243,14 +243,6 @@ require('header.php');
             da internet.
         </p>
     </div>
-
-    <!-- Chamar animação de navegação em navegacao.js -->
-    <script>
-        //Necessário para executar a animação apenas quando a página já tiver caarregado 100%
-        document.addEventListener("DOMContentLoaded", function () {
-            navegacaoSobreNos();
-        });
-    </script>
 </div>
 
 <!--Rodapé-->
