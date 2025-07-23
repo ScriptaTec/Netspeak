@@ -42,7 +42,7 @@ require('header.php');
         <img src="../imgs/imgs_perfil/perfil1.png" alt="foto de perfil">
 
         <!--Ícone de mudar foto de perfil do usuário-->
-        <button type="button" class="group">
+        <button type="button" onclick="abrirModalFoto()" class="group">
             <img src="../imgs/icones/editarFoto.png" alt="mudar foto de perfil"
                 class="h-12 absolute top-3 right-2 opacity-100 group-hover:opacity-0 transition-opacity duration-900">
             <img src="../imgs/icones/editarHover.png" alt="mudar foto de perfil"
@@ -70,12 +70,13 @@ require('header.php');
 </div>
 
 <!--Navegação entre as seções-->
-<div class="flex justify-center gap-5 text-lg text-gray-600">
+<div class="flex justify-center gap-5 text-center text-lg text-gray-600 mt-2 lg:mt-0">
     <button onclick="mostrarEditar()" id="btn-editar" class="hover:text-black transition duration-500 ">
         <span>Editar dados</span>
     </button>
 
-    <button onclick="mostrarAdicionar()" id="btn-adicionar" class="text-black hover:text-black transition duration-500 ">
+    <button onclick="mostrarAdicionar()" id="btn-adicionar"
+        class="text-black hover:text-black transition duration-500 ">
         <span>Adicionar dados</span>
     </button>
 
@@ -90,31 +91,31 @@ require('header.php');
 
 <!--Estilização do fundo da página-->
 <div class="relative bg-[#9e8cbe] mt-5">
-    <div class="h-3 w-4 bg-[#9e8cbe] absolute left-14 -top-32"></div>
-    <div class="h-6 w-10 bg-[#9e8cbe] absolute -top-24"></div>
+    <div class="lg:h-3 lg:w-4 bg-[#9e8cbe] absolute left-14 -top-32"></div>
+    <div class="lg:h-6 lg:w-10 bg-[#9e8cbe] absolute -top-24"></div>
 
-    <div class="h-6 w-2xl bg-white absolute left-15"></div>
-    <div class="h-10 w-10 bg-white absolute right-98"></div>
-    <div class="h-5 w-54 bg-white absolute left-32 top-6"></div>
-    <div class="h-10 w-10 bg-white absolute left-20 top-14"></div>
-    <div class="h-28 w-42 bg-white absolute right-0"></div>
-    <div class="h-5 w-10 bg-white absolute right-42"></div>
-    <div class="h-4 w-12 bg-white absolute left-110 top-10"></div>
-    <div class="h-5 w-5 bg-white absolute right-86 top-9"></div>
+    <div class="lg:h-6 lg:w-2xl bg-white absolute left-15"></div>
+    <div class="lg:h-10 lg:w-10 bg-white absolute right-98"></div>
+    <div class="lg:h-5 lg:w-54 bg-white absolute left-32 top-6"></div>
+    <div class="lg:h-10 lg:w-10 bg-white absolute left-20 top-14"></div>
+    <div class="lg:h-28 lg:w-42 bg-white absolute right-0"></div>
+    <div class="lg:h-5 lg:w-10 bg-white absolute right-42"></div>
+    <div class="lg:h-4 lg:w-12 bg-white absolute left-110 top-10"></div>
+    <div class="lg:h-5 lg:w-5 bg-white absolute right-86 top-9"></div>
 
-    <div class="h-3 w-5 bg-[#746587] absolute left-68"></div>
-    <div class="h-3 w-10 bg-[#746587] absolute left-154 top-6"></div>
-    <div class="h-5 w-7 bg-[#746587] absolute top-24"></div>
-    <div class="h-4 w-20 bg-[#746587] absolute right-10 top-28"></div>
-    <div class="h-10 w-32 bg-[#746587] absolute left-10 bottom-48"></div>
-    <div class="h-16 w-20 bg-[#746587] absolute right-98 bottom-74"></div>
+    <div class="lg:h-3 lg:w-5 bg-[#746587] absolute left-68"></div>
+    <div class="lg:h-3 lg:w-10 bg-[#746587] absolute left-154 top-6"></div>
+    <div class="lg:h-5 lg:w-7 bg-[#746587] absolute top-24"></div>
+    <div class="lg:h-4 lg:w-20 bg-[#746587] absolute right-10 top-28"></div>
+    <div class="lg:h-10 lg:w-32 bg-[#746587] absolute left-10 bottom-48"></div>
+    <div class="lg:h-16 lg:w-20 bg-[#746587] absolute right-98 bottom-74"></div>
 
-    <div class="h-20 w-54 bg-[#AE99D2] absolute left-64 top-54"></div>
-    <div class="h-30 w-28 bg-[#AE99D2] absolute right-98 top-20"></div>
-    <div class="h-14 w-28 bg-[#AE99D2] absolute right-148 bottom-14"></div>
-    <div class="h-42 w-28 bg-[#AE99D2] absolute right-0 bottom-64"></div>
+    <div class="lg:h-20 lg:w-54 bg-[#AE99D2] absolute left-64 top-54"></div>
+    <div class="lg:h-30 lg:w-28 bg-[#AE99D2] absolute right-98 top-20"></div>
+    <div class="lg:h-14 lg:w-28 bg-[#AE99D2] absolute right-148 bottom-14"></div>
+    <div class="lg:h-42 lg:w-28 bg-[#AE99D2] absolute right-0 bottom-64"></div>
 
-    <div class="flex justify-center text-center py-24 relative z-10">
+    <div class="flex justify-center py-10 text-center relative z-10 lg:py-24 ">
 
 
         <!--Seção de adicionar dados do usuário-->
@@ -127,7 +128,7 @@ require('header.php');
             <label for="nome" class="mt-3 text-left text-xl">Nome completo</label>
             <input type="text" name="nome_completo" required placeholder=". . . "
                 value="<?= $_SESSION['user']['nome_completo'] ?? '' ?>"
-                class="bg-[#F8FBA6] w-98 py-1.5 px-2 border border-black rounded-xl"
+                class="bg-[#F8FBA6] lg:w-98 py-1.5 px-2 border border-black rounded-xl"
                 style="box-shadow: -2px 2px 0px black;">
 
             <!--Campo para email secundario-->
@@ -203,7 +204,7 @@ require('header.php');
             <!--Campo para editar nome-->
             <label for="nome" class="mt-3 text-left text-xl">Nome</label>
             <input type="text" name="nome" placeholder=". . . " value="<?= $_SESSION['user']['nome'] ?? '' ?>"
-                class="bg-[#F8FBA6] w-98 py-1.5 px-2 border border-black rounded-xl"
+                class="bg-[#F8FBA6] lg:w-98 py-1.5 px-2 border border-black rounded-xl"
                 style="box-shadow: -2px 2px 0px black;">
 
             <!--Campo para email-->
@@ -285,7 +286,69 @@ require('header.php');
     </div>
 </div>
 
+
+<!--Modal de mudar foto de perfil-->
+<div id="modal-foto" class="hidden z-50 fixed inset-0 flex justify-center items-center bg-gray-200/50">
+
+    <!--Fechar pop-up-->
+    <button style="cursor: pointer;" type="button" class="btn-cancelar group">
+        <img src="../imgs/icones/close.png" alt="ícone de sair do mudar foto de perfil"
+            class="absolute top-22 right-90 opacity-100 group-hover:opacity-0 transition duration-900">
+        <img src="../imgs/icones/closeHover.png" alt="ícone de sair do mudar foto de perfil"
+            class="absolute top-22 right-90 opacity-0 group-hover:opacity-100 transition duration-900">
+    </button>
+
+    <div
+        class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-400 shadow-xl hover:border-black hover:border-3 transition duration-900">
+
+        <h1 class="text-center text-3xl">Edite sua foto de perfil</h1>
+
+        <!--Opções de foto de perfil-->
+        <div class="flex flex-col mt-5">
+            <div class="flex gap-4">
+                <img src="../imgs/imgs_perfil/perfil1.png" alt=""
+                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                <img src="../imgs/imgs_perfil/perfil6.png" alt=""
+                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                <img src="../imgs/imgs_perfil/perfil2.png" alt=""
+                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                <img src="../imgs/imgs_perfil/perfil7.png" alt=""
+                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+            </div>
+
+
+            <div class="flex gap-4 mt-7">
+                <img src="../imgs/imgs_perfil/perfil3.png" alt=""
+                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                <img src="../imgs/imgs_perfil/perfil8.png" alt=""
+                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                <img src="../imgs/imgs_perfil/perfil4.png" alt=""
+                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                <img src="../imgs/imgs_perfil/perfil5.png" alt=""
+                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+            </div>
+        </div>
+
+
+        <div class="flex justify-center">
+            <button
+                class="btn-confirmar mt-5 py-1 px-5 rounded-3xl bg-gray-300 text-gray-600 hover:bg-black hover:text-white transition duration-700">
+                Editar
+            </button>
+        </div>
+    </div>
+</div>
+
 <!--Rodapé-->
-<?php
-require('footer.php');
-?>
+<footer class="relative py-2 w-full">
+    <h6 class="text-sm text-center">&copy; 2025 Emojimoji. Todos os direitos reservados.</h6>
+
+    <div class="absolute right-3 bottom-1.5">
+        <a href="suporte.php">
+            <img src="../imgs/icones/suporte.png" alt="ícone de suporte">
+        </a>
+    </div>
+</footer>
+
+<!--Necessário para o funcionamento da biblioteca FlowBite-->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
