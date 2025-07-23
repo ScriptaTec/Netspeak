@@ -18,9 +18,9 @@
          </li>
 
          <li>
-            <a href="lista.php"
+            <a href="tradutor.php"
                class="flex items-center p-2 text-[#746587] rounded-lg transition duration-500 hover:text-white hover:bg-[#746587]">
-               <span class="ms-1">Lista de emojis</span>
+               <span class="ms-1">Tradutor</span>
             </a>
          </li>
 
@@ -41,20 +41,17 @@
          <li>
             <!--Sair da conta-->
             <form method="POST" action="../controller/controller_logout.php" id="form-sair">
-
                <!--Botão de sair da conta-->
-               <button type="button" data-modal-text="Você tem certeza que deseja sair da conta?"
-                  data-form-target="#form-sair"
-                  class="btn-abrir-modal flex w-full p-2 text-[#746587] rounded-lg transition duration-500 hover:text-white hover:bg-[#746587]">
+               <button type="button" onclick="abrirModalSair()"
+                  class="flex w-full p-2 text-[#746587] rounded-lg transition duration-500 hover:text-white hover:bg-[#746587]">
                   <span class="ms-1">Sair da conta</span>
                </button>
 
-               <!--Pop-up de sair da conta-->
-               <div id="modal-confirmacao-generico"
-                  class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+               <!--Modal de sair da conta-->
+               <div id="modal-sair" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
                   <div
                      class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
-                     <h1 id="modal-text" class="text-3xl"></h1>
+                     <h1 class="text-3xl">Você tem certeza que deseja sair da conta?</h1>
 
                      <div class="flex justify-center gap-5 mt-5">
                         <button type="button"

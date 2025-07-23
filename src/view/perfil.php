@@ -13,6 +13,7 @@ if (!isset($_SESSION['user'])) {
 require('header.php');
 ?>
 
+
 <!--Cabeçalho-->
 <header class="flex justify-between p-3">
     <div class="w-20">
@@ -70,21 +71,25 @@ require('header.php');
 
 <!--Navegação entre as seções-->
 <div class="flex justify-center gap-5 text-lg text-gray-600">
-    <button onclick="navegacaoPerfil()" id="editarDados" class="hover:text-black transition duration-500 ">
+    <button onclick="mostrarEditar()" id="btn-editar" class="hover:text-black transition duration-500 ">
         <span>Editar dados</span>
     </button>
 
-    <button onclick="navegacaoPerfil()" id="adicionarDados" class="hover:text-black transition duration-500 ">
+    <button onclick="mostrarAdicionar()" id="btn-adicionar" class="text-black hover:text-black transition duration-500 ">
         <span>Adicionar dados</span>
     </button>
 
-    <button onclick="navegacaoPerfil()" id="sairConta" class="hover:text-black transition duration-500 ">
-        <span>Sair da conta</span>
-    </button>
+    <a href="redefinir_senha.php" class="hover:text-black transition duration-500 ">Redefinir senha</a>
+
+    <form method="POST" action="../controller/controller_excluir.php" id="form-excluir">
+        <button onclick="abrirModalExcluir()" class="hover:text-black transition duration-500 ">
+            <span>Excluir conta</span>
+        </button>
+    </form>
 </div>
 
+<!--Estilização do fundo da página-->
 <div class="relative bg-[#9e8cbe] mt-5">
-    <!--Fundo da página-->
     <div class="h-3 w-4 bg-[#9e8cbe] absolute left-14 -top-32"></div>
     <div class="h-6 w-10 bg-[#9e8cbe] absolute -top-24"></div>
 
@@ -103,15 +108,17 @@ require('header.php');
     <div class="h-4 w-20 bg-[#746587] absolute right-10 top-28"></div>
     <div class="h-10 w-32 bg-[#746587] absolute left-10 bottom-48"></div>
     <div class="h-16 w-20 bg-[#746587] absolute right-98 bottom-74"></div>
-    
+
     <div class="h-20 w-54 bg-[#AE99D2] absolute left-64 top-54"></div>
     <div class="h-30 w-28 bg-[#AE99D2] absolute right-98 top-20"></div>
     <div class="h-14 w-28 bg-[#AE99D2] absolute right-148 bottom-14"></div>
     <div class="h-42 w-28 bg-[#AE99D2] absolute right-0 bottom-64"></div>
 
-    <!--Seção de adicionar dados do usuário-->
     <div class="flex justify-center text-center py-24 relative z-10">
-        <form action="../controller/controller_perfil.php" method="post"
+
+
+        <!--Seção de adicionar dados do usuário-->
+        <form action="../controller/controller_perfil.php" method="post" id="form-adicionar"
             class="flex flex-col bg-white py-4 px-10 rounded-2xl" style="box-shadow: -10px 10px 1px #776a8f;">
 
             <h2 class="text-4xl text-[#413E45]">Adicione dados</h2>
@@ -123,9 +130,9 @@ require('header.php');
                 class="bg-[#F8FBA6] w-98 py-1.5 px-2 border border-black rounded-xl"
                 style="box-shadow: -2px 2px 0px black;">
 
-            <!--Campo para email completo-->
-            <label for="email" class="mt-3 text-left text-xl">Email completo</label>
-            <input type="text" name="nome_completo" required placeholder=". . . "
+            <!--Campo para email secundario-->
+            <label for="email" class="mt-3 text-left text-xl">Email secundário</label>
+            <input type="email" name="email_secundario" required placeholder=". . . "
                 value="<?= $_SESSION['user']['email_secundario'] ?? '' ?>"
                 class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl" style="box-shadow: -2px 2px 0px black;">
 
@@ -176,11 +183,105 @@ require('header.php');
                 <option value="3" <?= $dificuldade === '1' ? 'selected' : '' ?>>Alto</option>
             </select>
 
-            <button
+            <!--Campo para que funcione a requisição-->
+            <input type="hidden" name="editar_personalizacao" value="editar">
+
+            <button type="button" onclick="abrirModalAdicionar()" name="editar_personalizacao"
                 class="bg-[#746587] mt-5 w-32 px-2 py-1.5 rounded-xl transition duration-500 hover:bg-black hover:scale-105">
                 <span class="text-white text-lg">Adicionar dados</span>
             </button>
         </form>
+        <!--Fim da seção de adicionar dados-->
+
+
+        <!--Seção de editar dados do usuário-->
+        <form action="../controller/controller_perfil.php" method="post" id="form-editar"
+            class="hidden flex flex-col bg-white py-4 px-10 rounded-2xl" style="box-shadow: -10px 10px 1px #776a8f;">
+
+            <h2 class="text-4xl text-[#413E45]">Edite seus dados</h2>
+
+            <!--Campo para editar nome-->
+            <label for="nome" class="mt-3 text-left text-xl">Nome</label>
+            <input type="text" name="nome" placeholder=". . . " value="<?= $_SESSION['user']['nome'] ?? '' ?>"
+                class="bg-[#F8FBA6] w-98 py-1.5 px-2 border border-black rounded-xl"
+                style="box-shadow: -2px 2px 0px black;">
+
+            <!--Campo para email-->
+            <label for="email" class="mt-3 text-left text-xl">Email</label>
+            <input type="email" name="email" placeholder=". . . " value="<?= $_SESSION['user']['email'] ?? '' ?>"
+                class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl" style="box-shadow: -2px 2px 0px black;">
+
+            <!--Campo para que funcione a requisição-->
+            <input type="hidden" name="editar_dados_basicos" value="editar">
+
+            <button type="button" onclick="abrirModalEditar()" name="editar_dados_basicos"
+                class="bg-[#746587] mt-5 w-32 px-2 py-1.5 rounded-xl transition duration-500 hover:bg-black hover:scale-105">
+                <span class="text-white text-lg">Editar dados</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!--Modais de editar, adicionar e excluir conta-->
+
+<div id="modal-adicionar" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+    <div
+        class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+        <h1 class="text-3xl">Você deseja adicionar estes dados ao seus perfil?</h1>
+
+        <div class="flex justify-center gap-5 mt-5">
+            <button type="button"
+                class="btn-confirmar 
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Sim
+            </button>
+            <button type="button"
+                class="btn-cancelar
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Não
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div id="modal-editar" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+    <div
+        class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+        <h1 class="text-3xl">Você deseja editar seus dados?</h1>
+
+        <div class="flex justify-center gap-5 mt-5">
+            <button type="button"
+                class="btn-confirmar 
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Sim
+            </button>
+            <button type="button"
+                class="btn-cancelar
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Não
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-excluir" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+    <div
+        class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+        <h1 class="text-3xl">Você deseja excluir a sua conta?</h1>
+
+        <div class="flex justify-center gap-5 mt-5">
+            <button type="button"
+                class="btn-confirmar 
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Sim
+            </button>
+            <button type="button"
+                class="btn-cancelar
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Não
+            </button>
+        </div>
     </div>
 </div>
 
