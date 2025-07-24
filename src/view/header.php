@@ -21,6 +21,8 @@
     <script src="../js/inputs.js"></script>
     <!--Navegação e modal do perfil-->
     <script src="../js/perfil.js" defer></script>
+     <!--Modal de filtro nas páginas de tradução-->
+     <script src="../js/tradutor.js" defer></script>
 
     <title>EmojiMoji</title>
 </head>
