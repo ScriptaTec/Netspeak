@@ -59,16 +59,71 @@ require('header.php');
                     conta?</a>
             </div>
 
+            <!--Modais de mensagem de erro no login-->
+            <div id="modal-email" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+                <div
+                    class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+                    <h1 class="text-3xl">O email fornecido esta incorreto!</h1>
+
+                    <div class="flex justify-center gap-5 mt-5">
+                        <button type="button"
+                            class="btn-confirmar 
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                            Ok
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-senha" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+                <div
+                    class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+                    <h1 class="text-3xl">A senha fornecida esta incorreta!</h1>
+
+                    <div class="flex justify-center gap-5 mt-5">
+                        <button type="button"
+                            class="btn-confirmar 
+                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                            Ok
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Necessário para funcionar os modais-->
+            <script>
+                const modalEmail = document.getElementById("modal-email");
+                const confirmarEmail = modalEmail.querySelector(".btn-confirmar");
+                const modalSenha = document.getElementById("modal-senha");
+                const confirmarSenha = modalSenha.querySelector(".btn-confirmar");
+
+                function erroModalEmail() {
+                    modalEmail.classList.remove("hidden");
+
+                    confirmarEmail.addEventListener("click", () => {
+                        modalEmail.classList.add("hidden")
+                    })
+                }
+
+                function erroModalSenha() {
+                    modalSenha.classList.remove("hidden");
+
+                    confirmarSenha.addEventListener("click", () => {
+                        modalSenha.classList.add("hidden")
+                    })
+                }
+            </script>
+
             <?php
             // Verifica se existe uma mensagem de erro de login na sessão (email) e exibe
             if (isset($_SESSION['erro_email'])) {
-                echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_email'] . '</p>';
+                echo '<script>erroModalEmail()</script>';
                 // Limpa a variável de erro após exibir a mensagem
                 unset($_SESSION['erro_email']);
             }
 
             if (isset($_SESSION['erro_senha'])) {
-                echo '<p style="color: red; font-size: 12px; padding: 2px; text-align: right">' . $_SESSION['erro_senha'] . '</p>';
+                echo '<script>erroModalSenha()</script>';
                 // Limpa a variável de erro após exibir a mensagem
                 unset($_SESSION['erro_senha']);
             }
