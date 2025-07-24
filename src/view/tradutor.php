@@ -6,6 +6,7 @@ $respostaDaApi = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     $fraseUsuario = $_POST['frase'];
+    $tipoTraducao = $_POST['tipoTraducao'];
     $respostaDaApi = processarFraseComGemini($fraseUsuario, "formal");
 }
 ?>
@@ -52,12 +53,42 @@ require('header.php');
 
     <!--Card para enviar a frase-->
     <div class="flex justify-center mt-7">
-        <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
-            style="box-shadow: 0px 8px 0px #AE99D2">
+        <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
             <!--Formulário para enviar para o resposta_tradutor-->
             <form method="post" action="resposta_tradutor.php" class="flex items-center gap-3">
                 <input type="hidden" name="tipoTraducao" value="formal">
+
+                <!--Ícone de selecionar o tipo de tradução-->
+                <div class="relative">
+                    <img src="../imgs/icones/filtro.png" alt="" class="w-8">
+
+                    <div id="modal-filtro" class="absolute bottom-10 left-3 items-center w-48">
+
+                        <div class="flex flex-col bg-white py-2 px-3 rounded-2xl rounded-bl-none border-2">
+
+                            <spam class="text-center text-lg">Tipo de tradução:</spam>
+
+                            <div class="flex gap-2 items-center">
+                                <input type="checkbox" name="formal" id="formal"
+                                    class="rounded-sm border-black focus:ring-white">
+
+                                <spam class="text-lg">Informal para formal</spam>
+                            </div>
+
+                            <div class="flex gap-2 items-center">
+                                <input type="checkbox" name="informal" id="informal"
+                                    class="rounded-sm border-black focus:ring-white">
+                                <spam class="text-lg">Formal para informal</spam>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <script></script>
+
+                <!--Atalho para emojis-->
                 <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
 
                 <!--Input para enviar a frase-->
