@@ -62,7 +62,7 @@ require('header.php');
                 <!--Selecionar o tipo de tradução-->
                 <div class="relative">
                     <button onclick="mostrarModalFiltro()" data-tooltip-target="tooltip-default-tipo">
-                        <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução" class="w-8"></button>
+                        <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução" class="w-8 mt-2"></button>
 
                     <div id="modal-filtro" class="hidden absolute bottom-10 left-3 items-center w-48">
 
@@ -71,13 +71,13 @@ require('header.php');
                             <spam class="text-center text-lg">Tipo de tradução:</spam>
 
                             <div class="flex gap-2 items-center">
-                                <input type="radio" class="rounded-sm border-black focus:ring-white">
+                                <input type="checkbox" name="tipo" value="formal" class="text-[#746587] rounded-sm border-black focus:ring-white">
 
                                 <spam class="text-lg">Informal para formal</spam>
                             </div>
 
                             <div class="flex gap-2 items-center">
-                                <input type="radio" class="rounded-sm border-black focus:ring-white">
+                                <input type="checkbox" name="tipo" value="informal" class="text-[#746587] rounded-sm border-black focus:ring-white">
                                 <spam class="text-lg">Formal para informal</spam>
                             </div>
                         </div>
@@ -90,22 +90,6 @@ require('header.php');
                     Tipo de tradução
                     <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
-
-                <!--Necessario para o modal de tipo de tradução-->
-                <script>
-                    const modalFiltro = document.getElementById("modal-filtro")
-
-                    function mostrarModalFiltro() {
-                        modalFiltro.classList.remove("hidden")
-                    }
-
-                    window.addEventListener('click', function (event) {
-                        // Verifica se o usuario clicou em qualquer lugar da tela para sair
-                        if (event.target === body) {
-                            modalFiltro.classList.add("hidden")
-                        }
-                    })
-                </script>
 
                 <!--Atalho para emojis-->
                 <button data-tooltip-target="tooltip-default-emoji">
@@ -120,7 +104,7 @@ require('header.php');
                 </div>
 
                 <!--Input para enviar a frase-->
-                <input type="text" name="frase" required placeholder="Aqui..."
+                <input type="text" name="frase" id="input" required placeholder="Aqui..."
                     class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
 
                 <!--Botão para enviar a frase-->

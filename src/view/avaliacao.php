@@ -3,7 +3,8 @@
 require('header.php');
 ?>
 
-<div class="lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-cover bg-center">
+
+<div class="headline lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -25,17 +26,17 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="text-center text-8xl text-[#F8FBA6]"
-        style="text-shadow: -5px 5px 0px #413E45; -webkit-text-stroke: 2px black; -moz-text-stroke: 2px black; text-stroke: 2px black;">
-        <h1 class="lg:text-left lg:ml-20">Qual sua experiência</h1>
-        <h1 class="-mt-6 lg:text-left lg:ml-20">com a ferramenta?</h1>
+    <div class="mt-2 text-center text-6xl lg:text-transparent">
+        <h1>Qual sua experiência</h1>
+        <h1>com a ferramenta?</h1>
     </div>
 
     <!--Cards para escolher a avaliação-->
     <div class="flex items-center flex-col gap-14 mt-5 lg:flex-row lg:ml-20">
 
         <!--Card de avalião ótima-->
-        <div class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group"
+        <div data-aos="fade-up" data-aos-duration="500"
+            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group lg:mt-32"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -52,7 +53,7 @@ require('header.php');
                     <p class="text-xl text-[#F8FBA6]">Pois traduziu todas as frases corretamente</p>
 
                     <!--Escolher avalião muito boa-->
-                    <button type="button" 
+                    <button type="button" onclick="abrirForm()"
                         class="relative z-20 mt-2 bg-[#746587] text-[#F8FBA6] px-3 py-1 transition duration-300 hover:bg-[#625672]"
                         style="box-shadow: 2px 2px 0px #625672">
                         Selecionar
@@ -62,7 +63,8 @@ require('header.php');
         </div>
 
         <!--Card de avalião boa-->
-        <div class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group"
+        <div data-aos="fade-up" data-aos-duration="1000"
+            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group lg:mt-32"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -79,7 +81,7 @@ require('header.php');
                     <p class="text-xl text-[#F8FBA6]">Pois traduziu quase todas as frases corretamente</p>
 
                     <!--Escolher avalião boa-->
-                    <button type="button" 
+                    <button type="button" onclick="abrirForm()"
                         class="relative z-20 mt-2 bg-[#746587] text-[#F8FBA6] px-3 py-1 transition duration-300 hover:bg-[#625672]"
                         style="box-shadow: 2px 2px 0px #625672">
                         Selecionar
@@ -89,7 +91,8 @@ require('header.php');
         </div>
 
         <!--Card de avalião ruim-->
-        <div class="flex flex-col justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group"
+        <div data-aos="fade-up" data-aos-duration="1500"
+            class="flex flex-col justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group lg:mt-32"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -106,7 +109,7 @@ require('header.php');
                     <p class="text-xl text-[#F8FBA6]">Pois não traduziu nenhuma das frases corretamente</p>
 
                     <!--Escolher avalião ruim-->
-                    <button type="button" 
+                    <button type="button" onclick="abrirForm()"
                         class="mt-2 relative z-20 bg-[#746587] text-[#F8FBA6] px-3 py-1 transition duration-300 hover:bg-[#625672]"
                         style="box-shadow: 2px 2px 0px #625672">
                         Selecionar
@@ -119,12 +122,7 @@ require('header.php');
 
 
     <!--Seção da justificativa para a avliação-->
-    <section>
-        <div class="text-center text-8xl text-[#F8FBA6] mt-20"
-            style="text-shadow: -5px 5px 0px #413E45; -webkit-text-stroke: 2px black; -moz-text-stroke: 2px black; text-stroke: 2px black;">
-            <h1 class="lg:text-left lg:ml-20">Justifique sua</h1>
-            <h1 class="-mt-4 lg:text-left lg:ml-20">avaliação</h1>
-        </div>
+    <section id="form" class="hidden lg:mt-20">
 
         <!--Card da justificativa para a avliação-->
         <div class="mt-5 m-2 lg:mb-20 lg:ml-20">
@@ -139,23 +137,23 @@ require('header.php');
                     <div class="lg:flex lg:flex-row gap-5">
                         <!--Opção 1-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="sim" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Sim</label>
+                            <input type="checkbox" name="opcao" value="sim"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
                         </div>
 
                         <!--Opção 2-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="mediano" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
+                            <input type="checkbox" name="opcao" value="mediano"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
                         </div>
 
                         <!--Opção 3-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="nao" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Não</label>
+                            <input type="checkbox" name="opcao" value="nao"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
                         </div>
                     </div>
                 </div>
@@ -168,23 +166,23 @@ require('header.php');
                     <div class="lg:flex lg:flex-row gap-5">
                         <!--Opção 1-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="sim" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Sim</label>
+                            <input type="checkbox" name="opcao" value="sim"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
                         </div>
 
                         <!--Opção 2-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="mediano" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
+                            <input type="checkbox" name="opcao" value="mediano"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
                         </div>
 
                         <!--Opção 3-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="nao" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Não</label>
+                            <input type="checkbox" name="opcao" value="nao"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
                         </div>
                     </div>
                 </div>
@@ -198,24 +196,66 @@ require('header.php');
                     <div class="lg:flex lg:flex-row gap-5">
                         <!--Opção 1-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="sim" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Sim</label>
+                            <input type="checkbox" name="opcao" value="sim"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
                         </div>
 
                         <!--Opção 2-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="mediano" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
+                            <input type="checkbox" name="opcao" value="mediano"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
                         </div>
 
                         <!--Opção 3-->
                         <div class="flex gap-2 items-center">
-                            <input type="radio" value="nao" name="opcao" required
-                                class="w-4 h-4 text-[#746587] bg-gray-100 border-gray-300 focus:ring-white focus:ring-1">
-                            <label for="default-radio-1" class=" text-lg text-[#413E45]">Não</label>
+                            <input type="checkbox" name="opcao" value="nao"
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
                         </div>
+                    </div>
+                </div>
+
+                <!--Pergunta 4-->
+                <div class="flex-col mt-5">
+                    <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                        De zero a dez, qual nota a ferramenta de tradução receberia?</label>
+
+                    <div class="lg:flex lg:flex-row gap-5">
+
+                        <div class="relative mb-6">
+                            <input id="labels-range-input" type="range" value="1000" 
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <span class="text-lg text-gray-500 absolute start-0 -bottom-6">1
+                            </span>
+                            <span
+                                class="text-lg text-gray-500 absolute start-1/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">2</span>
+                            <span
+                                class="text-lg text-gray-500 absolute start-2/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">3</span>
+
+                                <span
+                                class="text-lg text-gray-500 absolute start-3/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">4</span>
+
+                                <span
+                                class="text-lg text-gray-500 absolute start-4/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">5</span>
+
+                                <span
+                                class="text-lg text-gray-500 absolute start-5/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">6</span>
+
+                                <span
+                                class="text-lg text-gray-500 absolute start-6/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">7</span>
+
+                                <span
+                                class="text-lg text-gray-500 absolute start-7/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">8</span>
+
+                                <span
+                                class="text-lg text-gray-500 absolute start-8/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">9</span>
+
+                            <span class="text-lg text-gray-500 absolute end-0 -bottom-6">10</span>
+
+                        </div>
+
                     </div>
                 </div>
 
@@ -227,7 +267,7 @@ require('header.php');
 
                 <!--Enviar a avaliação-->
                 <div class="mt-5">
-                    <button type="button"
+                    <button type="button" onclick="fecharForm()"
                         class="bg-[#746587] text-lg px-2 py-1 rounded-xl text-white hover:bg-black transition duration-600 ease-in-out">
                         <span>Enviar Avaliação</span>
                     </button>
@@ -237,13 +277,23 @@ require('header.php');
 
 </div>
 
-<!-- Chamar animação de navegação em navegacao.js -->
 <script>
-    //Necessário para executar a animação apenas quando a página já tiver caarregado 100%
-    document.addEventListener("DOMContentLoaded", function () {
-        botaoAvaliacao();
-    });
+    const form = document.getElementById("form")
+
+    function abrirForm() {
+        form.classList.remove("hidden")
+
+        form.scrollIntoView({
+            behavior: 'smooth', // Faz a rolagem suave
+        });
+    }
+
+    function fecharForm() {
+        form.classList.add("hidden")
+    }
 </script>
+
+
 <!--Rodapé-->
 <?php
 require('footer.php');

@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 require('header.php');
 ?>
 
-<div class="lg:bg-[url(../imgs/Tradutor.png)] h-screen bg-cover bg-center">
+<!--Id body é necessário para fechar o modal do tipo de tradução-->
+<div id="body" class="lg:bg-[url(../imgs/Tradutor.png)] h-screen bg-cover bg-center">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -74,28 +75,69 @@ require('header.php');
             <div class="flex items-center gap-3 mt-7 py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
                 style="box-shadow: 0px 8px 0px #AE99D2">
 
-                <img src="../imgs/icones/emojiBranco.png" alt="" class="w-8">
+                <!--Selecionar o tipo de tradução-->
+                <div class="relative">
+                    <button onclick="mostrarModalFiltro()" data-tooltip-target="tooltip-default-tipo">
+                        <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução" class="w-8 mt-2"></button>
+
+                    <div id="modal-filtro" class="hidden absolute bottom-10 left-3 items-center w-48">
+
+                        <div class="flex flex-col bg-white py-2 px-3 rounded-2xl rounded-bl-none border-2">
+
+                            <spam class="text-center text-lg">Tipo de tradução:</spam>
+
+                            <div class="flex gap-2 items-center">
+                                <input type="checkbox" name="tipo" value="formal"
+                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
+
+                                <spam class="text-lg">Informal para formal</spam>
+                            </div>
+
+                            <div class="flex gap-2 items-center">
+                                <input type="checkbox" name="tipo" value="informal"
+                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                <spam class="text-lg">Formal para informal</spam>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Descrição do botão de tipo de tradução-->
+                <div id="tooltip-default-tipo" role="tooltip"
+                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
+                    Tipo de tradução
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+
+                <!--Atalho para emojis-->
+                <button data-tooltip-target="tooltip-default-emoji">
+                    <img src="../imgs/icones/emojiBranco.png" alt="Abrir atalho para emojis" class="w-8">
+                </button>
+
+                <!--Descrição do botão de atalho de emojis-->
+                <div id="tooltip-default-emoji" role="tooltip"
+                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
+                    Atalho de emojis
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
 
                 <!--Input para enviar a frase-->
-                <input type="text" name="frase" required placeholder="Aqui..."
+                <input type="text" name="frase" id="input" required placeholder="Escreva aqui..."
                     class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
 
-
                 <!--Botão para enviar a frase-->
-                <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default">
+                <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default-enviar">
                     <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
                         class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
-
 
                     <img src="../imgs/icones/enviarHover.png" alt="Ícone de enviar frase para ser traduzida"
                         class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </button>
 
-
-                <!--Descrição do que o botão de enviar fará-->
-                <div id="tooltip-default" role="tooltip"
+                <!--Descrição do botão de enviar-->
+                <div id="tooltip-default-enviar" role="tooltip"
                     class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
-                    Clique para enviar a frase que será traduzida
+                    Enviar a frase que será traduzida
                     <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
             </div>
