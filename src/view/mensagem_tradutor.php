@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 <!--Design do pop-up de mensagens da ferramenta emojimoji-->
 <div class="flex flex-col items-start mt-2 relative z-30">
 
-<!--Campo para mostrar a tradução-->
+    <!--Campo para mostrar a tradução-->
     <?php if (!empty($respostaDaApi)): ?>
         <div class="max-w-[60%] ml-7 py-2 px-2 rounded-2xl rounded-bl-none bg-[#F8FBA6] text-xl text-[#746587] font-bold"
             style="box-shadow: -5px 5px 0px #746587">
