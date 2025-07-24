@@ -21,8 +21,6 @@
     <script src="../js/inputs.js"></script>
     <!--Navegação e modal do perfil-->
     <script src="../js/perfil.js" defer></script>
-      <!--Modal do login, cadastro e redefinir senha-->
-      <script src="../js/login.js" defer></script>
 
     <title>EmojiMoji</title>
 </head>
