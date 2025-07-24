@@ -87,15 +87,15 @@ require('header.php');
                             <spam class="text-center text-lg">Tipo de tradução:</spam>
 
                             <div class="flex gap-2 items-center">
-                                <input type="radio" name="tipo" value="formal"
-                                    class="rounded-sm border-black focus:ring-white">
+                                <input type="checkbox" name="tipo" value="formal"
+                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
 
                                 <spam class="text-lg">Informal para formal</spam>
                             </div>
 
                             <div class="flex gap-2 items-center">
-                                <input type="radio" name="tipo" value="informal"
-                                    class="rounded-sm border-black focus:ring-white">
+                                <input type="checkbox" name="tipo" value="informal"
+                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
                                 <spam class="text-lg">Formal para informal</spam>
                             </div>
                         </div>

@@ -12,11 +12,10 @@
     <link rel="stylesheet" href="../fonts/fonts.css">
     <!--Navegação do sobre nós-->
     <script src="../js/sobre_nos.js" defer></script>
-    <!--Animação do input no login e cadastro-->
+    <!--Animação do login, cadastro, redefinir senha, index-->
     <script src="../js/animacao.js" defer></script>
-    <!--Animação das letras no index-->
-    <script src="js/animacaoLetra.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!--Mostrar senha nos inputs-->
     <script src="../js/inputs.js"></script>
     <!--Navegação e modal do perfil-->

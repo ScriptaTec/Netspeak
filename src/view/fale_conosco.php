@@ -3,7 +3,7 @@
 require('header.php');
 ?>
 
-<div class="lg:bg-[url(../imgs/fundoAvaliacao.png)] h-screen bg-cover bg-center">
+<div class="lg:bg-[url(../imgs/fundoFale.png)] bg-cover bg-center">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -25,15 +25,14 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="text-center text-8xl text-[#F8FBA6]"
-        style="text-shadow: -5px 5px 0px #413E45; -webkit-text-stroke: 2px black; -moz-text-stroke: 2px black; text-stroke: 2px black;">
-        <h1 class="lg:text-left lg:ml-20">Envie uma</h1>
-        <h1 class="-mt-6 lg:text-left lg:ml-20">mensagem...</h1>
+    <div class="mt-2 text-center text-6xl lg:text-transparent">
+        <h1>Envie uma</h1>
+        <h1>mensagem...</h1>
     </div>
 
     <!--Formulário do feedback-->
-    <form action="" class="mt-10 m-2 lg:ml-20">
-        <div class="flex-col lg:w-3xl py-3 px-10 rounded-4xl rounded-br-none border-2 border-[#746587]"
+    <form action="" class="mt-10 mb-10 m-2 lg:ml-32">
+        <div class="flex-col lg:w-3xl py-3 px-10 rounded-4xl rounded-br-none border-2 border-[#746587] lg:mt-20"
             style="box-shadow: 5px 14px 0px #746587">
             <div class="flex-col lg:flex lg:flex-row gap-11">
                 <div class="flex flex-col">
