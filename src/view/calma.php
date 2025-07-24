@@ -1,6 +1,7 @@
 <?php
-include "../controller/controller_cadastro.php";
+session_start();
 ?>
+
 <!--Cabeçalho-->
 <?php
 require('header.php');
@@ -93,10 +94,11 @@ require('header.php');
                 </div>
             </div>
 
-            <div id="modal-email-secundario" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+            <div id="modal-email-secundario"
+                class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
                 <div
                     class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
-                    <h1 class="text-3xl">Este email já esta vinculado a outra conta!</h1>
+                    <h1 class="text-3xl">O email fornecido esta incorreto!</h1>
 
                     <div class="flex justify-center gap-5 mt-5">
                         <button type="button"
@@ -111,7 +113,7 @@ require('header.php');
             <div id="modal-senha" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
                 <div
                     class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
-                    <h1 class="text-3xl">As senhas não coincidem!</h1>
+                    <h1 class="text-3xl">O email fornecido esta incorreto!</h1>
 
                     <div class="flex justify-center gap-5 mt-5">
                         <button type="button"
@@ -132,7 +134,7 @@ require('header.php');
                 const confirmarEmailSecundario = modalEmailSecundario.querySelector(".btn-confirmar")
                 const confirmarSenha = modalSenha.querySelector(".btn-confirmar")
 
-                function erroModalEmail(){
+                function erroModalEmail() {
                     modalEmail.classList.remove("hidden")
 
                     confirmarEmail.addEventListener("click", () => {
@@ -140,7 +142,7 @@ require('header.php');
                     })
                 }
 
-                function erroModalEmailSecundario(){
+                function erroModalEmailSecundario() {
                     modalEmailSecundario.classList.remove("hidden")
 
                     confirmarEmailSecundario.addEventListener("click", () => {
@@ -148,7 +150,7 @@ require('header.php');
                     })
                 }
 
-                function erroModalSenha(){
+                function erroModalSenha() {
                     modalSenha.classList.remove("hidden")
 
                     confirmarSenha.addEventListener("click", () => {

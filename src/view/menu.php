@@ -73,3 +73,26 @@
       </ul>
    </div>
 </div>
+
+<!--Modal de sair da conta-->
+<script>
+   const modalSair = document.getElementById("modal-sair");
+   const confirmarSair = modalSair.querySelector(".btn-confirmar");
+   const cancelarSair = modalSair.querySelector(".btn-cancelar");
+   const formSair = document.getElementById("form-sair");
+
+   function abrirModalSair() {
+      //Mostrar o modal quando a pessoa clicar no botão de sair da conta
+      event.preventDefault();
+      modalSair.classList.remove("hidden");
+
+      //Botões dentro do modal
+      confirmarSair.addEventListener("click", () => {
+         formSair.submit(); // Envia o formulário de sair da conta
+      });
+
+      cancelarSair.addEventListener("click", () => {
+         modalSair.classList.add("hidden"); // Esconde o modal e não sai da conta
+      });
+   }
+</script>

@@ -15,12 +15,14 @@
     <!--Animação do input no login e cadastro-->
     <script src="../js/animacao.js" defer></script>
     <!--Animação das letras no index-->
-    <script src="js/animacaoLetra.js" ></script>
+    <script src="js/animacaoLetra.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <!--Mostrar senha nos inputs-->
     <script src="../js/inputs.js"></script>
-     <!--Navegação e modal do perfil-->
-     <script src="../js/perfil.js" defer></script>
+    <!--Navegação e modal do perfil-->
+    <script src="../js/perfil.js" defer></script>
+      <!--Modal do login, cadastro e redefinir senha-->
+      <script src="../js/login.js" defer></script>
 
     <title>EmojiMoji</title>
 </head>

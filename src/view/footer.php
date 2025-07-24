@@ -1,5 +1,5 @@
 <!--Rodapé-->
- <footer class="fixed bottom-0 w-full">
+<footer class="fixed bottom-0 w-full">
     <h6 class="text-sm text-center">&copy; 2025 Emojimoji. Todos os direitos reservados.</h6>
 
     <div class="absolute right-3 bottom-0.5">
@@ -11,3 +11,6 @@
 
 <!--Necessário para o funcionamento da biblioteca FlowBite-->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
