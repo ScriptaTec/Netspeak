@@ -22,12 +22,14 @@ require("view/header.php")
         </div>
     </header>
 
-    <div class="text-right">
+    <img src="/imgs/index.png" alt="Capa do site" class="lg:hidden">
+
+    <div class="text-right flex justify-center items-center lg:mt-0 lg:block">
         <button data-aos="zoom-out-up" data-aos-duration="1000"
-            class="mt-98 mr-44 text-5xl text-[#746587] bg-white border-2 border-[#746587] rounded-lg px-10 py-1 transition duration-600 hover:border-white hover:bg-[#746587] hover:text-white">testar</button>
+            class="lg:mt-98 lg:mr-44 text-5xl text-[#746587] bg-white border-2 border-[#746587] rounded-lg px-10 py-1 transition duration-600 hover:border-white hover:bg-[#746587] hover:text-white">testar</button>
     </div>
 
-    <div class="flex flex-col justify-center items-center">
+    <div class="hidden lg:text-center lg:block">
         <button onclick="scrollSaberMais()" class="mt-18 transition duration-800 hover:scale-105">
             <img src="/imgs/icones/saberMais.png" alt="Saiba mais" class="w-32">
         </button>
@@ -36,17 +38,18 @@ require("view/header.php")
     <!--Seção com animação de scroll-->
     <section id="ferramenta">
         <div class="flex justify-between  mt-10 bg-[#F8FBA6] py-4">
-            <div class="flex flex-col gap-5">
+            <div class="hidden lg:block">
                 <div class="bg-[#413E45] w-74 h-1 rounded-lg shadow-sm"></div>
-                <div class="bg-[#413E45] w-44 h-1 rounded-lg shadow-sm"></div>
+                <div class="bg-[#413E45] mt-5 w-44 h-1 rounded-lg shadow-sm"></div>
             </div>
 
-            <h1 data-aos="fade-up" data-aos-duration="1000" class="text-[#413E45] text-7xl text-shadow-lg">Como a
+            <h1 data-aos="fade-up" data-aos-duration="1000" class="text-[#413E45] text-center text-7xl text-shadow-lg">
+                Como a
                 ferramenta funciona?</h1>
 
-            <div class="flex flex-col gap-5 mt-10">
+            <div class="hidden lg:block mt-10">
                 <div class="bg-[#413E45] w-20 h-1 rounded-lg shadow-sm"></div>
-                <div class="bg-[#413E45] w-60 h-1 rounded-lg shadow-sm"></div>
+                <div class="bg-[#413E45] mt-5 w-60 h-1 rounded-lg shadow-sm"></div>
             </div>
         </div>
 
@@ -133,39 +136,40 @@ require("view/header.php")
         </div>
     </section>
 
+    <!--Seção de atalhos-->
     <div class="h-screen lg:bg-[url(imgs/atalhos.png)] bg-no-repeat bg-center mt-16">
-        <div class="flex justify-center p-32 gap-10">
+        <div class="flex flex-col m-2 mr-3 text-center lg:flex-row lg:justify-center lg:p-32 gap-10">
 
             <div class="flex flex-col gap-5">
                 <!--Card sobre nós-->
                 <a data-aos="fade-down" data-aos-duration="1000" href="/view/sobre_nos.php"
-                    class="flex flex-col w-xl px-10 py-4 bg-[#F8FBA6] rounded-3xl transition-all duration-700 hover:scale-105 hover:m-2"
+                    class="flex flex-col lg:w-xl px-10 py-4 bg-[#F8FBA6] rounded-3xl"
                     style="box-shadow: 10px 10px 0px #413E45">
                     <h2 class="text-8xl text-[#413E45] text-shadow-[#746587] text-shadow-sm">Sobre nós</h2>
 
                     <div class="flex flex-col text-3xl text-[#413E45] text-shadow-[#746587] text-shadow-xs">
-                        <div class="flex gap-6 items-baseline">
+                        <div class="hidden lg:block lg:flex gap-6 items-baseline">
                             <div class="bg-[#413E45] w-20 h-1 rounded-lg shadow-sm"></div>
                             <div class="bg-[#413E45] w-80 h-1 rounded-lg shadow-sm"></div>
                         </div>
 
                         <div class="flex gap-2 items-baseline">
                             <span>Conheça as desenvolvedoras</span>
-                            <div class="bg-[#413E45] w-36 h-1 rounded-lg shadow-sm"></div>
+                            <div class="hidden lg:block bg-[#413E45] w-36 h-1 rounded-lg shadow-sm"></div>
                         </div>
 
-                        <div class="flex gap-2 items-baseline">
-                            <div class="bg-[#413E45] w-40 h-1 rounded-lg shadow-sm"></div>
+                        <div class="gap-2 items-baseline lg:flex">
+                            <div class="hidden lg:block bg-[#413E45] w-40 h-1 rounded-lg shadow-sm"></div>
                             <span class="-mt-2 text-right">e a pesquisa ;)</span>
-                            <div class="bg-[#413E45] w-20 h-1 rounded-lg shadow-sm"></div>
+                            <div class="hidden lg:block bg-[#413E45] w-20 h-1 rounded-lg shadow-sm"></div>
                         </div>
                     </div>
                 </a>
 
-                <div class="flex gap-10">
+                <div class="flex flex-col lg:flex-row gap-10">
                     <!--Card suporte-->
                     <a data-aos="fade-right" data-aos-duration="1300" data-aos-delay="550" href="/view/suporte.php"
-                        class="flex flex-col px-10 py-4 bg-[#746587] rounded-3xl  transition-all duration-700 hover:scale-105 hover:mx-2"
+                        class="flex flex-col px-10 py-4 bg-[#746587] rounded-3xl"
                         style="box-shadow: 10px 10px 0px #413E45">
                         <div class="text-[#F8FBA6] text-6xl text-shadow-[#413E45] text-shadow-lg">
                             <h7>Suporte</h7>
@@ -174,7 +178,7 @@ require("view/header.php")
 
                     <!--Card projeto-->
                     <a data-aos="fade-left" data-aos-duration="1400" data-aos-delay="600" href=""
-                        class="flex flex-col px-10 py-4 bg-[#746587] rounded-3xl  transition-all duration-700 hover:scale-105 hover:mx-2"
+                        class="flex flex-col px-10 py-4 bg-[#746587] rounded-3xl"
                         style="box-shadow: 10px 10px 0px #413E45">
                         <div class="text-[#F8FBA6] text-6xl text-shadow-[#413E45] text-shadow-lg">
                             <h6>Projeto</h6>
@@ -186,7 +190,7 @@ require("view/header.php")
             <!--Card avalie a ferramenta-->
             <div class="block">
                 <a data-aos="fade-left" data-aos-duration="1200" data-aos-delay="500" href="view/avaliacao.php"
-                    class="flex flex-col px-10 py-4 bg-[#746587] rounded-3xl  transition-all duration-700 hover:scale-105 hover:m-2"
+                    class="flex flex-col px-10 py-4 bg-[#746587] rounded-3xl "
                     style="box-shadow: 10px 10px 0px #413E45">
                     <div class="text-[#F8FBA6] text-6xl text-shadow-[#413E45] text-shadow-lg">
                         <h3>Avalie a</h3>
@@ -206,9 +210,8 @@ require("view/header.php")
         </div>
     </div>
 
-
-
-    <footer class="bg-[#413E45]">
+    <!--Rodapé-->
+    <footer class="bg-[#413E45] mt-32 lg:mt-0">
         <div class="mx-auto w-full max-w-screen-xl">
             <div class="px-4 py-4 md:flex items-center md:justify-between">
                 <span class="text-lg text-white sm:text-center">© 2025 Scripta todos os direitos
@@ -243,7 +246,8 @@ require("view/header.php")
                         <span class="sr-only">Pinterest</span>
                     </a>
 
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=scripta.tech@gmail.com" class="text-white hover:text-[#F8FBA6]">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=scripta.tech@gmail.com"
+                        class="text-white hover:text-[#F8FBA6]">
                         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Zm0 2v.01L12 13l8-6.99V6H4Zm0 12h16V8l-8 7-8-7v10Z" />
@@ -283,7 +287,9 @@ require("view/header.php")
         })
     }
     //Biblioteca de animacao
-    AOS.init()
+    AOS.init(
+        { disable: 'mobile', }
+    )
 
     document.addEventListener('DOMContentLoaded', function () {
         animacaoLetra()
