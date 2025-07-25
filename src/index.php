@@ -1,136 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require("view/header.php")
+    ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="js/animacaoLetra.js" defer></script>
-    <link rel="stylesheet" href="fonts/fonts.css">
-
-    <title>Index</title>
-</head>
-
-<body class="jersey">
-
-    <header class="flex justify-between p-3 relative z-50">
+<div class="h-screen lg:bg-[url(imgs/index.png)] bg-no-repeat bg-center">
+    <header class="flex justify-between items-center p-3 relative z-50">
         <div class="w-20">
             <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
 
-        <a href="view/login.php">
-            <div class="flex border-none rounded-2xl px-3 py-1 group bg-[#8570ab]"
-                style="box-shadow: -4px 4px 0px #685884">
-                <span class="mr-1 text-xl text-white group-hover:text-[#FFEB70] transition duration-600">Entrar</span>
+        <div class="flex items-center gap-5 text-lg">
+            <a href="view/login.php" class="text-[#413E45] hover:underline hover:underline-offset-2 hover:decoration-2">
+                Entrar
+            </a>
 
-                <div class="relative w-7 h-7">
-                    <img src="imgs/icones/perfilBranco.png" alt="ícone perfil"
-                        class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out">
-                    <img src="imgs/icones/perfilHover.png" alt="ícone perfil hover"
-                        class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                </div>
+            <div
+                class="px-2 py-1 text-[#746587] border-[#746587] rounded-lg bg-[#F8FBA6] transition duration-900 ease-in-out hover:bg-black hover:text-white">
+                <a href="view/cadastro.php">
+                    Cadastrar-se
+                </a>
             </div>
-        </a>
+        </div>
     </header>
 
-    <div>
-        <img src="imgs/capa.png" alt="" class="w-8xl -mt-50">
+    <div class="text-right">
+        <button
+            class="mt-98 mr-44 text-5xl text-[#746587] bg-white border-2 border-[#746587] rounded-lg px-10 py-1 transition duration-600 hover:border-white hover:bg-[#746587] hover:text-white">testar</button>
     </div>
 
-    <div class="-mt-26">
-        <div class=" text-center">
-            <h1 class="text-6xl">Descubra o significado dos <span class="px-3 py-1 rounded-3xl rounded-br-none"
-                    style="background-color:#ffeb70">emojis</span></h1>
-        </div>
-
-        <div class="text-center mt-1 text-xl">
-            <h3>Se cadastrando e tendo acesso a <span style="color:#574d6b">ferramenta de tradução</span> <a
-                    href="view/cadastro.php" class="underline">clicando aqui!</a></h3>
-        </div>
-
-        <div class="flex justify-center mt-7">
-            <div class="w-full max-w-2xl bg-gray-200 px-2 py-2 flex items-center rounded-3xl border border-gray-300">
-
-                <button class="p-2">
-                    <img src="imgs/icones/mais.png" alt="icone" class="w-6 h-6" />
-                </button>
-
-                <div
-                    class="flex items-center bg-white flex-grow mx-2 rounded-2xl border border-gray-300 px-3 py-2 shadow-sm">
-                    <img src="imgs/icones/emoji.png" alt="icone" class="w-5 h-5 mr-2" />
-                    <div type="text" class="placeholder-gray-500 bg-transparent">
-                        <span id="typed-output" class="pl-2 text-xl">
-                            <!--Animação da letra e as palavras chaves no arquivo animacaoLetra.js-->
-                        </span>
-                    </div>
-                </div>
-
-                <button class="p-2">
-                    <img src="imgs/icones/microfone.png" alt="icone" class="w-6 h-6" />
-                </button>
-            </div>
-        </div>
+    <div class="flex flex-col justify-center items-center">
+        <button id="saberMais" class="mt-18 transition duration-800 hover:scale-105">
+            <img src="/imgs/icones/saberMais.png" alt="Saiba mais" class="w-32">
+        </button>
     </div>
 
-    <!---------Rodapé--------->
-    <footer class="bottom-1 mt-15">
-        <div class=" bg-gray-200 p-10 pl-15 pr-15 text-[color:#311d56]">
+    <section>
+        <div class="mt-10 bg-[#F8FBA6] py-4">
+            <h1 class="text-center text-[#413E45] text-7xl text-shadow-lg">Como a ferramenta funciona?</h1>
+        </div>
 
-            <div class="flex justify-between">
+        <div class="mt-10 flex flex-col justify-center items-center">
+            <div class="flex flex-col lg:-ml-64">
+                <span
+                    class="text-left text-xl text-[#F8FBA6] px-4 py-3 bg-[#9E8AB7] rounded-2xl rounded-bl-none text-shadow-lg">Você
+                    selecionará o tipo de tradução</span>
 
-                <div class="flex flex-col">
-                    <h3 class="text-xl"><b>Usuário</b></h3>
-                    <a href="view/cadastro.php" class="hover:text-[color:#f5bd20] transition duration-700">Cadastro</a>
-                    
-                    <a href="view/login.php" class="hover:text-[color:#f5bd20] transition duration-700">Login</a>
-                    
-                    <a href="view/perfil.php" class="hover:text-[color:#f5bd20] transition duration-700">Perfil</a>
+                <div class="-ml-88 flex flex-col items-center">
+                    <img src="../imgs/icones/perfilMensagem.png" class="bg-[#F8FBA6] p-2 rounded-2xl"
+                        style="box-shadow: -3px 3px 0px #746587" alt="Perfil do usuário">
+                    <h2 class="mt-1 text-sm font-bold text-[#413E45]">Você</h2>
                 </div>
+            </div>
 
-                <div class="flex flex-col">
-                    <h3 class="text-xl" class="hover:text-[color:#f5bd20] transition duration-700">
-                        <b>Ferramentas</b>
-                    </h3>
-                    <a href="view/tradutor.php" class="hover:text-[color:#f5bd20] transition duration-700">Tradutor</a>
+            <div class="flex flex-col lg:-mr-70 mb-5">
+                <span
+                    class="text-left text-xl text-[#413E45] px-4 py-3 bg-[#C7AFF2] rounded-2xl rounded-br-none text-shadow-lg">
+                    e receberá a frase traduzida</span>
+
+                <div class="-mr-80 flex flex-col items-center">
+                    <img src="../imgs/icones/perfilMensagem.png" class="bg-[#F8FBA6] p-2 rounded-2xl"
+                        style="box-shadow: -3px 3px 0px #746587" alt="Perfil do usuário">
+                    <h2 class="mt-1 text-sm font-bold text-[#413E45]">EmojiMoji</h2>
                 </div>
+            </div>
 
-                <div class="flex flex-col">
-                    <h3 class="text-xl"><b>Fale conosco</b></h3>
-                    <a href="view/sobre_nos.php" class="hover:text-[color:#f5bd20] transition duration-700">Sobre nós</a>
-                    
-                    <a href="view/suporte.php" class="hover:text-[color:#f5bd20] transition duration-700">Suporte</a>
-                    
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=scripta.tech@gmail.com"
-                        class="hover:text-[color:#f5bd20] transition duration-700">scripta.tech@gmail.com</a>
-                </div>
+            <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
-                <div class="flex flex-col ">
-                    <h3 class="text-xl"><b>Redes sociais</b></h3>
+                <div class="flex items-center gap-3">
+                    <input type="hidden" name="tipoTraducao" value="formal">
 
-                    <div class="flex justify-center mt-2 gap-3">
-                        <a href="https://www.instagram.com/netspeak_2025/"><img src="imgs/icones/instagram.png"
-                                alt="instagram"></a>
+                    <div class="relative">
+                        <button data-tooltip-target="tooltip-default-tipo">
+                            <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução"
+                                class="w-8 mt-2"></button>
 
-                        <a href="https://github.com/ScriptaTec"><img src="imgs/icones/github.png" alt="gitHub"></a>
+                        <div id="modal-filtro" class="hidden absolute bottom-10 left-3 items-center w-48">
 
-                        <a href="https://br.pinterest.com/scriptatech/"><img src="imgs/icones/pinterest.png"
-                                alt="pinterest"></a>
+                            <div class="flex flex-col bg-white py-2 px-3 rounded-2xl rounded-bl-none border-2">
 
-                        <a href="https://wa.me/5547988703860?text=Oi!%20vim%20pelo%20site%20de%20vocês%20(:"
-                            target="_blank">
-                            <img src="imgs/icones/whatsapp.png" alt="WhatsApp">
-                        </a>
+                                <spam class="text-center text-lg">Tipo de tradução:</spam>
+
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="tipo" value="formal"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+
+                                    <spam class="text-lg">Informal para formal</spam>
+                                </div>
+
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="tipo" value="informal"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <spam class="text-lg">Formal para informal</spam>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Descrição do botão de tipo de tradução-->
+                    <div id="tooltip-default-tipo" role="tooltip"
+                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
+                        Tipo de tradução
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+
+                    <!--Atalho para emojis-->
+                    <button data-tooltip-target="tooltip-default-emoji">
+                        <img src="../imgs/icones/emojiBranco.png" alt="Abrir atalho para emojis" class="w-8">
+                    </button>
+
+                    <!--Descrição do botão de atalho de emojis-->
+                    <div id="tooltip-default-emoji" role="tooltip"
+                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
+                        Atalho de emojis
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+
+                    <!--Input para enviar a frase-->
+                    <input type="text" name="frase"
+                        class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
+
+                    <!--Botão para enviar a frase-->
+                    <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default-enviar">
+                        <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
+                            class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
+
+                        <img src="../imgs/icones/enviarHover.png" alt="Ícone de enviar frase para ser traduzida"
+                            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </button>
+
+                    <!--Descrição do botão de enviar-->
+                    <div id="tooltip-default-enviar" role="tooltip"
+                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
+                        Enviar a frase que será traduzida
+                        <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+    </section>
 
+    <div class="h-screen lg:bg-[url(imgs/atalhos.png)] bg-no-repeat bg-center mt-16">
+        <div class="">
+            <span>sim</span>
         </div>
-        </div>
-    </footer>
+    </div>
+</div>
 
+
+<!--Necessário para o funcionamento da biblioteca FlowBite-->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
