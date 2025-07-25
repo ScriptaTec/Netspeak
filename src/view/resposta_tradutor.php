@@ -77,7 +77,7 @@ require('header.php');
 
                 <!--Selecionar o tipo de tradução-->
                 <div class="relative">
-                    <button onclick="mostrarModalFiltro()" data-tooltip-target="tooltip-default-tipo">
+                    <button type="button" onclick="mostrarModalFiltro()" data-tooltip-target="tooltip-default-tipo">
                         <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução" class="w-8 mt-2"></button>
 
                     <div id="modal-filtro" class="hidden absolute bottom-10 left-3 items-center w-48">
