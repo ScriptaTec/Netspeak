@@ -14,3 +14,4 @@ window.addEventListener("click", function (event) {
     modalFiltro.classList.add("hidden");
   }
 });
+

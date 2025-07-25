@@ -38,7 +38,7 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <form method="post" action="resposta_tradutor.php">
+    <form method="post" action="resposta_tradutor.php" id="form">
 
         <!--Card onde será mostrada as traduções-->
         <div class="pt-12 pb-14 px-12 rounded-3xl border-2 border-white bg-[#9E8CBE] relative lg:mx-48"
@@ -77,7 +77,7 @@ require('header.php');
 
                 <!--Selecionar o tipo de tradução-->
                 <div class="relative">
-                    <button onclick="mostrarModalFiltro()" data-tooltip-target="tooltip-default-tipo">
+                    <button type="button" onclick="mostrarModalFiltro()" data-tooltip-target="tooltip-default-tipo">
                         <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução" class="w-8 mt-2"></button>
 
                     <div id="modal-filtro" class="hidden absolute bottom-10 left-3 items-center w-48">
@@ -144,6 +144,20 @@ require('header.php');
         </div>
     </form>
 </div>
+
+<!--Icone de loading-->
+<div id="carregando" class="hidden fixed inset-0 flex items-center justify-center bg-gray-50/50 z-[9999]">
+    <img src="../imgs/icones/carregando.gif" alt="Carregando" class="w-50">
+</div>
+
+<script> 
+    const form = document.getElementById("form");
+    const carregando = document.getElementById("carregando");
+
+    form.addEventListener('submit', function () {
+        carregando.classList.remove("hidden")
+    })
+</script>
 
 <!--Rodapé-->
 <?php

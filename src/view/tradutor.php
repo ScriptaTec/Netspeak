@@ -56,7 +56,7 @@ require('header.php');
         <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
             <!--Formulário para enviar para o resposta_tradutor-->
-            <form method="post" action="resposta_tradutor.php" class="flex items-center gap-3">
+            <form method="post" action="resposta_tradutor.php" id="form" class="flex items-center gap-3">
                 <input type="hidden" name="tipoTraducao" value="formal">
 
                 <!--Selecionar o tipo de tradução-->
@@ -71,13 +71,15 @@ require('header.php');
                             <spam class="text-center text-lg">Tipo de tradução:</spam>
 
                             <div class="flex gap-2 items-center">
-                                <input type="checkbox" name="tipo" value="formal" class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                <input type="checkbox" name="tipo" value="formal"
+                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
 
                                 <spam class="text-lg">Informal para formal</spam>
                             </div>
 
                             <div class="flex gap-2 items-center">
-                                <input type="checkbox" name="tipo" value="informal" class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                <input type="checkbox" name="tipo" value="informal"
+                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
                                 <spam class="text-lg">Formal para informal</spam>
                             </div>
                         </div>
@@ -126,6 +128,20 @@ require('header.php');
         </div>
     </div>
 </div>
+
+<!--Icone de loading-->
+<div id="carregando" class="hidden fixed inset-0 flex items-center justify-center bg-gray-50/50 z-[9999]">
+    <img src="../imgs/icones/carregando.gif" alt="Carregando" class="w-50">
+</div>
+
+<script> 
+    const form = document.getElementById("form");
+    const carregando = document.getElementById("carregando");
+
+    form.addEventListener('submit', function () {
+        carregando.classList.remove("hidden")
+    })
+</script>
 
 <!--Rodapé-->
 <?php
