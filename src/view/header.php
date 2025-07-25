@@ -14,14 +14,14 @@
     <script src="../js/sobre_nos.js" defer></script>
     <!--Animação do login, cadastro, redefinir senha, index-->
     <script src="../js/animacao.js" defer></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!--Animação das letras-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!---Animações no geral-->
     <!--Mostrar senha nos inputs-->
     <script src="../js/inputs.js"></script>
     <!--Navegação e modal do perfil-->
     <script src="../js/perfil.js" defer></script>
-     <!--Modal de filtro nas páginas de tradução-->
-     <script src="../js/tradutor.js" defer></script>
+    <!--Modal de filtro nas páginas de tradução-->
+    <script src="../js/tradutor.js" defer></script>
 
     <title>EmojiMoji</title>
 </head>
