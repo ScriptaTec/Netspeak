@@ -225,7 +225,7 @@ require('header.php');
                     <div class="lg:flex lg:flex-row gap-5">
 
                         <div class="relative mb-6">
-                            <input id="labels-range-input" type="range" value="1000" 
+                            <input id="labels-range-input" type="range" value="1000"
                                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                             <span class="text-lg text-gray-500 absolute start-0 -bottom-6">1
                             </span>
@@ -234,22 +234,22 @@ require('header.php');
                             <span
                                 class="text-lg text-gray-500 absolute start-2/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">3</span>
 
-                                <span
+                            <span
                                 class="text-lg text-gray-500 absolute start-3/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">4</span>
 
-                                <span
+                            <span
                                 class="text-lg text-gray-500 absolute start-4/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">5</span>
 
-                                <span
+                            <span
                                 class="text-lg text-gray-500 absolute start-5/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">6</span>
 
-                                <span
+                            <span
                                 class="text-lg text-gray-500 absolute start-6/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">7</span>
 
-                                <span
+                            <span
                                 class="text-lg text-gray-500 absolute start-7/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">8</span>
 
-                                <span
+                            <span
                                 class="text-lg text-gray-500 absolute start-8/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">9</span>
 
                             <span class="text-lg text-gray-500 absolute end-0 -bottom-6">10</span>
