@@ -18,10 +18,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!---Animações no geral-->
     <!--Mostrar senha nos inputs-->
     <script src="../js/inputs.js"></script>
-    <!--Navegação e modal do perfil-->
-    <script src="../js/perfil.js" defer></script>
     <!--Modal de filtro nas páginas de tradução-->
     <script src="../js/tradutor.js" defer></script>
+     <!--Modal de avaliacao no suporte-->
+     <script src="../js/avaliacao.js" defer></script>
 
     <title>EmojiMoji</title>
 </head>

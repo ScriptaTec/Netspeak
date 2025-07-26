@@ -4,7 +4,7 @@ require('header.php');
 ?>
 
 
-<div class="headline lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat">
+<div class="lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -122,177 +122,404 @@ require('header.php');
 
 
     <!--Seção da justificativa para a avliação-->
-    <section id="form" class="hidden lg:mt-20">
+    <section id="secaoJustificativa"
+        class="hidden fixed inset-0 flex items-center justify-center bg-gray-50/50 z-[9999]">
 
         <!--Card da justificativa para a avliação-->
-        <div class="mt-5 m-2 lg:mb-20 lg:ml-20">
-            <div class="flex-col py-3 px-10 rounded-4xl rounded-br-none border-2 border-[#746587] lg:w-5xl"
-                style="box-shadow: 5px 14px 0px #746587">
+        <div class="bg-white mt-5 m-2 max-h-screen overflow-y-auto lg:mb-20 lg:ml-20">
+            <div class="flex-col py-3 px-10 text-center rounded-4xl border-2 border-[#746587] lg:w-4xl">
 
-                <!--Pergunta 1-->
-                <div class="flex-col">
-                    <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">Todas as traduções foram feitas
-                        corretamente?</label>
-
-                    <div class="lg:flex lg:flex-row gap-5">
-                        <!--Opção 1-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="sim"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
-                        </div>
-
-                        <!--Opção 2-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="mediano"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
-                        </div>
-
-                        <!--Opção 3-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="nao"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Pergunta 2-->
-                <div class="flex-col mt-5">
-                    <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">A linguagem usada pela ferramenta
-                        foi compreenssiva?</label>
-
-                    <div class="lg:flex lg:flex-row gap-5">
-                        <!--Opção 1-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="sim"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
-                        </div>
-
-                        <!--Opção 2-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="mediano"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
-                        </div>
-
-                        <!--Opção 3-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="nao"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Pergunta 3-->
-                <div class="flex-col mt-5">
-                    <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">A sua compreenssão sobre a
-                        linguagem da
-                        internet melhorou após utilizar a ferramenta?</label>
-
-                    <div class="lg:flex lg:flex-row gap-5">
-                        <!--Opção 1-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="sim"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
-                        </div>
-
-                        <!--Opção 2-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="mediano"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou menos</label>
-                        </div>
-
-                        <!--Opção 3-->
-                        <div class="flex gap-2 items-center">
-                            <input type="checkbox" name="opcao" value="nao"
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Pergunta 4-->
-                <div class="flex-col mt-5">
-                    <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
-                        De zero a dez, qual nota a ferramenta de tradução receberia?</label>
-
-                    <div class="lg:flex lg:flex-row gap-5">
-
-                        <div class="relative mb-6">
-                            <input id="labels-range-input" type="range" value="1000"
-                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
-                            <span class="text-lg text-gray-500 absolute start-0 -bottom-6">1
-                            </span>
-                            <span
-                                class="text-lg text-gray-500 absolute start-1/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">2</span>
-                            <span
-                                class="text-lg text-gray-500 absolute start-2/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">3</span>
-
-                            <span
-                                class="text-lg text-gray-500 absolute start-3/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">4</span>
-
-                            <span
-                                class="text-lg text-gray-500 absolute start-4/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">5</span>
-
-                            <span
-                                class="text-lg text-gray-500 absolute start-5/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">6</span>
-
-                            <span
-                                class="text-lg text-gray-500 absolute start-6/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">7</span>
-
-                            <span
-                                class="text-lg text-gray-500 absolute start-7/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">8</span>
-
-                            <span
-                                class="text-lg text-gray-500 absolute start-8/9 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">9</span>
-
-                            <span class="text-lg text-gray-500 absolute end-0 -bottom-6">10</span>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="mt-5 flex flex-col">
-                    <label for="obs" class="text-[#413E45] text-xl">Observações</label>
-                    <textarea name="" id="" placeholder="..."
-                        class="resize-none bg-[#beaddb] px-4 h-74 outline-none border-none focus:outline-none focus:ring-0 hover:border-none lg:h-28 lg:w-2xl"></textarea>
-                </div>
-
-                <!--Enviar a avaliação-->
-                <div class="mt-5">
-                    <button type="button" onclick="fecharForm()"
-                        class="bg-[#746587] text-lg px-2 py-1 rounded-xl text-white hover:bg-black transition duration-600 ease-in-out">
-                        <span>Enviar Avaliação</span>
+                <div class="flex flex-col justify-center gap-4 items-center lg:relative lg:flex-row lg:gap-0">
+                    <button type="button" onclick="voltarEtapa()" class="flex items-center ">
+                        <img src="../imgs/icones/voltar.png" alt="Voltar etapa"
+                            class="w-10 h-10 flex justify-center lg:absolute left-0">
                     </button>
+
+                    <h1 id="titulo"
+                        class="text-7xl text-shadow-lg decoration-4 decoration-[#746587] underline underline-offset-15">
+                        Justifique sua resposta</h1>
                 </div>
+
+                <!--Formulário que engloba todas as etapas da avaliação-->
+                <form action="" method="post">
+
+                    <!--Etapa 1 da avaliação-->
+                    <section id="formEtapa1" class="hidden">
+
+                        <!--Pergunta 1-->
+                        <div class="flex-col mt-5 flex justify-center items-center">
+                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">Todas as traduções foram
+                                feitas
+                                corretamente?</label>
+
+                            <div class=" lg:flex lg:flex-row gap-5">
+                                <!--Opção 1-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="sim"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                </div>
+
+                                <!--Opção 2-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="mediano"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                        menos</label>
+                                </div>
+
+                                <!--Opção 3-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="nao"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Pergunta 2-->
+                        <div class="flex-col mt-5 flex justify-center items-center">
+                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                                Após a tradução, o contexto da frase foi mantido?
+                            </label>
+
+                            <div class="lg:flex lg:flex-row gap-5">
+                                <!--Opção 1-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="sim"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                </div>
+
+                                <!--Opção 2-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="mediano"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                        menos</label>
+                                </div>
+
+                                <!--Opção 3-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="nao"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Pergunta 3-->
+                        <div class="flex-col mt-5 flex justify-center items-center">
+                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">A linguagem usada pela
+                                ferramenta
+                                foi compreenssiva?</label>
+
+                            <div class="lg:flex lg:flex-row gap-5">
+                                <!--Opção 1-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="sim"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                </div>
+
+                                <!--Opção 2-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="mediano"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                        menos</label>
+                                </div>
+
+                                <!--Opção 3-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="nao"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Pergunta 4-->
+                        <div class="flex-col mt-5 flex justify-center items-center">
+                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                                Você aprendeu novas gírias, abreviações ou emojis com a ferramenta?
+                            </label>
+
+                            <div class="lg:flex lg:flex-row gap-5">
+                                <!--Opção 1-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="sim"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                </div>
+
+                                <!--Opção 2-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="mediano"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                        menos</label>
+                                </div>
+
+                                <!--Opção 3-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="nao"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="abrirEtapa2()"
+                            class="mt-5 
+                    py-2 px-5 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                            Próxima etapa
+                        </button>
+                    </section>
+                    <!--Fim da etapa 1 do formulario-->
+
+
+
+
+                    <!--Etapa 2 do formulario-->
+                    <section id="formEtapa2" class="hidden">
+
+                        <!--Pergunta 8-->
+                        <div class="flex-col mt-5 flex justify-center items-center">
+                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                                Você usaria essa ferramenta no seu dia a dia?
+                            </label>
+
+                            <div class="lg:flex lg:flex-row gap-5">
+                                <!--Opção 1-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="sim"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                </div>
+
+                                <!--Opção 2-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="mediano"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                        menos</label>
+                                </div>
+
+                                <!--Opção 3-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="nao"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Pergunta 6-->
+                        <div class="flex-col mt-5 flex justify-center items-center">
+                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                                A sua compreenssão sobre a linguagem formal melhorou?
+                            </label>
+
+                            <div class="lg:flex lg:flex-row gap-5">
+                                <!--Opção 1-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="sim"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                </div>
+
+                                <!--Opção 2-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="mediano"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                        menos</label>
+                                </div>
+
+                                <!--Opção 3-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="nao"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Pergunta 7-->
+                        <div class="flex-col mt-5 flex justify-center items-center">
+                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                                A sua compreenssão sobre a linguagem informal melhorou?
+                            </label>
+
+                            <div class="lg:flex lg:flex-row gap-5">
+                                <!--Opção 1-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="sim"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                </div>
+
+                                <!--Opção 2-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="mediano"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                        menos</label>
+                                </div>
+
+                                <!--Opção 3-->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="opcao" value="nao"
+                                        class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button type="button" onclick="abrirEtapa3()"
+                            class="mt-5 
+                    py-2 px-5 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                            Próxima etapa
+                        </button>
+                    </section>
+                    <!--Fim da etapa 2 do formulario-->
+
+
+
+                    <!--Etapa 3 do formulario-->
+                    <section id="formEtapa3" class="hidden">
+                        <!--Pergunta 8-->
+                        <div class="flex-col mt-5 flex justify-center items-center">
+                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                                Você gostaria de nos enviar alguma observação?
+                            </label>
+
+                            <div class="lg:flex lg:flex-row gap-5">
+                                <textarea name="" id=""
+                                    class="resize-none bg-[#9380ac] text-white px-4 h-74 outline-none rounded-lg border-none focus:outline-none focus:ring-0 hover:border-none lg:h-28 lg:w-xl"></textarea>
+                            </div>
+                        </div>
+
+                        <!--Pergunta 9-->
+                        <div class="flex flex-col justify-center mt-7">
+
+                            <label for="nota" class="text-2xl text-[#413E45]">De 0 a 10, qual nota a ferramenta merece
+                                receber?</label>
+
+                            <div class="flex flex-col justify-center items-center mt-4 gap-1 lg:flex-row">
+                                <div class="flex">
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">1</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">2</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">3</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">4</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">5</span>
+                                    </button>
+                                </div>
+
+                                <div class="flex mt-2">
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">6</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">7</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">8</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">9</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">10</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button type="button" onclick="fecharForm()"
+                            class="mt-5 
+                    py-2 px-5 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                            Enviar avaliacao
+                        </button>
+                    </section>
+                    <!--Fim da etapa 3 do formulario-->
+                </form>
             </div>
+        </div>
     </section>
-
 </div>
-
-<script>
-    const form = document.getElementById("form")
-
-    function abrirForm() {
-        form.classList.remove("hidden")
-
-        form.scrollIntoView({
-            behavior: 'smooth', // Faz a rolagem suave
-        });
-    }
-
-    function fecharForm() {
-        form.classList.add("hidden")
-    }
-</script>
-
 
 <!--Rodapé-->
 <?php

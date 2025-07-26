@@ -11,7 +11,10 @@
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    AOS.init();
+   //Biblioteca de animacao
+   AOS.init(
+        { disable: 'mobile', }
+    )
 </script>
 
 <!--Necessário para o funcionamento da biblioteca FlowBite-->

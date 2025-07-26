@@ -71,11 +71,11 @@ require('header.php');
 
 <!--Navegação entre as seções-->
 <div class="flex justify-center gap-5 text-center text-lg text-gray-600 mt-2 lg:mt-0">
-    <button onclick="mostrarEditar()" id="btn-editar" class="hover:text-black transition duration-500 ">
+    <button type="button" onclick="mostrarEditar()" id="btn-editar" class="hover:text-black transition duration-500 ">
         <span>Editar dados</span>
     </button>
 
-    <button onclick="mostrarAdicionar()" id="btn-adicionar"
+    <button type="button" onclick="mostrarAdicionar()" id="btn-adicionar"
         class="text-black hover:text-black transition duration-500 ">
         <span>Adicionar dados</span>
     </button>
@@ -83,7 +83,7 @@ require('header.php');
     <a href="redefinir_senha.php" class="hover:text-black transition duration-500 ">Redefinir senha</a>
 
     <form method="POST" action="../controller/controller_excluir.php" id="form-excluir">
-        <button onclick="abrirModalExcluir()" class="hover:text-black transition duration-500 ">
+        <button type="button" onclick="abrirModalExcluir()" class="hover:text-black transition duration-500 ">
             <span>Excluir conta</span>
         </button>
     </form>
@@ -117,6 +117,32 @@ require('header.php');
 
     <div class="flex justify-center py-10 text-center relative z-10 lg:py-24 ">
 
+        <!--Seção de editar dados do usuário-->
+        <form action="../controller/controller_perfil.php" method="post" id="form-editar"
+            class="hidden flex flex-col bg-white py-4 px-10 rounded-2xl" style="box-shadow: -10px 10px 1px #776a8f;">
+
+            <h2 class="text-4xl text-[#413E45]">Edite seus dados</h2>
+
+            <!--Campo para editar nome-->
+            <label for="nome" class="mt-3 text-left text-xl">Nome</label>
+            <input type="text" name="nome" placeholder=". . . " value="<?= $_SESSION['user']['nome'] ?? '' ?>"
+                class="bg-[#F8FBA6] lg:w-98 py-1.5 px-2 border border-black rounded-xl"
+                style="box-shadow: -2px 2px 0px black;">
+
+            <!--Campo para email-->
+            <label for="email" class="mt-3 text-left text-xl">Email</label>
+            <input type="email" name="email" placeholder=". . . " value="<?= $_SESSION['user']['email'] ?? '' ?>"
+                class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl" style="box-shadow: -2px 2px 0px black;">
+
+            <!--Campo para que funcione a requisição-->
+            <input type="hidden" name="editar_dados_basicos" value="editar">
+
+            <button onclick="abrirModalEditar()" name="editar_dados_basicos"
+                class="bg-[#746587] mt-5 w-32 px-2 py-1.5 rounded-xl transition duration-500 hover:bg-black hover:scale-105">
+                <span class="text-white text-lg">Editar dados</span>
+            </button>
+        </form>
+        <!--Fim da seção de editar dados do usuário-->
 
         <!--Seção de adicionar dados do usuário-->
         <form action="../controller/controller_perfil.php" method="post" id="form-adicionar"
@@ -187,39 +213,13 @@ require('header.php');
             <!--Campo para que funcione a requisição-->
             <input type="hidden" name="editar_personalizacao" value="editar">
 
-            <button type="button" onclick="abrirModalAdicionar()" name="editar_personalizacao"
+            <button onclick="abrirModalAdicionar()" name="editar_personalizacao"
                 class="bg-[#746587] mt-5 w-32 px-2 py-1.5 rounded-xl transition duration-500 hover:bg-black hover:scale-105">
                 <span class="text-white text-lg">Adicionar dados</span>
             </button>
         </form>
         <!--Fim da seção de adicionar dados-->
 
-
-        <!--Seção de editar dados do usuário-->
-        <form action="../controller/controller_perfil.php" method="post" id="form-editar"
-            class="hidden flex flex-col bg-white py-4 px-10 rounded-2xl" style="box-shadow: -10px 10px 1px #776a8f;">
-
-            <h2 class="text-4xl text-[#413E45]">Edite seus dados</h2>
-
-            <!--Campo para editar nome-->
-            <label for="nome" class="mt-3 text-left text-xl">Nome</label>
-            <input type="text" name="nome" placeholder=". . . " value="<?= $_SESSION['user']['nome'] ?? '' ?>"
-                class="bg-[#F8FBA6] lg:w-98 py-1.5 px-2 border border-black rounded-xl"
-                style="box-shadow: -2px 2px 0px black;">
-
-            <!--Campo para email-->
-            <label for="email" class="mt-3 text-left text-xl">Email</label>
-            <input type="email" name="email" placeholder=". . . " value="<?= $_SESSION['user']['email'] ?? '' ?>"
-                class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl" style="box-shadow: -2px 2px 0px black;">
-
-            <!--Campo para que funcione a requisição-->
-            <input type="hidden" name="editar_dados_basicos" value="editar">
-
-            <button type="button" onclick="abrirModalEditar()" name="editar_dados_basicos"
-                class="bg-[#746587] mt-5 w-32 px-2 py-1.5 rounded-xl transition duration-500 hover:bg-black hover:scale-105">
-                <span class="text-white text-lg">Editar dados</span>
-            </button>
-        </form>
     </div>
 </div>
 
@@ -331,7 +331,7 @@ require('header.php');
 
 
         <div class="flex justify-center">
-            <button
+            <button type="button"
                 class="btn-confirmar mt-5 py-1 px-5 rounded-3xl bg-gray-300 text-gray-600 hover:bg-black hover:text-white transition duration-700">
                 Editar
             </button>
@@ -349,6 +349,116 @@ require('header.php');
         </a>
     </div>
 </footer>
+
+<script>
+    //Variaveis da navegação
+    const editar = document.getElementById("btn-editar");
+    const adicionar = document.getElementById("btn-adicionar");
+
+    //Variaveis do adicionar dados
+    const modalAdicionar = document.getElementById("modal-adicionar");
+    const confirmar = modalAdicionar.querySelector(".btn-confirmar");
+    const cancelar = modalAdicionar.querySelector(".btn-cancelar");
+    const formAdicionar = document.getElementById("form-adicionar");
+
+    //Variaveis do editar dados
+    const modalEditar = document.getElementById("modal-editar");
+    const confirmarEditar = modalEditar.querySelector(".btn-confirmar");
+    const cancelarEditar = modalEditar.querySelector(".btn-cancelar");
+    const formEditar = document.getElementById("form-editar");
+
+    //Variaveis do excluir conta
+    const modalExcluir = document.getElementById("modal-excluir");
+    const confirmarExcluir = modalExcluir.querySelector(".btn-confirmar");
+    const cancelarExcluir = modalExcluir.querySelector(".btn-cancelar");
+    const formExcluir = document.getElementById("form-excluir");
+
+    //Variaveis de mudar foto de perfil
+    const modalFoto = document.getElementById("modal-foto");
+    const confirmarFoto = modalFoto.querySelector(".btn-confirmar");
+    const cancelarFoto = modalFoto.querySelector(".btn-cancelar");
+
+    // Função para alternar a visibilidade dos formulários
+    function mostrarEditar() {
+        editar.classList.add("text-black");
+        formEditar.classList.remove("hidden");
+
+        adicionar.classList.remove("text-black");
+        formAdicionar.classList.add("hidden");
+    }
+
+    function mostrarAdicionar() {
+        adicionar.classList.add("text-black");
+        formAdicionar.classList.remove("hidden");
+
+        editar.classList.remove("text-black");
+        formEditar.classList.add("hidden");
+    }
+
+    //Modal de adicionar dados
+    function abrirModalAdicionar() {
+        //Mostrar o modal quando a pessoa clicar no botão de adicionar dados
+        event.preventDefault();
+        modalAdicionar.classList.remove("hidden");
+
+        //Botões dentro do modal
+        confirmar.addEventListener("click", () => {
+            formAdicionar.submit(); // Envia o formulário de exclusão
+        });
+
+        cancelar.addEventListener("click", () => {
+            modalAdicionar.classList.add("hidden"); // Esconde o modal
+        });
+    }
+
+    //Modal de editar dados
+    function abrirModalEditar() {
+        //Mostrar o modal quando a pessoa clicar no botão de editar dados
+        event.preventDefault();
+        modalEditar.classList.remove("hidden");
+
+        //Botões dentro do modal
+        confirmarEditar.addEventListener("click", () => {
+            formEditar.submit(); // Envia o formulário de edição
+        });
+
+        cancelarEditar.addEventListener("click", () => {
+            modalEditar.classList.add("hidden"); // Esconde o modal e não envia as alterações
+        });
+    }
+
+    //Modal de excluir conta
+    function abrirModalExcluir() {
+        //Mostrar o modal quando a pessoa clicar no botão de excluir conta
+        event.preventDefault();
+        modalExcluir.classList.remove("hidden");
+
+        //Botões dentro do modal
+        confirmarExcluir.addEventListener("click", () => {
+            formExcluir.submit(); // Envia o formulário de excluir conta
+        });
+
+        cancelarExcluir.addEventListener("click", () => {
+            modalExcluir.classList.add("hidden"); // Esconde o modal e não exclui a conta
+        });
+    }
+
+    //Modal de mudar foto de perfil
+    function abrirModalFoto() {
+        //Mostrar o modal quando a pessoa clicar no botão de sair da conta
+        event.preventDefault();
+        modalFoto.classList.remove("hidden");
+
+        //Botões dentro do modal
+        confirmarFoto.addEventListener("click", () => {
+            modalFoto.classList.add("hidden");
+        });
+
+        cancelarFoto.addEventListener("click", () => {
+            modalFoto.classList.add("hidden"); // Esconde o modal e não sai da conta
+        });
+    }
+</script>
 
 <!--Necessário para o funcionamento da biblioteca FlowBite-->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>

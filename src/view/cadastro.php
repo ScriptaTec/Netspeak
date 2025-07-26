@@ -15,10 +15,10 @@ require('header.php');
         <a href="../index.php" class="text-2xl transition duration-500 hover:text-amber-300">Home</a>
     </header>
 
-    <div class="flex items-center justify-center">
+    <div class="flex items-center justify-center m-3">
         <form method="POST" action="../controller/controller_cadastro.php" id="form" class="flex flex-col">
 
-            <h1 class="text-7xl lg:text-8xl">Seja bem-vindo</h1>
+            <h1 class="text-7xl text-center lg:text-8xl">Seja bem-vindo</h1>
 
             <label for="email" class="text-xl mt-3 ml-4">Email</label>
             <input type="email" name="email" required placeholder="Email..."
