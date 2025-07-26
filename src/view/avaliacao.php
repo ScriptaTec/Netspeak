@@ -123,16 +123,22 @@ require('header.php');
 
     <!--Seção da justificativa para a avliação-->
     <section id="secaoJustificativa"
-        class="hidden fixed inset-0 flex items-center justify-center bg-gray-50/50 z-[9999] lg:mt-20">
+        class="hidden fixed inset-0 flex items-center justify-center bg-gray-50/50 z-[9999]">
 
         <!--Card da justificativa para a avliação-->
         <div class="bg-white mt-5 m-2 lg:mb-20 lg:ml-20">
             <div class="flex-col py-3 px-10 text-center rounded-4xl rounded-br-none border-2 border-[#746587] lg:w-4xl"
                 style="box-shadow: 5px 14px 0px #746587">
 
-                <h1 id="titulo"
-                    class="text-7xl text-shadow-lg decoration-4 decoration-[#746587] underline underline-offset-15">
-                    Justifique sua resposta</h1>
+                <div class="flex justify-center items-center relative">
+                    <button type="button" onclick="voltarEtapa()">
+                        <img src="../imgs/icones/voltar.png" alt="Voltar etapa" class="w-10 h-10 absolute left-0">
+                    </button>
+
+                    <h1 id="titulo"
+                        class="text-7xl text-shadow-lg decoration-4 decoration-[#746587] underline underline-offset-15">
+                        Justifique sua resposta</h1>
+                </div>
 
                 <!--Formulário que engloba todas as etapas da avaliação-->
                 <form action="" method="post">
@@ -272,7 +278,7 @@ require('header.php');
 
 
 
-                    
+
                     <!--Etapa 2 do formulario-->
                     <section id="formEtapa2" class="hidden">
 
