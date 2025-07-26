@@ -27,7 +27,7 @@ require('header.php');
         <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
             aria-controls="drawer-navigation">
             <div class="relative w-8 h-8 group">
-                <img src="../imgs/icones/menu.png" alt="ícone menu"
+                <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
                     class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
                 <img src="../imgs/icones/menuAmarelo.png" alt="ícone menu hover"
                     class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">

@@ -4,7 +4,7 @@ require('header.php');
 ?>
 
 
-<div class="headline lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat">
+<div class="lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -126,13 +126,13 @@ require('header.php');
         class="hidden fixed inset-0 flex items-center justify-center bg-gray-50/50 z-[9999]">
 
         <!--Card da justificativa para a avliação-->
-        <div class="bg-white mt-5 m-2 lg:mb-20 lg:ml-20">
-            <div class="flex-col py-3 px-10 text-center rounded-4xl rounded-br-none border-2 border-[#746587] lg:w-4xl"
-                style="box-shadow: 5px 14px 0px #746587">
+        <div class="bg-white mt-5 m-2 max-h-screen overflow-y-auto lg:mb-20 lg:ml-20">
+            <div class="flex-col py-3 px-10 text-center rounded-4xl border-2 border-[#746587] lg:w-4xl">
 
-                <div class="flex justify-center items-center relative">
-                    <button type="button" onclick="voltarEtapa()">
-                        <img src="../imgs/icones/voltar.png" alt="Voltar etapa" class="w-10 h-10 absolute left-0">
+                <div class="flex flex-col justify-center gap-4 items-center lg:relative lg:flex-row lg:gap-0">
+                    <button type="button" onclick="voltarEtapa()" class="flex items-center ">
+                        <img src="../imgs/icones/voltar.png" alt="Voltar etapa"
+                            class="w-10 h-10 flex justify-center lg:absolute left-0">
                     </button>
 
                     <h1 id="titulo"
@@ -142,8 +142,10 @@ require('header.php');
 
                 <!--Formulário que engloba todas as etapas da avaliação-->
                 <form action="" method="post">
+
                     <!--Etapa 1 da avaliação-->
                     <section id="formEtapa1" class="hidden">
+
                         <!--Pergunta 1-->
                         <div class="flex-col mt-5 flex justify-center items-center">
                             <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">Todas as traduções foram
@@ -395,11 +397,116 @@ require('header.php');
                             </label>
 
                             <div class="lg:flex lg:flex-row gap-5">
-                                <textarea name="" id="" placeholder="..."
-                                    class="resize-none bg-[#F8FBA6] px-4 h-74 outline-none border-none focus:outline-none focus:ring-0 hover:border-none lg:h-28 lg:w-xl"></textarea>
-
+                                <textarea name="" id=""
+                                    class="resize-none bg-[#9380ac] text-white px-4 h-74 outline-none rounded-lg border-none focus:outline-none focus:ring-0 hover:border-none lg:h-28 lg:w-xl"></textarea>
                             </div>
                         </div>
+
+                        <!--Pergunta 9-->
+                        <div class="flex flex-col justify-center mt-7">
+
+                            <label for="nota" class="text-2xl text-[#413E45]">De 0 a 10, qual nota a ferramenta merece
+                                receber?</label>
+
+                            <div class="flex flex-col justify-center items-center mt-4 gap-1 lg:flex-row">
+                                <div class="flex">
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">1</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">2</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">3</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">4</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">5</span>
+                                    </button>
+                                </div>
+
+                                <div class="flex mt-2">
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">6</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">7</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">8</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">9</span>
+                                    </button>
+                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                        <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+
+                                        <span class="text-lg text-[#413E45]">10</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <button type="button" onclick="fecharForm()"
                             class="mt-5 
