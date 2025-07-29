@@ -4,7 +4,7 @@ const titutlo = document.getElementById("titulo");
 const formEtapa1 = document.getElementById("formEtapa1");
 const formEtapa2 = document.getElementById("formEtapa2");
 const formEtapa3 = document.getElementById("formEtapa3");
-const checkbox = formEtapa2.querySelectorAll('input[type="checkbox"]');
+const radio = formEtapa2.querySelectorAll('input[type="radio"]');
 const estrelas = formEtapa3.querySelectorAll(".btn-estrela");
 
 //Etapa 1 do formulario
@@ -26,8 +26,8 @@ function abrirEtapa2() {
   titulo.classList.remove("decoration-[#746587]", "text-shadow-lg");
   titulo.classList.add("decoration-[#FEF37E]");
 
-  //Mudar cor do checkbox
-  checkbox.forEach((mudar) => {
+  //Mudar cor do radio
+  radio.forEach((mudar) => {
     mudar.classList.remove("text-[#746587]");
     mudar.classList.add("text-[#FEF37E]");
   });
@@ -42,8 +42,8 @@ function abrirEtapa3() {
   titulo.classList.remove("decoration-[#FEF37E]");
   titulo.classList.add("decoration-[#746587]");
 
-  //Mudar cor do checkbox
-  checkbox.forEach((voltar) => {
+  //Mudar cor do radio
+  radio.forEach((voltar) => {
     voltar.classList.remove("text-[#FEF37E]");
     voltar.classList.add("text-[#746587]");
   });
