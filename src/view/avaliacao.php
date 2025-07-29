@@ -155,24 +155,24 @@ require('header.php');
                             <div class=" lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="sim"
+                                    <input type="radio" name="opcao" value="sim" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="mediano"
+                                    <input type="radio" name="opcao" value="mediano" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="nao"
+                                    <input type="radio" name="opcao" value="nao" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -186,24 +186,24 @@ require('header.php');
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="sim"
+                                    <input type="radio" name="opcao" value="sim" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="mediano"
+                                    <input type="radio" name="opcao" value="mediano" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="nao"
+                                    <input type="radio" name="opcao" value="nao" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -217,24 +217,24 @@ require('header.php');
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="sim"
+                                    <input type="radio" name="opcao" value="sim" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="mediano"
+                                    <input type="radio" name="opcao" value="mediano" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="nao"
+                                    <input type="radio" name="opcao" value="nao" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -248,24 +248,24 @@ require('header.php');
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="sim"
+                                    <input type="radio" name="opcao" value="sim" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="mediano"
+                                    <input type="radio" name="opcao" value="mediano" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="nao"
+                                    <input type="radio" name="opcao" value="nao" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -293,24 +293,24 @@ require('header.php');
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="sim"
+                                    <input type="radio" name="opcao" value="sim" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="mediano"
+                                    <input type="radio" name="opcao" value="mediano" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="nao"
+                                    <input type="radio" name="opcao" value="nao" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -324,24 +324,24 @@ require('header.php');
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="sim"
+                                    <input type="radio" name="opcao" value="sim" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="mediano"
+                                    <input type="radio" name="opcao" value="mediano" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="nao"
+                                    <input type="radio" name="opcao" value="nao" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -355,24 +355,24 @@ require('header.php');
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="sim"
+                                    <input type="radio" name="opcao" value="sim" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="mediano"
+                                    <input type="radio" name="opcao" value="mediano" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="checkbox" name="opcao" value="nao"
+                                    <input type="radio" name="opcao" value="nao" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="default-checkbox-1" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -397,7 +397,7 @@ require('header.php');
                             </label>
 
                             <div class="lg:flex lg:flex-row gap-5">
-                                <textarea name="" id=""
+                                <textarea name="obs" id="obs"
                                     class="resize-none bg-[#9380ac] text-white px-4 h-74 outline-none rounded-lg border-none focus:outline-none focus:ring-0 hover:border-none lg:h-28 lg:w-xl"></textarea>
                             </div>
                         </div>
