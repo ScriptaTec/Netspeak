@@ -65,6 +65,32 @@ require('header.php');
                 </button>
             </div>
 
+            <!--Termos de uso-->
+            <div class="ml-5 mt-5 flex items-center gap-2">
+                <input type="checkbox" name="termo" id=""
+                    class="bg-gray-100 rounded-sm border-black text-[#746587] focus:ring-0">
+                <span>Concordo com <button onclick="abrirTermo()"
+                        class="underline underline-offset-2 decoration-[#746587]">termos de uso do site</button></spam>
+            </div>
+
+            <div id="termo" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+                <div
+                    class="relative bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
+
+                    <div class="absolute -top-4 -right-4">
+                        <button type="button" class="btn-cancelar">
+                            <div class="h-5 w-5">
+                                <img src="../imgs/icones/close.png" alt="fechar modal" class="hover:opacity-0 absolute">
+                                <img src="../imgs/icones/closeHover.png" alt="fechar modal"
+                                    class="opacity-0 hover:opacity-100 absolute">
+                            </div>
+                        </button>
+                    </div>
+
+                    <h1 class="text-3xl">Termos de uso</h1>
+                </div>
+            </div>
+
             <button type="submit" style="cursor: pointer;"
                 class="mt-5 w-full relative bg-black rounded-4xl rounded-br-none overflow-hidden p-2 pl-4 pr-4 transition duration-500 hover:scale-110">
                 <div id="progressoInterno" class="absolute left-0 top-0 h-full transition-all duration-700"
@@ -93,7 +119,8 @@ require('header.php');
                 </div>
             </div>
 
-            <div id="modal-email-secundario" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+            <div id="modal-email-secundario"
+                class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
                 <div
                     class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
                     <h1 class="text-3xl">Este email já esta vinculado a outra conta!</h1>
@@ -131,8 +158,19 @@ require('header.php');
                 const confirmarEmail = modalEmail.querySelector(".btn-confirmar")
                 const confirmarEmailSecundario = modalEmailSecundario.querySelector(".btn-confirmar")
                 const confirmarSenha = modalSenha.querySelector(".btn-confirmar")
+                const termo = document.getElementById("termo")
+                const cancelar = document.querySelector(".btn-cancelar")
 
-                function erroModalEmail(){
+                function abrirTermo() {
+                    termo.classList.remove("hidden")
+
+
+                    cancelar.addEventListener("click", function () {
+                        termo.classList.add("hidden")
+                    })
+                }
+
+                function erroModalEmail() {
                     modalEmail.classList.remove("hidden")
 
                     confirmarEmail.addEventListener("click", () => {
@@ -140,7 +178,7 @@ require('header.php');
                     })
                 }
 
-                function erroModalEmailSecundario(){
+                function erroModalEmailSecundario() {
                     modalEmailSecundario.classList.remove("hidden")
 
                     confirmarEmailSecundario.addEventListener("click", () => {
@@ -148,7 +186,7 @@ require('header.php');
                     })
                 }
 
-                function erroModalSenha(){
+                function erroModalSenha() {
                     modalSenha.classList.remove("hidden")
 
                     confirmarSenha.addEventListener("click", () => {
