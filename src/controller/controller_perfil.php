@@ -29,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email_secundario = $_POST['email_secundario'];
         $genero = $_POST['genero'] ?? '';
         $grau_formacao = $_POST['grau_formacao'] ?? '';
-        $dificuldade_tecnologia = $_POST['dificuldade_tecnologia'] ?? '';
+        $dificuldade = $_POST['dificuldade'] ?? '';
 
         $sql = "UPDATE usuarios SET 
             nome_completo = ?, email_secundario = ?, genero = ?, 
-            grau_formacao = ?, dificuldade_tecnologia = ?
+            grau_formacao = ?, dificuldade = ?
             WHERE id = ?";
         $stmt = $pdo->prepare($sql);
 
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email_secundario,
             $genero,
             $grau_formacao,
-            $dificuldade_tecnologia,
+            $dificuldade,
             $id_usuario
         ]);
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'email_secundario' => $email_secundario,
             'genero' => $genero,
             'grau_formacao' => $grau_formacao,
-            'dificuldade_tecnologia' => $dificuldade_tecnologia
+            'dificuldade' => $dificuldade
         ]);
         $mensagem = "Dados de personalização atualizados!";
     }

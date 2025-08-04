@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $senha = $_POST['senha'];
 
         // Buscar todos os campos necessários de uma vez
-        $sql = "SELECT id, nome, email, senha, data_nascimento, nome_completo, email_secundario, genero, grau_formacao, dificuldade_tecnologia FROM usuarios WHERE email = ?";
+        $sql = "SELECT id, nome, email, senha, data_nascimento, nome_completo, email_secundario, genero, grau_formacao, dificuldade FROM usuarios WHERE email = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$email]);
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'email_secundario' => $usuario['email_secundario'],
                     'genero' => $usuario['genero'],
                     'grau_formacao' => $usuario['grau_formacao'],
-                    'dificuldade_tecnologia' => $usuario['dificuldade_tecnologia']
+                    'dificuldade' => $usuario['dificuldade']
                 ];
 
                 header("Location: ../view/tradutor.php");

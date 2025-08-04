@@ -166,7 +166,7 @@ require('header.php');
             <!--Campo para gênero-->
             <label for="genero" class="mt-3 text-left text-xl">Gênero</label>
 
-            <select id="genero" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
+            <select id="genero" name="genero" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
                 style="box-shadow: -2px 2px 0px black;">
 
                 <?php $genero = $_SESSION['user']['genero'] ?? ''; ?>
@@ -178,36 +178,36 @@ require('header.php');
             </select>
 
             <!--Campo para grau de formação-->
-            <label for="formacao" class="mt-3 text-left text-xl">Grau de formação</label>
+            <label for="grau_formacao" class="mt-3 text-left text-xl">Grau de formação</label>
 
-            <select id="formacao" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
+            <select id="grau_formacao" name="grau_formacao" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
                 style="box-shadow: -2px 2px 0px black;">
 
                 <?php $formacao = $_SESSION['user']['grau_formacao'] ?? ''; ?>
 
                 <option disabled selected>Selecione</option>
-                <option name="grau_formacao" value="1" <?= $formacao === '1' ? 'selected' : '' ?>>Ensino Médio incompleto
+                <option value="1" <?= $formacao === '1' ? 'selected' : '' ?>>Ensino Médio incompleto
                 </option>
-                <option name="grau_formacao" value="2" <?= $formacao === '2' ? 'selected' : '' ?>>Ensino Médio completo
+                <option value="2" <?= $formacao === '2' ? 'selected' : '' ?>>Ensino Médio completo
                 </option>
-                <option name="grau_formacao" value="3" <?= $formacao === '3' ? 'selected' : '' ?>>Graduação incompleta
+                <option value="3" <?= $formacao === '3' ? 'selected' : '' ?>>Graduação incompleta
                 </option>
-                <option name="grau_formacao" value="4" <?= $formacao === '4' ? 'selected' : '' ?>>Graduação completa
+                <option value="4" <?= $formacao === '4' ? 'selected' : '' ?>>Graduação completa
                 </option>
             </select>
 
             <!--Campo para nível de dificuldade com a tecnologia-->
             <label for="tecnologia" class="mt-3 text-left text-xl">Nível de dificuldade com a tecnologia</label>
 
-            <select id="dificuldade" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
+            <select id="dificuldade" name="dificuldade" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
                 style="box-shadow: -2px 2px 0px black;">
 
-                <?php $dificuldade = $_SESSION['user']['dificuldade_tecnologia'] ?? ''; ?>
+                <?php $dificuldade = $_SESSION['user']['dificuldade'] ?? ''; ?>
 
                 <option disabled selected>Selecione</option>
                 <option value="1" <?= $dificuldade === '1' ? 'selected' : '' ?>>Baixo</option>
-                <option value="2" <?= $dificuldade === '1' ? 'selected' : '' ?>>Médio</option>
-                <option value="3" <?= $dificuldade === '1' ? 'selected' : '' ?>>Alto</option>
+                <option value="2" <?= $dificuldade === '2' ? 'selected' : '' ?>>Médio</option>
+                <option value="3" <?= $dificuldade === '3' ? 'selected' : '' ?>>Alto</option>
             </select>
 
             <!--Campo para que funcione a requisição-->

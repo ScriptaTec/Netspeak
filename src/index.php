@@ -25,7 +25,7 @@ require("view/header.php");
     <img src="/imgs/index.png" alt="Capa do site" class="lg:hidden">
 
     <div class="text-right flex justify-center items-center lg:mt-0 lg:block">
-        <a href="/view/tradutor.php">
+        <a href="/view/cadastro.php">
             <button type="button" data-aos="zoom-out-up" data-aos-duration="1000" data-aos-delay="500"
                 class="lg:mt-98 lg:mr-44 text-5xl text-[#746587] bg-white border-2 border-[#746587] rounded-lg px-10 py-1 transition duration-600 hover:border-white hover:bg-[#746587] hover:text-white"
                 style="cursor: pointer;">

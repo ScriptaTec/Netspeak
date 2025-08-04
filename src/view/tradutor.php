@@ -47,7 +47,7 @@ require('header.php');
     <!--Tutorial para usar a ferramenta-->
     <div
         class="mx-7 text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400 lg:ml-90 lg:mt-64">
-        <a href="tutorial.php">Precisa de ajuda?</a>
+        <a href="tutoriais.php">Precisa de ajuda?</a>
     </div>
 
 
