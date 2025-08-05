@@ -6,7 +6,7 @@ include "../controller/controller_cadastro.php";
 require('header.php');
 ?>
 
-<div class="h-screen lg:bg-[url(../imgs/cadastro.png)]">
+<div class="lg:bg-[url(../imgs/cadastro.png)]">
     <header class="flex justify-between m-3">
         <div class="w-20">
             <a href="../index.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
@@ -67,28 +67,15 @@ require('header.php');
 
             <!--Termos de uso-->
             <div class="ml-5 mt-5 flex items-center gap-2">
-                <input type="checkbox" name="termo" id=""
+                <input type="checkbox" name="termo" id="" required
                     class="bg-gray-100 rounded-sm border-black text-[#746587] focus:ring-0">
                 <span>Concordo com <button onclick="abrirTermo()"
                         class="underline underline-offset-2 decoration-[#746587]">termos de uso do site</button></spam>
             </div>
 
-            <div id="termo" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
-                <div
-                    class="relative bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
-
-                    <div class="absolute -top-4 -right-4">
-                        <button type="button" class="btn-cancelar">
-                            <div class="h-5 w-5">
-                                <img src="../imgs/icones/close.png" alt="fechar modal" class="hover:opacity-0 absolute">
-                                <img src="../imgs/icones/closeHover.png" alt="fechar modal"
-                                    class="opacity-0 hover:opacity-100 absolute">
-                            </div>
-                        </button>
-                    </div>
-
-                    <h1 class="text-3xl">Termos de uso</h1>
-                </div>
+            <!--Modal do termo-->
+            <div id="termo" class="hidden fixed inset-0 z-50 flex justify-center items-center px-10 bg-gray-200/50">
+                <!--Usará fetch para chamar termo.php--->
             </div>
 
             <button type="submit" style="cursor: pointer;"
@@ -103,116 +90,45 @@ require('header.php');
                     conta?</a>
             </div>
 
-            <!--Modais de erro no cadastro-->
-            <div id="modal-email" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
-                <div
-                    class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
-                    <h1 class="text-3xl">O email fornecido esta incorreto!</h1>
-
-                    <div class="flex justify-center gap-5 mt-5">
-                        <button type="button"
-                            class="btn-confirmar 
-                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
-                            Ok
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="modal-email-secundario"
-                class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
-                <div
-                    class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
-                    <h1 class="text-3xl">Este email já esta vinculado a outra conta!</h1>
-
-                    <div class="flex justify-center gap-5 mt-5">
-                        <button type="button"
-                            class="btn-confirmar 
-                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
-                            Ok
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="modal-senha" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
-                <div
-                    class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:scale-105 hover:border-black transition duration-900">
-                    <h1 class="text-3xl">As senhas não coincidem!</h1>
-
-                    <div class="flex justify-center gap-5 mt-5">
-                        <button type="button"
-                            class="btn-confirmar 
-                    py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
-                            Ok
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!--Necessário para funcionar os modais de erro no cadastro-->
+            <!--Necessário para funcionar o modal do termo de uso-->
             <script>
-                const modalEmail = document.getElementById("modal-email")
-                const modalEmailSecundario = document.getElementById("modal-email-secundario")
-                const modalSenha = document.getElementById("modal-senha")
-                const confirmarEmail = modalEmail.querySelector(".btn-confirmar")
-                const confirmarEmailSecundario = modalEmailSecundario.querySelector(".btn-confirmar")
-                const confirmarSenha = modalSenha.querySelector(".btn-confirmar")
-                const termo = document.getElementById("termo")
-                const cancelar = document.querySelector(".btn-cancelar")
+                const termo = document.getElementById("termo");
 
                 function abrirTermo() {
-                    termo.classList.remove("hidden")
-
-
-                    cancelar.addEventListener("click", function () {
-                        termo.classList.add("hidden")
-                    })
+                    //Chamar o componente
+                    fetch('termos.php')
+                        .then(response => {
+                            return response.text();
+                        })
+                        .then(html => {
+                            termo.innerHTML = html; //coloca o html dentro da div do termo
+                            termo.classList.remove("hidden");
+                        })
                 }
 
-                function erroModalEmail() {
-                    modalEmail.classList.remove("hidden")
-
-                    confirmarEmail.addEventListener("click", () => {
-                        modalEmail.classList.add("hidden")
-                    })
-                }
-
-                function erroModalEmailSecundario() {
-                    modalEmailSecundario.classList.remove("hidden")
-
-                    confirmarEmailSecundario.addEventListener("click", () => {
-                        modalEmailSecundario.classList.add("hidden")
-                    })
-                }
-
-                function erroModalSenha() {
-                    modalSenha.classList.remove("hidden")
-
-                    confirmarSenha.addEventListener("click", () => {
-                        modalSenha.classList.add("hidden")
-                    })
+                //Botao de sair dentro do modal
+                function sair() {
+                    termo.classList.add("hidden")
                 }
             </script>
-
             <?php
             // Verifica se a mensagem de erro existe na sessão e exibe
             if (isset($_SESSION['erro_email'])) {
-                echo '<script>erroModalEmail()</script>';
+                echo 'Erro email';
 
                 // Limpa a variável de sessão após exibir a mensagem
                 unset($_SESSION['erro_email']);
             }
 
             if (isset($_SESSION['erro_email_secundario'])) {
-                echo '<script>erroModalEmailSecundario()</script>';
+                echo 'Erro email secundario';
 
                 // Limpa a variável de sessão após exibir a mensagem
                 unset($_SESSION['erro_email_secundario']);
             }
 
             if (isset($_SESSION['erro_senha'])) {
-                echo '<script>erroModalSenha()</script>';
+                echo 'Erro senha';
                 unset($_SESSION['erro_senha']);
             }
             ?>

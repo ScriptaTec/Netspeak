@@ -8,7 +8,7 @@ echo ""
 echo $senha | sudo -S docker rm -f nginx_netspeak php_netspeak mysql_netspeak certbot_netspeak
 echo $senha | sudo -S rm -r ./mysql
 
-cp src/.env-docker src/.env
+cp ./src/.env-docker ./src/.env
 
 composer install -d ./src
 
