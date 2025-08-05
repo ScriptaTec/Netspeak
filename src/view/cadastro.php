@@ -69,7 +69,7 @@ require('header.php');
             <div class="ml-5 mt-5 flex items-center gap-2">
                 <input type="checkbox" name="termo" id="" required
                     class="bg-gray-100 rounded-sm border-black text-[#746587] focus:ring-0">
-                <span>Concordo com <button onclick="abrirTermo()"
+                <span>Concordo com os <button onclick="abrirTermo()"
                         class="underline underline-offset-2 decoration-[#746587]">termos de uso do site</button></spam>
             </div>
 
