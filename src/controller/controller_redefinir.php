@@ -55,7 +55,7 @@ $update->bindParam(':senha', $nova_senha_hash);
 $update->bindParam(':id', $user['id']);
 
 if ($update->execute()) {
-    echo "<script>alert('Senha redefinida com sucesso!'); location.href='../view/login.php';</script>";
+    echo "<script>location.href='../view/perfil.php';</script>";
 } else {
     echo "<script>alert('Erro ao redefinir a senha.'); history.back();</script>";
 }

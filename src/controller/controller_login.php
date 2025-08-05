@@ -32,12 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: ../view/tradutor.php");
                 exit();
             } else {
-                $_SESSION['erro_senha'] = "Senha incorreta!";
+                $_SESSION['erro_senha'] = "Senha/e-mail incorretos";
                 header("Location: ../view/login.php");
                 exit();
             }
         } else {
-            $_SESSION['erro_email'] = "Email não encontrado!";
+            $_SESSION['erro_email'] = "Senha/e-mail incorretos";
             header("Location: ../view/login.php");
             exit();
         }

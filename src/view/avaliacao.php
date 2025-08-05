@@ -141,131 +141,133 @@ require('header.php');
                 </div>
 
                 <!--Formulário que engloba todas as etapas da avaliação-->
-                <form action="" method="post">
+                <form action="../controller/controller_avaliacao.php" method="post">
+                    <input type="hidden" name="avaliacao_geral" id="avaliacao_geral_input">
+<input type="hidden" name="nota" id="nota_input">
 
                     <!--Etapa 1 da avaliação-->
                     <section id="formEtapa1" class="hidden">
 
                         <!--Pergunta 1-->
                         <div class="flex-col mt-5 flex justify-center items-center">
-                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">Todas as traduções foram
+                            <label for="p1" class="mt-5 text-[#413E45] text-2xl lg:mt-0">Todas as traduções foram
                                 feitas
                                 corretamente?</label>
 
                             <div class=" lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="sim" required
+                                    <input type="radio" name="p1" value="1" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="p1" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="mediano" required
+                                    <input type="radio" name="p1" value="2" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="p1" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="nao" required
+                                    <input type="radio" name="p1" value="3" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="p1" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
 
                         <!--Pergunta 2-->
                         <div class="flex-col mt-5 flex justify-center items-center">
-                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                            <label for="p2" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
                                 Após a tradução, o contexto da frase foi mantido?
                             </label>
 
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="sim" required
+                                    <input type="radio" name="p2" value="1" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="p2" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="mediano" required
+                                    <input type="radio" name="p2" value="2" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="p2" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="nao" required
+                                    <input type="radio" name="p2" value="3" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="p2" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
 
                         <!--Pergunta 3-->
                         <div class="flex-col mt-5 flex justify-center items-center">
-                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">A linguagem usada pela
+                            <label for="p3" class="mt-5 text-[#413E45] text-2xl lg:mt-0">A linguagem usada pela
                                 ferramenta
                                 foi compreenssiva?</label>
 
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="sim" required
+                                    <input type="radio" name="p3" value="1" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="p3" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="mediano" required
+                                    <input type="radio" name="p3" value="2" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="p3" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="nao" required
+                                    <input type="radio" name="p3" value="3" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="p3" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
 
                         <!--Pergunta 4-->
                         <div class="flex-col mt-5 flex justify-center items-center">
-                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                            <label for="p4" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
                                 Você aprendeu novas gírias, abreviações ou emojis com a ferramenta?
                             </label>
 
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="sim" required
+                                    <input type="radio" name="p4" value="1" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="p4" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="mediano" required
+                                    <input type="radio" name="p4" value="2" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="p4" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="nao" required
+                                    <input type="radio" name="p4" value="3" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="p4" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -286,93 +288,93 @@ require('header.php');
 
                         <!--Pergunta 8-->
                         <div class="flex-col mt-5 flex justify-center items-center">
-                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                            <label for="p5" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
                                 Você usaria essa ferramenta no seu dia a dia?
                             </label>
 
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="sim" required
+                                    <input type="radio" name="p5" value="1" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="p5" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="mediano" required
+                                    <input type="radio" name="p5" value="2" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="p5" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="nao" required
+                                    <input type="radio" name="p5" value="3" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="p5" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
 
                         <!--Pergunta 6-->
                         <div class="flex-col mt-5 flex justify-center items-center">
-                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                            <label for="p6" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
                                 A sua compreenssão sobre a linguagem formal melhorou?
                             </label>
 
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="sim" required
+                                    <input type="radio" name="p6" value="1" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="p6" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="mediano" required
+                                    <input type="radio" name="p6" value="2" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="p6" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="nao" required
+                                    <input type="radio" name="p6" value="3" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="p6" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
 
                         <!--Pergunta 7-->
                         <div class="flex-col mt-5 flex justify-center items-center">
-                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                            <label for="p7" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
                                 A sua compreenssão sobre a linguagem informal melhorou?
                             </label>
 
                             <div class="lg:flex lg:flex-row gap-5">
                                 <!--Opção 1-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="sim" required
+                                    <input type="radio" name="p7" value="1" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Sim</label>
+                                    <label for="p7" class=" text-lg text-[#413E45]">Sim</label>
                                 </div>
 
                                 <!--Opção 2-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="mediano" required
+                                    <input type="radio" name="p7" value="2" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Mais ou
+                                    <label for="p7" class=" text-lg text-[#413E45]">Mais ou
                                         menos</label>
                                 </div>
 
                                 <!--Opção 3-->
                                 <div class="flex gap-2 items-center">
-                                    <input type="radio" name="opcao" value="nao" required
+                                    <input type="radio" name="p7" value="3" required
                                         class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                    <label for="opcao" class=" text-lg text-[#413E45]">Não</label>
+                                    <label for="p7" class=" text-lg text-[#413E45]">Não</label>
                                 </div>
                             </div>
                         </div>
@@ -392,12 +394,12 @@ require('header.php');
                     <section id="formEtapa3" class="hidden">
                         <!--Pergunta 8-->
                         <div class="flex-col mt-5 flex justify-center items-center">
-                            <label for="pergunta" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
+                            <label for="p8" class="mt-5 text-[#413E45] text-2xl lg:mt-0">
                                 Você gostaria de nos enviar alguma observação?
                             </label>
 
                             <div class="lg:flex lg:flex-row gap-5">
-                                <textarea name="obs" id="obs"
+                                <textarea name="p8" id="obs"
                                     class="resize-none bg-[#9380ac] text-white px-4 h-74 outline-none rounded-lg border-none focus:outline-none focus:ring-0 hover:border-none lg:h-28 lg:w-xl"></textarea>
                             </div>
                         </div>
@@ -508,7 +510,7 @@ require('header.php');
                         </div>
 
 
-                        <button type="button" onclick="fecharForm()"
+                        <button type="submit" onclick="fecharForm()"
                             class="mt-5 
                     py-2 px-5 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
                             Enviar avaliacao
