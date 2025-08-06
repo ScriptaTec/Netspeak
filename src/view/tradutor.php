@@ -6,7 +6,10 @@ $respostaDaApi = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     $fraseUsuario = $_POST['frase'];
-    $respostaDaApi = processarFraseComGemini($fraseUsuario, "formal");
+    $respostaDaApi = processarFraseComGemini($fraseUsuario, $tipoTraducao);
+
+    header("Location: ../view/resposta_tradutor.php");
+    exit();
 }
 ?>
 
@@ -55,8 +58,8 @@ require('header.php');
         <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
             <!--Formulário para enviar para o resposta_tradutor-->
-            <form method="post" action="resposta_tradutor.php" id="form" class="flex items-center gap-3">
-                <input type="hidden" name="tipoTraducao" value="formal">
+            <form method="post" action="../view/resposta_tradutor.php" id="form" class="flex items-center gap-3">
+            <input type="hidden" name="tipoTraducao" value="formal">
 
                 <!--Atalho para emojis-->
                 <button data-tooltip-target="tooltip-default-emoji">
@@ -99,14 +102,14 @@ require('header.php');
                         <h1 class="text-5xl">Selecione o tipo de tradução</h1>
 
                         <div class="flex gap-2 items-center text-2xl">
-                            <input type="radio" name="tipo" value="formal" required
+                            <input type="radio" name="tipoTraducao" value="informal" required
                                 class="text-[#746587] rounded-sm border-black focus:ring-white">
 
                             <spam>Informal para formal</spam>
                         </div>
 
                         <div class="flex gap-2 items-center text-2xl">
-                            <input type="radio" name="tipo" value="informal" required
+                            <input type="radio" name="tipoTraducao" value="formal" required
                                 class="text-[#746587] rounded-sm border-black focus:ring-white">
                             <spam>Formal para informal</spam>
                         </div>

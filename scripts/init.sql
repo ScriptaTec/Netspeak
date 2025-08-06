@@ -26,6 +26,7 @@ CREATE TABLE `avaliacao` (
     `p6` enum('1', '2', '3') DEFAULT NULL,
     `p7` enum('1', '2', '3') DEFAULT NULL,
     `p8` varchar(100) DEFAULT NULL,
+    `p9` enum('1', '2', '3', '4', '5', '6', '7', '8', '9', '10') DEFAULT NULL,
     `email` varchar(255) DEFAULT NULL
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
