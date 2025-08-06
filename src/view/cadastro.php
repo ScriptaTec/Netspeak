@@ -18,18 +18,31 @@ require('header.php');
     <div class="flex items-center justify-center m-3">
         <form method="POST" action="../controller/controller_cadastro.php" id="form" class="flex flex-col">
 
-            <h1 class="text-7xl text-center lg:text-8xl">Seja bem-vindo</h1>
+            <h1 class="text-6xl text-center lg:text-8xl">Seja bem-vindo</h1>
 
             <label for="email" class="text-xl mt-3 ml-4">Email</label>
             <input type="email" name="email" required placeholder="Email..."
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none transition duration-500"
                 style="box-shadow: 2px 2px 1px;">
 
+            <?php
+            if (isset($_SESSION['erro_email'])) {
+                echo '<span style="color: red;">O email já está sendo usado</span>';
+                unset($_SESSION['erro_email']);
+            }
+            ?>
+
             <label for="nome" class="text-xl mt-3 ml-4">Nome</label>
             <input type="text" name="nome" required placeholder="Nome..."
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none transition duration-500"
                 style="box-shadow: 2px 2px 0px;">
 
+            <?php
+            if (isset($_SESSION['erro_senha_secundario'])) {
+                echo '<span style="color: red;">Este email já esta sendo usado</span>';
+                unset($_SESSION['erro_senha_secundario']);
+            }
+            ?>
 
             <label for="nascimento" class="text-xl mt-3 ml-4">Nascimento</label>
             <input type="date" name="data_nascimento" required
@@ -37,32 +50,45 @@ require('header.php');
                 style="box-shadow: 2px 2px 1px;">
 
 
-            <label for="senha" class="text-xl mt-3 ml-4">Senha</label>
 
-            <div class="relative flex items-center">
-                <input type="password" name="senha" id="senha" required placeholder="Senha..."
-                    class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
-                    style="box-shadow: 2px 2px 1px;">
+            <div class="flex gap-5">
+                <div class="flex flex-col">
+                    <label for="senha" class="text-xl mt-3 ml-4">Senha</label>
+                    <div class="relative flex items-center">
+                        <input type="password" name="senha" id="senha" required placeholder="Senha..."
+                            class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none rounded-tr-none transition duration-500 hover:border-black focus:outline-none"
+                            style="box-shadow: 2px 2px 1px;">
 
-                <button type="button" onclick="acaoBotao('senha', this)" class="absolute right-0 px-3 text-gray-500">
-                    <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
-                    <img class="mostrar hidden " src="../imgs/icones/mostrar.png" alt="Mostrar senha">
-                </button>
-            </div>
+                        <button type="button" onclick="acaoBotao('senha', this)"
+                            class="absolute right-0 px-3 text-gray-500">
+                            <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
+                            <img class="mostrar hidden " src="../imgs/icones/mostrar.png" alt="Mostrar senha">
+                        </button>
+                    </div>
 
-            <label for="senha" class="text-xl mt-3 ml-4">Repetir senha</label>
+                    <?php
+                    if (isset($_SESSION['erro_senha'])) {
+                        echo '<span style="color: red;">As senhas não coincidem</span>';
+                        unset($_SESSION['erro_senha']);
+                    }
+                    ?>
+                </div>
 
-            <div class="relative flex items-center">
-                <input type="password" name="confirmar_senha" id="confirmarSenha" required
-                    placeholder="Repetir senha..."
-                    class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
-                    style="box-shadow: 2px 2px 1px;">
+                <div class="flex flex-col"><label for="senha" class="text-xl mt-3 ml-4">Repetir senha</label>
 
-                <button type="button" onclick="acaoBotao('confirmarSenha', this)"
-                    class="absolute right-0 px-3 text-gray-500">
-                    <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
-                    <img class="mostrar hidden " src="../imgs/icones/mostrar.png" alt="Mostrar senha">
-                </button>
+                    <div class="relative flex items-center">
+                        <input type="password" name="confirmar_senha" id="confirmarSenha" required
+                            placeholder="Repetir senha..."
+                            class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-2xl rounded-bl-none rounded-tl-none rounded-br-none transition duration-500 hover:border-black focus:outline-none"
+                            style="box-shadow: 2px 2px 1px;">
+
+                        <button type="button" onclick="acaoBotao('confirmarSenha', this)"
+                            class="absolute right-0 px-3 text-gray-500">
+                            <img class="ocultar " src="../imgs/icones/ocultar.png" alt="Ocultar senha">
+                            <img class="mostrar hidden " src="../imgs/icones/mostrar.png" alt="Mostrar senha">
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!--Termos de uso-->
@@ -103,7 +129,27 @@ require('header.php');
                         .then(html => {
                             termo.innerHTML = html; //coloca o html dentro da div do termo
                             termo.classList.remove("hidden");
+                            inicializarNavegacaoTermo();
                         })
+                }
+
+                function inicializarNavegacaoTermo() {
+                    const buttons = document.querySelectorAll(".btn-etapa");
+                    const contents = document.querySelectorAll(".etapa");
+                    const icones = document.querySelectorAll(".icone");
+
+                    buttons.forEach(button => {
+                        button.addEventListener("click", () => {
+                            const target = button.getAttribute("data-target");
+                            contents.forEach(content => content.classList.add("hidden"));
+                            buttons.forEach(btn => btn.classList.remove("text-[#746587]", "font-semibold"));
+                            icones.forEach(icon => icon.classList.remove("border-[#746587]", "border-2"));
+                            document.getElementById(target).classList.remove("hidden");
+                            button.classList.add("text-[#746587]", "font-semibold");
+                            const icon = button.querySelector(".icone");
+                            if (target !== "etapa1") icon.classList.add("border-[#746587]", "border-2");
+                        });
+                    });
                 }
 
                 //Botao de sair dentro do modal
@@ -111,27 +157,6 @@ require('header.php');
                     termo.classList.add("hidden")
                 }
             </script>
-            <?php
-            // Verifica se a mensagem de erro existe na sessão e exibe
-            if (isset($_SESSION['erro_email'])) {
-                echo 'Erro email';
-
-                // Limpa a variável de sessão após exibir a mensagem
-                unset($_SESSION['erro_email']);
-            }
-
-            if (isset($_SESSION['erro_email_secundario'])) {
-                echo 'Erro email secundario';
-
-                // Limpa a variável de sessão após exibir a mensagem
-                unset($_SESSION['erro_email_secundario']);
-            }
-
-            if (isset($_SESSION['erro_senha'])) {
-                echo 'Erro senha';
-                unset($_SESSION['erro_senha']);
-            }
-            ?>
         </form>
     </div>
 </div>
