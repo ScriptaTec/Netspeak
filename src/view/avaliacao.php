@@ -459,7 +459,7 @@ require('header.php');
                                     </button>
                                 </div>
 
-                                <div class="flex mt-2">
+                                <div class="flex mt-2 lg:mt-0">
                                     <button type="button" class="btn-estrela flex flex-col items-center">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
@@ -509,6 +509,8 @@ require('header.php');
                             </div>
                         </div>
 
+                        <!--Coletar nota da avaliacao de estrelinhas-->
+                        <input type="hidden" name="nota_avaliacao" id="notaInput">
 
                         <button type="submit" onclick="fecharForm()"
                             class="mt-5 

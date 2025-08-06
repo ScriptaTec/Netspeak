@@ -75,40 +75,6 @@ require('header.php');
             <div class="flex items-center gap-3 mt-7 py-3 px-7 rounded-2xl bg-[#746587] text-left transition duration-500 hover:scale-105"
                 style="box-shadow: 0px 8px 0px #AE99D2">
 
-                <!--Selecionar o tipo de tradução-->
-                <div class="relative">
-                    <button type="button" onclick="mostrarModalFiltro()" data-tooltip-target="tooltip-default-tipo">
-                        <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução" class="w-8 mt-2"></button>
-
-                    <div id="modal-filtro" class="hidden absolute bottom-10 left-3 items-center w-48">
-
-                        <div class="flex flex-col bg-white py-2 px-3 rounded-2xl rounded-bl-none border-2">
-
-                            <spam class="text-center text-lg">Tipo de tradução:</spam>
-
-                            <div class="flex gap-2 items-center">
-                                <input type="radio" name="tipo" value="formal" required
-                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
-
-                                <spam class="text-lg">Informal para formal</spam>
-                            </div>
-
-                            <div class="flex gap-2 items-center">
-                                <input type="radio" name="tipo" value="informal" required
-                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
-                                <spam class="text-lg">Formal para informal</spam>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Descrição do botão de tipo de tradução-->
-                <div id="tooltip-default-tipo" role="tooltip"
-                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
-                    Tipo de tradução
-                    <div class="tooltip-arrow" data-popper-arrow></div>
-                </div>
-
                 <!--Atalho para emojis-->
                 <button data-tooltip-target="tooltip-default-emoji">
                     <img src="../imgs/icones/emojiBranco.png" alt="Abrir atalho para emojis" class="w-8">
