@@ -23,14 +23,14 @@ require('header.php');
         </div>
 
         <label for="email" class="text-xl mt-3 ml-4">Email</label>
-        <input type="email" name="email" required placeholder="Email..."
+        <input type="email" name="email" required placeholder="Digite seu email..."
             class="w-full -mt-1 text-xl py-1.5 px-4  border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
             style="box-shadow: 2px 2px 1px;">
 
         <label for="senha" class="text-xl mt-3 ml-4">Senha antiga</label>
 
         <div class="relative flex items-center">
-            <input type="password" name="senha" required placeholder="Senha antiga..." id="senhaAntiga"
+            <input type="password" name="senha" required placeholder="Digite a senha antiga..." id="senhaAntiga"
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;">
 
@@ -43,7 +43,7 @@ require('header.php');
         <label for="senha" class="text-xl mt-3 ml-4">Nova senha</label>
 
         <div class="relative flex items-center">
-            <input type="password" name="novaSenha" required placeholder="Nova senha..." id="senhaNova"
+            <input type="password" name="novaSenha" required placeholder="Digite uma nova senha..." id="senhaNova"
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;">
 
@@ -56,7 +56,7 @@ require('header.php');
         <label for="senha" class="text-xl mt-3 ml-4">Confirmar senha</label>
 
         <div class="relative flex items-center">
-            <input type="password" name="confirmSenha" required placeholder="Confirmar senha nova..."
+            <input type="password" name="confirmSenha" required placeholder="Confirme a nova senha..."
                 id="confirmarSenha"
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none transition duration-500 hover:border-black focus:outline-none"
                 style="box-shadow: 2px 2px 1px;">

@@ -21,7 +21,7 @@ require('header.php');
             <h1 class="text-6xl text-center lg:text-8xl">Seja bem-vindo</h1>
 
             <label for="email" class="text-xl mt-3 ml-4">Email</label>
-            <input type="email" name="email" required placeholder="Email..."
+            <input type="email" name="email" required placeholder="Digite seu email..."
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none transition duration-500"
                 style="box-shadow: 2px 2px 1px;">
 
@@ -33,7 +33,7 @@ require('header.php');
             ?>
 
             <label for="nome" class="text-xl mt-3 ml-4">Nome</label>
-            <input type="text" name="nome" required placeholder="Nome..."
+            <input type="text" name="nome" required placeholder="Digite seu nome..."
                 class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none transition duration-500"
                 style="box-shadow: 2px 2px 0px;">
 
@@ -55,7 +55,7 @@ require('header.php');
                 <div class="flex flex-col">
                     <label for="senha" class="text-xl mt-3 ml-4">Senha</label>
                     <div class="relative flex items-center">
-                        <input type="password" name="senha" id="senha" required placeholder="Senha..."
+                        <input type="password" name="senha" id="senha" required placeholder="Digite a senha..."
                             class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none rounded-tr-none transition duration-500 hover:border-black focus:outline-none"
                             style="box-shadow: 2px 2px 1px;">
 
@@ -78,7 +78,7 @@ require('header.php');
 
                     <div class="relative flex items-center">
                         <input type="password" name="confirmar_senha" id="confirmarSenha" required
-                            placeholder="Repetir senha..."
+                            placeholder="Repita a senha..."
                             class="w-full -mt-1 text-xl py-1.5 px-4 border-2 border-black rounded-2xl rounded-bl-none rounded-tl-none rounded-br-none transition duration-500 hover:border-black focus:outline-none"
                             style="box-shadow: 2px 2px 1px;">
 

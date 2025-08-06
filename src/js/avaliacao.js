@@ -6,6 +6,7 @@ const formEtapa2 = document.getElementById("formEtapa2");
 const formEtapa3 = document.getElementById("formEtapa3");
 const radio = formEtapa2.querySelectorAll('input[type="radio"]');
 const estrelas = formEtapa3.querySelectorAll(".btn-estrela");
+const notaInput = document.getElementById("notaInput");
 
 //Etapa 1 do formulario
 function abrirForm() {
@@ -52,6 +53,11 @@ function abrirEtapa3() {
   estrelas.forEach((btn, index) => {
     //Quando clicar em uma estrela
     btn.addEventListener("click", function () {
+      const notaSelecionada = index + 1;
+
+      //Atualiza o valor do input escondido com a nota da avaliacao
+      notaInput.value = notaSelecionada;
+
       //Procura qual foi a estrela clicada pela posição na lista
       estrelas.forEach((outraBtn, i) => {
         const svg = outraBtn.querySelector("svg");
