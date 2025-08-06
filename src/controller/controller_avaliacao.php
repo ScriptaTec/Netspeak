@@ -21,10 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $p5 = $_POST['p5'] ?? null;
         $p6 = $_POST['p6'] ?? null;
         $p7 = $_POST['p7'] ?? null;
-        $p8 = $_POST['p8'] ?? null; // A observação
+        $p8 = $_POST['p8'] ?? null;
+        
+        $p9 = $_POST['p9'] ?? null;
+
+        var_dump($_POST);
 
         // Monta a query de INSERT usando prepared statements
-        $sql = "INSERT INTO avaliacao (p1, p2, p3, p4, p5, p6, p7, p8, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO avaliacao (p1, p2, p3, p4, p5, p6, p7, p8, p9, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $pdo->prepare($sql);
 
         // Executa a query com os valores do formulário
@@ -37,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $p6,
             $p7,
             $p8,
+            $p9,
             $email
         ]);
 

@@ -414,7 +414,7 @@ require('header.php');
 
                             <div class="flex flex-col justify-center items-center mt-4 gap-1 lg:flex-row">
                                 <div class="flex">
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="1">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -423,7 +423,7 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">1</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="2">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -432,7 +432,7 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">2</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p33" value="3">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -441,7 +441,7 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">3</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="4">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -450,7 +450,7 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">4</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="5">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -462,7 +462,7 @@ require('header.php');
                                 </div>
 
                                 <div class="flex mt-2 lg:mt-0">
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="6">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -471,7 +471,7 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">6</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="7">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -480,7 +480,7 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">7</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="8">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -489,7 +489,7 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">8</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="9">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -498,7 +498,7 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">9</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="10">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
