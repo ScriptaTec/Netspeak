@@ -90,37 +90,39 @@ require('header.php');
                     Enviar a frase que será traduzida
                     <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
+
+                <!--Selecionar o tipo de tradução-->
+                <div id="modal-filtro"
+                    class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+                    <div
+                        class="flex flex-col justify-center items-center bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:border-black transition duration-900">
+                        <h1 class="text-5xl">Selecione o tipo de tradução</h1>
+
+                        <div class="flex gap-2 items-center text-2xl">
+                            <input type="radio" name="tipo" value="formal" required
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+
+                            <spam>Informal para formal</spam>
+                        </div>
+
+                        <div class="flex gap-2 items-center text-2xl">
+                            <input type="radio" name="tipo" value="informal" required
+                                class="text-[#746587] rounded-sm border-black focus:ring-white">
+                            <spam>Formal para informal</spam>
+                        </div>
+
+                        <button type="button" id="confirmar"
+                            class="
+                    mt-5 py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                            Traduzir frase
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
 </div>
 
-<!--Selecionar o tipo de tradução-->
-<div id="modal-filtro" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
-    <div
-        class="flex flex-col justify-center items-center bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:border-black transition duration-900">
-        <h1 class="text-5xl">Selecione o tipo de tradução</h1>
-
-        <div class="flex gap-2 items-center text-2xl">
-            <input type="radio" name="tipo" value="formal" required
-                class="text-[#746587] rounded-sm border-black focus:ring-white">
-
-            <spam>Informal para formal</spam>
-        </div>
-
-        <div class="flex gap-2 items-center text-2xl">
-            <input type="radio" name="tipo" value="informal" required
-                class="text-[#746587] rounded-sm border-black focus:ring-white">
-            <spam>Formal para informal</spam>
-        </div>
-
-        <button type="button" id="confirmar"
-            class="
-                    mt-5 py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
-            Traduzir frase
-        </button>
-    </div>
-</div>
 
 <!--Icone de loading-->
 <div id="carregando" class="hidden fixed inset-0 flex items-center justify-center bg-gray-50/50 z-[9999]">

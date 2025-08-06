@@ -143,7 +143,9 @@ require('header.php');
                 <!--Formulário que engloba todas as etapas da avaliação-->
                 <form action="../controller/controller_avaliacao.php" method="post">
                     <input type="hidden" name="avaliacao_geral" id="avaliacao_geral_input">
-<input type="hidden" name="nota" id="nota_input">
+                    
+                    <!--Coletar nota da avaliacao de estrelinhas-->
+                    <input type="hidden" name="nota_avaliacao" id="notaInput">
 
                     <!--Etapa 1 da avaliação-->
                     <section id="formEtapa1" class="hidden">
@@ -508,9 +510,6 @@ require('header.php');
                                 </div>
                             </div>
                         </div>
-
-                        <!--Coletar nota da avaliacao de estrelinhas-->
-                        <input type="hidden" name="nota_avaliacao" id="notaInput">
 
                         <button type="submit" onclick="fecharForm()"
                             class="mt-5 
