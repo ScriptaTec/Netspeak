@@ -47,7 +47,7 @@ require('header.php');
     <div class="relative z-10">
         <!--Foto de perfil do usuário-->
         <img id="currentProfileDisplay" src="../imgs/imgs_perfil/<?php echo htmlspecialchars($foto_perfil); ?>"
-            alt="Foto de Perfil Atual" class="w-50 rounded-full shadow-lg">
+            alt="Foto de Perfil Atual" class="w-64 rounded-full shadow-lg">
 
         <!--Ícone de mudar foto de perfil do usuário-->
         <button type="button" onclick="abrirModalFoto()" class="group">
