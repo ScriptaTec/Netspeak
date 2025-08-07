@@ -49,8 +49,6 @@ require('header.php');
                 class="w-full -mt-1 text-xl text-gray-500 py-1.5 px-4 border-2 border-black rounded-4xl rounded-br-none hover:border-black focus:outline-none focus:text-black transition duration-500"
                 style="box-shadow: 2px 2px 1px;">
 
-
-
             <div class="flex gap-5">
                 <div class="flex flex-col">
                     <label for="senha" class="text-xl mt-3 ml-4">Senha</label>

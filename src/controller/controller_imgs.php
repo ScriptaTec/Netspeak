@@ -25,6 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // $conn->close();
-header("Location: ../view/testeimg.php"); // Redireciona de volta para a página principal
+header("Location: ../view/perfil.php"); // Redireciona de volta para a página principal
 exit();
 ?>
