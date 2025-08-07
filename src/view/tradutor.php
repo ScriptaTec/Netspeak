@@ -97,28 +97,39 @@ require('header.php');
                 <!--Selecionar o tipo de tradução-->
                 <div id="modal-filtro"
                     class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
-                    <div
-                        class="flex flex-col justify-center items-center bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:border-black transition duration-900">
-                        <h1 class="text-5xl">Selecione o tipo de tradução</h1>
 
-                        <div class="flex gap-2 items-center text-2xl">
-                            <input type="radio" name="tipoTraducao" value="informal" required
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-
-                            <spam>Informal para formal</spam>
-                        </div>
-
-                        <div class="flex gap-2 items-center text-2xl">
-                            <input type="radio" name="tipoTraducao" value="formal" required
-                                class="text-[#746587] rounded-sm border-black focus:ring-white">
-                            <spam>Formal para informal</spam>
-                        </div>
-
-                        <button type="button" id="confirmar"
-                            class="
-                    mt-5 py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
-                            Traduzir frase
+                    <div class="relative">
+                        <!--Fechar pop-up-->
+                        <button style="cursor: pointer;" type="button" id="cancelar" class=" group">
+                            <img src="../imgs/icones/close.png" alt="ícone de sair do mudar foto de perfil"
+                                class="absolute -top-5 -right-5 opacity-100 group-hover:opacity-0 transition duration-900">
+                            <img src="../imgs/icones/closeHover.png" alt="ícone de sair do mudar foto de perfil"
+                                class="absolute -top-5 -right-5 opacity-0 group-hover:opacity-100 transition duration-900">
                         </button>
+
+                        <div
+                            class="flex flex-col justify-center items-center bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:border-black transition duration-900">
+                            <h1 class="text-5xl">Selecione o tipo de tradução</h1>
+
+                            <div class="flex gap-2 items-center text-2xl">
+                                <input type="radio" name="tipoTraducao" value="informal" required
+                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
+
+                                <spam>Informal para formal</spam>
+                            </div>
+
+                            <div class="flex gap-2 items-center text-2xl">
+                                <input type="radio" name="tipoTraducao" value="formal" required
+                                    class="text-[#746587] rounded-sm border-black focus:ring-white">
+                                <spam>Formal para informal</spam>
+                            </div>
+
+                            <button type="button" id="confirmar"
+                                class="
+                    mt-5 py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                                Traduzir frase
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -166,6 +177,7 @@ require('header.php');
         const form = document.getElementById("form");
         const modalFiltro = document.getElementById("modal-filtro");
         const confirmarFiltro = document.getElementById("confirmar");
+        const cancelarFiltro = document.getElementById("cancelar");
 
         // A função para mostrar o modal de filtro agora é chamada por um event listener
         const btnEnviarFrase = document.querySelector('button[onclick="mostrarModalFiltro()"]');
@@ -180,6 +192,12 @@ require('header.php');
         if (confirmarFiltro) {
             confirmarFiltro.addEventListener("click", () => {
                 form.submit(); // Envia o formulário ao clicar em 'confirmar'
+            });
+        }
+
+        if (cancelarFiltro) {
+            cancelarFiltro.addEventListener("click", () => {
+                modalFiltro.classList.add("hidden"); 
             });
         }
 
@@ -208,6 +226,16 @@ require('header.php');
                 // Verifica se o clique foi diretamente no fundo do modal
                 if (event.target === emojiModal) {
                     emojiModal.classList.add('hidden');
+                }
+            });
+        }
+
+        // Evento para FECHAR o modal clicando fora do card (no fundo escuro)
+        if (modalFiltro) {
+            modalFiltro.addEventListener('click', (event) => {
+                // Verifica se o clique foi diretamente no fundo do modal
+                if (event.target === modalFiltro) {
+                    modalFiltro.classList.add('hidden');
                 }
             });
         }
