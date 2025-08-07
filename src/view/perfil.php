@@ -1,11 +1,18 @@
 <?php
 require "../controller/controller_perfil.php";
-
+include '../controller/config.php';
 
 if (!isset($_SESSION['user'])) {
     echo "<script>alert('Usuário não logado.'); location.href = 'cadastro.php';</script>";
     exit();
 }
+
+$username = $_SESSION['user']['email'];
+$current_profile_picture = "perfil1.png";
+$stmt = $pdo->prepare("SELECT foto_perfil FROM usuarios WHERE email = ?");
+$stmt->execute([$username]);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+$foto_perfil = $usuario['foto_perfil'];
 ?>
 
 <!--Cabeçalho-->
@@ -39,7 +46,8 @@ require('header.php');
     <!--Mudar foto de perfil do usuário-->
     <div class="relative z-10">
         <!--Foto de perfil do usuário-->
-        <img src="../imgs/imgs_perfil/perfil1.png" alt="foto de perfil">
+        <img id="currentProfileDisplay" src="../imgs/imgs_perfil/<?php echo htmlspecialchars($foto_perfil); ?>"
+            alt="Foto de Perfil Atual" class="w-50 rounded-full shadow-lg">
 
         <!--Ícone de mudar foto de perfil do usuário-->
         <button type="button" onclick="abrirModalFoto()" class="group">
@@ -166,7 +174,8 @@ require('header.php');
             <!--Campo para gênero-->
             <label for="genero" class="mt-3 text-left text-xl">Gênero</label>
 
-            <select id="genero" name="genero" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
+            <select id="genero" name="genero" required
+                class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
                 style="box-shadow: -2px 2px 0px black;">
 
                 <?php $genero = $_SESSION['user']['genero'] ?? ''; ?>
@@ -180,7 +189,8 @@ require('header.php');
             <!--Campo para grau de formação-->
             <label for="grau_formacao" class="mt-3 text-left text-xl">Grau de formação</label>
 
-            <select id="grau_formacao" name="grau_formacao" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
+            <select id="grau_formacao" name="grau_formacao" required
+                class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
                 style="box-shadow: -2px 2px 0px black;">
 
                 <?php $formacao = $_SESSION['user']['grau_formacao'] ?? ''; ?>
@@ -199,7 +209,8 @@ require('header.php');
             <!--Campo para nível de dificuldade com a tecnologia-->
             <label for="tecnologia" class="mt-3 text-left text-xl">Nível de dificuldade com a tecnologia</label>
 
-            <select id="dificuldade" name="dificuldade" required class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
+            <select id="dificuldade" name="dificuldade" required
+                class="bg-[#F8FBA6] py-1.5 px-2 border border-black rounded-xl text-lg"
                 style="box-shadow: -2px 2px 0px black;">
 
                 <?php $dificuldade = $_SESSION['user']['dificuldade'] ?? ''; ?>
@@ -288,53 +299,56 @@ require('header.php');
 
 
 <!--Modal de mudar foto de perfil-->
-<div id="modal-foto" class="hidden z-50 fixed inset-0 flex justify-center items-center bg-gray-200/50">
+<div class="relative">
+    <div id="modal-foto" class="hidden z-50 fixed inset-0 flex justify-center items-center bg-gray-200/50">
 
-    <!--Fechar pop-up-->
-    <button style="cursor: pointer;" type="button" class="btn-cancelar group">
-        <img src="../imgs/icones/close.png" alt="ícone de sair do mudar foto de perfil"
-            class="absolute top-22 right-90 opacity-100 group-hover:opacity-0 transition duration-900">
-        <img src="../imgs/icones/closeHover.png" alt="ícone de sair do mudar foto de perfil"
-            class="absolute top-22 right-90 opacity-0 group-hover:opacity-100 transition duration-900">
-    </button>
+        <!--Fechar pop-up-->
+        <button style="cursor: pointer;" type="button" class="btn-cancelar group">
+            <img src="../imgs/icones/close.png" alt="ícone de sair do mudar foto de perfil"
+                class="absolute top-10 right-90 opacity-100 group-hover:opacity-0 transition duration-900">
+            <img src="../imgs/icones/closeHover.png" alt="ícone de sair do mudar foto de perfil"
+                class="absolute top-10 right-90 opacity-0 group-hover:opacity-100 transition duration-900">
+        </button>
 
-    <div
-        class="bg-white py-5 px-10 rounded-4xl border-2 border-gray-400 shadow-xl hover:border-black hover:border-3 transition duration-900">
+        <div
+            class="w-xl flex flex-col justify-center items-center bg-white py-5 px-10 rounded-4xl border-2 border-gray-400 shadow-xl hover:border-black hover:border-3 transition duration-900">
 
-        <h1 class="text-center text-3xl">Edite sua foto de perfil</h1>
+            <div class="flex flex-col gap-2 justify-center items-center">
+                <h1 class="text-4xl">Edite sua foto de perfil</h1>
 
-        <!--Opções de foto de perfil-->
-        <div class="flex flex-col mt-5">
-            <div class="flex gap-4">
-                <img src="../imgs/imgs_perfil/perfil1.png" alt=""
-                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                <img src="../imgs/imgs_perfil/perfil6.png" alt=""
-                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                <img src="../imgs/imgs_perfil/perfil2.png" alt=""
-                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                <img src="../imgs/imgs_perfil/perfil7.png" alt=""
-                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
+                <img id="currentProfileDisplay" src="../imgs/imgs_perfil/<?php echo htmlspecialchars($foto_perfil); ?>"
+                    alt="Foto de Perfil Atual" class="w-40 rounded-full border-3 border-[#746587] shadow-lg">
+
+                <h1 class="text-lg">Foto atual</h1>
             </div>
 
+            <!--Opções de foto de perfil-->
+            <form id="profileForm" action="../controller/controller_imgs.php" method="POST">
+                <div class="flex flex-wrap justify-center items-center gap-5 mt-5">
+                    <?php for ($i = 1; $i <= 8; $i++): ?>
+                        <?php
+                        $imageName = "perfil{$i}.png";
+                        ?>
 
-            <div class="flex gap-4 mt-7">
-                <img src="../imgs/imgs_perfil/perfil3.png" alt=""
-                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                <img src="../imgs/imgs_perfil/perfil8.png" alt=""
-                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                <img src="../imgs/imgs_perfil/perfil4.png" alt=""
-                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-                <img src="../imgs/imgs_perfil/perfil5.png" alt=""
-                    class="h-30 hover:scale-110 hover:border-3 border-yellow-300 rounded-full transition duration-800 ease-in-out">
-            </div>
-        </div>
+                        <div class="profile-option cursor-pointer<?php echo $isSelected; ?>"
+                            data-image="<?php echo $imageName; ?>">
 
+                            <img src="../imgs/imgs_perfil/<?php echo $imageName; ?>" alt="Perfil <?php echo $i; ?>"
+                                class="w-24 border-gray-300 border-2 rounded-full shadow-lg transition duration-800 ease-in-out hover:border-[#746587]">
+                        </div>
+                    <?php endfor; ?>
+                </div>
 
-        <div class="flex justify-center">
-            <button type="button"
-                class="btn-confirmar mt-5 py-1 px-5 rounded-3xl bg-gray-300 text-gray-600 hover:bg-black hover:text-white transition duration-700">
-                Editar
-            </button>
+                <input type="hidden" name="selected_picture" id="selectedPictureInput"
+                    value="<?php echo htmlspecialchars($current_profile_picture); ?>">
+
+                <div class="flex justify-center">
+                    <button type="submit"
+                        class="btn-confirmar mt-5 py-1 px-5 rounded-3xl bg-gray-300 text-gray-600 hover:bg-black hover:text-white transition duration-700">
+                        Editar
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -459,6 +473,9 @@ require('header.php');
         });
     }
 </script>
+
+<!--Necessário para a foto de perfil-->
+<script src="../js/img_perfil.js"></script>
 
 <!--Necessário para o funcionamento da biblioteca FlowBite-->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
