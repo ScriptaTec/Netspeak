@@ -73,7 +73,7 @@ require('header.php');
                     <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
 
-                <!--Input para enviar a frase (Este ID é usado pelo script do emoji)-->
+                <!--Input para enviar a frase-->
                 <input type="text" name="frase" required placeholder="Aqui..." id="emoji-display"
                     class="py-2 px-3 rounded-xl bg-white text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black transition-all duration-700 lg:w-120">
 
@@ -158,7 +158,6 @@ require('header.php');
     </div>
 </div>
 
-<!-- SCRIPT DE CONTROLE DOS MODAIS (SUBSTITUA O SEU ANTIGO POR ESTE) -->
 <script>
     // Espera o documento HTML carregar completamente antes de executar o script
     document.addEventListener('DOMContentLoaded', () => {
@@ -167,10 +166,6 @@ require('header.php');
         const form = document.getElementById("form");
         const modalFiltro = document.getElementById("modal-filtro");
         const confirmarFiltro = document.getElementById("confirmar");
-
-        // Nota: O elemento com id 'carregando' não existe no seu HTML. 
-        // Se precisar dele, lembre-se de adicioná-lo.
-        // const carregando = document.getElementById("carregando");
 
         // A função para mostrar o modal de filtro agora é chamada por um event listener
         const btnEnviarFrase = document.querySelector('button[onclick="mostrarModalFiltro()"]');
@@ -187,14 +182,6 @@ require('header.php');
                 form.submit(); // Envia o formulário ao clicar em 'confirmar'
             });
         }
-
-        /*
-        if (form && carregando) {
-            form.addEventListener('submit', function () {
-                carregando.classList.remove("hidden");
-            });
-        }
-        */
 
         // --- Lógica para o modal de EMOJIS (A PARTE QUE FALTAVA) ---
         const emojiModal = document.getElementById('modal-emojis');
