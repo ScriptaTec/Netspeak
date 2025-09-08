@@ -46,15 +46,8 @@ require('header.php');
         </div>
     </div>
 
-    <!--Tutorial para usar a ferramenta-->
-    <div
-        class="mx-7 text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400 lg:ml-90 lg:mt-64">
-        <a href="tutoriais.php">Precisa de ajuda?</a>
-    </div>
-
-
     <!--Card para enviar a frase-->
-    <div class="flex justify-center mt-7">
+    <div class="flex justify-center mt-70">
         <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
             <!--Formulário para enviar para o resposta_tradutor-->
@@ -96,7 +89,7 @@ require('header.php');
 
                 <!--Selecionar o tipo de tradução-->
                 <div id="modal-filtro"
-                    class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+                    class="hidden fixed inset-0 z-30 flex justify-center items-center bg-gray-200/50">
 
                     <div class="relative">
                         <!--Fechar pop-up-->
@@ -135,6 +128,18 @@ require('header.php');
             </form>
         </div>
     </div>
+
+     <!--Tutorial para usar a ferramenta-->
+        <div
+            class="ml-98 mt-3 text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400">
+            <a href="tutoriais.php">Precisa de ajuda?</a>
+        </div>
+</div>
+
+
+<!--Animação de carregamento-->
+<div class="hidden flex justify-center items-center fixed inset-0 bg-gray-200/50 z-50" id="loadingScreen">
+    <img src="../imgs/loading.gif" alt="Animação de Carregamento">
 </div>
 
 <div id="modal-emojis" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-900/60 p-4">
@@ -179,6 +184,8 @@ require('header.php');
         const confirmarFiltro = document.getElementById("confirmar");
         const cancelarFiltro = document.getElementById("cancelar");
 
+        const loadingScreen = document.getElementById('loadingScreen');
+
         // A função para mostrar o modal de filtro agora é chamada por um event listener
         const btnEnviarFrase = document.querySelector('button[onclick="mostrarModalFiltro()"]');
         if (btnEnviarFrase) {
@@ -192,16 +199,19 @@ require('header.php');
         if (confirmarFiltro) {
             confirmarFiltro.addEventListener("click", () => {
                 form.submit(); // Envia o formulário ao clicar em 'confirmar'
-            });
+
+                // Exibe a tela de loading
+                loadingScreen.classList.remove('hidden');
+            })
         }
 
         if (cancelarFiltro) {
             cancelarFiltro.addEventListener("click", () => {
-                modalFiltro.classList.add("hidden"); 
+                modalFiltro.classList.add("hidden");
             });
         }
 
-        // --- Lógica para o modal de EMOJIS (A PARTE QUE FALTAVA) ---
+        // --- Lógica para o modal de EMOJIS  ---
         const emojiModal = document.getElementById('modal-emojis');
         const openEmojiBtn = document.getElementById('open-emoji-modal-btn');
         const closeEmojiBtn = document.getElementById('close-emoji-modal-btn');
@@ -297,7 +307,7 @@ require('header.php');
                 'Symbols',
                 'Flags'
             ];
-            
+
             // Variável para rastrear se a primeira aba já foi ativada
             let firstCategoryProcessed = false;
 
@@ -374,6 +384,7 @@ require('header.php');
             if (loadingMessage) loadingMessage.innerHTML = '<p class="text-red-500">Erro ao carregar emojis.</p>';
         });
 </script>
+
 
 <!--Rodapé-->
 <?php

@@ -91,7 +91,8 @@ require('header.php');
                     class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
 
                 <!--Botão para enviar a frase-->
-                <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default-enviar">
+                <button type="submit" id="confirmar" class="group relative w-8 h-8"
+                    data-tooltip-target="tooltip-default-enviar">
                     <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
                         class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
 
@@ -108,6 +109,11 @@ require('header.php');
             </div>
         </div>
     </form>
+</div>
+
+<!--Animação de carregamento-->
+<div class="hidden flex justify-center items-center fixed inset-0 bg-gray-200/50 z-50" id="loadingScreen">
+    <img src="../imgs/loading.gif" alt="Animação de Carregamento">
 </div>
 
 <div id="modal-emojis" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-900/60 p-4">
@@ -150,6 +156,12 @@ require('header.php');
         const emojiModal = document.getElementById('modal-emojis');
         const openEmojiBtn = document.getElementById('open-emoji-modal-btn');
         const closeEmojiBtn = document.getElementById('close-emoji-modal-btn');
+        const confirmar = document.getElementById("confirmar");
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        confirmar.addEventListener("click", () => {
+            loadingScreen.classList.remove('hidden');
+        })
 
         // Evento para ABRIR o modal de emojis
         if (openEmojiBtn) {
