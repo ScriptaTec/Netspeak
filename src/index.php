@@ -40,6 +40,8 @@ require("view/header.php");
         </button>
     </div>
 
+
+
     <!--Seção com animação de scroll-->
     <section id="ferramenta">
         <div class="flex justify-between  mt-10 bg-[#F8FBA6] py-4">
@@ -279,7 +281,6 @@ require("view/header.php");
 </div>
 
 <!--Rodapé-->
-
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     const ferramenta = document.getElementById("ferramenta")
