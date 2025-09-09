@@ -39,6 +39,13 @@
          </li>
 
          <li>
+            <a href="avaliacao.php"
+               class="flex items-center p-2 text-[#746587] rounded-lg transition duration-500 hover:text-white hover:bg-[#746587]">
+               <span class="ms-1">Avaliar a ferramenta</span>
+            </a>
+         </li>
+
+         <li>
             <!--Sair da conta-->
             <form method="POST" action="../controller/controller_logout.php" id="form-sair">
                <!--Botão de sair da conta-->

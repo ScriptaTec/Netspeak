@@ -41,105 +41,137 @@ require("view/header.php");
     </div>
 
     <!--Seção com animação de scroll-->
-    <section id="ferramenta">
-        <div class="flex justify-between  mt-10 bg-[#F8FBA6] py-4">
-            <div class="hidden lg:block">
-                <div class="bg-[#413E45] w-74 h-1 rounded-lg shadow-sm"></div>
-                <div class="bg-[#413E45] mt-5 w-44 h-1 rounded-lg shadow-sm"></div>
+    <div class="flex justify-center mt-10">
+
+        <div id="ferramenta" class="flex flex-col justify-around gap-5 bg-[#746587] py-10 px-7 relative text-center lg:flex-row" data-aos="fade-up"
+            data-aos-duration="1000">
+            <h1 class="text-white text-7xl text-shadow-sm lg:text-left">
+                Você sabe o que <br> é netspeak?</h1>
+
+            <div class="relative">
+                <p class="w-98 bg-white py-2 px-4 text-xl text-[#746587] text-justify">Netspeak é a maneira
+                    como as pessoas usam a linguagem em ambientes digitais, como na
+                    internet, em aplicativos de mensagens e nas redes sociais. É uma mistura de gírias, abreviações,
+                    emojis, e até mesmo uma forma diferente de escrever, tudo feito para se comunicar de forma
+                    rápida e
+                    eficiente.
+
+                <div class="flex justify-center items-center absolute top-24 -left-20 bg-white w-20 h-20">
+                    <img src="imgs/icones/emojiPergunta.png" alt="Emoji">
+                </div>
+                </p>
             </div>
 
-            <h1 data-aos="fade-up" data-aos-duration="1000" class="text-[#413E45] text-center text-7xl text-shadow-lg">
-                Como a
-                ferramenta funciona?</h1>
+            <div class="w-0 absolute top-0 left-34 bg-white lg:w-14 h-5"></div>
+            <div class="w-0 absolute top-24 right-0 bg-white lg:w-4 h-10"></div>
+            <div class="w-0 absolute bottom-5 left-0 bg-white lg:w-14 h-10"></div>
+            <div class="w-0 absolute bottom-3 right-110 bg-white lg:w-6 h-6"></div>
 
-            <div class="hidden lg:block mt-10">
-                <div class="bg-[#413E45] w-20 h-1 rounded-lg shadow-sm"></div>
-                <div class="bg-[#413E45] mt-5 w-60 h-1 rounded-lg shadow-sm"></div>
+            <div class="w-0 absolute bottom-0 left-44 bg-[#9E8CBE] lg:w-28 h-4"></div>
+            <div class="w-0 absolute top-0 right-44 bg-[#9E8CBE] lg:w-20 h-6"></div>
+
+            <div class="w-0 absolute -bottom-10 right-130 bg-[#746587] lg:w-4 h-4"></div>
+            <div class="w-0 absolute top-28 -left-14 bg-[#746587] lg:w-10 h-10"></div>
+            <div class="w-0 absolute top-58 -right-18 bg-[#746587] lg:w-12 h-6"></div>
+        </div>
+    </div>
+
+    <div class="flex justify-between mt-20 bg-[#F8FBA6] py-4">
+        <div class="hidden lg:block">
+            <div class="bg-[#413E45] w-74 h-1 rounded-lg shadow-sm"></div>
+            <div class="bg-[#413E45] mt-5 w-44 h-1 rounded-lg shadow-sm"></div>
+        </div>
+
+        <h1 data-aos="fade-up" data-aos-duration="1000" class="text-[#413E45] text-center text-7xl text-shadow-lg">
+            Como a
+            ferramenta funciona?</h1>
+
+        <div class="hidden lg:block mt-10">
+            <div class="bg-[#413E45] w-20 h-1 rounded-lg shadow-sm"></div>
+            <div class="bg-[#413E45] mt-5 w-60 h-1 rounded-lg shadow-sm"></div>
+        </div>
+    </div>
+
+    <div class="mt-10 flex flex-col justify-center items-center">
+        <div class="flex flex-col lg:-ml-64">
+            <span data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="200"
+                class="text-left text-xl text-[#F8FBA6] px-4 py-3 bg-[#9E8AB7] rounded-2xl rounded-bl-none text-shadow-sm shadow-xs shadow-[#413E45]">Você
+                selecionará o tipo de tradução</span>
+
+            <div data-aos="zoom-in-right" data-aos-duration="1000" class="-ml-88 flex flex-col items-center">
+                <img src="../imgs/icones/perfilMensagem.png" class="bg-[#F8FBA6] p-2 rounded-2xl"
+                    style="box-shadow: -3px 3px 0px #746587" alt="Perfil do usuário">
+                <h2 class="mt-1 text-sm font-bold text-[#413E45]">Você</h2>
             </div>
         </div>
 
-        <div class="mt-10 flex flex-col justify-center items-center">
-            <div class="flex flex-col lg:-ml-64">
-                <span data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="200"
-                    class="text-left text-xl text-[#F8FBA6] px-4 py-3 bg-[#9E8AB7] rounded-2xl rounded-bl-none text-shadow-sm shadow-xs shadow-[#413E45]">Você
-                    selecionará o tipo de tradução</span>
+        <div class="flex flex-col lg:-mr-70 mb-5">
+            <span data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="600"
+                class="text-left text-xl text-[#413E45] px-4 py-3 bg-[#C7AFF2] rounded-2xl rounded-br-none text-shadow-sm shadow-xs shadow-[#413E45]">
+                e receberá a frase traduzida</span>
 
-                <div data-aos="zoom-in-right" data-aos-duration="1000" class="-ml-88 flex flex-col items-center">
-                    <img src="../imgs/icones/perfilMensagem.png" class="bg-[#F8FBA6] p-2 rounded-2xl"
-                        style="box-shadow: -3px 3px 0px #746587" alt="Perfil do usuário">
-                    <h2 class="mt-1 text-sm font-bold text-[#413E45]">Você</h2>
-                </div>
+            <div data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="500"
+                class="-mr-80 flex flex-col items-center">
+                <img src="../imgs/icones/perfilMensagem.png" class="bg-[#F8FBA6] p-2 rounded-2xl"
+                    style="box-shadow: -3px 3px 0px #746587" alt="Perfil do usuário">
+                <h2 class="mt-1 text-sm font-bold text-[#413E45]">EmojiMoji</h2>
             </div>
+        </div>
 
-            <div class="flex flex-col lg:-mr-70 mb-5">
-                <span data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="600"
-                    class="text-left text-xl text-[#413E45] px-4 py-3 bg-[#C7AFF2] rounded-2xl rounded-br-none text-shadow-sm shadow-xs shadow-[#413E45]">
-                    e receberá a frase traduzida</span>
+        <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700"
+            class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
-                <div data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="500"
-                    class="-mr-80 flex flex-col items-center">
-                    <img src="../imgs/icones/perfilMensagem.png" class="bg-[#F8FBA6] p-2 rounded-2xl"
-                        style="box-shadow: -3px 3px 0px #746587" alt="Perfil do usuário">
-                    <h2 class="mt-1 text-sm font-bold text-[#413E45]">EmojiMoji</h2>
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <button data-tooltip-target="tooltip-default-tipo">
+                        <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução" class="w-8 mt-2"></button>
                 </div>
-            </div>
 
-            <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700"
-                class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
+                <!--Descrição do botão de tipo de tradução-->
+                <div id="tooltip-default-tipo" role="tooltip"
+                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
+                    Tipo de tradução
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
 
-                <div class="flex items-center gap-3">
-                    <div class="relative">
-                        <button data-tooltip-target="tooltip-default-tipo">
-                            <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução"
-                                class="w-8 mt-2"></button>
-                    </div>
+                <!--Atalho para emojis-->
+                <button data-tooltip-target="tooltip-default-emoji">
+                    <img src="../imgs/icones/emojiBranco.png" alt="Abrir atalho para emojis" class="w-8">
+                </button>
 
-                    <!--Descrição do botão de tipo de tradução-->
-                    <div id="tooltip-default-tipo" role="tooltip"
-                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
-                        Tipo de tradução
-                        <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
+                <!--Descrição do botão de atalho de emojis-->
+                <div id="tooltip-default-emoji" role="tooltip"
+                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
+                    Atalho de emojis
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
 
-                    <!--Atalho para emojis-->
-                    <button data-tooltip-target="tooltip-default-emoji">
-                        <img src="../imgs/icones/emojiBranco.png" alt="Abrir atalho para emojis" class="w-8">
-                    </button>
+                <!--Exemplos de frases-->
+                <div
+                    class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
+                    <span id="typed-output" class="pl-2 text-xl">
+                        <!--Animação da letra e as palavras chaves no arquivo animacao.js-->
+                    </span>
+                </div>
 
-                    <!--Descrição do botão de atalho de emojis-->
-                    <div id="tooltip-default-emoji" role="tooltip"
-                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
-                        Atalho de emojis
-                        <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
+                <!--Botão para enviar a frase-->
+                <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default-enviar">
+                    <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
+                        class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
 
-                    <!--Exemplos de frases-->
-                    <div
-                        class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
-                        <span id="typed-output" class="pl-2 text-xl">
-                            <!--Animação da letra e as palavras chaves no arquivo animacao.js-->
-                        </span>
-                    </div>
+                    <img src="../imgs/icones/enviarHover.png" alt="Ícone de enviar frase para ser traduzida"
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </button>
 
-                    <!--Botão para enviar a frase-->
-                    <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default-enviar">
-                        <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
-                            class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
-
-                        <img src="../imgs/icones/enviarHover.png" alt="Ícone de enviar frase para ser traduzida"
-                            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    </button>
-
-                    <!--Descrição do botão de enviar-->
-                    <div id="tooltip-default-enviar" role="tooltip"
-                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
-                        Enviar a frase que será traduzida
-                        <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
+                <!--Descrição do botão de enviar-->
+                <div id="tooltip-default-enviar" role="tooltip"
+                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
+                    Enviar a frase que será traduzida
+                    <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!--Seção de atalhos-->
     <div class="h-screen lg:bg-[url(imgs/atalhos.png)] bg-no-repeat bg-center mt-16">
@@ -182,7 +214,7 @@ require("view/header.php");
                     </a>
 
                     <!--Card projeto-->
-                    <a data-aos="fade-left" data-aos-duration="1400" data-aos-delay="600" href=""
+                    <a data-aos="fade-left" data-aos-duration="1400" data-aos-delay="600" href="imgs/projeto.pdf"
                         class="flex flex-col px-10 py-4 bg-[#746587] rounded-3xl"
                         style="box-shadow: 10px 10px 0px #413E45">
                         <div class="text-[#F8FBA6] text-6xl text-shadow-[#413E45] text-shadow-lg">
@@ -279,7 +311,6 @@ require("view/header.php");
 </div>
 
 <!--Rodapé-->
-
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     const ferramenta = document.getElementById("ferramenta")
@@ -288,6 +319,7 @@ require("view/header.php");
         // Função de animação pronta do js
         ferramenta.scrollIntoView({
             behavior: 'smooth',
+            block: 'center'
         })
     }
     //Biblioteca de animacao

@@ -4,7 +4,7 @@ require('header.php');
 ?>
 
 
-<div class="lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat">
+<div class="lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat bg-cover mb-10">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -32,11 +32,11 @@ require('header.php');
     </div>
 
     <!--Cards para escolher a avaliação-->
-    <div class="flex items-center flex-col gap-14 mt-5 lg:flex-row lg:ml-20">
+    <div class="flex flex-col gap-14 mt-5 lg:flex-row lg:ml-20">
 
         <!--Card de avalião ótima-->
         <div data-aos="fade-up" data-aos-duration="500"
-            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group lg:mt-32"
+            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -48,8 +48,7 @@ require('header.php');
             <div class="text-center">
                 <h2 class="text-4xl text-[#FEF37E]" style="text-shadow: 3px 3px 0px #605470">Ótima</h2>
 
-                <div
-                    class="opacity-0 max-h-0 transition-all duration-600 group-focus-within:max-h-40 group-focus-within:opacity-100 group-hover:max-h-40 group-hover:opacity-100">
+                <div>
                     <p class="text-xl text-[#F8FBA6]">Pois traduziu todas as frases corretamente</p>
 
                     <!--Escolher avalião muito boa-->
@@ -64,7 +63,7 @@ require('header.php');
 
         <!--Card de avalião boa-->
         <div data-aos="fade-up" data-aos-duration="1000"
-            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group lg:mt-32"
+            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -76,8 +75,7 @@ require('header.php');
             <div class="text-center">
                 <h2 class="text-4xl text-[#FEF37E]" style="text-shadow: 3px 3px 0px #605470">Boa</h2>
 
-                <div
-                    class="opacity-0 max-h-0 transition-all duration-600 group-focus-within:max-h-40 group-focus-within:opacity-100 group-hover:max-h-40 group-hover:opacity-100">
+                <div>
                     <p class="text-xl text-[#F8FBA6]">Pois traduziu quase todas as frases corretamente</p>
 
                     <!--Escolher avalião boa-->
@@ -92,7 +90,7 @@ require('header.php');
 
         <!--Card de avalião ruim-->
         <div data-aos="fade-up" data-aos-duration="1500"
-            class="flex flex-col justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative group lg:mt-32"
+            class="flex flex-col justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -104,8 +102,7 @@ require('header.php');
             <div class="text-center">
                 <h2 class="text-4xl text-[#FEF37E]" style="text-shadow: 3px 3px 0px #605470">Ruim</h2>
 
-                <div
-                    class="opacity-0 max-h-0 transition-all duration-600 group-focus-within:max-h-40 group-focus-within:opacity-100 group-hover:max-h-40 group-hover:opacity-100">
+                <div>
                     <p class="text-xl text-[#F8FBA6]">Pois não traduziu nenhuma das frases corretamente</p>
 
                     <!--Escolher avalião ruim-->
@@ -143,7 +140,7 @@ require('header.php');
                 <!--Formulário que engloba todas as etapas da avaliação-->
                 <form action="../controller/controller_avaliacao.php" method="post">
                     <input type="hidden" name="avaliacao_geral" id="avaliacao_geral_input">
-                    
+
                     <!--Coletar nota da avaliacao de estrelinhas-->
                     <input type="hidden" name="nota_avaliacao" id="notaInput">
 
@@ -414,7 +411,8 @@ require('header.php');
 
                             <div class="flex flex-col justify-center items-center mt-4 gap-1 lg:flex-row">
                                 <div class="flex">
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="1">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="1">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -423,7 +421,8 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">1</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="2">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="2">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -432,7 +431,8 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">2</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p33" value="3">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p33"
+                                        value="3">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -441,7 +441,8 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">3</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="4">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="4">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -450,7 +451,8 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">4</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="5">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="5">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -462,7 +464,8 @@ require('header.php');
                                 </div>
 
                                 <div class="flex mt-2 lg:mt-0">
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="6">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="6">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -471,7 +474,8 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">6</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="7">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="7">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -480,7 +484,8 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">7</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="8">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="8">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -489,7 +494,8 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">8</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="9">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="9">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -498,7 +504,8 @@ require('header.php');
 
                                         <span class="text-lg text-[#413E45]">9</span>
                                     </button>
-                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9" value="10">
+                                    <button type="button" class="btn-estrela flex flex-col items-center" name="p9"
+                                        value="10">
                                         <svg class="w-10 h-10 ms-1 text-gray-300" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                             <path
@@ -525,6 +532,26 @@ require('header.php');
 </div>
 
 <!--Rodapé-->
-<?php
-require('footer.php');
-?>
+<footer class="fixed bottom-0 w-full">
+    <h6 class="text-sm text-center">&copy; 2025 Emojimoji. Todos os direitos reservados.</h6>
+
+    <div class="absolute right-3 bottom-0.5">
+        <a href="suporte.php">
+            <img src="../imgs/icones/suporte.png" alt="ícone de suporte">
+        </a>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+   //Biblioteca de animacao
+   AOS.init(
+        { disable: 'mobile', }
+    )
+</script>
+
+<!--Necessário para o funcionamento da biblioteca FlowBite-->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>

@@ -46,15 +46,8 @@ require('header.php');
         </div>
     </div>
 
-    <!--Tutorial para usar a ferramenta-->
-    <div
-        class="mx-7 text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400 lg:ml-90 lg:mt-64">
-        <a href="tutoriais.php">Precisa de ajuda?</a>
-    </div>
-
-
     <!--Card para enviar a frase-->
-    <div class="flex justify-center mt-7">
+    <div class="flex justify-center mt-70">
         <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
             <!--Formulário para enviar para o resposta_tradutor-->
@@ -96,7 +89,7 @@ require('header.php');
 
                 <!--Selecionar o tipo de tradução-->
                 <div id="modal-filtro"
-                    class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-200/50">
+                    class="hidden fixed inset-0 z-30 flex justify-center items-center bg-gray-200/50">
 
                     <div class="relative">
                         <!--Fechar pop-up-->
@@ -135,6 +128,18 @@ require('header.php');
             </form>
         </div>
     </div>
+
+     <!--Tutorial para usar a ferramenta-->
+        <div
+            class="ml-98 mt-3 text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400">
+            <a href="tutoriais.php">Precisa de ajuda?</a>
+        </div>
+</div>
+
+
+<!--Animação de carregamento-->
+<div class="hidden flex justify-center items-center fixed inset-0 bg-gray-200/50 z-50" id="loadingScreen">
+    <img src="../imgs/loading.gif" alt="Animação de Carregamento">
 </div>
 
 <div id="modal-emojis" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-900/60 p-4">
@@ -179,6 +184,8 @@ require('header.php');
         const confirmarFiltro = document.getElementById("confirmar");
         const cancelarFiltro = document.getElementById("cancelar");
 
+        const loadingScreen = document.getElementById('loadingScreen');
+
         // A função para mostrar o modal de filtro agora é chamada por um event listener
         const btnEnviarFrase = document.querySelector('button[onclick="mostrarModalFiltro()"]');
         if (btnEnviarFrase) {
@@ -192,16 +199,19 @@ require('header.php');
         if (confirmarFiltro) {
             confirmarFiltro.addEventListener("click", () => {
                 form.submit(); // Envia o formulário ao clicar em 'confirmar'
-            });
+
+                // Exibe a tela de loading
+                loadingScreen.classList.remove('hidden');
+            })
         }
 
         if (cancelarFiltro) {
             cancelarFiltro.addEventListener("click", () => {
-                modalFiltro.classList.add("hidden"); 
+                modalFiltro.classList.add("hidden");
             });
         }
 
-        // --- Lógica para o modal de EMOJIS (A PARTE QUE FALTAVA) ---
+        // --- Lógica para o modal de EMOJIS  ---
         const emojiModal = document.getElementById('modal-emojis');
         const openEmojiBtn = document.getElementById('open-emoji-modal-btn');
         const closeEmojiBtn = document.getElementById('close-emoji-modal-btn');
@@ -242,7 +252,6 @@ require('header.php');
     });
 </script>
 
-
 <script>
     fetch('https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource/15.1.2/emoji.json')
         .then(response => {
@@ -263,12 +272,19 @@ require('header.php');
 
             loadingMessage.style.display = 'none';
             emojiPaletteContainer.classList.remove('hidden');
-            emojiPaletteContainer.classList.add('flex'); // Usamos flex em vez de 'block'
+            emojiPaletteContainer.classList.add('flex');
 
             const categoryIcons = {
-                'Smileys & Emotion': '😀', 'People & Body': '👋', 'Animals & Nature': '🌳',
-                'Food & Drink': '🍔', 'Travel & Places': '🌍', 'Activities': '⚽',
-                'Objects': '💡', 'Symbols': '❤️', 'Flags': '🇧🇷', 'default': '✨'
+                'Smileys & Emotion': '😀',
+                'People & Body': '👋',
+                'Animals & Nature': '🌳',
+                'Food & Drink': '🍔',
+                'Travel & Places': '🌍',
+                'Activities': '⚽',
+                'Objects': '💡',
+                'Symbols': '❤️',
+                'Flags': '🇧🇷',
+                'default': '✨'
             };
 
             const emojisByCategory = data.reduce((acc, emoji) => {
@@ -279,79 +295,87 @@ require('header.php');
                 return acc;
             }, {});
 
-            const sortedCategories = Object.keys(emojisByCategory).sort();
+            // Define a ordem das categorias
+            const categoryOrder = [
+                'Smileys & Emotion',
+                'People & Body',
+                'Animals & Nature',
+                'Food & Drink',
+                'Travel & Places',
+                'Activities',
+                'Objects',
+                'Symbols',
+                'Flags'
+            ];
 
-            sortedCategories.forEach((category, index) => {
-                const categoryId = `category-${category.replace(/[\s&]+/g, '-').toLowerCase()}`;
+            // Variável para rastrear se a primeira aba já foi ativada
+            let firstCategoryProcessed = false;
 
-                // === ATUALIZAÇÃO AQUI: Criar a Aba de Categoria com classes Tailwind ===
-                const tabItem = document.createElement('div');
-                tabItem.title = category;
-                tabItem.dataset.category = categoryId;
-                tabItem.textContent = categoryIcons[category] || categoryIcons['default'];
-                // Classes de estilo e transição do Tailwind
-                tabItem.className = 'text-2xl cursor-pointer p-2 rounded-lg transition-all duration-200 opacity-60 hover:scale-110';
+            // Percorre a lista de categorias na ordem desejada
+            categoryOrder.forEach((category) => {
+                // Verifica se a categoria existe no JSON de emojis
+                if (emojisByCategory[category]) {
+                    const categoryId = `category-${category.replace(/[\s&]+/g, '-').toLowerCase()}`;
 
-                categoryTabs.appendChild(tabItem);
+                    // Cria o item da aba (ícone)
+                    const tabItem = document.createElement('div');
+                    tabItem.title = category;
+                    tabItem.dataset.category = categoryId;
+                    tabItem.textContent = categoryIcons[category] || categoryIcons['default'];
+                    tabItem.className = 'text-2xl cursor-pointer p-2 rounded-lg transition-all duration-200 opacity-60 hover:scale-110';
+                    categoryTabs.appendChild(tabItem);
 
-                // === ATUALIZAÇÃO AQUI: Criar o Conteúdo da Categoria com classes Tailwind ===
-                const categoryContent = document.createElement('div');
-                categoryContent.id = categoryId;
-                // Começa escondido, e tem as classes para o layout flex
-                categoryContent.className = 'hidden h-full';
+                    // Cria o conteúdo da categoria (o grid de emojis)
+                    const categoryContent = document.createElement('div');
+                    categoryContent.id = categoryId;
+                    categoryContent.className = 'hidden h-full';
 
-                // === ATUALIZAÇÃO AQUI: Criar o Grid de Emojis com classes Tailwind ===
-                const emojiGrid = document.createElement('div');
-                // A mágica da rolagem e do grid responsivo acontece aqui!
-                emojiGrid.className = 'h-full w-full max-h-[350px] overflow-y-auto p-1 pr-3 grid grid-cols-[repeat(auto-fill,minmax(40px,1fr))] gap-2 ' +
-                    // Classes para estilizar a barra de rolagem (opcional, mas elegante)
-                    '[&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-purple-300 ' +
-                    '[&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb:hover]:bg-purple-400';
+                    const emojiGrid = document.createElement('div');
+                    emojiGrid.className = 'h-full w-full max-h-[350px] overflow-y-auto p-1 pr-3 grid grid-cols-[repeat(auto-fill,minmax(40px,1fr))] gap-2 ' +
+                        '[&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-purple-300 ' +
+                        '[&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb:hover]:bg-purple-400';
 
-                emojisByCategory[category].forEach(emoji => {
-                    const emojiItem = document.createElement('div');
-                    emojiItem.title = emoji.name;
-                    emojiItem.textContent = emoji.char;
-                    // Classes para cada item emoji
-                    emojiItem.className = 'text-2xl text-center cursor-pointer p-1 rounded-lg transition-colors duration-200 hover:bg-gray-100';
-                    emojiItem.addEventListener('click', () => {
-                        emojiDisplay.value += emoji.char;
-                        emojiDisplay.focus();
+                    emojisByCategory[category].forEach(emoji => {
+                        const emojiItem = document.createElement('div');
+                        emojiItem.title = emoji.name;
+                        emojiItem.textContent = emoji.char;
+                        emojiItem.className = 'text-2xl text-center cursor-pointer p-1 rounded-lg transition-colors duration-200 hover:bg-gray-100';
+                        emojiItem.addEventListener('click', () => {
+                            emojiDisplay.value += emoji.char;
+                            emojiDisplay.focus();
+                        });
+                        emojiGrid.appendChild(emojiItem);
                     });
-                    emojiGrid.appendChild(emojiItem);
-                });
 
-                categoryContent.appendChild(emojiGrid);
-                emojiContentArea.appendChild(categoryContent);
+                    categoryContent.appendChild(emojiGrid);
+                    emojiContentArea.appendChild(categoryContent);
 
-                // Lógica para ativar a primeira aba
-                if (index === 0) {
-                    tabItem.classList.remove('opacity-60');
-                    tabItem.classList.add('opacity-100', 'bg-purple-100'); // Ativa
-                    categoryContent.classList.remove('hidden');
-                    categoryContent.classList.add('block'); // Mostra
+                    // Ativa a primeira categoria na ordem
+                    if (!firstCategoryProcessed) {
+                        tabItem.classList.remove('opacity-60');
+                        tabItem.classList.add('opacity-100', 'bg-purple-100');
+                        categoryContent.classList.remove('hidden');
+                        categoryContent.classList.add('block');
+                        firstCategoryProcessed = true;
+                    }
+
+                    // Adiciona o evento de clique para a aba
+                    tabItem.addEventListener('click', () => {
+                        categoryTabs.querySelectorAll('div').forEach(tab => {
+                            tab.classList.remove('opacity-100', 'bg-purple-100');
+                            tab.classList.add('opacity-60');
+                        });
+                        emojiContentArea.querySelectorAll('div[id^="category-"]').forEach(content => {
+                            content.classList.remove('block');
+                            content.classList.add('hidden');
+                        });
+
+                        tabItem.classList.remove('opacity-60');
+                        tabItem.classList.add('opacity-100', 'bg-purple-100');
+                        document.getElementById(categoryId).classList.remove('hidden');
+                        document.getElementById(categoryId).classList.add('block');
+                    });
                 }
-
-                // === ATUALIZAÇÃO AQUI: Lógica de clique para trocar de aba ===
-                tabItem.addEventListener('click', () => {
-                    // 1. Desativa todas as outras abas
-                    categoryTabs.querySelectorAll('div').forEach(tab => {
-                        tab.classList.remove('opacity-100', 'bg-purple-100');
-                        tab.classList.add('opacity-60');
-                    });
-                    // 2. Esconde todos os outros conteúdos
-                    emojiContentArea.querySelectorAll('div[id^="category-"]').forEach(content => {
-                        content.classList.remove('block');
-                        content.classList.add('hidden');
-                    });
-
-                    // 3. Ativa a aba clicada
-                    tabItem.classList.remove('opacity-60');
-                    tabItem.classList.add('opacity-100', 'bg-purple-100');
-                    // 4. Mostra o conteúdo correspondente
-                    document.getElementById(categoryId).classList.remove('hidden');
-                    document.getElementById(categoryId).classList.add('block');
-                });
             });
         })
         .catch(error => {
@@ -360,6 +384,7 @@ require('header.php');
             if (loadingMessage) loadingMessage.innerHTML = '<p class="text-red-500">Erro ao carregar emojis.</p>';
         });
 </script>
+
 
 <!--Rodapé-->
 <?php
