@@ -99,7 +99,7 @@ require("view/header.php");
                 class="text-left text-xl text-[#F8FBA6] px-4 py-3 bg-[#9E8AB7] rounded-2xl rounded-bl-none text-shadow-sm shadow-xs shadow-[#413E45]">Você
                 selecionará o tipo de tradução</span>
 
-            <div data-aos="zoom-in-right" data-aos-duration="1000" class="-ml-88 flex flex-col items-center">
+            <div data-aos="zoom-in-right" data-aos-duration="1000" class="-ml-84 flex flex-col items-center">
                 <img src="../imgs/icones/perfilMensagem.png" class="bg-[#F8FBA6] p-2 rounded-2xl"
                     style="box-shadow: -3px 3px 0px #746587" alt="Perfil do usuário">
                 <h2 class="mt-1 text-sm font-bold text-[#413E45]">Você</h2>
@@ -108,7 +108,7 @@ require("view/header.php");
 
         <div class="flex flex-col lg:-mr-70 mb-5">
             <span data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="600"
-                class="text-left text-xl text-[#413E45] px-4 py-3 bg-[#C7AFF2] rounded-2xl rounded-br-none text-shadow-sm shadow-xs shadow-[#413E45]">
+                class="ml-8 text-left text-xl text-[#413E45] px-4 py-3 bg-[#C7AFF2] rounded-2xl rounded-br-none text-shadow-sm shadow-xs shadow-[#413E45]">
                 e receberá a frase traduzida</span>
 
             <div data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="500"
