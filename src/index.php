@@ -43,8 +43,9 @@ require("view/header.php");
     <!--Seção com animação de scroll-->
     <div class="flex justify-center mt-10">
 
-        <div id="ferramenta" class="flex flex-col justify-around gap-5 bg-[#746587] py-10 px-7 relative text-center lg:flex-row" data-aos="fade-up"
-            data-aos-duration="1000">
+        <div id="ferramenta"
+            class="flex flex-col justify-around gap-5 bg-[#746587] py-10 px-7 relative text-center lg:flex-row"
+            data-aos="fade-up" data-aos-duration="1000">
             <h1 class="text-white text-7xl text-shadow-sm lg:text-left">
                 Você sabe o que <br> é netspeak?</h1>
 
@@ -122,17 +123,6 @@ require("view/header.php");
             class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
             <div class="flex items-center gap-3">
-                <div class="relative">
-                    <button data-tooltip-target="tooltip-default-tipo">
-                        <img src="../imgs/icones/filtro.png" alt="Abrir filtro de tradução" class="w-8 mt-2"></button>
-                </div>
-
-                <!--Descrição do botão de tipo de tradução-->
-                <div id="tooltip-default-tipo" role="tooltip"
-                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#746587] transition-opacity duration-300 bg-[#F8FBA6] rounded-lg shadow-xs opacity-0 tooltip">
-                    Tipo de tradução
-                    <div class="tooltip-arrow" data-popper-arrow></div>
-                </div>
 
                 <!--Atalho para emojis-->
                 <button data-tooltip-target="tooltip-default-emoji">
@@ -147,12 +137,12 @@ require("view/header.php");
                 </div>
 
                 <!--Exemplos de frases-->
-                <div
-                    class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
-                    <span id="typed-output" class="pl-2 text-xl">
-                        <!--Animação da letra e as palavras chaves no arquivo animacao.js-->
-                    </span>
-                </div>
+                <input
+                    class="w-54 py-2 px-1.5 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120"
+                    type="text" disabled id="typed-output">
+                    <!--Animação da letra e as palavras chaves no arquivo animacao.js-->
+                    
+                </input>
 
                 <!--Botão para enviar a frase-->
                 <button type="submit" class="group relative w-8 h-8" data-tooltip-target="tooltip-default-enviar">
