@@ -10,13 +10,29 @@ $dotenv->load();
 
 function processarFraseComGemini($fraseUsuario, $tipoTraducao)
 {
-    if ($tipoTraducao === "informal"){
-        $mensagem = "Como especialista em linguagem e tradução, sua única tarefa é converter frases da linguagem informal para a linguagem formal do português do Brasil. Você deve responder apenas com a frase traduzida, sem saudações, comentários ou explicações. Sua tradução deve considerar gírias, internetês, abreviações, coloquialismos e construções gramaticais simples, transformando-os em uma versão formal e culta da língua. Por exemplo, uma frase como E aí, tudo bom? A gente foi lá e fez, deve se tornar Olá, tudo bem? Nós fomos até lá e fizemos. Lembre-se de responder exclusivamente com a tradução da seguinte frase: $fraseUsuario";
-    } else {
-        $mensagem = "Beleza. Como um expert em linguagem, sua missão é traduzir frases do português formal e culto para o português informal e descolado do Brasil. Sua resposta deve ter emojis, gírias e abreviações. Você precisa responder só com a frase traduzida, sem enrolação.
+    // Novo bloco IF (tipoTraducao === "formal" -> Informal)
+if ($tipoTraducao === "formal"){
+    $mensagem = "SUA MISSÃO PRIMÁRIA É: 1. **IDENTIFICAR O IDIOMA** da frase de entrada. 2. **REESCREVER** a frase, alterando-a de um tom formal para um tom informal e descolado. 3. **VOCÊ DEVE MANTER O IDIOMA ORIGINAL** (Português, Inglês ou Espanhol). Sua reescrita deve ser carregada de emojis, gírias e abreviações apropriadas para a cultura da língua detectada.
 
-Por exemplo, Agradeço imensamente o convite para o evento vira Mano, valeu pelo convite do rolê! ✌️. Você poderia, por gentileza, me ajudar com este problema? vira Me ajuda com esse BO, por favor? 🙏. Nós realizamos a tarefa com sucesso vira A gente fez o trampo e deu certo! 🚀. Lembre-se: sua resposta é a tradução informal, e só isso! adicione erros gramaticais propositais como: mlk, vc, tbm, hj. Lembre-se de responder exclusivamente com a tradução da seguinte frase: $fraseUsuario";
-    }
+    **Regras de Estilo e Idioma:**
+    - **Se ESPANHOL:** Use gírias e coloquialismos como 'chévere', 'chido', 'guay', e conjugue verbos no tratamento 'tú' ou 'vos' (dependendo da gíria).
+    - **Se PORTUGUÊS:** Use gírias brasileiras e internetês (mlk, vc, tbm, hj).
+    - **Se INGLÊS:** Use gírias (slang) americanas/britânicas (dude, hangout, asap).
+
+    RESPONDA APENAS com a Frase a processar: '$fraseUsuario'";
+} else {
+    // Novo bloco ELSE (Outros -> Formal)
+    $mensagem = "SUA MISSÃO PRIMÁRIA É: 1. **IDENTIFICAR O IDIOMA** da frase de entrada. 2. **REESCREVER** a frase, alterando-a de um tom informal e coloquial para um tom **formal e culto**. 3. **VOCÊ DEVE MANTER O IDIOMA ORIGINAL** (Português, Inglês ou Espanhol). Sua reescrita deve ser gramaticalmente correta, polida e apropriada para comunicações profissionais.
+
+    **Regras de Estilo e Idioma:**
+    - **Se ESPANHOL:** Use a norma culta e o tratamento formal 'Usted' com conjugação na terceira pessoa.
+    - **Se PORTUGUÊS:** Use a norma culta do português do Brasil.
+    - **Se INGLÊS:** Use inglês padrão (standard English) para contextos profissionais ou acadêmicos.
+
+    Frase a processar: '$fraseUsuario'
+
+    **FORMATO DE SAÍDA OBRIGATÓRIO:** Responda APENAS com a frase reescrita. O idioma da saída deve ser idêntico ao idioma da entrada.";
+}
 
     $apiKey = $_ENV['CHAVE_API_GEMINI'];
 
