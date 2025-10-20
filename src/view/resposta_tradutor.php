@@ -25,12 +25,7 @@ require('header.php');
 
         <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
             aria-controls="drawer-navigation">
-            <div class="relative w-8 h-8 group">
-                <img src="../imgs/icones/menuRoxo.png" alt="ícone perfil"
-                    class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
-                <img src="../imgs/icones/menuAmarelo.png" alt="ícone perfil hover"
-                    class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
-            </div>
+            <img src="../imgs/icones/menuRoxo.png" alt="ícone perfil" class="w-8">
         </button>
 
         <!--Importar o menu de navegação rápida-->
@@ -40,7 +35,7 @@ require('header.php');
     <form method="post" action="resposta_tradutor.php" id="form">
 
         <!--Card onde será mostrada as traduções-->
-        <div class="pt-12 pb-14 px-12 rounded-3xl border-2 border-white bg-[#9E8CBE] relative lg:mx-48"
+        <div class="pt-7 pb-14 px-12 rounded-3xl border-2 border-white bg-[#9E8CBE] relative lg:mx-48"
             style="box-shadow: -10px 10px 0px #746587">
 
             <!--Decoração no fundo do campo de traduções-->
@@ -52,14 +47,11 @@ require('header.php');
             <div class="absolute bottom-0 right-40 h-5 w-24 bg-[#AE99D2]"></div>
 
             <!--Selecionar tipo de conversão-->
-            <div class="flex justify-center relative z-10">
-                <select name="tipoTraducao" id="tipoTraducao"
-                    class="text-center text-[#746587] bg-white focus:outline-none font-xl rounded-sm text-xl "
-                    style="box-shadow: -6px 6px 0px #AE99D2">
-                    <option value="1">Selecione o tipo de conversão</option>
-                    <option value="formal">Formal para informal</option>
-                    <option value="informal">Informal para formal</option>
-                </select>
+            <div class="flex justify-center">
+                <button type="submit" onclick="mostrarModalFiltro()"
+                    class="bg-white text-xl text-[#746587] rounded-2xl py-1 px-5 shadow-sm border-[#746587] border-2 transition duration-400 hover:bg-[#746587] hover:text-white">
+                    Alterar tipo da tradução
+                </button>
             </div>
 
             <!--Chamar componente da mensagem e ícone do perfil do usuario-->
@@ -67,7 +59,6 @@ require('header.php');
             include('mensagem_tradutor.php');
             ?>
         </div>
-
 
         <!--Card para enviar a frase para o resposta_tradutor-->
         <div class="flex justify-center">
@@ -91,13 +82,8 @@ require('header.php');
                     class="py-2 px-3 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120">
 
                 <!--Botão para enviar a frase-->
-                <button type="submit" id="confirmar" class="group relative w-8 h-8"
-                    data-tooltip-target="tooltip-default-enviar">
-                    <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
-                        class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
-
-                    <img src="../imgs/icones/enviarHover.png" alt="Ícone de enviar frase para ser traduzida"
-                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <button type="submit" class="confirmar" data-tooltip-target="tooltip-default-enviar">
+                    <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida" class="w-8">
                 </button>
 
                 <!--Descrição do botão de enviar-->
@@ -109,6 +95,44 @@ require('header.php');
             </div>
         </div>
     </form>
+</div>
+
+<!--Selecionar o tipo de tradução-->
+<div id="modal-filtro" class="hidden fixed inset-0 z-30 flex justify-center items-center bg-gray-200/50">
+
+    <div class="relative">
+        <!--Fechar pop-up-->
+        <button style="cursor: pointer;" type="button" id="cancelar" class=" group">
+            <img src="../imgs/icones/close.png" alt="ícone de sair do mudar foto de perfil"
+                class="absolute -top-5 -right-5 opacity-100 group-hover:opacity-0 transition duration-900">
+            <img src="../imgs/icones/closeHover.png" alt="ícone de sair do mudar foto de perfil"
+                class="absolute -top-5 -right-5 opacity-0 group-hover:opacity-100 transition duration-900">
+        </button>
+
+        <div
+            class="flex flex-col justify-center items-center bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:border-black transition duration-900">
+            <h1 class="text-5xl">Selecione o tipo de tradução</h1>
+
+            <div class="flex gap-2 items-center text-2xl">
+                <input type="radio" name="tipoTraducao" value="informal" required
+                    class="text-[#746587] rounded-sm border-black focus:ring-white">
+
+                <spam>Informal para formal</spam>
+            </div>
+
+            <div class="flex gap-2 items-center text-2xl">
+                <input type="radio" name="tipoTraducao" value="formal" required
+                    class="text-[#746587] rounded-sm border-black focus:ring-white">
+                <spam>Formal para informal</spam>
+            </div>
+
+            <button type="submit"
+                class="
+                    confirmar mt-5 py-2 px-7 rounded-3xl bg-black text-white border-2 hover:bg-yellow-200 hover:text-black transition duration-700">
+                Traduzir frase
+            </button>
+        </div>
+    </div>
 </div>
 
 <!--Animação de carregamento-->
@@ -147,6 +171,89 @@ require('header.php');
         </div>
     </div>
 </div>
+
+<script>
+    // Espera o documento HTML carregar completamente antes de executar o script
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Lógica para o modal de FILTRO DE TRADUÇÃO ---
+        const form = document.getElementById("form");
+        const modalFiltro = document.getElementById("modal-filtro");
+        const confirmarFiltro = document.querySelectorAll(".confirmar");
+        const cancelarFiltro = document.getElementById("cancelar");
+
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        // A função para mostrar o modal de filtro agora é chamada por um event listener
+        const btnEnviarFrase = document.querySelector('button[onclick="mostrarModalFiltro()"]');
+        if (btnEnviarFrase) {
+            btnEnviarFrase.onclick = null; // Remove o onclick antigo para evitar duplicação
+            btnEnviarFrase.addEventListener('click', (event) => {
+                event.preventDefault(); // Impede o envio do formulário
+                modalFiltro.classList.remove("hidden");
+            });
+        }
+
+        if (confirmarFiltro) {
+
+            confirmarFiltro.forEach(botao => {
+
+                botao.addEventListener("click", () => {
+                    form.submit(); // Envia o formulário ao clicar em 'confirmar'
+
+                    // Exibe a tela de loading
+                    loadingScreen.classList.remove('hidden');
+                })
+
+            })
+        }
+
+        if (cancelarFiltro) {
+            cancelarFiltro.addEventListener("click", () => {
+                modalFiltro.classList.add("hidden");
+            });
+        }
+
+        // --- Lógica para o modal de EMOJIS  ---
+        const emojiModal = document.getElementById('modal-emojis');
+        const openEmojiBtn = document.getElementById('open-emoji-modal-btn');
+        const closeEmojiBtn = document.getElementById('close-emoji-modal-btn');
+
+        // Evento para ABRIR o modal de emojis
+        if (openEmojiBtn) {
+            openEmojiBtn.addEventListener('click', () => {
+                emojiModal.classList.remove('hidden');
+            });
+        }
+
+        // Evento para FECHAR o modal de emojis pelo botão 'X'
+        if (closeEmojiBtn) {
+            closeEmojiBtn.addEventListener('click', () => {
+                emojiModal.classList.add('hidden');
+            });
+        }
+
+        // Evento para FECHAR o modal clicando fora do card (no fundo escuro)
+        if (emojiModal) {
+            emojiModal.addEventListener('click', (event) => {
+                // Verifica se o clique foi diretamente no fundo do modal
+                if (event.target === emojiModal) {
+                    emojiModal.classList.add('hidden');
+                }
+            });
+        }
+
+        // Evento para FECHAR o modal clicando fora do card (no fundo escuro)
+        if (modalFiltro) {
+            modalFiltro.addEventListener('click', (event) => {
+                // Verifica se o clique foi diretamente no fundo do modal
+                if (event.target === modalFiltro) {
+                    modalFiltro.classList.add('hidden');
+                }
+            });
+        }
+    });
+</script>
 
 <script>
     // Espera o documento HTML carregar completamente antes de executar o script
