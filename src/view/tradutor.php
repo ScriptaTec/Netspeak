@@ -71,13 +71,8 @@ require('header.php');
                     class="py-2 px-3 rounded-xl bg-white text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black transition-all duration-700 lg:w-120">
 
                 <!--Botão para enviar a frase-->
-                <button type="submit" onclick="mostrarModalFiltro()" class="group relative w-8 h-8"
-                    data-tooltip-target="tooltip-default-enviar">
-                    <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida"
-                        class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500">
-
-                    <img src="../imgs/icones/enviarHover.png" alt="Ícone de enviar frase para ser traduzida"
-                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <button type="submit" onclick="mostrarModalFiltro()" data-tooltip-target="tooltip-default-enviar">
+                    <img src="../imgs/icones/enviar.png" alt="Ícone de enviar frase para ser traduzida" class="w-8">
                 </button>
 
                 <!--Descrição do botão de enviar-->

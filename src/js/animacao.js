@@ -36,6 +36,8 @@ function animacaoBtn(formId) {
 
 //Necessário para funcionar a animação da letra no index
 function animacaoLetra() {
+
+   const output = document.getElementById("typed-output");
     
 var options = {
   strings: [
@@ -88,6 +90,7 @@ var options = {
     "bora comer um lanchin agr? 🍔",
     "Espero que esteja tudo bem com você.",
   ],
+
   typeSpeed: 60, // Velocidade de digitação em milissegundos
   backSpeed: 35, // Velocidade de "backspace" em milissegundos
   backDelay: 1000, // Atraso antes de começar o "backspace"
@@ -97,6 +100,26 @@ var options = {
   cursorChar: "|", // Caractere do cursor
 };
 
-var typed = new Typed("#typed-output", options);
+  var typed = new Typed("#typed-output", options);
   
+  setInterval(() => {
+    // Verifica se o conteúdo está maior que a área visível
+    if (output.scrollWidth > output.clientWidth) {
+      // *** MUDANÇA PRINCIPAL AQUI: ***
+      // Usamos .scrollTo() com o objeto de opções { behavior: 'smooth' }
+      // para animar a rolagem até o final do conteúdo (output.scrollWidth).
+      output.scrollTo({
+        left: output.scrollWidth,
+        behavior: "auto", // ISTO FAZ A ROLAGEM SER SUAVE
+      });
+    }
+
+    // Se a frase estiver sendo "apagada" (backspacing), também garante que o scroll volte
+    if (output.scrollLeft > 0 && output.scrollWidth <= output.clientWidth) {
+      output.scrollTo({
+        left: 0,
+        behavior: "auto",
+      });
+    }
+  }, 50);
 }
