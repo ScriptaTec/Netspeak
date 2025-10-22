@@ -12,7 +12,41 @@ require('header.php');
             <a href="../index.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
 
-        <a href="../index.php" class="text-2xl transition duration-500 hover:text-amber-300">Home</a>
+        <div class="flex gap-2 items-center">
+            <div class="flex flex-col items-center group transition-all duration-400">
+
+                <!--Tradução português-->
+                <button type="submit" onclick="traduzirPagina('pt')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center group transition-all duration-400">
+
+                <!--Tradução inglês-->
+                <button type="submit" onclick="traduzirPagina('en')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                        class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                        class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <a href="../index.php" class="text-2xl transition duration-500 hover:text-amber-300">Home</a>
+        </div>
     </header>
 
     <div class="flex items-center justify-center m-3">
