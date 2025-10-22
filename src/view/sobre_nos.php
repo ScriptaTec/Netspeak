@@ -3,7 +3,7 @@
 require('header.php');
 ?>
 
-<main class="lg:bg-[url(../imgs/fundoSobre.png)] bg-no-repeat">
+<main class="lg:bg-[url(../imgs/fundoSobre.png)] bg-center bg-no-repeat">
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
         <div class="w-20">
@@ -24,34 +24,38 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="mt-2 lg:text-transparent">
-        <div class="text-center text-7xl">
-            <h1>Sobre nós</h1>
+     <div class="text-center lg:ml-10 ">
+            <!--Título tela grande-->
+            <h1 class=" leading-small text-left text-9xl text-[#F8FBA6] lg:mr-10 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+                Sobre <br> nós</h1>
+
+            <!--Título tela pequena-->
+            <h1 class="text-5xl text-[#F8FBA6] mr-5 lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+                Sobre <br> nós</h1>
         </div>
-    </div>
 
     <!--Opções de navegação-->
     <div class="flex flex-col gap-4 mx-7 mb-10 mt-4 lg:flex-row lg:gap-6 lg:mx-16">
         <button onclick="mostrarCardBolsa()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-44"
+            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Sobre a bolsa
         </button>
 
         <button onclick="mostrarCardBolsistas()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-44"
+            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Desenvolvedoras
         </button>
 
         <button onclick="mostrarCardObjetivo()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-44"
+            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Objetivo
         </button>
 
         <button onclick="mostrarCardResultados()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-44"
+            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Resultados
         </button>

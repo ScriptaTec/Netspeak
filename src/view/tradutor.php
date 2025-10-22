@@ -41,9 +41,9 @@ require('header.php');
     </header>
 
     <div class="flex justify-center m-2">
-        <div class="text-center lg:text-transparent">
+        <div class="text-center">
             <!--Título tela grande-->
-            <h1 class="text-left text-8xl text-[#F8FBA6] lg:mr-10 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+            <h1 class="text-left lg:text-8xl text-[#F8FBA6] lg:mr-10 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
                 Digite <br> uma frase no <br> campo abaixo</h1>
 
             <!--Título tela pequena-->
