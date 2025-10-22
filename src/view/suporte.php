@@ -3,7 +3,7 @@
 require('header.php');
 ?>
 
-<div class="lg:bg-[url(../imgs/fundoSuporte.png)] h-screen bg-cover bg-center">
+<div class="lg:bg-[url(../imgs/fundoSup.png)] h-screen bg-cover bg-center">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -25,13 +25,19 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="mt-2 text-center text-6xl lg:text-transparent">
-        <h1>Como podemos</h1>
-        <h1>lhe ajudar?</h1>
+    <div class="mt-2 text-center">
+        <!--Título tela grande-->
+            <h1 class="text-left lg:text-8xl text-[#F8FBA6] lg:mx-14 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+                Como podemos <br> lhe ajudar?</h1>
+
+            <!--Título tela pequena-->
+            <h1 class="text-5xl text-[#F8FBA6] mx-5 lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+                 Como podemos <br> lhe ajudar?</h1>
+        
     </div>
 
     <!--Cards para as páginas faleConosco, avaliacao e tutoriais-->
-    <div class="flex flex-col gap-10 mt-10 lg:flex-row lg:gap-20 lg:ml-20">
+    <div class="flex flex-col gap-10 mt-2 lg:flex-row lg:gap-20 lg:ml-20">
 
         <!--Card que redireciona para a página fale conosco-->
         <a href="fale_conosco.php"
