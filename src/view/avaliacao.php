@@ -4,39 +4,92 @@ require('header.php');
 ?>
 
 
-<div class="lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat bg-cover mb-10">
+<div class="lg:bg-[url(../imgs/avaliacao.png)] bg-no-repeat bg-cover mb-10">
 
-    <!--Cabeçalho-->
+<!--Cabeçalho-->
     <header class="flex justify-between p-3">
         <div class="w-20">
             <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
 
-        <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
-            aria-controls="drawer-navigation">
-            <div class="relative w-8 h-8 group">
-                <img src="../imgs/icones/menuRoxo.png" alt="ícone perfil"
-                    class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
-                <img src="../imgs/icones/menu.png" alt="ícone perfil hover"
-                    class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
-            </div>
-        </button>
+        <div class="flex gap-2 items-center">
+            <div class="flex flex-col items-center group transition-all duration-400">
 
+                <!--Tradução português-->
+                <button type="submit" onclick="traduzirPagina('pt')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+             <div class="flex flex-col items-center group transition-all duration-400">
+
+                <!--Tradução espanhol-->
+                <button type="submit" onclick="traduzirPagina('es')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/espanha.png" alt="espanha" class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/espanha.png" alt="espanha" class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center group transition-all duration-400">
+
+                <!--Tradução inglês-->
+                <button type="submit" onclick="traduzirPagina('en')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                        class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                        class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                aria-controls="drawer-navigation">
+                <div class="relative w-8 h-8 group">
+                    <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
+                        class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
+                    <img src="../imgs/icones/menu.png" alt="ícone menu hover"
+                        class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+                </div>
+            </button>
+        </div>
         <!--Importar o menu de navegação rápida-->
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="mt-2 text-center text-6xl lg:text-transparent">
-        <h1>Qual sua experiência</h1>
-        <h1>com a ferramenta?</h1>
+    <div class="mt-2 text-center">
+         <!--Título tela grande-->
+            <h1 class="text-left lg:text-8xl text-[#F8FBA6] lg:ml-14 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+                Qual sua experiência <br> com a ferramenta?</h1>
+
+            <!--Título tela pequena-->
+            <h1 class="text-5xl text-[#F8FBA6] lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+               Qual sua experiência <br> com a ferramenta?</h1>
     </div>
 
     <!--Cards para escolher a avaliação-->
-    <div class="flex flex-col gap-14 mt-5 lg:flex-row lg:ml-20">
+    <div class="flex flex-col gap-14 lg:flex-row lg:ml-20 mx-20">
 
         <!--Card de avalião ótima-->
         <div data-aos="fade-up" data-aos-duration="500"
-            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
+            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-5"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -63,7 +116,7 @@ require('header.php');
 
         <!--Card de avalião boa-->
         <div data-aos="fade-up" data-aos-duration="1000"
-            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
+            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-5"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -90,7 +143,7 @@ require('header.php');
 
         <!--Card de avalião ruim-->
         <div data-aos="fade-up" data-aos-duration="1500"
-            class="flex flex-col justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
+            class="flex flex-col justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-5"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>

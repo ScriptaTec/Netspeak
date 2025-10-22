@@ -10,55 +10,109 @@ require('header.php');
             <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
 
-        <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
-            aria-controls="drawer-navigation">
-            <div class="relative w-8 h-8 group">
-                <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
-                    class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
-                <img src="../imgs/icones/menuAmarelo.png" alt="ícone menu hover"
-                    class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
-            </div>
-        </button>
+        <div class="flex gap-2 items-center">
+            <div class="flex flex-col items-center group transition-all duration-400">
 
+                <!--Tradução português-->
+                <button type="submit" onclick="traduzirPagina('pt')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center group transition-all duration-400">
+
+                <!--Tradução espanhol-->
+                <button type="submit" onclick="traduzirPagina('es')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/espanha.png" alt="espanha" class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/espanha.png" alt="espanha" class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center group transition-all duration-400">
+
+                <!--Tradução inglês-->
+                <button type="submit" onclick="traduzirPagina('en')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                        class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                        class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                aria-controls="drawer-navigation">
+                <div class="relative w-8 h-8 group">
+                    <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
+                        class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
+                    <img src="../imgs/icones/menu.png" alt="ícone menu hover"
+                        class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+                </div>
+            </button>
+        </div>
         <!--Importar o menu de navegação rápida-->
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="mt-2 lg:text-transparent">
-        <div class="text-center text-7xl">
-            <h1>Sobre nós</h1>
-        </div>
+    <div class="text-center lg:ml-14 ">
+        <!--Título tela grande-->
+        <h1 class=" leading-small text-left text-9xl text-[#F8FBA6] lg:mr-10 hidden lg:block"
+            style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+            Sobre <br> nós</h1>
+
+        <!--Título tela pequena-->
+        <h1 class="text-5xl text-[#F8FBA6] mr-5 lg:hidden"
+            style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+            Sobre <br> nós</h1>
     </div>
 
     <!--Opções de navegação-->
     <div class="flex flex-col gap-4 mx-7 mb-10 mt-4 lg:flex-row lg:gap-6 lg:mx-16">
         <button onclick="mostrarCardBolsa()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-44"
+            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Sobre a bolsa
         </button>
 
         <button onclick="mostrarCardBolsistas()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-44"
+            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Desenvolvedoras
         </button>
 
         <button onclick="mostrarCardObjetivo()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-44"
+            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Objetivo
         </button>
 
         <button onclick="mostrarCardResultados()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-44"
+            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Resultados
         </button>
     </div>
 
     <!--Card sobre a bolsa-->
-    <div id="card-bolsa" class="mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
+    <div id="card-bolsa" class="m-5 mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
         style="box-shadow: 20px 10px 0px #75678E">
         <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">O desenvolvimento de um
             interpretador para a linguagem da internet</h3>
@@ -235,9 +289,9 @@ require('header.php');
         </div>
     </div>
 
-    <div id="card-objetivo" class="hidden mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
+    <div id="card-objetivo" class="hidden m-5 mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
         style="box-shadow: 20px 10px 0px #75678E">
-        <h3 class="text-4xl text-[#543A82] text-justify" style="text-shadow: 2px 2px 0px #babc7c">Qual o
+        <h3 class="text-4xl text-[#543A82] text-left lg:text-justify" style="text-shadow: 2px 2px 0px #babc7c">Qual o
             nosso
             obejtivo?</h3>
 
@@ -249,7 +303,7 @@ require('header.php');
         </p>
     </div>
 
-    <div id="card-resultados" class="hidden mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
+    <div id="card-resultados" class="hidden m-5 mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
         style="box-shadow: 20px 10px 0px #75678E">
         <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">Como os resultados
             da pesquisa

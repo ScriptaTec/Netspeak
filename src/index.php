@@ -2,19 +2,71 @@
 require("view/header.php");
 ?>
 
-<div class="h-screen lg:bg-[url(imgs/index.png)] bg-no-repeat bg-center">
+<div class="h-screen">
+
     <header class="flex justify-between items-center p-3 relative z-50">
         <div class="w-20">
-            <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
+            <a href="tradutor.php"><img src="imgs/logo.png" alt="Logo do site"></a>
         </div>
 
         <div class="flex items-center gap-5 text-lg">
-            <a href="view/login.php" class="text-[#413E45] hover:underline hover:underline-offset-2 hover:decoration-2">
+            <div class="flex gap-2 items-center">
+                <div class="flex flex-col items-center group transition-all duration-400">
+
+                    <!--Tradução português-->
+                    <button type="submit" onclick="traduzirPagina('pt')">
+                        <!--Icone tela pequena-->
+                        <img src="imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
+
+                        <!--Icone tela grande-->
+                        <img src="imgs/icones/brasil.png" alt="Brasil" class="h-7 border rounded-full hidden lg:block">
+
+                        <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                    </button>
+                </div>
+
+                <div class="flex flex-col items-center group transition-all duration-400">
+
+                    <!--Tradução espanhol-->
+                    <button type="submit" onclick="traduzirPagina('es')">
+                        <!--Icone tela pequena-->
+                        <img src="../imgs/icones/espanha.png" alt="espanha" class="h-5 border rounded-full lg:hidden">
+
+                        <!--Icone tela grande-->
+                        <img src="../imgs/icones/espanha.png" alt="espanha"
+                            class="h-7 border rounded-full hidden lg:block">
+
+                        <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                    </button>
+                </div>
+
+                <div class="flex flex-col items-center group transition-all duration-400">
+
+                    <!--Tradução inglês-->
+                    <button type="submit" onclick="traduzirPagina('en')">
+                        <!--Icone tela pequena-->
+                        <img src="imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                            class="h-5 border rounded-full lg:hidden">
+
+                        <!--Icone tela grande-->
+                        <img src="imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                            class="h-7 border rounded-full hidden lg:block">
+
+                        <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                    </button>
+                </div>
+            </div>
+
+            <a href="view/login.php"
+                class="text-sm lg:text-xl text-[#413E45] hover:underline hover:underline-offset-2 hover:decoration-2">
                 Entrar
             </a>
 
             <div
-                class="px-2 py-1 text-[#746587] border-[#746587] rounded-lg bg-[#F8FBA6] shadow-[#746587] shadow-xs transition duration-900 ease-in-out hover:bg-black hover:text-white">
+                class="lg:text-xl text-sm px-2 py-1 text-[#746587] border-[#746587] rounded-lg bg-[#F8FBA6] shadow-[#746587] shadow-xs transition duration-900 ease-in-out hover:bg-black hover:text-white">
                 <a href="view/cadastro.php">
                     Cadastrar-se
                 </a>
@@ -22,21 +74,36 @@ require("view/header.php");
         </div>
     </header>
 
-    <img src="/imgs/index.png" alt="Capa do site" class="lg:hidden">
+    <div class="bg-[url('imgs/fundoIndex.png')] lg:min-h-screen lg:bg-cover bg-contain bg-center bg-no-repeat -mt-10">
 
-    <div class="text-right flex justify-center items-center lg:mt-0 lg:block">
-        <a href="/view/cadastro.php">
-            <button type="button" data-aos="zoom-out-up" data-aos-duration="1000" data-aos-delay="500"
-                class="lg:mt-98 lg:mr-44 text-5xl text-[#746587] bg-white border-2 border-[#746587] rounded-lg px-10 py-1 transition duration-600 hover:border-white hover:bg-[#746587] hover:text-white"
-                style="cursor: pointer;">
-                Começar
-            </button>
-        </a>
+        <div class="text-3xl pt-20">
+            <!--Título tela grande-->
+            <h1 class="lg:text-9xl text-right text-[#F8FBA6] lg:mr-10 hidden lg:block"
+                style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+                Ferramenta de <br> tradução do <br> netspeak</h1>
+
+            <!--Título tela pequena-->
+            <h1 class="lg:text-9xl text-right text-[#F8FBA6] mr-5 lg:hidden"
+                style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #413E45;">
+                Ferramenta de <br> tradução do <br> netspeak</h1>
+        </div>
+
+        <div class="text-right flex justify-center items-center mt-10 text-3xl lg:mt-0 lg:block">
+            <a href="/view/cadastro.php">
+                <button type="button" data-aos="zoom-out-up" data-aos-duration="1000" data-aos-delay="500"
+                    class="lg:mt-3 lg:mr-20 lg:text-5xl text-[#746587] bg-white border-2 border-[#746587] rounded-lg px-10 py-1 transition duration-600 hover:border-white hover:bg-[#746587] hover:text-white"
+                    style="cursor: pointer;">
+                    Começar
+                </button>
+            </a>
+        </div>
     </div>
 
-    <div class="hidden lg:text-center lg:block">
-        <button onclick="scrollSaberMais()" class="mt-18 transition duration-800 hover:scale-105">
-            <img src="/imgs/icones/saberMais.png" alt="Saiba mais" class="w-32">
+    <div class="hidden lg:text-center lg:block flex flex-col text-center">
+        <button onclick="scrollSaberMais()" class=" transition duration-800 hover:scale-105">
+            <span class="text-xl text-[#413E45]">Saber mais</span>
+
+            <img src="/imgs/icones/verMais.png" alt="Saiba mais" class="w-32">
         </button>
     </div>
 
@@ -44,21 +111,25 @@ require("view/header.php");
     <div class="flex justify-center mt-10">
 
         <div id="ferramenta"
-            class="flex flex-col justify-around gap-5 bg-[#746587] py-10 px-7 relative text-center lg:flex-row"
+            class="flex flex-col justify-around gap-5 bg-[#746587] py-10 px-7 relative text-center lg:flex-row lg:m-0"
             data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="text-white text-7xl text-shadow-sm lg:text-left">
-                Você sabe o que <br> é netspeak?</h1>
+            <div class="text-4xl">
+                <h1 class="text-white lg:text-7xl text-shadow-sm lg:text-left">
+                    Você sabe o que <br> é netspeak?</h1>
+            </div>
 
             <div class="relative">
-                <p class="w-98 bg-white py-2 px-4 text-xl text-[#746587] text-justify">Netspeak é a maneira
+                <p class="lg:w-98 bg-white py-2 px-4 text-xl text-[#746587] text-justify">Netspeak é a maneira
                     como as pessoas usam a linguagem em ambientes digitais, como na
                     internet, em aplicativos de mensagens e nas redes sociais. É uma mistura de gírias, abreviações,
                     emojis, e até mesmo uma forma diferente de escrever, tudo feito para se comunicar de forma
                     rápida e
                     eficiente.
 
-                <div class="flex justify-center items-center absolute top-24 -left-20 bg-white w-20 h-20">
-                    <img src="imgs/icones/emojiPergunta.png" alt="Emoji">
+                <div class="hidden lg:block">
+                    <div class="flex justify-center items-center absolute top-24 -left-20 bg-white w-20 h-20">
+                        <img src="imgs/icones/emojiPergunta.png" alt="Emoji">
+                    </div>
                 </div>
                 </p>
             </div>
@@ -140,8 +211,8 @@ require("view/header.php");
                 <input
                     class="w-54 py-2 px-1.5 rounded-xl bg-white text-gray-500 text-xl focus:outline-none focus:border-0 hover:border-0 focus:shadow-none focus:ring-black hover:text-[#543A82] transition-all duration-700 lg:w-120"
                     type="text" disabled id="typed-output">
-                    <!--Animação da letra e as palavras chaves no arquivo animacao.js-->
-                    
+                <!--Animação da letra e as palavras chaves no arquivo animacao.js-->
+
                 </input>
 
                 <!--Botão para enviar a frase-->

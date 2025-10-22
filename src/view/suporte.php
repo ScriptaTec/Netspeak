@@ -3,7 +3,7 @@
 require('header.php');
 ?>
 
-<div class="lg:bg-[url(../imgs/fundoSuporte.png)] h-screen bg-cover bg-center">
+<div class="lg:bg-[url(../imgs/fundoSup.png)] h-screen bg-cover bg-center">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -11,27 +11,81 @@ require('header.php');
             <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
         </div>
 
-        <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
-            aria-controls="drawer-navigation">
-            <div class="relative w-8 h-8 group">
-                <img src="../imgs/icones/menuRoxo.png" alt="ícone de menu"
-                    class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 duration-600">
-                <img src="../imgs/icones/menuAmarelo.png" alt="ícone de menu hover"
-                    class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 duration-600">
-            </div>
-        </button>
+        <div class="flex gap-2 items-center">
+            <div class="flex flex-col items-center group transition-all duration-400">
 
+                <!--Tradução português-->
+                <button type="submit" onclick="traduzirPagina('pt')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+             <div class="flex flex-col items-center group transition-all duration-400">
+
+                <!--Tradução espanhol-->
+                <button type="submit" onclick="traduzirPagina('es')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/espanha.png" alt="espanha" class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/espanha.png" alt="espanha" class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center group transition-all duration-400">
+
+                <!--Tradução inglês-->
+                <button type="submit" onclick="traduzirPagina('en')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                        class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                        class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                aria-controls="drawer-navigation">
+                <div class="relative w-8 h-8 group">
+                    <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
+                        class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
+                    <img src="../imgs/icones/menu.png" alt="ícone menu hover"
+                        class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+                </div>
+            </button>
+        </div>
         <!--Importar o menu de navegação rápida-->
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="mt-2 text-center text-6xl lg:text-transparent">
-        <h1>Como podemos</h1>
-        <h1>lhe ajudar?</h1>
+    <div class="mt-2 text-center">
+        <!--Título tela grande-->
+            <h1 class="text-left lg:text-8xl text-[#F8FBA6] lg:mx-14 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+                Como podemos <br> lhe ajudar?</h1>
+
+            <!--Título tela pequena-->
+            <h1 class="text-5xl text-[#F8FBA6] mx-5 lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+                 Como podemos <br> lhe ajudar?</h1>
+        
     </div>
 
     <!--Cards para as páginas faleConosco, avaliacao e tutoriais-->
-    <div class="flex flex-col gap-10 mt-10 lg:flex-row lg:gap-20 lg:ml-20">
+    <div class="flex flex-col gap-10 mt-2 lg:flex-row lg:gap-20 lg:ml-20">
 
         <!--Card que redireciona para a página fale conosco-->
         <a href="fale_conosco.php"
