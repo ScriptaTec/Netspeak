@@ -2,10 +2,15 @@
 require_once '../controller/geminiController.php';
 
 $respostaDaApi = '';
+$tipoTraducao = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     $fraseUsuario = $_POST['frase'];
-    $tipoTraducao = $_POST['tipoTraducao'];
+
+    if (isset($_POST['tipoTraducao'])) {
+        $tipoTraducao = $_POST['tipoTraducao'];
+    } 
+
     $respostaDaApi = processarFraseComGemini($fraseUsuario, $tipoTraducao);
 }
 ?>
