@@ -4,7 +4,7 @@ require('header.php');
 ?>
 
 
-<div class="lg:bg-[url(../imgs/fundoAvaliacao.png)] bg-no-repeat bg-cover mb-10">
+<div class="lg:bg-[url(../imgs/avaliacao.png)] bg-no-repeat bg-cover mb-10">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -26,17 +26,22 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="mt-2 text-center text-6xl lg:text-transparent">
-        <h1>Qual sua experiência</h1>
-        <h1>com a ferramenta?</h1>
+    <div class="mt-2 text-center">
+         <!--Título tela grande-->
+            <h1 class="text-left lg:text-8xl text-[#F8FBA6] lg:ml-14 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+                Qual sua experiência <br> com a ferramenta?</h1>
+
+            <!--Título tela pequena-->
+            <h1 class="text-5xl text-[#F8FBA6] lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+               Qual sua experiência <br> com a ferramenta?</h1>
     </div>
 
     <!--Cards para escolher a avaliação-->
-    <div class="flex flex-col gap-14 mt-5 lg:flex-row lg:ml-20">
+    <div class="flex flex-col gap-14 lg:flex-row lg:ml-20 mx-20">
 
         <!--Card de avalião ótima-->
         <div data-aos="fade-up" data-aos-duration="500"
-            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
+            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-5"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -63,7 +68,7 @@ require('header.php');
 
         <!--Card de avalião boa-->
         <div data-aos="fade-up" data-aos-duration="1000"
-            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
+            class="flex flex-col justify-center flex-justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-5"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
@@ -90,7 +95,7 @@ require('header.php');
 
         <!--Card de avalião ruim-->
         <div data-aos="fade-up" data-aos-duration="1500"
-            class="flex flex-col justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-32"
+            class="flex flex-col justify-center items-center bg-[#9E8CBE] rounded-4xl w-52 py-4 px-2 relative lg:mt-5"
             style="box-shadow: 8px 8px 0px #605470">
             <div class="absolute top-0 right-0 bg-[#AE99D2] h-8 w-8 rounded-tr-4xl"></div>
             <div class="absolute top-20 left-0 bg-[#AE99D2] h-4 w-7"></div>
