@@ -3,7 +3,7 @@
 require('header.php');
 ?>
 
-<div class="lg:bg-[url(../imgs/fundoFale.png)] bg-cover bg-center">
+<div class="lg:bg-[url(../imgs/fundoFaleConosco.png)] bg-cover bg-center">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -25,14 +25,20 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-    <div class="mt-2 text-center text-6xl lg:text-transparent">
-        <h1>Envie uma</h1>
-        <h1>mensagem...</h1>
+    <div class="mt-2 text-center">
+           <!--Título tela grande-->
+            <h1 class="text-left lg:text-8xl text-[#F8FBA6] lg:ml-14 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+                Envie uma <br> mensagem...</h1>
+
+            <!--Título tela pequena-->
+            <h1 class="text-5xl text-[#F8FBA6] mr-5 lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+               Envie uma <br> mensagem...</h1>
+        
     </div>
 
     <!--Formulário do feedback-->
-    <form action="" class="mt-10 mb-10 m-2 lg:ml-32">
-        <div class="flex-col lg:w-3xl py-3 px-10 rounded-4xl rounded-br-none border-2 border-[#746587] lg:mt-20"
+    <form action="" class=" mb-10 m-2 lg:ml-14">
+        <div class="flex-col lg:w-3xl py-3 px-10 rounded-4xl rounded-br-none border-2 border-[#746587] lg:mt-10"
             style="box-shadow: 5px 14px 0px #746587">
             <div class="flex-col lg:flex lg:flex-row gap-11">
                 <div class="flex flex-col">

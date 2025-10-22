@@ -60,11 +60,11 @@ require("view/header.php");
         <div class="text-2xl pt-20">
             <!--Título tela grande-->
             <h1 class="lg:text-9xl text-right text-[#F8FBA6] lg:mr-10 hidden lg:block"
-                style="text-shadow: 7px 7px 0px #413E45;">
+                style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
                 Ferramenta de <br> tradução do <br> netspeak</h1>
 
             <!--Título tela pequena-->
-            <h1 class="lg:text-9xl text-right text-[#F8FBA6] mr-5 lg:hidden" style="text-shadow: 2px 2px 0px #413E45;">
+            <h1 class="lg:text-9xl text-right text-[#F8FBA6] mr-5 lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
                 Ferramenta de <br> tradução do <br> netspeak</h1>
         </div>
 
