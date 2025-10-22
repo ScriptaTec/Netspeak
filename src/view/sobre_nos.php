@@ -3,7 +3,8 @@
 require('header.php');
 ?>
 
-<main class="lg:bg-[url(../imgs/fundoSobre.png)] bg-center bg-no-repeat">
+<main class="lg:bg-[url(../imgs/fundoSobre.png)] bg-no-repeat">
+
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
         <div class="w-20">
@@ -24,7 +25,7 @@ require('header.php');
         <?php include 'menu.php'; ?>
     </header>
 
-     <div class="text-center lg:ml-10 ">
+     <div class="text-center lg:ml-14 ">
             <!--Título tela grande-->
             <h1 class=" leading-small text-left text-9xl text-[#F8FBA6] lg:mr-10 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
                 Sobre <br> nós</h1>
@@ -36,8 +37,7 @@ require('header.php');
 
     <!--Opções de navegação-->
     <div class="flex flex-col gap-4 mx-7 mb-10 mt-4 lg:flex-row lg:gap-6 lg:mx-16">
-        <button onclick="mostrarCardBolsa()"
-            class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
+        <button onclick="mostrarCardBolsa()" class="cursor-pointer py-1 px-2 text-xl text-[#F8FBA6] bg-[#9E8CBE] transition duration-500 hover:bg-[#F8FBA6] hover:text-[#543A82] lg:mt-5"
             style="box-shadow: 4px 4px 0px #716587; text-shadow: -1px 1px 0px #716587">
             Sobre a bolsa
         </button>
@@ -62,7 +62,7 @@ require('header.php');
     </div>
 
     <!--Card sobre a bolsa-->
-    <div id="card-bolsa" class="mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
+    <div id="card-bolsa" class="m-5 mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
         style="box-shadow: 20px 10px 0px #75678E">
         <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">O desenvolvimento de um
             interpretador para a linguagem da internet</h3>
@@ -239,9 +239,9 @@ require('header.php');
         </div>
     </div>
 
-    <div id="card-objetivo" class="hidden mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
+    <div id="card-objetivo" class="hidden m-5 mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
         style="box-shadow: 20px 10px 0px #75678E">
-        <h3 class="text-4xl text-[#543A82] text-justify" style="text-shadow: 2px 2px 0px #babc7c">Qual o
+        <h3 class="text-4xl text-[#543A82] text-left lg:text-justify" style="text-shadow: 2px 2px 0px #babc7c">Qual o
             nosso
             obejtivo?</h3>
 
@@ -253,7 +253,7 @@ require('header.php');
         </p>
     </div>
 
-    <div id="card-resultados" class="hidden mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
+    <div id="card-resultados" class="hidden m-5 mb-20 p-4 rounded-2xl rounded-br-none bg-[#F8FBA6] lg:mx-16"
         style="box-shadow: 20px 10px 0px #75678E">
         <h3 class="text-4xl text-[#543A82]" style="text-shadow: 2px 2px 0px #babc7c">Como os resultados
             da pesquisa
