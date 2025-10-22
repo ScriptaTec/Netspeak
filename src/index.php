@@ -3,6 +3,7 @@ require("view/header.php");
 ?>
 
 <div class="h-screen">
+
     <header class="flex justify-between items-center p-3 relative z-50">
         <div class="w-20">
             <a href="tradutor.php"><img src="imgs/logo.png" alt="Logo do site"></a>
@@ -13,7 +14,7 @@ require("view/header.php");
                 <div class="flex flex-col items-center group transition-all duration-400">
 
                     <!--Tradução português-->
-                    <button type="button">
+                    <button type="submit" onclick="traduzirPagina('pt')">
                         <!--Icone tela pequena-->
                         <img src="imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
 
@@ -26,8 +27,9 @@ require("view/header.php");
                 </div>
 
                 <div class="flex flex-col items-center group transition-all duration-400">
+
                     <!--Tradução inglês-->
-                    <button type="button">
+                    <button type="submit" onclick="traduzirPagina('en')">
                         <!--Icone tela pequena-->
                         <img src="imgs/icones/estadosUnidos.png" alt="Estados Unidos"
                             class="h-5 border rounded-full lg:hidden">
