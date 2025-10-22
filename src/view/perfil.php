@@ -22,56 +22,71 @@ require('header.php');
 
 
 <!--Cabeçalho-->
-    <header class="flex justify-between p-3">
-        <div class="w-20">
-            <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
-        </div>
+<header class="flex justify-between p-3">
+    <div class="w-20">
+        <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
+    </div>
 
-        <div class="flex gap-2 items-center">
-            <div class="flex flex-col items-center group transition-all duration-400">
+    <div class="flex gap-2 items-center">
+        <div class="flex flex-col items-center group transition-all duration-400">
 
-                <!--Tradução português-->
-                <button type="submit" onclick="traduzirPagina('pt')">
-                    <!--Icone tela pequena-->
-                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
+            <!--Tradução português-->
+            <button type="submit" onclick="traduzirPagina('pt')">
+                <!--Icone tela pequena-->
+                <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
 
-                    <!--Icone tela grande-->
-                    <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-7 border rounded-full hidden lg:block">
+                <!--Icone tela grande-->
+                <img src="../imgs/icones/brasil.png" alt="Brasil" class="h-7 border rounded-full hidden lg:block">
 
-                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+                <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
 
-                </button>
-            </div>
-
-            <div class="flex flex-col items-center group transition-all duration-400">
-
-                <!--Tradução inglês-->
-                <button type="submit" onclick="traduzirPagina('en')">
-                    <!--Icone tela pequena-->
-                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
-                        class="h-5 border rounded-full lg:hidden">
-
-                    <!--Icone tela grande-->
-                    <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
-                        class="h-7 border rounded-full hidden lg:block">
-
-                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
-
-                </button>
-            </div>
-
-            <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
-                aria-controls="drawer-navigation">
-                <div class="relative w-8 h-8 group">
-                    <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
-                        class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
-                    <img src="../imgs/icones/menuAmarelo.png" alt="ícone menu hover"
-                        class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
-                </div>
             </button>
         </div>
-        <!--Importar o menu de navegação rápida-->
-       <?php include 'menu.php'; ?>
+
+        <div class="flex flex-col items-center group transition-all duration-400">
+
+            <!--Tradução espanhol-->
+            <button type="submit" onclick="traduzirPagina('es')">
+                <!--Icone tela pequena-->
+                <img src="../imgs/icones/espanha.png" alt="espanha" class="h-5 border rounded-full lg:hidden">
+
+                <!--Icone tela grande-->
+                <img src="../imgs/icones/espanha.png" alt="espanha" class="h-7 border rounded-full hidden lg:block">
+
+                <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+            </button>
+        </div>
+
+        <div class="flex flex-col items-center group transition-all duration-400">
+
+            <!--Tradução inglês-->
+            <button type="submit" onclick="traduzirPagina('en')">
+                <!--Icone tela pequena-->
+                <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                    class="h-5 border rounded-full lg:hidden">
+
+                <!--Icone tela grande-->
+                <img src="../imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                    class="h-7 border rounded-full hidden lg:block">
+
+                <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+            </button>
+        </div>
+
+        <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+            aria-controls="drawer-navigation">
+            <div class="relative w-8 h-8 group">
+                <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
+                    class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
+                <img src="../imgs/icones/menu.png" alt="ícone menu hover"
+                    class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+            </div>
+        </button>
+    </div>
+    <!--Importar o menu de navegação rápida-->
+    <?php include 'menu.php'; ?>
 </header>
 
 <div class="flex justify-center items-center gap-5 m-3 lg:m-0">

@@ -28,6 +28,22 @@ require("view/header.php");
 
                 <div class="flex flex-col items-center group transition-all duration-400">
 
+                    <!--Tradução espanhol-->
+                    <button type="submit" onclick="traduzirPagina('es')">
+                        <!--Icone tela pequena-->
+                        <img src="../imgs/icones/espanha.png" alt="espanha" class="h-5 border rounded-full lg:hidden">
+
+                        <!--Icone tela grande-->
+                        <img src="../imgs/icones/espanha.png" alt="espanha"
+                            class="h-7 border rounded-full hidden lg:block">
+
+                        <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                    </button>
+                </div>
+
+                <div class="flex flex-col items-center group transition-all duration-400">
+
                     <!--Tradução inglês-->
                     <button type="submit" onclick="traduzirPagina('en')">
                         <!--Icone tela pequena-->
@@ -44,12 +60,13 @@ require("view/header.php");
                 </div>
             </div>
 
-            <a href="view/login.php" class="text-[#413E45] hover:underline hover:underline-offset-2 hover:decoration-2">
+            <a href="view/login.php"
+                class="text-sm lg:text-xl text-[#413E45] hover:underline hover:underline-offset-2 hover:decoration-2">
                 Entrar
             </a>
 
             <div
-                class="px-2 py-1 text-[#746587] border-[#746587] rounded-lg bg-[#F8FBA6] shadow-[#746587] shadow-xs transition duration-900 ease-in-out hover:bg-black hover:text-white">
+                class="lg:text-xl text-sm px-2 py-1 text-[#746587] border-[#746587] rounded-lg bg-[#F8FBA6] shadow-[#746587] shadow-xs transition duration-900 ease-in-out hover:bg-black hover:text-white">
                 <a href="view/cadastro.php">
                     Cadastrar-se
                 </a>
@@ -59,7 +76,7 @@ require("view/header.php");
 
     <div class="bg-[url('imgs/fundoIndex.png')] lg:min-h-screen lg:bg-cover bg-contain bg-center bg-no-repeat -mt-10">
 
-        <div class="text-2xl pt-20">
+        <div class="text-3xl pt-20">
             <!--Título tela grande-->
             <h1 class="lg:text-9xl text-right text-[#F8FBA6] lg:mr-10 hidden lg:block"
                 style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
@@ -67,7 +84,7 @@ require("view/header.php");
 
             <!--Título tela pequena-->
             <h1 class="lg:text-9xl text-right text-[#F8FBA6] mr-5 lg:hidden"
-                style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+                style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #413E45;">
                 Ferramenta de <br> tradução do <br> netspeak</h1>
         </div>
 

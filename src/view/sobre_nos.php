@@ -28,6 +28,21 @@ require('header.php');
 
             <div class="flex flex-col items-center group transition-all duration-400">
 
+                <!--Tradução espanhol-->
+                <button type="submit" onclick="traduzirPagina('es')">
+                    <!--Icone tela pequena-->
+                    <img src="../imgs/icones/espanha.png" alt="espanha" class="h-5 border rounded-full lg:hidden">
+
+                    <!--Icone tela grande-->
+                    <img src="../imgs/icones/espanha.png" alt="espanha" class="h-7 border rounded-full hidden lg:block">
+
+                    <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center group transition-all duration-400">
+
                 <!--Tradução inglês-->
                 <button type="submit" onclick="traduzirPagina('en')">
                     <!--Icone tela pequena-->
@@ -48,7 +63,7 @@ require('header.php');
                 <div class="relative w-8 h-8 group">
                     <img src="../imgs/icones/menuRoxo.png" alt="ícone menu"
                         class="absolute inset-0 w-full h-full opacity-100 group-hover:opacity-0 transition-opacity duration-600 ease-in-out">
-                    <img src="../imgs/icones/menuAmarelo.png" alt="ícone menu hover"
+                    <img src="../imgs/icones/menu.png" alt="ícone menu hover"
                         class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
                 </div>
             </button>
