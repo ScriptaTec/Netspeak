@@ -64,7 +64,8 @@ require("view/header.php");
                 Ferramenta de <br> tradução do <br> netspeak</h1>
 
             <!--Título tela pequena-->
-            <h1 class="lg:text-9xl text-right text-[#F8FBA6] mr-5 lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+            <h1 class="lg:text-9xl text-right text-[#F8FBA6] mr-5 lg:hidden"
+                style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
                 Ferramenta de <br> tradução do <br> netspeak</h1>
         </div>
 
@@ -79,9 +80,11 @@ require("view/header.php");
         </div>
     </div>
 
-    <div class="hidden lg:text-center lg:block">
+    <div class="hidden lg:text-center lg:block flex flex-col text-center">
         <button onclick="scrollSaberMais()" class=" transition duration-800 hover:scale-105">
-            <img src="/imgs/icones/saberMais.png" alt="Saiba mais" class="w-32">
+            <span class="text-xl text-[#413E45]">Saber mais</span>
+
+            <img src="/imgs/icones/verMais.png" alt="Saiba mais" class="w-32">
         </button>
     </div>
 
