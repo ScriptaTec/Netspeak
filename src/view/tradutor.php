@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
 require('header.php');
 ?>
 
-<div class="lg:bg-[url(../imgs/fundo.png)] h-screen bg-cover bg-center">
+<div class="lg:bg-[url(../imgs/fundoTradutor.png)] h-screen bg-cover bg-center">
 
     <!--Cabeçalho-->
     <header class="flex justify-between p-3">
@@ -41,13 +41,19 @@ require('header.php');
     </header>
 
     <div class="flex justify-center m-2">
-        <div class="text-center text-6xl lg:text-transparent">
-            <h1>Digite uma frase no campo abaixo</h1>
+        <div class="text-center lg:text-transparent">
+            <!--Título tela grande-->
+            <h1 class="text-left text-8xl text-[#F8FBA6] lg:mr-10 hidden lg:block" style="text-shadow: 7px 7px 0px #413E45; -webkit-text-stroke-width: 2.5px; -webkit-text-stroke-color: #413E45;">
+                Digite <br> uma frase no <br> campo abaixo</h1>
+
+            <!--Título tela pequena-->
+            <h1 class="text-5xl text-[#F8FBA6] mr-5 lg:hidden" style="text-shadow: 2px 2px 0px #413E45; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: #413E45;">
+                Digite <br> uma frase no <br> campo abaixo</h1>
         </div>
     </div>
 
     <!--Card para enviar a frase-->
-    <div class="flex justify-center mt-70">
+    <div class="flex justify-center mt-4 lg:mt-10">
         <div class="py-3 px-7 rounded-2xl bg-[#746587] text-left" style="box-shadow: 0px 8px 0px #AE99D2">
 
             <!--Formulário para enviar para o resposta_tradutor-->
@@ -84,9 +90,9 @@ require('header.php');
 
                 <!--Selecionar o tipo de tradução-->
                 <div id="modal-filtro"
-                    class="hidden fixed inset-0 z-30 flex justify-center items-center bg-gray-200/50">
+                    class="hidden fixed inset-0 z-30 flex justify-center text-center items-center bg-gray-200/50 px-3 lg:p-0">
 
-                    <div class="relative">
+                    <div class="relative flex ">
                         <!--Fechar pop-up-->
                         <button style="cursor: pointer;" type="button" id="cancelar" class=" group">
                             <img src="../imgs/icones/close.png" alt="ícone de sair do mudar foto de perfil"
@@ -96,8 +102,8 @@ require('header.php');
                         </button>
 
                         <div
-                            class="flex flex-col justify-center items-center bg-white py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:border-black transition duration-900">
-                            <h1 class="text-5xl">Selecione o tipo de tradução</h1>
+                            class="flex flex-col justify-center items-center bg-white text-2xl py-5 px-10 rounded-4xl border-2 border-gray-800 shadow-xl hover:border-black transition duration-900">
+                            <h1 class="lg:text-5xl">Selecione o tipo de tradução</h1>
 
                             <div class="flex gap-2 items-center text-2xl">
                                 <input type="radio" name="tipoTraducao" value="informal" required
@@ -124,11 +130,11 @@ require('header.php');
         </div>
     </div>
 
-     <!--Tutorial para usar a ferramenta-->
-        <div
-            class="ml-98 mt-3 text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400">
-            <a href="tutoriais.php">Precisa de ajuda?</a>
-        </div>
+    <!--Tutorial para usar a ferramenta-->
+    <div
+        class="lg:ml-98 mt-3 text-lg text-[#75678E] font-bold underline underline-offset-4 decoration-2 decoration-[#75678E] hover:text-[#543A82] hover:decoration-[#543A82] transition duration-400">
+        <a href="tutoriais.php" class="ml-5">Precisa de ajuda?</a>
+    </div>
 </div>
 
 
