@@ -5,10 +5,43 @@ require("view/header.php");
 <div class="h-screen">
     <header class="flex justify-between items-center p-3 relative z-50">
         <div class="w-20">
-            <a href="tradutor.php"><img src="../imgs/logo.png" alt="Logo do site"></a>
+            <a href="tradutor.php"><img src="imgs/logo.png" alt="Logo do site"></a>
         </div>
 
         <div class="flex items-center gap-5 text-lg">
+            <div class="flex gap-2 items-center">
+                <div class="flex flex-col items-center group transition-all duration-400">
+
+                    <!--Tradução português-->
+                    <button type="button">
+                        <!--Icone tela pequena-->
+                        <img src="imgs/icones/brasil.png" alt="Brasil" class="h-5 border rounded-full lg:hidden">
+
+                        <!--Icone tela grande-->
+                        <img src="imgs/icones/brasil.png" alt="Brasil" class="h-7 border rounded-full hidden lg:block">
+
+                        <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                    </button>
+                </div>
+
+                <div class="flex flex-col items-center group transition-all duration-400">
+                    <!--Tradução inglês-->
+                    <button type="button">
+                        <!--Icone tela pequena-->
+                        <img src="imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                            class="h-5 border rounded-full lg:hidden">
+
+                        <!--Icone tela grande-->
+                        <img src="imgs/icones/estadosUnidos.png" alt="Estados Unidos"
+                            class="h-7 border rounded-full hidden lg:block">
+
+                        <div class="mt-1 h-0.5 w-7 bg-[#746587] rounded-xl hidden group-hover:block"></div>
+
+                    </button>
+                </div>
+            </div>
+
             <a href="view/login.php" class="text-[#413E45] hover:underline hover:underline-offset-2 hover:decoration-2">
                 Entrar
             </a>
@@ -72,9 +105,9 @@ require("view/header.php");
                     eficiente.
 
                 <div class="hidden lg:block">
-                  <div class="flex justify-center items-center absolute top-24 -left-20 bg-white w-20 h-20">
-                      <img src="imgs/icones/emojiPergunta.png" alt="Emoji">
-                  </div>
+                    <div class="flex justify-center items-center absolute top-24 -left-20 bg-white w-20 h-20">
+                        <img src="imgs/icones/emojiPergunta.png" alt="Emoji">
+                    </div>
                 </div>
                 </p>
             </div>
