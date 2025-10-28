@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $p9 = $_POST['p9'] ?? null;
 
-        var_dump($_POST);
+        // var_dump($_POST);
 
         // Monta a query de INSERT usando prepared statements
         $sql = "INSERT INTO avaliacao (p1, p2, p3, p4, p5, p6, p7, p8, p9, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

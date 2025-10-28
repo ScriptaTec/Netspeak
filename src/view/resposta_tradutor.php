@@ -4,6 +4,10 @@ require_once '../controller/geminiController.php';
 $respostaDaApi = '';
 $tipoTraducao = '';
 
+session_start();
+
+
+
 // Correção PHP: Usa o operador de coalescência nula (??) para evitar o Warning
 // se 'tipoTraducao' não estiver definido no array $_POST (o que pode ocorrer em alguns acessos)
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
@@ -11,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['frase'])) {
     // Define 'informal' como valor padrão/fallback se não for enviado
     $tipoTraducao = $_POST['tipoTraducao'] ?? 'informal';
     $respostaDaApi = processarFraseComGemini($fraseUsuario, $tipoTraducao);
+    $_SESSION['tipoT'] = $tipoTraducao;
 }
 ?>
 
@@ -221,6 +226,22 @@ require('header.php');
         const radioFormal = document.getElementById("radioFormal");
         const submitFraseBtn = document.getElementById('submitFraseBtn');
 
+        // FELIPE
+        // FELIPE
+        const tipoSalvo = sessionStorage.getItem('tipoTraducao');
+
+        if (tipoSalvo === 'formal') {
+            radioFormal.checked = true;
+            tipoTraducaoHidden.value = 'formal'; // <-- ADICIONE ISSO
+        } else if (tipoSalvo === 'informal') {
+            radioInformal.checked = true;
+            tipoTraducaoHidden.value = 'informal'; // <-- ADICIONE ISSO
+        } else {
+            // Garante que o padrão seja 'informal' tanto no rádio quanto no hidden
+            radioInformal.checked = true; 
+            tipoTraducaoHidden.value = 'informal'; // <-- ADICIONE ISSO
+        }
+
         // --- Lógica do Modal de Filtro de Tradução ---
 
         // Função para ABRIR o modal
@@ -241,8 +262,26 @@ require('header.php');
         }
 
         // Função para FECHAR o modal pelo botão 'X'
+        // if (cancelarFiltro) {
+        //     cancelarFiltro.addEventListener("click", () => {
+        //         modalFiltro.classList.add("hidden");
+        //     });
+        // }
+
+        // FELIPE
+        // Função para FECHAR o modal pelo botão 'X'
         if (cancelarFiltro) {
             cancelarFiltro.addEventListener("click", () => {
+                // PEGA O VALOR AQUI DO RADIO, MEU COMENTARIO FELIPE kkkkk PRA NAO ACHAR QUE É CHAT
+                const selectedRadio = document.querySelector('#modal-filtro input[name="modalTipoTraducao"]:checked');
+
+                if (selectedRadio) {
+                    // ADICIONA O VALOR DO BOTAO NO RADIO
+                    tipoTraducaoHidden.value = selectedRadio.value;
+                    sessionStorage.setItem('tipoTraducao', selectedRadio.value);
+                }
+
+                // FECHA O MODAL
                 modalFiltro.classList.add("hidden");
             });
         }
@@ -258,6 +297,9 @@ require('header.php');
                 if (selectedRadio) {
                     tipoTraducaoHidden.value = selectedRadio.value;
                 }
+
+                // FELIPE
+                sessionStorage.setItem('tipoTraducao', selectedRadio.value);
 
                 // 3. Submete o formulário principal
                 modalFiltro.classList.add("hidden");
@@ -357,7 +399,7 @@ require('header.php');
             const emojisByCategory = data.reduce((acc, emoji) => {
                 if (emoji.category === 'Component' || !emoji.category || !emoji.unified) return acc;
                 const emojiChar = String.fromCodePoint(...emoji.unified.split('-').map(code => parseInt(code, 16)));
-                if (!acc[emoji.category]) acc[O emoji é o caractere que o usuário vê. A categoria é a chave do objeto. ] = [];
+                if (!acc[emoji.category]) acc[emoji.category] = [];
                 acc[emoji.category].push({ char: emojiChar, name: emoji.name || 'Emoji' });
                 return acc;
             }, {});

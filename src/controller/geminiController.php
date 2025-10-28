@@ -6,31 +6,44 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable('../');
 $dotenv->load();
 
-
-
 function processarFraseComGemini($fraseUsuario, $tipoTraducao)
 {
-    // Novo bloco IF (tipoTraducao === "formal" -> Informal)
-if ($tipoTraducao === "formal"){
-    $mensagem = "SUA MISSÃO PRIMÁRIA É: 1. **IDENTIFICAR O IDIOMA** da frase de entrada. 2. **REESCREVER** a frase, alterando-a de um tom formal para um tom informal e descolado. 3. **VOCÊ DEVE MANTER O IDIOMA ORIGINAL** (Português, Inglês ou Espanhol). Sua reescrita deve ser carregada de emojis, gírias e abreviações apropriadas para a cultura da língua detectada. 4. **VOCÊ DEVE USAR EMOJIS QUE SE ADEQUEM AO CONTEXTO DA FRASE DE FORMA NATURAL**
+    if ($tipoTraducao === "formal") { // Formal -> Informal
+        $mensagem = "
+        **Strict Output Instruction:** Respond *ONLY* with the rewritten sentence. Do not include greetings, explanations, language identification, or any other extra text.
 
-    **Regras de Estilo e Idioma:**
-    - **Se ESPANHOL:** Use gírias e coloquialismos como 'chévere', 'chido', 'guay', e conjugue verbos no tratamento 'tú' ou 'vos' (dependendo da gíria).
-    - **Se PORTUGUÊS:** Use gírias brasileiras e internetês (mlk, vc, tbm, hj).
-    - **Se INGLÊS:** Use gírias (slang) americanas/britânicas (dude, hangout, asap).
+        **Your Task:**
+        1.  **Identify Language:** Determine if the input is Portuguese, English, or Spanish.
+        2.  **Rewrite Tone:** Change the sentence from a formal tone to a casual, informal tone.
+        3.  **MAINTAIN ORIGINAL LANGUAGE:** The output *MUST* be in the *SAME LANGUAGE* as the input (e.g., Spanish input -> Spanish output).
 
-    RESPONDA APENAS com a Frase: $fraseUsuario já processada";
-} else {
-    // Novo bloco ELSE (Outros -> Formal)
-    $mensagem = "SUA MISSÃO PRIMÁRIA É: 1. **IDENTIFICAR O IDIOMA** da frase de entrada. 2. **REESCREVER** a frase, alterando-a de um tom informal e coloquial para um tom **formal e culto**. 3. **VOCÊ DEVE MANTER O IDIOMA ORIGINAL** (Português, Inglês ou Espanhol). Sua reescrita deve ser gramaticalmente correta, polida e apropriada para comunicações profissionais.
+        **Style Rules (by language):**
+        -   **If Spanish:** Use slang (chévere, chido, guay) and the 'tú' or 'vos' form and emojis.
+        -   **If Portuguese (BR):** Use Brazilian slang and internet speech (mlk, vc, tbm, hj) and emojis.
+        -   **If English:** Use American/British slang (dude, hangout, asap) and emojis.
 
-    **Regras de Estilo e Idioma:**
-    - **Se ESPANHOL:** Use a norma culta e o tratamento formal 'Usted' com conjugação na terceira pessoa.
-    - **Se PORTUGUÊS:** Use a norma culta do português do Brasil.
-    - **Se INGLÊS:** Use inglês padrão (standard English) para contextos profissionais ou acadêmicos.
+        **Input Sentence:**
+        $fraseUsuario
+        ";
+    } else {
+        // Informal -> Formal
+        $mensagem = "
+        **Strict Output Instruction:** Respond *ONLY* with the rewritten sentence. Do not include greetings, explanations, language identification, or any other extra text.
 
-    RESPONDA APENAS com a frase: $fraseUsuario já processada";
-}
+        **Your Task:**
+        1.  **Identify Language:** Determine if the input is Portuguese, English, or Spanish.
+        2.  **Rewrite Tone:** Change the sentence from a casual/informal tone to a formal, polite, and professional tone.
+        3.  **MAINTAIN ORIGINAL LANGUAGE:** The output *MUST* be in the *SAME LANGUAGE* as the input (e.g., Spanish input -> Spanish output).
+
+        **Style Rules (by language):**
+        -   **If Spanish:** Use the formal 'Usted' treatment and standard grammar.
+        -   **If Portuguese (BR):** Use the standard formal norm (norma culta).
+        -   **If English:** Use professional/academic standard English.
+
+        **Input Sentence:**
+        $fraseUsuario
+        ";
+    }
 
     $apiKey = $_ENV['CHAVE_API_GEMINI'];
 

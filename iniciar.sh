@@ -22,6 +22,6 @@ sleep 10
 
 
 
-echo $senha | sudo -S docker-compose up -d --build
+docker compose up -d --build
 
 firefox localhost  2>/dev/null
